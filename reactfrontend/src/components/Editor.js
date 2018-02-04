@@ -158,15 +158,7 @@ class Editor extends React.Component {
                     </div>
                   </fieldset>
 
-                  <fieldset className="form-group">
-                      <input
-                  className="form-control"
-                  type="text"
-                  placeholder="Familiares"
-                  value={this.props.tagInput}
-                  onChange={this.changeTagInput}
-                  onKeyUp={this.watchForEnter} />
-                  </fieldset>
+                  
 
                   <fieldset className="form-group">
                       <input
