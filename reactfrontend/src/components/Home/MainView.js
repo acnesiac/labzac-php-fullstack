@@ -72,10 +72,10 @@ const MainView = props => {
         <ul className="nav nav-pills outline-active">
 
           
-          {props.currentUser.username  === 'acnesiac1' &&
+         
           <GlobalFeedTab
             tab={props.tab} onTabClick={props.onTabClick} />
-          }
+          
 
           <TagFilterTab tag={props.tag} />
 
