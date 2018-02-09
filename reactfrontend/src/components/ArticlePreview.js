@@ -67,6 +67,9 @@ const ArticlePreview = props => {
             })
           }
         </ul>
+         <Link className="author" to={`/@${article.author.username}`}>
+            Grafica
+          </Link>
       </Link>
     </div>
   );
