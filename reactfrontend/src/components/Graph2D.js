@@ -2,6 +2,7 @@ import ListErrors from './ListErrors';
 import React from 'react';
 import agent from '../agent';
 import { connect } from 'react-redux';
+import {LineChart} from 'react-d3-basic';
 import {
   ADD_TAG,
   EDITOR_PAGE_LOADED,
@@ -92,12 +93,47 @@ class Graph2D extends React.Component {
   }
 
   render() {
+      var data = [
+          {
+              "age": 39,
+              "index": 0
+          },
+          {
+              "age": 38,
+              "index": 1
+          },
+          {
+              "age": 34,
+              "index": 2
+          },
+          {
+              "age": 12,
+              "index": 3
+          }
+      ];
+ 
+      var chartSeries = [
+          {
+            field: 'age',
+            name: 'Age',
+            color: '#ff7f0e',
+            style: {
+              "stroke-width": 2,
+              "stroke-opacity": .2,
+              "fill-opacity": .2
+            }
+          }
+        ],
+        x = function(d) {
+          return d.index;
+        }
+
     return (
       <div className="editor-page">
         <div className="container page">
           <div className="row">
             <div className="col-md-10 offset-md-1 col-xs-12">
-
+<LineChart width= {600} height= {300} data= {data} chartSeries= {chartSeries} x= {x} />
               <ListErrors errors={this.props.errors}></ListErrors>
 
               <form>
