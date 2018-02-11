@@ -3,6 +3,8 @@ import React from 'react';
 import agent from '../agent';
 import { connect } from 'react-redux';
 import {LineChart} from 'react-d3-basic';
+import { Link } from 'react-router-dom';
+
 import {
   ADD_TAG,
   EDITOR_PAGE_LOADED,
@@ -115,7 +117,7 @@ class Graph2D extends React.Component {
       var chartSeries = [
           {
             field: 'age',
-            name: 'Age',
+            name: 'Presion arterial',
             color: '#ff7f0e',
             style: {
               "stroke-width": 2,
@@ -133,92 +135,15 @@ class Graph2D extends React.Component {
         <div className="container page">
           <div className="row">
             <div className="col-md-10 offset-md-1 col-xs-12">
-<LineChart width= {600} height= {300} data= {data} chartSeries= {chartSeries} x= {x} />
+              <LineChart width= {600} height= {300} data= {data} chartSeries= {chartSeries} x= {x} />
               <ListErrors errors={this.props.errors}></ListErrors>
 
-              <form>
-                <fieldset>
-
-                  <fieldset className="form-group">
-                    <input
-                      className="form-control form-control-lg"
-                      type="text"
-                      placeholder="Nombre Paciente"
-                      value={this.props.title}
-                      onChange={this.changeTitle} />
-                  </fieldset>
-
-                  <fieldset className="form-group">
-                    <input
-                      className="form-control"
-                      type="text"
-                      placeholder="Cual es su padecimiento?"
-                      value={this.props.description}
-                      onChange={this.changeDescription} />
-                  </fieldset>
-
-                  <fieldset className="form-group">
-                    <textarea
-                      className="form-control"
-                      rows="8"
-                      placeholder="Descripcion"
-                      value={this.props.body}
-                      onChange={this.changeBody}>
-                    </textarea>
-                  </fieldset>
-
-                  <fieldset className="form-group">
-                    <input
-                      className="form-control"
-                      type="text"
-                      placeholder="Link Drive"
-                      value={this.props.tagInput}
-                      onChange={this.changeTagInput}
-                      onKeyUp={this.watchForEnter} />
-
-                
-
-                    <div className="tag-list">
-                      {
-                        (this.props.tagList || []).map(tag => {
-                          return (
-                            <span className="tag-default tag-pill" key={tag}>
-                              <i  className="ion-close-round"
-                                  onClick={this.removeTagHandler(tag)}>
-                              </i>
-                              {tag}
-                            </span>
-                          );
-                        })
-                      }
-                    </div>
-                  </fieldset>
-
-                  
-
-                  <fieldset className="form-group">
-                      <input
-                  className="form-control"
-                  type="text"
-                  placeholder="Doctores"
-                  value={this.props.tagInput}
-                  onChange={this.changeTagInput}
-                  onKeyUp={this.watchForEnter} />
-                  </fieldset>
-
-                  <button
-                    className="btn btn-lg pull-xs-right btn-primary"
-                    type="button"
-                    disabled={this.props.inProgress}
-                    onClick={this.submitForm}>
-                    Grafica 2D
-                  </button>
-
-                </fieldset>
-              </form>
 
             </div>
           </div>
+          <Link to="/" className="nav-link">
+            Regresar        
+          </Link>
         </div>
       </div>
     );
