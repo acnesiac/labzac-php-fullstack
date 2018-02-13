@@ -10,6 +10,7 @@ import Home from '../components/Home';
 import Login from '../components/Login';
 
 import Graph2D from '../components/Graph2D';
+import GraphChart2D from '../components/GraphChart2D';
 import Profile from '../components/Profile';
 import ProfileFavorites from '../components/ProfileFavorites';
 import Register from '../components/Register';
@@ -68,6 +69,8 @@ class App extends React.Component {
             <Route path="/@:username/favorites" component={ProfileFavorites} />
             <Route path="/@:username" component={Profile} />
              <Route path="/graph2d" component={Graph2D} />
+                       <Route path="/graphchart2d" component={GraphChart2D} />
+
             </Switch>
         </div>
       );

@@ -116,7 +116,7 @@ class Editor extends React.Component {
                     <input
                       className="form-control"
                       type="text"
-                      placeholder="Cual es su padecimiento?"
+                      placeholder="Cuadro general, padecimiento"
                       value={this.props.description}
                       onChange={this.changeDescription} />
                   </fieldset>
@@ -125,7 +125,7 @@ class Editor extends React.Component {
                     <textarea
                       className="form-control"
                       rows="8"
-                      placeholder="Descripcion"
+                      placeholder="Domicilio"
                       value={this.props.body}
                       onChange={this.changeBody}>
                     </textarea>
