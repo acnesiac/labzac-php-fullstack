@@ -5,6 +5,9 @@ import { connect } from 'react-redux';
 import {LineChart} from 'react-d3-basic';
 import { Link } from 'react-router-dom';
 import {Doughnut} from 'react-chartjs-2';
+import {Bar} from 'react-chartjs-2';
+import {Line} from 'react-chartjs-2';
+
 
 import {
   ADD_TAG,
@@ -116,6 +119,20 @@ class GraphChart2D extends React.Component {
 		]
 	}]
 };
+      const data2 = {
+  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+  datasets: [
+    {
+      label: 'My First dataset',
+      backgroundColor: 'rgba(255,99,132,0.2)',
+      borderColor: 'rgba(255,99,132,1)',
+      borderWidth: 1,
+      hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+      hoverBorderColor: 'rgba(255,99,132,1)',
+      data: [65, 59, 80, 81, 56, 55, 40]
+    }
+  ]
+};
       var data = [
           {
               "age": 39,
@@ -149,16 +166,55 @@ class GraphChart2D extends React.Component {
         ],
         x = function(d) {
           return d.index;
-        }
-
+        };
+const data3 = {
+  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+  datasets: [
+    {
+      label: 'My First dataset',
+      fill: false,
+      lineTension: 0.1,
+      backgroundColor: 'rgba(75,192,192,0.4)',
+      borderColor: 'rgba(75,192,192,1)',
+      borderCapStyle: 'butt',
+      borderDash: [],
+      borderDashOffset: 0.0,
+      borderJoinStyle: 'miter',
+      pointBorderColor: 'rgba(75,192,192,1)',
+      pointBackgroundColor: '#fff',
+      pointBorderWidth: 1,
+      pointHoverRadius: 5,
+      pointHoverBackgroundColor: 'rgba(75,192,192,1)',
+      pointHoverBorderColor: 'rgba(220,220,220,1)',
+      pointHoverBorderWidth: 2,
+      pointRadius: 1,
+      pointHitRadius: 10,
+      data: [65, 59, 80, 81, 56, 55, 40]
+    }
+  ]
+};
     return (
       <div className="editor-page">
         <div className="container page">
           <div className="row">
             <div className="col-md-10 offset-md-1 col-xs-12">
                 <Doughnut data={data1} />
-
+  <div>
+        <h2>Bar Example (custom size)</h2>
+        <Bar
+          data={data2}
+          width={100}
+          height={50}
+          options={{
+            maintainAspectRatio: true
+          }}
+        />
+      </div>
               <LineChart width= {600} height= {300} data= {data} chartSeries= {chartSeries} x= {x} />
+<div>
+        <h2>Line Example</h2>
+        <Line data={data3} />
+      </div>
               <ListErrors errors={this.props.errors}></ListErrors>
 
 
