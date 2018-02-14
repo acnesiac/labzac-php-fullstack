@@ -11,6 +11,9 @@ import Login from '../components/Login';
 
 import Graph2D from '../components/Graph2D';
 import GraphChart2D from '../components/GraphChart2D';
+import AppGraph from '../components/AppGraph';
+
+
 import Profile from '../components/Profile';
 import ProfileFavorites from '../components/ProfileFavorites';
 import Register from '../components/Register';
@@ -68,8 +71,9 @@ class App extends React.Component {
             <Route path="/settings" component={Settings} />
             <Route path="/@:username/favorites" component={ProfileFavorites} />
             <Route path="/@:username" component={Profile} />
-             <Route path="/graph2d" component={Graph2D} />
-                       <Route path="/graphchart2d" component={GraphChart2D} />
+            <Route path="/graph2d" component={Graph2D} />
+            <Route path="/graphchart2d" component={GraphChart2D} />
+            <Route path="/graphchartTraversi2d" component={AppGraph} />
 
             </Switch>
         </div>
