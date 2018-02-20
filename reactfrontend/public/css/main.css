@@ -4918,8 +4918,8 @@ footer .attribution {
     display: block; }
 
 .article-preview {
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 1.5rem 0; }
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 1.5rem ; }
 .article-preview .article-meta {
     margin: 0 0 1rem 0; }
 .article-preview .preview-link h1 {

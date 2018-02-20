@@ -123,7 +123,7 @@ class HojaEnfermeria extends React.Component {
   labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
   datasets: [
     {
-      label: 'My First dataset',
+      label: 'Hoja de evolucion del paciente',
       backgroundColor: 'rgba(255,99,132,0.2)',
       borderColor: 'rgba(255,99,132,1)',
       borderWidth: 1,
@@ -168,10 +168,10 @@ class HojaEnfermeria extends React.Component {
           return d.index;
         };
 const data3 = {
-  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+  labels: ['10 AM', '11 AM', '12 AM', '13 PM', '14 PM', '15 PM', '16 PM'],
   datasets: [
     {
-      label: 'My First dataset',
+      label: 'Evolucion del paciente',
       fill: false,
       lineTension: 0.1,
       backgroundColor: 'rgba(75,192,192,0.4)',
@@ -197,12 +197,126 @@ const data3 = {
       <div className="editor-page">
         <div className="container page">
           <div className="row">
-            <h2>Line Example</h2>
-            <Line data={data3} />
-          </div>
-          <ListErrors errors={this.props.errors}></ListErrors>
+            <div className="col-md-10 offset-md-1 col-xs-12"><div>
+              <h2>Presion arterial</h2>
+              <Line data={data3} />
             </div>
+            <ListErrors errors={this.props.errors}></ListErrors>
+            </div>
+
+            {/*http:///bootdey.com/snippets/view/Table-user-information#preview */}
+<div className="container bootstrap snippet page col-md-12 offset-md-1 col-xs-12">
+<div className="panel-body">
+    <div className="row">
+        
+        <div className="col-md-10">
+            <strong>Information</strong>
+            <div className="table-responsive">
+            <table className="table table-condensed table-responsive table-user-information">
+                <tbody>
+                    <tr>        
+                        <td>
+                            <strong>
+                                <span className="glyphicon glyphicon-asterisk text-primary"></span>
+                                Identificacion                                                
+                            </strong>
+                        </td>
+                        <td className="text-primary">
+                            123456789     
+                        </td>
+                    </tr>
+                    <tr>    
+                        <td>
+                            <strong>
+                                <span className="glyphicon glyphicon-user  text-primary"></span>    
+                                Name                                                
+                            </strong>
+                        </td>
+                        <td className="text-primary">
+                            Bootdey     
+                        </td>
+                    </tr>
+                    <tr>        
+                        <td>
+                            <strong>
+                                <span className="glyphicon glyphicon-cloud text-primary"></span>  
+                                Lastname                                                
+                            </strong>
+                        </td>
+                        <td className="text-primary">
+                            Bootstrap  
+                        </td>
+                    </tr>
+
+                    <tr>        
+                        <td>
+                            <strong>
+                                <span className="glyphicon glyphicon-bookmark text-primary"></span> 
+                                Username                                                
+                            </strong>
+                        </td>
+                        <td className="text-primary">
+                            bootnipets 
+                        </td>
+                    </tr>
+
+
+                    <tr>        
+                        <td>
+                            <strong>
+                                <span className="glyphicon glyphicon-eye-open text-primary"></span> 
+                                Role                                                
+                            </strong>
+                        </td>
+                        <td className="text-primary">
+                            Admin
+                        </td>
+                    </tr>
+                    <tr>        
+                        <td>
+                            <strong>
+                                <span className="glyphicon glyphicon-envelope text-primary"></span> 
+                                Email                                                
+                            </strong>
+                        </td>
+                        <td className="text-primary">
+                            noreply@email.com  
+                        </td>
+                    </tr>
+                    <tr>        
+                        <td>
+                            <strong>
+                                <span className="glyphicon glyphicon-calendar text-primary"></span>
+                                created                                                
+                            </strong>
+                        </td>
+                        <td className="text-primary">
+                            20 jul 20014
+                        </td>
+                    </tr>
+                    <tr>        
+                        <td>
+                            <strong>
+                                <span className="glyphicon glyphicon-calendar text-primary"></span>
+                                Modified                                                
+                            </strong>
+                        </td>
+                        <td className="text-primary">
+                             20 jul 20014 20:00:00
+                        </td>
+                    </tr>                                    
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div> 
           </div>
+
+
+
+
           <Link to="/" className="nav-link">
             Regresar        
           </Link>
