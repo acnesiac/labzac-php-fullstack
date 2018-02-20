@@ -31,14 +31,25 @@ class CommentInput extends React.Component {
   render() {
     return (
       <form className="card comment-form" onSubmit={this.createComment}>
+      
+        <fieldset className="form-group">
+                      <input
+                  className="form-control"
+                  type="text"
+                  placeholder="Evolucion"
+                  value={this.props.tagInput}
+                  onChange={this.changeTagInput}
+                  onKeyUp={this.watchForEnter} />
+
         <div className="card-block">
           <textarea className="form-control"
-            placeholder="Datos de evolucion ..."
+            placeholder="Evolucion de paciente ..."
             value={this.state.body}
             onChange={this.setBody}
             rows="3">
           </textarea>
         </div>
+
         <div className="card-footer">
           <img
             src={this.props.currentUser.image}
@@ -47,9 +58,20 @@ class CommentInput extends React.Component {
           <button
             className="btn btn-sm btn-primary"
             type="submit">
-            Informacion de bitacora del dia
+            Detalles
           </button>
         </div>
+        <button
+          className="btn btn-lg pull-xs-right btn-primary"
+          type="button"
+          disabled={this.props.inProgress}
+          onClick={this.submitForm}>
+          Salvar paciente
+        </button>
+
+                </fieldset>
+
+        
       </form>
     );
   }

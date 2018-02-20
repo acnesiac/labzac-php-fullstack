@@ -4919,7 +4919,14 @@ footer .attribution {
 
 .article-preview {
     border: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 1.5rem ; }
+    padding: 1.5rem ; 
+position: relative;
+    display: block;
+    margin-bottom: 0.75rem;
+    background-color: #fff;
+    border-radius: 0.25rem;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.125);
+    }
 .article-preview .article-meta {
     margin: 0 0 1rem 0; }
 .article-preview .preview-link h1 {
