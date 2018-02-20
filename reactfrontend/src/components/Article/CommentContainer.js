@@ -22,30 +22,57 @@ const CommentContainer = props => {
           slug={props.slug}
           currentUser={props.currentUser} />
         */}
+
          <ReactTable
             data={[{
-    name: 'Tanner Linsley',
-    age: 26,
-    friend: {
-      name: 'Jason Maurer',
-      age: 23,
-    }
-  }]}
-            columns={[{
-    Header: 'Name',
-    accessor: 'name' // String-based value accessors!
-  }, {
-    Header: 'Age',
-    accessor: 'age',
-    Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
-  }, {
-    id: 'friendName', // Required because our accessor is not a string
-    Header: 'Friend Name',
-    accessor: d => d.friend.name // Custom value accessors!
-  }, {
-    Header: props => <span>Friend Age</span>, // Custom header components!
-    accessor: 'friend.age'
-  }]}
+              name: 'Tanner Linsley',
+              age: 26,
+              friend: {
+                name: 'Jason Maurer',
+                age: 23,
+              },
+               firstName: 'name',
+              lastName: 'name',
+              age: Math.floor(Math.random() * 30),
+              visits: Math.floor(Math.random() * 100),
+              progress: Math.floor(Math.random() * 100),
+              status:"single"
+            }]} 
+          columns={[{
+        Header: 'Fecha',
+        accessor: 'progress',
+        Cell: row => (
+          <div
+            style={{
+              width: '100%',
+              height: '100%',
+              backgroundColor: '#dadada',
+              borderRadius: '2px'
+            }}
+          >
+            <div
+              style={{
+                width: `${row.value}%`,
+                height: '100%',
+                backgroundColor: row.value > 66 ? '#85cc00'
+                  : row.value > 33 ? '#ffbf00'
+                  : '#ff2e00',
+                borderRadius: '2px',
+                transition: 'all .2s ease-out'
+              }}
+            />
+          </div>
+        )
+      }, {
+        Header: 'Action',
+        accessor: 'status',
+        Cell: row => (
+          <span>
+            <a href="/login">ver</a>
+          </span>
+        )
+      }]
+}
           />
       </div>
     );

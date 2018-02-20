@@ -14,6 +14,7 @@ const ArticleActions = props => {
   const del = () => {
     props.onClickDelete(agent.Articles.del(article.slug))
   };
+  
   if (props.canModify) {
     return (
 
@@ -26,10 +27,10 @@ const ArticleActions = props => {
         </Link>
         </span>
          <span>
-    </span>
+        </span>
         <span>
           <Link
-          to={`/editor/${article.slug}`}
+          to="/hourEditor"
           className="btn btn-outline-secondary btn-sm">
           <i className="ion-edit"></i> Nuevo Registro
         </Link>

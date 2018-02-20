@@ -13,6 +13,7 @@ import Graph2D from '../components/Graph2D';
 import GraphChart2D from '../components/GraphChart2D';
 import AppGraph from '../components/AppGraph';
 import HojaEnfermeria from '../components/HojaEnfermeria';
+import HourEditor from '../components/HourEntry/HourEditor';
 
 
 import Profile from '../components/Profile';
@@ -76,6 +77,7 @@ class App extends React.Component {
             <Route path="/graphchart2d" component={GraphChart2D} />
             <Route path="/graphchartTraversi2d" component={AppGraph} />
             <Route path="/hojaEnfermeria" component={HojaEnfermeria} />
+           <Route path="/hourEditor" component={HourEditor} />
 
             </Switch>
         </div>
