@@ -48,9 +48,9 @@ class AppGraph extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <h2>Welcome to React</h2>
+          <h2></h2>
         </div>
-        <GraphChartTraversy2D chartData={this.state.chartData} location="Massachusetts" legendPosition="bottom"/>
+        <GraphChartTraversy2D chartData={this.state.chartData} location="Fanny Garcia" legendPosition="bottom"/>
       </div>
     );
   }

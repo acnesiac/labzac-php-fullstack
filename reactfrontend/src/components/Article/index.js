@@ -52,8 +52,10 @@ class Article extends React.Component {
           </div>
         </div>
 
-        <div className="container page">
 
+        <div className="container page">
+{
+  /*
           <div className="row article-content">
             <div className="col-xs-12">
 
@@ -75,12 +77,15 @@ class Article extends React.Component {
 
             </div>
           </div>
-
-          <hr />
-
-          <div className="article-actions">
+            <hr />
+              <div className="article-actions">
           </div>
 
+*/
+}
+        
+
+        
           <div className="row">
             <CommentContainer
               comments={this.props.comments || []}

@@ -13,18 +13,21 @@ class GraphChartTraversy2D extends Component{
     displayTitle:true,
     displayLegend: true,
     legendPosition:'right',
-    location:'City'
+    location:'Fanny Garcia'
   }
 
   render(){
     return (
-      <div className="chart">
+            <div className="editor-page">
+        <div className="container page">
+          <div className="row">
+            <div className="col-md-10 offset-md-1 col-xs-12">
         <Bar
           data={this.state.chartData}
           options={{
             title:{
               display:this.props.displayTitle,
-              text:'Largest Cities In '+this.props.location,
+              text:'Presion arterial '+this.props.location,
               fontSize:25
             },
             legend:{
@@ -54,7 +57,7 @@ class GraphChartTraversy2D extends Component{
           options={{
             title:{
               display:this.props.displayTitle,
-              text:'Largest Cities In '+this.props.location,
+              text:'Evolucion del paciente '+this.props.location,
               fontSize:25
             },
             legend:{
@@ -63,6 +66,9 @@ class GraphChartTraversy2D extends Component{
             }
           }}
         />
+      </div>
+      </div>
+      </div>
       </div>
     )
   }

@@ -67,8 +67,8 @@ const ArticlePreview = props => {
             })
           }
         </ul>
-         <Link className="btn btn-primary" to={`/graph2d`}>
-            Hoja de enfermeria
+         <Link className="btn btn-primary" to={`/graphchartTraversi2d`}>
+            Resumen 
           </Link>
       </Link>
     </div>

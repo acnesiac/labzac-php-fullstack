@@ -31,30 +31,34 @@ class CommentInput extends React.Component {
   render() {
     return (
       <form className="card comment-form" onSubmit={this.createComment}>
-      
-        <fieldset className="form-group">
-                      <input
-                  className="form-control"
-                  type="text"
-                  placeholder="Evolucion"
-                  value={this.props.tagInput}
-                  onChange={this.changeTagInput}
-                  onKeyUp={this.watchForEnter} />
 
-        <div className="card-block">
+        <fieldset className="form-group">
+        
+        <input
+          className="form-control"
+          type="text"
+          placeholder="Fecha"
+          value={this.props.tagInput}
+          onChange={this.changeTagInput}
+          onKeyUp={this.watchForEnter} />
+
+        <input
+          className="form-control"
+          type="text"
+          placeholder="Hora"
+          value={this.props.tagInput}
+          onChange={this.changeTagInput}
+          onKeyUp={this.watchForEnter} />
+
           <textarea className="form-control"
             placeholder="Evolucion de paciente ..."
             value={this.state.body}
             onChange={this.setBody}
             rows="3">
           </textarea>
-        </div>
-
+        
         <div className="card-footer">
-          <img
-            src={this.props.currentUser.image}
-            className="comment-author-img"
-            alt={this.props.currentUser.username} />
+
           <button
             className="btn btn-sm btn-primary"
             type="submit">
