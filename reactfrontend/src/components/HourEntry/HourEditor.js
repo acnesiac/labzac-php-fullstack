@@ -2,6 +2,8 @@ import ListErrors from '../ListErrors';
 import React from 'react';
 import agent from '../../agent';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+
 import {
   ADD_TAG,
   EDITOR_PAGE_LOADED,
@@ -104,78 +106,56 @@ class HourEditor extends React.Component {
                 <fieldset>
 
                   <fieldset className="form-group">
+                    <label for="exampleInputEmail1">Fecha de registro</label>
+
                     <input
                       className="form-control form-control-lg"
-                      type="text"
-                      placeholder="Nombre Paciente"
+                      type="date"
+                      placeholder="dd/mm/yy"
                       value={this.props.title}
                       onChange={this.changeTitle} />
+
                   </fieldset>
 
                   <fieldset className="form-group">
+                    <label for="exampleInputEmail1">Presion Arterial</label>
                     <input
                       className="form-control"
                       type="text"
-                      placeholder="Cuadro general, padecimiento"
+                      placeholder="PA"
                       value={this.props.description}
                       onChange={this.changeDescription} />
                   </fieldset>
 
                   <fieldset className="form-group">
-                    <textarea
-                      className="form-control"
-                      rows="8"
-                      placeholder="Domicilio"
-                      value={this.props.body}
-                      onChange={this.changeBody}>
-                    </textarea>
-                  </fieldset>
-
-                  <fieldset className="form-group">
+                     <label for="exampleInputEmail1">Glucosa</label>
                     <input
                       className="form-control"
                       type="text"
-                      placeholder="Link Drive"
-                      value={this.props.tagInput}
-                      onChange={this.changeTagInput}
-                      onKeyUp={this.watchForEnter} />
-
-                
-
-                    <div className="tag-list">
-                      {
-                        (this.props.tagList || []).map(tag => {
-                          return (
-                            <span className="tag-default tag-pill" key={tag}>
-                              <i  className="ion-close-round"
-                                  onClick={this.removeTagHandler(tag)}>
-                              </i>
-                              {tag}
-                            </span>
-                          );
-                        })
-                      }
-                    </div>
+                      placeholder=""
+                      value={this.props.description}
+                      onChange={this.changeDescription} />
                   </fieldset>
+
 
                   
-
-                  <fieldset className="form-group">
-                      <input
-                  className="form-control"
-                  type="text"
-                  placeholder="Doctores"
-                  value={this.props.tagInput}
-                  onChange={this.changeTagInput}
-                  onKeyUp={this.watchForEnter} />
-                  </fieldset>
-
+                
+ <Link to={`/article/`+this.props} className="author"> 
+           <button
+                    className="btn btn-lg  btn-primary"
+                    type="button"
+                    disabled={this.props.inProgress}
+                    >
+                    Regresar
+                  </button>                             
+        </Link>
+                
                   <button
                     className="btn btn-lg pull-xs-right btn-primary"
                     type="button"
                     disabled={this.props.inProgress}
                     onClick={this.submitForm}>
-                    Salvar paciente
+                    Salvar
                   </button>
 
                 </fieldset>
