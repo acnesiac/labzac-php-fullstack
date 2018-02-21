@@ -30,7 +30,7 @@ const ArticleActions = props => {
         </span>
         <span>
           <Link
-          to="/hourEditor"
+          to={`/hourEditor/${article.slug}`}
           className="btn btn-outline-secondary btn-sm">
           <i className="ion-edit"></i> Nuevo Registro
         </Link>

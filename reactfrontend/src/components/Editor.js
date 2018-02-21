@@ -2,6 +2,8 @@ import ListErrors from './ListErrors';
 import React from 'react';
 import agent from '../agent';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+
 import {
   ADD_TAG,
   EDITOR_PAGE_LOADED,
@@ -71,6 +73,7 @@ class Editor extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    console.log(this.props.match.params.slug);
     if (this.props.match.params.slug !== nextProps.match.params.slug) {
       if (nextProps.match.params.slug) {
         this.props.onUnload();
@@ -82,6 +85,7 @@ class Editor extends React.Component {
 
   componentWillMount() {
     if (this.props.match.params.slug) {
+      console.log(this.props.match.params.slug);
       return this.props.onLoad(agent.Articles.get(this.props.match.params.slug));
     }
     this.props.onLoad(null);
@@ -170,6 +174,17 @@ class Editor extends React.Component {
                   onKeyUp={this.watchForEnter} />
                   </fieldset>
 
+                
+
+ <Link to={`/article/`+this.props.title} className="author"> 
+           <button
+                    className="btn btn-lg  btn-primary"
+                    type="button"
+                    disabled={this.props.inProgress}
+                    >
+                    Regresar
+                  </button>                             
+        </Link>
                   <button
                     className="btn btn-lg pull-xs-right btn-primary"
                     type="button"
