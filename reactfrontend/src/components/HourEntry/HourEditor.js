@@ -138,20 +138,27 @@ class HourEditor extends React.Component {
                       value={this.props.description}
                       onChange={this.changeDescription} />
                   </fieldset>
-
-
+                
+                  <Link to={`/article/`+this.props.title} className="author"> 
+                         <button
+                            className="btn btn-lg  btn-primary"
+                            type="button"
+                            disabled={this.props.inProgress}
+                            >
+                            Regresar
+                          </button>                             
+                  </Link>
                   
-                
- <Link to={`/article/`+this.props.title} className="author"> 
-           <button
-                    className="btn btn-lg  btn-primary"
-                    type="button"
-                    disabled={this.props.inProgress}
-                    >
-                    Regresar
-                  </button>                             
-        </Link>
-                
+                  <Link to={'/graphchart2d'} className="author"> 
+                         <button
+                            className="btn btn-lg  btn-primary"
+                            type="button"
+                            disabled={this.props.inProgress}
+                            >
+                            Grafica
+                          </button>                             
+                  </Link>
+
                   <button
                     className="btn btn-lg pull-xs-right btn-primary"
                     type="button"

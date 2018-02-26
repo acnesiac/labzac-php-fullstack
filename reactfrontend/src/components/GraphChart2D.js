@@ -99,27 +99,29 @@ class GraphChart2D extends React.Component {
   }
 
   render() {
-      const data1 = {
-	labels: [
-		'Red',
-		'Green',
-		'Yellow'
-	],
-	datasets: [{
-		data: [300, 50, 100],
-		backgroundColor: [
-		'#FF6384',
-		'#36A2EB',
-		'#FFCE56'
-		],
-		hoverBackgroundColor: [
-		'#FF6384',
-		'#36A2EB',
-		'#FFCE56'
-		]
-	}]
-};
-      const data2 = {
+
+  const data1 = {
+    	labels: [
+    		'Midazolam',
+    		'Salbutamol',
+    		'Paracetamol'
+    	],
+    	datasets: [{
+    		data: [300, 50, 100],
+    		backgroundColor: [
+    		'#FF6384',
+    		'#36A2EB',
+    		'#FFCE56'
+    		],
+    		hoverBackgroundColor: [
+    		'#FF6384',
+    		'#36A2EB',
+    		'#FFCE56'
+    		]
+    	}]
+    };
+
+  const data2 = {
   labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
   datasets: [
     {
@@ -195,12 +197,22 @@ const data3 = {
 };
     return (
       <div className="editor-page">
+
+      
+      
         <div className="container page">
+        <Link to="/" className="author">
+          <button className = 'btn-primary btn btn-lg'>
+            Regresar        
+          </button>
+        </Link>
           <div className="row">
+                  <h2>Medicamentos</h2>
+
             <div className="col-md-10 offset-md-1 col-xs-12">
                 <Doughnut data={data1} />
   <div>
-        <h2>Bar Example (custom size)</h2>
+        <h2>Evolucion de PA</h2>
         <Bar
           data={data2}
           width={100}
@@ -210,9 +222,9 @@ const data3 = {
           }}
         />
       </div>
-              <LineChart width= {600} height= {300} data= {data} chartSeries= {chartSeries} x= {x} />
+      <LineChart width= {600} height= {300} data= {data} chartSeries= {chartSeries} x= {x} />
 <div>
-        <h2>Line Example</h2>
+        <h2>Evolucion de Oxigeno</h2>
         <Line data={data3} />
       </div>
               <ListErrors errors={this.props.errors}></ListErrors>
@@ -220,9 +232,7 @@ const data3 = {
 
             </div>
           </div>
-          <Link to="/" className="nav-link">
-            Regresar        
-          </Link>
+          
         </div>
       </div>
     );
