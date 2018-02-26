@@ -77,7 +77,7 @@ class App extends React.Component {
             <Route path="/graphchart2d" component={GraphChart2D} />
             <Route path="/graphchartTraversi2d" component={AppGraph} />
             <Route path="/hojaEnfermeria" component={HojaEnfermeria} />
-           <Route path="/hourEditor" component={HourEditor} />
+           <Route path="/hourEditor/:slug" component={HourEditor} />
 
             </Switch>
         </div>

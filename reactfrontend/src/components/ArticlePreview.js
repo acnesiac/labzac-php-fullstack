@@ -67,9 +67,11 @@ const ArticlePreview = props => {
             })
           }
         </ul>
+      {/*
          <Link className="btn btn-primary" to={`/graphchartTraversi2d`}>
             Resumen 
           </Link>
+          */}
       </Link>
     </div>
   );

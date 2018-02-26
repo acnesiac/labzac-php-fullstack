@@ -85,7 +85,7 @@ class Article extends React.Component {
 }
         
 
-        
+        {/*
           <div className="row">
             <CommentContainer
               comments={this.props.comments || []}
@@ -93,6 +93,7 @@ class Article extends React.Component {
               slug={this.props.match.params.id}
               currentUser={this.props.currentUser} />
           </div>
+        */}
         </div>
       </div>
     );

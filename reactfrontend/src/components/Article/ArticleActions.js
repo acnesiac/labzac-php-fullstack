@@ -19,21 +19,26 @@ const ArticleActions = props => {
     return (
 
       <span>
-          <span>
-        <Link
-          to={`/editor/${article.slug}`}
-          className="btn btn-outline-secondary btn-sm">
-          <i className="ion-edit"></i> Edita paciente
-        </Link>
+        <span>
+          <Link
+            to={`/editor/${article.slug}`}
+            className="btn btn-outline-secondary btn-sm">
+            <i className="ion-edit"></i> Edita paciente
+          </Link>
         </span>
-         <span>
-        </span>
+        
         <span>
           <Link
           to={`/hourEditor/${article.slug}`}
           className="btn btn-outline-secondary btn-sm">
-          <i className="ion-edit"></i> Nuevo Registro
-        </Link>
+          <i className="ion-edit"></i> Evolucion
+          </Link>
+
+          <Link
+            to={`/hourEditor/${article.slug}`}
+            className="btn btn-outline-secondary btn-sm">
+            <i className="ion-edit"></i> Imagenes Dx
+          </Link>
         </span>
        
 

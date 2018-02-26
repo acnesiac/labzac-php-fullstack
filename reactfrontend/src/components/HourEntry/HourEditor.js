@@ -73,6 +73,8 @@ class HourEditor extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+        console.log(this.props.match.params.slug);
+
     if (this.props.match.params.slug !== nextProps.match.params.slug) {
       if (nextProps.match.params.slug) {
         this.props.onUnload();
@@ -105,20 +107,9 @@ class HourEditor extends React.Component {
               <form>
                 <fieldset>
 
+                  
                   <fieldset className="form-group">
-                    <label for="exampleInputEmail1">Fecha de registro</label>
-
-                    <input
-                      className="form-control form-control-lg"
-                      type="date"
-                      placeholder="dd/mm/yy"
-                      value={this.props.title}
-                      onChange={this.changeTitle} />
-
-                  </fieldset>
-
-                  <fieldset className="form-group">
-                    <label for="exampleInputEmail1">Presion Arterial</label>
+                    <label>Presion Arterial</label>
                     <input
                       className="form-control"
                       type="text"
@@ -128,7 +119,18 @@ class HourEditor extends React.Component {
                   </fieldset>
 
                   <fieldset className="form-group">
-                     <label for="exampleInputEmail1">Glucosa</label>
+                     <label>Glucosa</label>
+                    <input
+                      className="form-control"
+                      type="text"
+                      placeholder=""
+                      value={this.props.description}
+                      onChange={this.changeDescription} />
+                  </fieldset>
+
+
+                  <fieldset className="form-group">
+                     <label>Medicamento </label>
                     <input
                       className="form-control"
                       type="text"
@@ -140,7 +142,7 @@ class HourEditor extends React.Component {
 
                   
                 
- <Link to={`/article/`+this.props} className="author"> 
+ <Link to={`/article/`+this.props.title} className="author"> 
            <button
                     className="btn btn-lg  btn-primary"
                     type="button"
