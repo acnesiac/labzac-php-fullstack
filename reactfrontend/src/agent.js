@@ -3,7 +3,7 @@ import _superagent from 'superagent';
 
 const superagent = superagentPromise(_superagent, global.Promise);
 
-const API_ROOT = 'http://localhost/imagenesrx/public/api';
+const API_ROOT = 'http://www.imagenesrx.com.mx/api';
 
 const encode = encodeURIComponent;
 const responseBody = res => res.body;

@@ -114,7 +114,7 @@ class HourEditor extends React.Component {
                       className="form-control"
                       type="text"
                       placeholder="PA"
-                      value={this.props.description}
+                    
                       onChange={this.changeDescription} />
                   </fieldset>
 
@@ -124,7 +124,6 @@ class HourEditor extends React.Component {
                       className="form-control"
                       type="text"
                       placeholder=""
-                      value={this.props.description}
                       onChange={this.changeDescription} />
                   </fieldset>
 
@@ -135,7 +134,6 @@ class HourEditor extends React.Component {
                       className="form-control"
                       type="text"
                       placeholder=""
-                      value={this.props.description}
                       onChange={this.changeDescription} />
                   </fieldset>
                 
