@@ -14,7 +14,9 @@ import GraphChart2D from '../components/GraphChart2D';
 import AppGraph from '../components/AppGraph';
 import HojaEnfermeria from '../components/HojaEnfermeria';
 import HourEditor from '../components/HourEntry/HourEditor';
+import Upload from '../components/Upload/Upload';
 
+import ProfilePage from '../components/Upload/ProfilePage';
 
 import Profile from '../components/Profile';
 import ProfileFavorites from '../components/ProfileFavorites';
@@ -22,6 +24,19 @@ import Register from '../components/Register';
 import Settings from '../components/Settings';
 import { store } from '../store';
 import { push } from 'react-router-redux';
+import firebase from 'firebase';
+
+
+var config = {
+    apiKey: "AIzaSyBqWC-AHjyG4xd3mnXHECz0uKH2piAhOOk",
+    authDomain: "uploadrx-92ff0.firebaseapp.com",
+    databaseURL: "https://uploadrx-92ff0.firebaseio.com",
+    projectId: "uploadrx-92ff0",
+    storageBucket: "uploadrx-92ff0.appspot.com",
+    messagingSenderId: "30483709073"
+  };
+  
+
 
 const mapStateToProps = state => {
   return {
@@ -39,6 +54,12 @@ const mapDispatchToProps = dispatch => ({
 });
 
 class App extends React.Component {
+  constructor(){
+    super();
+    firebase.initializeApp(config);
+  }
+
+  
   componentWillReceiveProps(nextProps) {
     if (nextProps.redirectTo) {
       // this.context.router.replace(nextProps.redirectTo);
@@ -77,9 +98,12 @@ class App extends React.Component {
             <Route path="/graphchart2d" component={GraphChart2D} />
             <Route path="/graphchartTraversi2d" component={AppGraph} />
             <Route path="/hojaEnfermeria" component={HojaEnfermeria} />
-           <Route path="/hourEditor/:slug" component={HourEditor} />
+            <Route path="/hourEditor/:slug" component={HourEditor} />
+            <Route path="/upload" component={Upload} />
+            <Route path="/profilepage" component={ProfilePage} />
 
             </Switch>
+
         </div>
       );
     }
