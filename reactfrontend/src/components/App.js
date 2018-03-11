@@ -15,7 +15,7 @@ import AppGraph from '../components/AppGraph';
 import HojaEnfermeria from '../components/HojaEnfermeria';
 import HourEditor from '../components/HourEntry/HourEditor';
 import Upload from '../components/Upload/Upload';
-
+import LoadImage from '../components/Upload/LoadImage';
 import ProfilePage from '../components/Upload/ProfilePage';
 
 import Profile from '../components/Profile';
@@ -101,6 +101,7 @@ class App extends React.Component {
             <Route path="/hourEditor/:slug" component={HourEditor} />
             <Route path="/upload" component={Upload} />
             <Route path="/profilepage" component={ProfilePage} />
+            <Route path="/loadimage" component={LoadImage} />
 
             </Switch>
 
