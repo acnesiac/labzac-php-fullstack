@@ -64,6 +64,7 @@ class HourEditor extends React.Component {
       };
 
       const slug = { slug: this.props.articleSlug };
+
       const promise = this.props.articleSlug ?
         agent.Articles.update(Object.assign(article, slug)) :
         agent.Articles.create(article);
@@ -73,8 +74,7 @@ class HourEditor extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-        console.log(this.props.match.params.slug);
-
+    console.log(this.props.match.params.slug);
     if (this.props.match.params.slug !== nextProps.match.params.slug) {
       if (nextProps.match.params.slug) {
         this.props.onUnload();
@@ -101,23 +101,17 @@ class HourEditor extends React.Component {
         <div className="container page">
           <div className="row">
             <div className="col-md-12 offset-md-0 col-xs-12">
-
               <ListErrors errors={this.props.errors}></ListErrors>
-
               <form>
                 <fieldset>
-
-                  
                   <fieldset className="form-group">
                     <label>Presion Arterial</label>
                     <input
                       className="form-control"
                       type="text"
                       placeholder="PA"
-                    
                       onChange={this.changeDescription} />
                   </fieldset>
-
                   <fieldset className="form-group">
                      <label>Glucosa</label>
                     <input
@@ -126,8 +120,6 @@ class HourEditor extends React.Component {
                       placeholder=""
                       onChange={this.changeDescription} />
                   </fieldset>
-
-
                   <fieldset className="form-group">
                      <label>Medicamento </label>
                     <input
@@ -137,34 +129,34 @@ class HourEditor extends React.Component {
                       onChange={this.changeDescription} />
                   </fieldset>
                 
-                  
-                  <Link to={`/article/`+this.props.title} className="author" > 
-                         <button
-                            className="btn btn-lg  btn-primary"
-                            type="button"
-                            disabled={this.props.inProgress}
-                            >
-                            Regresar
-                          </button>                             
-                  </Link>
-                  
-                  <Link to={'/graphchart2d'} className="author .px-2 "> 
-                         <button
-                            className="btn btn-lg  btn-primary"
-                            type="button"
-                            disabled={this.props.inProgress}
-                            >
-                            Grafica
-                          </button>                             
-                  </Link>
 
-                  <button
-                    className="btn btn-lg pull-xs-right btn-primary"
-                    type="button"
-                    disabled={this.props.inProgress}
-                    onClick={this.submitForm}>
-                    Salvar
-                  </button>
+                    
+
+
+                      <Link to={`/article/`+this.props.title} className="author" > 
+                           <button
+                              className="btn btn-lg  btn-primary"
+                              type="button"
+                              disabled={this.props.inProgress}
+                              >
+                              Regresar
+                            </button>                             
+                    </Link>
+
+                    <Link to={'/graphchart2d'} className="btn btn-lg btn-primary" role="button"> 
+                                Grafica
+                    </Link>
+
+                      
+                      
+                      
+                      <button
+                        className="btn btn-lg pull-xs-right btn-primary"
+                        type="button"
+                        disabled={this.props.inProgress}
+                        onClick={this.submitForm}>
+                        Salvar
+                      </button>
 
                 </fieldset>
               </form>

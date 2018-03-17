@@ -56,6 +56,7 @@ class Editor extends React.Component {
 
     this.submitForm = ev => {
       ev.preventDefault();
+
       const article = {
         title: this.props.title,
         description: this.props.description,
@@ -64,11 +65,13 @@ class Editor extends React.Component {
       };
 
       const slug = { slug: this.props.articleSlug };
+
       const promise = this.props.articleSlug ?
         agent.Articles.update(Object.assign(article, slug)) :
         agent.Articles.create(article);
 
       this.props.onSubmit(promise);
+
     };
   }
 
@@ -125,16 +128,6 @@ class Editor extends React.Component {
                       onChange={this.changeDescription} />
                   </fieldset>
 
-                  <fieldset className="form-group">
-                    <textarea
-                      className="form-control"
-                      rows="8"
-                      placeholder="Domicilio"
-                      value={this.props.body}
-                      onChange={this.changeBody}>
-                    </textarea>
-                  </fieldset>
-
                 
 
                
@@ -149,15 +142,16 @@ class Editor extends React.Component {
                   </fieldset>
                 
 
- <Link to={`/article/`+this.props.title} className="author"> 
-           <button
-                    className="btn btn-lg  btn-primary"
-                    type="button"
-                    disabled={this.props.inProgress}
-                    >
-                    Regresar
-                  </button>                             
-        </Link>
+                 <Link to={`/article/`+this.props.description} className="author"> 
+                 <button
+                          className="btn btn-lg  btn-primary"
+                          type="button"
+                          disabled={this.props.inProgress}
+                          >
+                          Regresar
+                        </button>                             
+              </Link>
+
                   <button
                     className="btn btn-lg pull-xs-right btn-primary"
                     type="button"

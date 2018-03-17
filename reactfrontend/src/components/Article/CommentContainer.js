@@ -29,7 +29,110 @@ const CommentContainer = props => {
           comments={props.comments}
           slug={props.slug}
           currentUser={props.currentUser} />
+
         */}
+
+
+            <table className="table table-condensed table-responsive table-user-information">
+                <tbody>
+                    <tr>        
+                        <td>
+                            <strong>
+                                <span className="glyphicon glyphicon-asterisk text-primary"></span>
+                                Identificacion                                                
+                            </strong>
+                        </td>
+                        <td className="text-primary">
+                            123456789     
+                        </td>
+                    </tr>
+                    <tr>    
+                        <td>
+                            <strong>
+                                <span className="glyphicon glyphicon-user  text-primary"></span>    
+                                Name                                                
+                            </strong>
+                        </td>
+                        <td className="text-primary">
+                            Bootdey     
+                        </td>
+                    </tr>
+                    <tr>        
+                        <td>
+                            <strong>
+                                <span className="glyphicon glyphicon-cloud text-primary"></span>  
+                                Lastname                                                
+                            </strong>
+                        </td>
+                        <td className="text-primary">
+                            Bootstrap  
+                        </td>
+                    </tr>
+
+                    <tr>        
+                        <td>
+                            <strong>
+                                <span className="glyphicon glyphicon-bookmark text-primary"></span> 
+                                Username                                                
+                            </strong>
+                        </td>
+                        <td className="text-primary">
+                            bootnipets 
+                        </td>
+                    </tr>
+
+
+                    <tr>        
+                        <td>
+                            <strong>
+                                <span className="glyphicon glyphicon-eye-open text-primary"></span> 
+                                Role                                                
+                            </strong>
+                        </td>
+                        <td className="text-primary">
+                            Admin
+                        </td>
+                    </tr>
+                    <tr>        
+                        <td>
+                            <strong>
+                                <span className="glyphicon glyphicon-envelope text-primary"></span> 
+                                Email                                                
+                            </strong>
+                        </td>
+                        <td className="text-primary">
+                            noreply@email.com  
+                        </td>
+                    </tr>
+                    <tr>        
+                        <td>
+                            <strong>
+                                <span className="glyphicon glyphicon-calendar text-primary"></span>
+                                created                                                
+                            </strong>
+                        </td>
+                        <td className="text-primary">
+                            20 jul 20014
+                        </td>
+                    </tr>
+                    <tr>        
+                        <td>
+                            <strong>
+                                <span className="glyphicon glyphicon-calendar text-primary"></span>
+                                Modified                                                
+                            </strong>
+                        </td>
+                        <td className="text-primary">
+                             20 jul 20014 20:00:00
+                        </td>
+                    </tr>                                    
+                </tbody>
+            </table>
+
+
+
+
+
 
          <ReactTable
             data={[{

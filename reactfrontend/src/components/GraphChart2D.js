@@ -196,21 +196,18 @@ const data3 = {
   ]
 };
     return (
-      <div className="editor-page">
+      <div className="home-page">
 
       
       
         <div className="container page">
-        <Link to="/" className="author">
-          <button className = 'btn-primary btn btn-lg'>
-            Regresar        
-          </button>
-        </Link>
+       
           <div className="row">
                   <h2>Medicamentos</h2>
 
-            <div className="col-md-10 offset-md-1 col-xs-12">
+            <div className="col-md-12 offset-md-0 col-xs-12">
                 <Doughnut data={data1} />
+{/*
   <div>
         <h2>Evolucion de PA</h2>
         <Bar
@@ -229,6 +226,12 @@ const data3 = {
       </div>
               <ListErrors errors={this.props.errors}></ListErrors>
 
+*/}
+        <Link to="/" className="author">
+          <button className = 'btn-primary btn btn-lg'>
+            Regresar        
+          </button>
+        </Link>
 
             </div>
           </div>

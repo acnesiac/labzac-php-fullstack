@@ -212,6 +212,7 @@ const data3 = {
         <div className="col-md-12">
             <strong>Information</strong>
             <div className="table-responsive">
+            
             <table className="table table-condensed table-responsive table-user-information">
                 <tbody>
                     <tr>        
@@ -307,6 +308,8 @@ const data3 = {
                     </tr>                                    
                 </tbody>
             </table>
+
+
             </div>
         </div>
     </div>
@@ -317,7 +320,7 @@ const data3 = {
 
 
 
-          <Link to="/" className="nav-link">
+          <Link to="/" className="nav-link" role="button"  className="btn btn-lg  btn-primary  pull-xs-left">
             Regresar        
           </Link>
         </div>

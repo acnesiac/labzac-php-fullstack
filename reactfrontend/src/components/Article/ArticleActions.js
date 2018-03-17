@@ -10,7 +10,9 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const ArticleActions = props => {
+
   const article = props.article;
+
   const del = () => {
     props.onClickDelete(agent.Articles.del(article.slug))
   };
@@ -19,10 +21,7 @@ const ArticleActions = props => {
     return (
 
       <span>
-
-
-        <ul  className="list-group">
-        <li className="list-group-item list-group-item-action flex-column align-items-start active">
+ <div className="nav-item active">
                 <h1>{article.title}</h1>
 
 
@@ -33,56 +32,62 @@ const ArticleActions = props => {
                 <span className="date">
                   {new Date(article.createdAt).toDateString()}
                 </span>
-        </li>
+        </div>
 
-        <li className="list-group-item">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+ <div class="collapse navbar-collapse" id="navbarNav">
+        <ul  className="navbar-nav list-unstyled" >
+       
+        <li className="nav-item active">
           <Link
             to={`/editor/${article.slug}`}
-            className="btn btn-outline-secondary btn-lg">
+            className="btn btn-outline-secondary btn-md">
             <i className="ion-edit"></i> Edita paciente
           </Link>
         </li>
 
-          <li className="list-group-item">
+          <li className="nav-item active">
             <Link
             to={`/hourEditor/${article.slug}`}
-            className="btn btn-outline-secondary btn-lg">
+            className="btn btn-outline-secondary btn-md">
             <i className="ion-edit"></i> Evolucion grafica
             </Link>
           </li>
 
-          <li className="list-group-item">
+          <li className="nav-item active">
           <Link
           to={`/reacttable`}
-          className="btn btn-outline-secondary btn-lg">
+          className="btn btn-outline-secondary btn-md">
           <i className="ion-edit"></i> Tabla Evolucion
           </Link>
           </li>
 
-          <li className="list-group-item">
+          <li className="nav-item active">
           <Link
             to={`/hojaEnfermeria`}
-            className="btn btn-outline-secondary btn-lg">
+            className="btn btn-outline-secondary btn-md">
             <i className="ion-edit"></i> Presion arterial
           </Link>
           </li>
 
-          <li className="list-group-item">
+          <li className="nav-item active">
           <Link
             to={`/profilepage`}
-            className="btn btn-outline-secondary btn-lg">
+            className="btn btn-outline-secondary btn-md">
             <i className="ion-edit"></i> Sube tu Dx
           </Link>
           </li>
 
-          <li className="list-group-item">
+          <li className="nav-item active">
           <Link
             to={`/loadimage`}
-            className="btn btn-outline-secondary btn-lg">
+            className="btn btn-outline-secondary btn-md">
             <i className="ion-edit"></i> Visualiza Dx
           </Link>
           </li>
-        </ul>       
+        </ul>  
+        </div>
+      </nav>     
 
       </span>
     );
