@@ -19,48 +19,70 @@ const ArticleActions = props => {
     return (
 
       <span>
-        <span>
+
+
+        <ul  className="list-group">
+        <li className="list-group-item list-group-item-action flex-column align-items-start active">
+                <h1>{article.title}</h1>
+
+
+                <Link to={`/@${article.author.username}`}>
+                  <img src={article.author.image} alt={article.author.username} />
+                </Link>
+
+                <span className="date">
+                  {new Date(article.createdAt).toDateString()}
+                </span>
+        </li>
+
+        <li className="list-group-item">
           <Link
             to={`/editor/${article.slug}`}
-            className="btn btn-outline-secondary btn-sm">
+            className="btn btn-outline-secondary btn-lg">
             <i className="ion-edit"></i> Edita paciente
           </Link>
-        </span>
-        
-        <span>
-          <Link
-          to={`/hourEditor/${article.slug}`}
-          className="btn btn-outline-secondary btn-sm">
-          <i className="ion-edit"></i> Evolucion ingreso grafica
-          </Link>
+        </li>
 
+          <li className="list-group-item">
+            <Link
+            to={`/hourEditor/${article.slug}`}
+            className="btn btn-outline-secondary btn-lg">
+            <i className="ion-edit"></i> Evolucion grafica
+            </Link>
+          </li>
+
+          <li className="list-group-item">
           <Link
           to={`/reacttable`}
-          className="btn btn-outline-secondary btn-sm">
+          className="btn btn-outline-secondary btn-lg">
           <i className="ion-edit"></i> Tabla Evolucion
           </Link>
+          </li>
 
+          <li className="list-group-item">
           <Link
             to={`/hojaEnfermeria`}
-            className="btn btn-outline-secondary btn-sm">
+            className="btn btn-outline-secondary btn-lg">
             <i className="ion-edit"></i> Presion arterial
           </Link>
+          </li>
 
+          <li className="list-group-item">
           <Link
             to={`/profilepage`}
-            className="btn btn-outline-secondary btn-sm">
-            <i className="ion-edit"></i> Sube Dx
+            className="btn btn-outline-secondary btn-lg">
+            <i className="ion-edit"></i> Sube tu Dx
           </Link>
+          </li>
 
-
+          <li className="list-group-item">
           <Link
             to={`/loadimage`}
-            className="btn btn-outline-secondary btn-sm">
+            className="btn btn-outline-secondary btn-lg">
             <i className="ion-edit"></i> Visualiza Dx
           </Link>
-
-        </span>
-       
+          </li>
+        </ul>       
 
       </span>
     );

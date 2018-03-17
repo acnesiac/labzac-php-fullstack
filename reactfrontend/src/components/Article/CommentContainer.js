@@ -8,6 +8,14 @@ import 'react-table/react-table.css';
 const CommentContainer = props => {
   if (true) {
     return (
+
+      <div className="home-page">
+
+          
+
+
+        <div className="container page">
+         <div className="row">
       <div className="col-xs-12 col-md-12 offset-md-0">
         
         {/*
@@ -75,6 +83,9 @@ const CommentContainer = props => {
 }
           />
       </div>
+       </div>
+         </div>
+        </div>
     );
   } else {
     return (

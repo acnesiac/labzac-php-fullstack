@@ -29,16 +29,16 @@ constructor () {
 render() {
   return (
       <div>
-            <div className="editor-page">
+            <div className="home-page">
         <div className="container page">
           <div className="row">
-            <div className="col-md-10 offset-md-2 col-xs-12">
+            <div className="col-md-12 offset-md-0 col-xs-12">
 
           One<br />
           <img src={ this.state.uk } alt="" />
         </div>
         <br />
-            <div className="col-md-10 offset-md-2 col-xs-12">
+            <div className="col-md-12 offset-md-0 col-xs-12">
         
         2<br />
         <img src={ this.state.uk } alt="UK flag" />

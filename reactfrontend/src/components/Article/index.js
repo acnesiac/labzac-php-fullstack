@@ -39,18 +39,16 @@ class Article extends React.Component {
     const canModify = this.props.currentUser &&
       this.props.currentUser.username === this.props.article.author.username;
     return (
-      <div className="article-page">
+      <div className="home-page">
 
-        <div className="banner">
           <div className="container">
 
-            <h1>{this.props.article.title}</h1>
+          
             <ArticleMeta
               article={this.props.article}
               canModify={canModify} />
 
           </div>
-        </div>
 
 
         <div className="container page">

@@ -29,35 +29,49 @@ handleUploadSuccess = (filename) => {
 
 render() {
 	return (
-		<div>
-			<form>
-			<label>Username:</label>
-			<input type="text" value={this.state.username} name="username" onChange={this.handleChangeUsername} />
-			<label>Avatar:</label>
-				{this.state.isUploading &&
-			<p>Progress: {this.state.progress}</p>
-			}
-			{this.state.avatarURL &&
-			<img src={this.state.avatarURL} />
-			}
-			 <label style={{backgroundColor: 'steelblue', color: 'white', padding: 10, borderRadius: 4, pointer: 'cursor'}}>
-    Select your awesome avatar
-			<FileUploader
-			hidden
-			storageRef={firebase.storage().ref('images')}
-    filename={file => this.state.username }
+		 <div className="home-page">
 
-			accept="image/*"
-			name="avatar"
-			randomizeFilename
-			onUploadStart={this.handleUploadStart}
-			onUploadError={this.handleUploadError}
-			onUploadSuccess={this.handleUploadSuccess}
-			onProgress={this.handleProgress}
-			/>
-			</label>
+        <div className="user-info">
+          <div className="container">
+            <div className="row">
+              <div className="col-xs-12 col-md-10 offset-md-1">
+
+			<form>
+				<label>Username:</label>
+				<input type="text" value={this.state.username} name="username" onChange={this.handleChangeUsername} />
+				<label>Avatar:</label>
+					{this.state.isUploading &&
+				<p>Progress: {this.state.progress}</p>
+				
+				}
+				{this.state.avatarURL &&
+				<img src={this.state.avatarURL} />
+				}
+
+				 <label style={{backgroundColor: 'steelblue', color: 'white', padding: 10, borderRadius: 4, pointer: 'cursor'}}>
+				    Select your awesome avatar
+							<FileUploader
+							hidden
+							storageRef={firebase.storage().ref('images')}
+				    filename={file => this.state.username }
+
+				accept="image/*"
+				name="avatar"
+				randomizeFilename
+				onUploadStart={this.handleUploadStart}
+				onUploadError={this.handleUploadError}
+				onUploadSuccess={this.handleUploadSuccess}
+				onProgress={this.handleProgress}
+				/>
+				</label>
 			</form>
 		</div>
+		</div>
+		</div>
+		</div>
+
+		</div>
+
 	);
 }
 }

@@ -194,22 +194,22 @@ const data3 = {
   ]
 };
     return (
-      <div className="editor-page">
+      <div className="home-page">
         <div className="container page">
           <div className="row">
-            <div className="col-md-10 offset-md-1 col-xs-12"><div>
+            <div className="col-md-12 offset-md-0 col-xs-12">
+
               <h2>Presion arterial</h2>
               <Line data={data3} />
-            </div>
             <ListErrors errors={this.props.errors}></ListErrors>
             </div>
 
             {/*http:///bootdey.com/snippets/view/Table-user-information#preview */}
-<div className="container bootstrap snippet page col-md-12 offset-md-1 col-xs-12">
-<div className="panel-body">
+<div className="container page">
+<div className="">
     <div className="row">
         
-        <div className="col-md-10">
+        <div className="col-md-12">
             <strong>Information</strong>
             <div className="table-responsive">
             <table className="table table-condensed table-responsive table-user-information">

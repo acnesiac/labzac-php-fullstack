@@ -97,10 +97,10 @@ class HourEditor extends React.Component {
 
   render() {
     return (
-      <div className="editor-page">
+      <div className="home-page">
         <div className="container page">
           <div className="row">
-            <div className="col-md-10 offset-md-1 col-xs-12">
+            <div className="col-md-12 offset-md-0 col-xs-12">
 
               <ListErrors errors={this.props.errors}></ListErrors>
 
@@ -137,7 +137,8 @@ class HourEditor extends React.Component {
                       onChange={this.changeDescription} />
                   </fieldset>
                 
-                  <Link to={`/article/`+this.props.title} className="author"> 
+                  
+                  <Link to={`/article/`+this.props.title} className="author" > 
                          <button
                             className="btn btn-lg  btn-primary"
                             type="button"
@@ -147,7 +148,7 @@ class HourEditor extends React.Component {
                           </button>                             
                   </Link>
                   
-                  <Link to={'/graphchart2d'} className="author"> 
+                  <Link to={'/graphchart2d'} className="author .px-2 "> 
                          <button
                             className="btn btn-lg  btn-primary"
                             type="button"
