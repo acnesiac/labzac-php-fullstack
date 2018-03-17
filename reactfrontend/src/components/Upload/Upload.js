@@ -1,5 +1,6 @@
 import React from 'react'
 import axios, { post } from 'axios';
+import firebase from 'firebase';
 
 class SimpleReactFileUpload extends React.Component {
 
@@ -11,6 +12,8 @@ class SimpleReactFileUpload extends React.Component {
     this.onFormSubmit = this.onFormSubmit.bind(this)
     this.onChange = this.onChange.bind(this)
     this.fileUpload = this.fileUpload.bind(this)
+
+    
   }
   onFormSubmit(e){
     e.preventDefault() // Stop form submit

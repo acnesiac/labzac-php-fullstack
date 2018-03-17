@@ -29,11 +29,23 @@ constructor () {
 render() {
   return (
       <div>
-        Hello Lithuania<br />
-        <img src={ this.state.uk } alt="Lithuanian flag" />
+            <div className="editor-page">
+        <div className="container page">
+          <div className="row">
+            <div className="col-md-10 offset-md-2 col-xs-12">
+
+          One<br />
+          <img src={ this.state.uk } alt="" />
+        </div>
         <br />
-        Hello United Kingdom<br />
+            <div className="col-md-10 offset-md-2 col-xs-12">
+        
+        2<br />
         <img src={ this.state.uk } alt="UK flag" />
+        </div>
+        </div>
+        </div>
+        </div>
       </div>  );
 }
 }

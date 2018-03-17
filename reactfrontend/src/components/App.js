@@ -8,6 +8,8 @@ import Article from '../components/Article';
 import Editor from '../components/Editor';
 import Home from '../components/Home';
 import Login from '../components/Login';
+import CommentContainer from '../components/Article/CommentContainer';
+
 
 import Graph2D from '../components/Graph2D';
 import GraphChart2D from '../components/GraphChart2D';
@@ -102,6 +104,7 @@ class App extends React.Component {
             <Route path="/upload" component={Upload} />
             <Route path="/profilepage" component={ProfilePage} />
             <Route path="/loadimage" component={LoadImage} />
+            <Route path="/reacttable" component={CommentContainer} />
 
             </Switch>
 

@@ -6,7 +6,7 @@ import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 
 const CommentContainer = props => {
-  if (props.currentUser) {
+  if (true) {
     return (
       <div className="col-xs-12 col-md-12 offset-md-0">
         
@@ -55,8 +55,8 @@ const CommentContainer = props => {
                 width: `${row.value}%`,
                 height: '100%',
                 backgroundColor: row.value > 66 ? '#85cc00'
-                  : row.value > 33 ? '#ffbf00'
-                  : '#ff2e00',
+                  : row.value > 33 ? '#85cc00'
+                  : '#85cc00',
                 borderRadius: '2px',
                 transition: 'all .2s ease-out'
               }}
@@ -85,11 +85,12 @@ const CommentContainer = props => {
           <Link to="/register">sign up</Link>
           &nbsp;to add comments on this article.
         </p>
-
+{/*
         <CommentList
           comments={props.comments}
           slug={props.slug}
           currentUser={props.currentUser} />
+          */}
       </div>
     );
   }

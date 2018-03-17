@@ -31,14 +31,34 @@ const ArticleActions = props => {
           <Link
           to={`/hourEditor/${article.slug}`}
           className="btn btn-outline-secondary btn-sm">
-          <i className="ion-edit"></i> Evolucion
+          <i className="ion-edit"></i> Evolucion ingreso grafica
           </Link>
 
           <Link
-            to={`/hourEditor/${article.slug}`}
-            className="btn btn-outline-secondary btn-sm">
-            <i className="ion-edit"></i> Imagenes Dx
+          to={`/reacttable`}
+          className="btn btn-outline-secondary btn-sm">
+          <i className="ion-edit"></i> Tabla Evolucion
           </Link>
+
+          <Link
+            to={`/hojaEnfermeria`}
+            className="btn btn-outline-secondary btn-sm">
+            <i className="ion-edit"></i> Presion arterial
+          </Link>
+
+          <Link
+            to={`/profilepage`}
+            className="btn btn-outline-secondary btn-sm">
+            <i className="ion-edit"></i> Sube Dx
+          </Link>
+
+
+          <Link
+            to={`/loadimage`}
+            className="btn btn-outline-secondary btn-sm">
+            <i className="ion-edit"></i> Visualiza Dx
+          </Link>
+
         </span>
        
 
