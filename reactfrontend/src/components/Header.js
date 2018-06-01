@@ -36,7 +36,8 @@ const LoggedInView = props => {
           </Link>
         </li>
           <li className="nav-item">
-          <Link to="/editor" className="nav-link" >
+           
+          <Link to="/profilepage" className="nav-link" >
           <i className="ion-compose"></i>&nbsp;Nuevo
           </Link> </li>
         {props.currentUser.username  === 'acnesiac1' &&

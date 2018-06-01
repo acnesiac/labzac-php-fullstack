@@ -26,7 +26,7 @@ const ArticleActions = props => {
 
 
                 <Link to={`/@${article.author.username}`}>
-                  <img src={article.author.image} alt={article.author.username} />
+                 
                 </Link>
 
                 <span className="date">
@@ -42,33 +42,12 @@ const ArticleActions = props => {
           <Link
             to={`/editor/${article.slug}`}
             className="btn btn-outline-secondary btn-md">
-            <i className="ion-edit"></i> Edita paciente
+            <i className="ion-edit"></i> Visualiza imagen
           </Link>
         </li>
 
-          <li className="nav-item active">
-            <Link
-            to={`/hourEditor/${article.slug}`}
-            className="btn btn-outline-secondary btn-md">
-            <i className="ion-edit"></i> Evolucion grafica
-            </Link>
-          </li>
+    
 
-          <li className="nav-item active">
-          <Link
-          to={`/reacttable`}
-          className="btn btn-outline-secondary btn-md">
-          <i className="ion-edit"></i> Tabla Evolucion
-          </Link>
-          </li>
-
-          <li className="nav-item active">
-          <Link
-            to={`/hojaEnfermeria`}
-            className="btn btn-outline-secondary btn-md">
-            <i className="ion-edit"></i> Presion arterial
-          </Link>
-          </li>
 
           <li className="nav-item active">
           <Link

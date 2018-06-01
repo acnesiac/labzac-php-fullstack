@@ -35,6 +35,7 @@ class ProfileFavorites extends Profile {
             className="nav-link"
             to={`/@${this.props.profile.username}`}>
             Mis imagenes
+            
           </Link>
         </li>
 
