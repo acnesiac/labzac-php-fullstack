@@ -29,13 +29,16 @@ const GlobalFeedTab = props => {
     ev.preventDefault();
     props.onTabClick('all', agent.Articles.byAuthor("acnesiac"), agent.Articles.all());
   };
+  if (!props.token) {
+    return null;
+  }
   return (
     <li className="nav-item">
       <a
         href=""
         className={ props.tab === 'all' ? 'nav-link active' : 'nav-link' }
         onClick={clickHandler}>
-        Pacientes 
+        Pacientess
       </a>
     </li>
   );
@@ -74,7 +77,7 @@ const MainView = props => {
           
          
           <GlobalFeedTab
-            tab={props.tab} onTabClick={props.onTabClick} />
+            token={props.token}  tab={props.tab} onTabClick={props.onTabClick} />
           
 
           <TagFilterTab tag={props.tag} />
@@ -83,6 +86,7 @@ const MainView = props => {
       </div>
 
       <ArticleList
+        token = {props.token}
         pager={props.pager}
         articles={props.articles}
         loading={props.loading}

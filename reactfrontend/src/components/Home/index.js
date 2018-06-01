@@ -49,7 +49,7 @@ class Home extends React.Component {
 
         <div className="container page">
           <div className="row">
-            <MainView />
+            <MainView  token={this.props.token} />
 
         
           </div>

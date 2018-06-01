@@ -3,6 +3,9 @@ import ListPagination from './ListPagination';
 import React from 'react';
 
 const ArticleList = props => {
+  if (!props.token) {
+    return null;
+  }
   if (!props.articles) {
     return (
       <div className="article-preview">Loading...</div>
