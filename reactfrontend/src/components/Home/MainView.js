@@ -16,7 +16,7 @@ const YourFeedTab = props => {
         <a  href=""
             className={ props.tab === 'feed' ? 'nav-link active' : 'nav-link' }
             onClick={clickHandler}>
-            Tus pacientes
+            Tus imagenes
         </a>
       </li>
     );
@@ -38,7 +38,7 @@ const GlobalFeedTab = props => {
         href=""
         className={ props.tab === 'all' ? 'nav-link active' : 'nav-link' }
         onClick={clickHandler}>
-        Pacientess
+        Imagenes
       </a>
     </li>
   );
