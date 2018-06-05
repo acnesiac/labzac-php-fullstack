@@ -32,14 +32,14 @@ render() {
 		 <div className="home-page">
 
         <div className="user-info">
-          <div className="container">
+          <div className="container page">
             <div className="row">
-              <div className="col-xs-12 col-md-10 offset-md-1">
+              <div className="col-xs-12 col-md-10">
 
 			<form>
-				<label>Username:</label>
-				<input type="text" value={this.state.username} name="username" onChange={this.handleChangeUsername} />
-				<label>Avatar:</label>
+				<label></label>
+				<input type="text" value={this.state.username} name="username" onChange={this.handleChangeUsername}  />
+				<label> </label>
 					{this.state.isUploading &&
 				<p>Progress: {this.state.progress}</p>
 				
@@ -49,7 +49,7 @@ render() {
 				}
 
 				 <label style={{backgroundColor: 'steelblue', color: 'white', padding: 10, borderRadius: 4, pointer: 'cursor'}}>
-				    Select your awesome avatar
+				    Sube tu imagen RX
 							<FileUploader
 							hidden
 							storageRef={firebase.storage().ref('images')}

@@ -1,19 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import agent from '../agent';
+import {withRouter} from 'react-router-dom';
 
 const LoggedOutView = props => {
   if (!props.currentUser) {
     return (
       <ul className="nav navbar-nav pull-xs-right">
 
-        
+
 
         <li className="nav-item">
           <Link to="/login" className="nav-link">
             Login
           </Link>
         </li>
-        
+
         <li className="nav-item">
           <Link to="/register" className="nav-link">
             Crea una cuenta
@@ -26,20 +28,35 @@ const LoggedOutView = props => {
 };
 
 const LoggedInView = props => {
+
+  function handleClick(e) {
+      e.preventDefault();
+      console.log('The link was clicked.');
+      window.localStorage.setItem('jwt', '');
+      agent.setToken(null);
+      window.location.assign("/");
+    }
+
   if (props.currentUser) {
     return (
       <ul className="nav navbar-nav pull-xs-right">
+
 
         <li className="nav-item">
           <Link to="/" className="nav-link">
             Imagenes
           </Link>
+
         </li>
           <li className="nav-item">
-           
+
           <Link to="/profilepage" className="nav-link" >
-          <i className="ion-compose"></i>&nbsp;Nuevo
-          </Link> </li>
+          <i className="ion-compose"></i>&nbsp;Nueva imagen
+          </Link>
+
+
+          </li>
+
         {props.currentUser.username  === 'acnesiac1' &&
         <li className="nav-item">
           <Link to="/editor" className="nav-link">
@@ -47,7 +64,7 @@ const LoggedInView = props => {
           </Link>
         </li>
         }
-      
+
 
         <li className="nav-item">
           <Link
@@ -57,7 +74,13 @@ const LoggedInView = props => {
             {props.currentUser.username}
           </Link>
         </li>
-      
+        <li className="nav-item">
+        <button
+          className="btn" onClick={handleClick}>
+
+          Cierra la sesion.
+        </button>
+        </li>
       </ul>
     );
   }
