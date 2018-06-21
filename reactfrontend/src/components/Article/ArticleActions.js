@@ -16,7 +16,7 @@ const ArticleActions = props => {
   const del = () => {
     props.onClickDelete(agent.Articles.del(article.slug))
   };
-  
+
   if (props.canModify) {
     return (
 
@@ -26,7 +26,7 @@ const ArticleActions = props => {
 
 
                 <Link to={`/@${article.author.username}`}>
-                 
+
                 </Link>
 
                 <span className="date">
@@ -37,24 +37,25 @@ const ArticleActions = props => {
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
  <div class="collapse navbar-collapse" id="navbarNav">
         <ul  className="navbar-nav list-unstyled" >
-       
+
         <li className="nav-item active">
           <Link
             to={`/editor/${article.slug}`}
             className="btn btn-outline-secondary btn-md">
-            <i className="ion-edit"></i> Visualiza imagen
+            <i className="ion-edit"></i> Detalles paciente
           </Link>
         </li>
 
-    
+
 
 
           <li className="nav-item active">
+          {/*
           <Link
             to={`/profilepage`}
             className="btn btn-outline-secondary btn-md">
             <i className="ion-edit"></i> Sube tu Dx
-          </Link>
+          </Link>*/}
           </li>
 
           <li className="nav-item active">
@@ -64,9 +65,9 @@ const ArticleActions = props => {
             <i className="ion-edit"></i> Visualiza Dx
           </Link>
           </li>
-        </ul>  
+        </ul>
         </div>
-      </nav>     
+      </nav>
 
       </span>
     );

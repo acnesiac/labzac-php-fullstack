@@ -2,7 +2,7 @@ import agent from '../agent';
 import Header from './Header';
 import React from 'react';
 import { connect } from 'react-redux';
-import { APP_LOAD, REDIRECT } from '../constants/actionTypes';
+import { APP_LOAD, REDIRECT, CHANGE_TAB } from '../constants/actionTypes';
 import { Route, Switch } from 'react-router-dom';
 import Article from '../components/Article';
 import Editor from '../components/Editor';
@@ -37,7 +37,7 @@ var config = {
     storageBucket: "uploadrx-92ff0.appspot.com",
     messagingSenderId: "30483709073"
   };
-  
+
 
 
 const mapStateToProps = state => {
@@ -49,8 +49,10 @@ const mapStateToProps = state => {
   }};
 
 const mapDispatchToProps = dispatch => ({
-  onLoad: (payload, token) =>
-    dispatch({ type: APP_LOAD, payload, token, skipTracking: true }),
+  onLoad: (payload, token) =>{
+    //agent.Articles.all();
+    //dispatch({ type: CHANGE_TAB, payload, token, skipTracking: true });
+    dispatch({ type: APP_LOAD, payload, token, skipTracking: true })},
   onRedirect: () =>
     dispatch({ type: REDIRECT })
 });
@@ -61,7 +63,7 @@ class App extends React.Component {
     firebase.initializeApp(config);
   }
 
-  
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.redirectTo) {
       // this.context.router.replace(nextProps.redirectTo);
