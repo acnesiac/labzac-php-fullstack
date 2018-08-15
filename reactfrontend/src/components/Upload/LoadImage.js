@@ -33,12 +33,12 @@ constructor () {
       uk: ''
     }
 
-    this.getImage('')
+    this.getImage('estudiorxtest1')
   }
 
   getImage (image) {
 
-    firebase.storage().ref('images').child(`${image}.jpg`).getDownloadURL().then((url) => {
+    firebase.storage().ref('images/testid').child(`${image}.jpg`).getDownloadURL().then((url) => {
       console.log(url);
 
       this.setState({uk : url});
@@ -70,7 +70,7 @@ render() {
                 	{this.state.avatarURL &&
                 	<img src={this.state.avatarURL} />
                 	}
-                	<label style={{backgroundColor: 'steelblue', color: 'white', padding: 10, borderRadius: 4, pointer: 'cursor'}}>
+                	<label style={{backgroundColor: 'steelblue', color: 'white', padding: 4, borderRadius: 4, pointer: 'cursor'}}>
                 			Sube tu imagen RX
                 				<FileUploader
                 				hidden
@@ -88,7 +88,7 @@ render() {
                 	</label>
   <form>
   <fieldset>   <fieldset className="form-group"> <br />
-    <img src={ this.state.uk } alt="" /><br />  </fieldset>
+    <img src={ this.state.uk } height="500" width="500" /><br />  </fieldset>
     <fieldset className="form-group">
       <input
         className="form-control form-control-lg"
