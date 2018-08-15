@@ -62,7 +62,7 @@ const ArticleActions = props => {
           <Link
             to={`/loadimage`}
             className="btn btn-outline-secondary btn-md">
-            <i className="ion-edit"></i> ver Dx
+            <i className="ion-edit"></i> ver Paciente
           </Link>
           </li>
         </ul>

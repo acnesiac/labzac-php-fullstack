@@ -3,6 +3,29 @@ import firebase from 'firebase';
 import FileUploader from 'react-firebase-file-uploader';
 
 class LoadImage extends Component {
+  state = {
+  username: '',
+  avatar: '',
+  isUploading: false,
+  progress: 0,
+  avatarURL: ''
+};
+
+handleChangeUsername = (event) => this.setState({username: event.target.value});
+
+handleUploadStart = () => this.setState({isUploading: true, progress: 0});
+
+handleProgress = (progress) => this.setState({progress});
+
+handleUploadError = (error) => {
+  this.setState({isUploading: false});
+  console.error(error);
+}
+
+handleUploadSuccess = (filename) => {
+  this.setState({avatar: filename, progress: 100, isUploading: false});
+  firebase.storage().ref('images').child(filename).getDownloadURL().then(url => this.setState({avatarURL: url}));
+};
 constructor () {
     super();
     this.state = {
@@ -38,6 +61,31 @@ render() {
                 <div className="col-md-6 offset-md-3 col-xs-12">
 
                   <h1 className="text-xs-center">Diagnostico del paciente #</h1>
+                  <input type="text" value={this.state.username} name="username" onChange={this.handleChangeUsername}  />
+                	<label> </label>
+                		{this.state.isUploading &&
+                	<p>Progress: {this.state.progress}</p>
+
+                	}
+                	{this.state.avatarURL &&
+                	<img src={this.state.avatarURL} />
+                	}
+                	<label style={{backgroundColor: 'steelblue', color: 'white', padding: 10, borderRadius: 4, pointer: 'cursor'}}>
+                			Sube tu imagen RX
+                				<FileUploader
+                				hidden
+                				storageRef={firebase.storage().ref('images')}
+                			filename={file => this.state.username }
+
+                	accept="image/*"
+                	name="avatar"
+                	randomizeFilename
+                	onUploadStart={this.handleUploadStart}
+                	onUploadError={this.handleUploadError}
+                	onUploadSuccess={this.handleUploadSuccess}
+                	onProgress={this.handleProgress}
+                	/>
+                	</label>
   <form>
   <fieldset>   <fieldset className="form-group"> <br />
     <img src={ this.state.uk } alt="" /><br />  </fieldset>
@@ -45,7 +93,7 @@ render() {
       <input
         className="form-control form-control-lg"
         type="text"
-        placeholder="Descripcion del padecimiento "
+        placeholder="Comentarios el padecimiento... "
         value={this.state.username}
 
         />
@@ -57,12 +105,7 @@ render() {
 
 
           </form>
-    			<button
-    				className="btn btn-lg btn-primary pull-xs-right"
-    				type="submit"
-    				>
-    				Guardar
-    			</button>
+
 
         </div>
         </div>

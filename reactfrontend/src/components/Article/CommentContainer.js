@@ -1,5 +1,7 @@
 import CommentInput from './CommentInput';
 import CommentList from './CommentList';
+import ProfilePage from '../Upload/ProfilePage';
+
 import { Link } from 'react-router-dom';
 import React from 'react';
 import ReactTable from 'react-table';
@@ -11,19 +13,19 @@ const CommentContainer = props => {
 
       <div className="home-page">
 
-          
+
 
 
         <div className="container page">
          <div className="row">
       <div className="col-xs-12 col-md-12 offset-md-0">
-        
+
         {/*
         <div>
           <list-errors errors={props.errors}></list-errors>
           <CommentInput slug={props.slug} currentUser={props.currentUser} />
         </div>
-      
+
 
         <CommentList
           comments={props.comments}
@@ -33,103 +35,109 @@ const CommentContainer = props => {
         */}
 
 
-            <table className="table table-condensed table-responsive table-user-information">
+            <table className="">
                 <tbody>
-                    <tr>        
+                    <tr>
                         <td>
                             <strong>
                                 <span className="glyphicon glyphicon-asterisk text-primary"></span>
-                                Identificacion                                                
+                                Identificacion
                             </strong>
                         </td>
                         <td className="text-primary">
-                            123456789     
+                            123456789
                         </td>
                     </tr>
-                    <tr>    
+                    <tr>
                         <td>
                             <strong>
-                                <span className="glyphicon glyphicon-user  text-primary"></span>    
-                                Name                                                
+                                <span className="glyphicon glyphicon-user  text-primary"></span>
+                                Name
                             </strong>
                         </td>
                         <td className="text-primary">
-                            Bootdey     
+                            Bootdey
                         </td>
                     </tr>
-                    <tr>        
+                    <tr>
                         <td>
                             <strong>
-                                <span className="glyphicon glyphicon-cloud text-primary"></span>  
-                                Lastname                                                
+                                <span className="glyphicon glyphicon-cloud text-primary"></span>
+                                Lastname
                             </strong>
                         </td>
                         <td className="text-primary">
-                            Bootstrap  
-                        </td>
-                    </tr>
-
-                    <tr>        
-                        <td>
-                            <strong>
-                                <span className="glyphicon glyphicon-bookmark text-primary"></span> 
-                                Username                                                
-                            </strong>
-                        </td>
-                        <td className="text-primary">
-                            bootnipets 
+                            Bootstrap
                         </td>
                     </tr>
 
-
-                    <tr>        
+                    <tr>
                         <td>
                             <strong>
-                                <span className="glyphicon glyphicon-eye-open text-primary"></span> 
-                                Role                                                
+                                <span className="glyphicon glyphicon-bookmark text-primary"></span>
+                                Username
+                            </strong>
+                        </td>
+                        <td className="text-primary">
+                            bootnipets
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            <strong>
+                                <span className="glyphicon glyphicon-eye-open text-primary"></span>
+                                Role
                             </strong>
                         </td>
                         <td className="text-primary">
                             Admin
                         </td>
                     </tr>
-                    <tr>        
+                    <tr>
                         <td>
                             <strong>
-                                <span className="glyphicon glyphicon-envelope text-primary"></span> 
-                                Email                                                
+                                <span className="glyphicon glyphicon-envelope text-primary"></span>
+                                Email
                             </strong>
                         </td>
                         <td className="text-primary">
-                            noreply@email.com  
+                            noreply@email.com
                         </td>
                     </tr>
-                    <tr>        
+                    <tr>
                         <td>
                             <strong>
                                 <span className="glyphicon glyphicon-calendar text-primary"></span>
-                                created                                                
+                                created
                             </strong>
                         </td>
                         <td className="text-primary">
                             20 jul 20014
                         </td>
                     </tr>
-                    <tr>        
+                    <tr>
                         <td>
                             <strong>
                                 <span className="glyphicon glyphicon-calendar text-primary"></span>
-                                Modified                                                
+                                Modified
                             </strong>
                         </td>
                         <td className="text-primary">
                              20 jul 20014 20:00:00
                         </td>
-                    </tr>                                    
+                    </tr>
+                    <tr>
+
+                    <Link
+                      to={`/loadimage`}
+                      className="btn btn-outline-secondary btn-md">
+                      <i className="ion-edit"></i> Subir Imagen
+                    </Link>
+                    </tr>
                 </tbody>
             </table>
-
-
 
 
 
@@ -148,7 +156,7 @@ const CommentContainer = props => {
               visits: Math.floor(Math.random() * 100),
               progress: Math.floor(Math.random() * 100),
               status:"single"
-            }]} 
+            }]}
           columns={[{
         Header: 'Fecha',
         accessor: 'progress',
@@ -179,7 +187,7 @@ const CommentContainer = props => {
         accessor: 'status',
         Cell: row => (
           <span>
-            <a href="/login">ver</a>
+            <a href="/loadimage">Zoom, ver comentarios, commentar</a>
           </span>
         )
       }]
