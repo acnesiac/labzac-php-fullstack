@@ -42,12 +42,7 @@ const LoggedInView = props => {
       <ul className="nav navbar-nav pull-xs-right">
 
 
-        <li className="nav-item">
-          <Link to="/" className="nav-link">
-            Imagenes
-          </Link>
 
-        </li>
           <li className="nav-item">
 
           <Link to="/profilepage" className="nav-link" >
@@ -77,7 +72,6 @@ const LoggedInView = props => {
         <li className="nav-item">
         <button
           className="btn" onClick={handleClick}>
-
           Cierra la sesion.
         </button>
         </li>
