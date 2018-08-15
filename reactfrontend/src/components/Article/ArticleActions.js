@@ -36,33 +36,33 @@ const ArticleActions = props => {
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
  <div class="collapse navbar-collapse" id="navbarNav">
-        <ul  className="navbar-nav list-unstyled" >
-
+        <ul  >
+{/*
         <li className="nav-item active">
           <Link
             to={`/editor/${article.slug}`}
             className="btn btn-outline-secondary btn-md">
             <i className="ion-edit"></i> Detalles paciente
           </Link>
-        </li>
+        </li>*/}
 
 
 
-
+{/*
           <li className="nav-item active">
-          {/*
+
           <Link
             to={`/profilepage`}
             className="btn btn-outline-secondary btn-md">
             <i className="ion-edit"></i> Sube tu Dx
-          </Link>*/}
-          </li>
+          </Link>
+          </li>*/}
 
           <li className="nav-item active">
           <Link
             to={`/loadimage`}
             className="btn btn-outline-secondary btn-md">
-            <i className="ion-edit"></i> Visualiza Dx
+            <i className="ion-edit"></i> ver Dx
           </Link>
           </li>
         </ul>

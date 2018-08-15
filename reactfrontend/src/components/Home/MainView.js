@@ -33,7 +33,7 @@ const GlobalFeedTab = props => {
   }
   return (
     <li className="nav-item">
-      <a href="" className={ props.tab === 'all' ? 'nav-link active' : 'nav-link' } onClick={clickHandler}>Imagenes </a>
+      <a href="" className={ props.tab === 'all' ? 'nav-link active' : 'nav-link' } onClick={clickHandler}>Pacientes </a>
     </li>
   );
 };

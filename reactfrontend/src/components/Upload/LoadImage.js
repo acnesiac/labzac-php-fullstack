@@ -9,15 +9,15 @@ constructor () {
       lithuania: '',
       uk: ''
     }
-    
+
     this.getImage('')
   }
 
   getImage (image) {
-    
+
     firebase.storage().ref('images').child(`${image}.jpg`).getDownloadURL().then((url) => {
       console.log(url);
-      
+
       this.setState({uk : url});
     }).catch((error) => {
       // Handle any errors
@@ -25,28 +25,52 @@ constructor () {
     })
   }
 
-  
+
 render() {
   return (
-      <div>
-            <div className="home-page">
-        <div className="container page">
-          <div className="row">
-            <div className="col-md-12 offset-md-0 col-xs-12">
+    <div className="user-info">
+      <div className="container page">
+        <div className="row">
+          <div className="col-xs-12 col-md-10">
+          <div className="settings-page">
+            <div className="container page">
+              <div className="row">
+                <div className="col-md-6 offset-md-3 col-xs-12">
 
-          One<br />
-          <img src={ this.state.uk } alt="" />
+                  <h1 className="text-xs-center">Diagnostico del paciente #</h1>
+  <form>
+  <fieldset>   <fieldset className="form-group"> <br />
+    <img src={ this.state.uk } alt="" /><br />  </fieldset>
+    <fieldset className="form-group">
+      <input
+        className="form-control form-control-lg"
+        type="text"
+        placeholder="Descripcion del padecimiento "
+        value={this.state.username}
+
+        />
+    </fieldset>
+    </fieldset>
+
+    <label></label>
+
+
+
+          </form>
+    			<button
+    				className="btn btn-lg btn-primary pull-xs-right"
+    				type="submit"
+    				>
+    				Guardar
+    			</button>
+
         </div>
-        <br />
-            <div className="col-md-12 offset-md-0 col-xs-12">
-        
-        2<br />
-        <img src={ this.state.uk } alt="UK flag" />
         </div>
         </div>
-        </div>
-        </div>
-      </div>  );
+      </div> </div>
+      </div>
+      </div>
+    </div> );
 }
 }
 export default LoadImage;
