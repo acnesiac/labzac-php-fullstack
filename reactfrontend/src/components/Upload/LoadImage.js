@@ -24,7 +24,7 @@ handleUploadError = (error) => {
 
 handleUploadSuccess = (filename) => {
   this.setState({avatar: filename, progress: 100, isUploading: false});
-  firebase.storage().ref('images').child(filename).getDownloadURL().then(url => this.setState({avatarURL: url}));
+//  firebase.storage().ref('images/testid').child(filename).getDownloadURL().then(url => this.setState({avatarURL: url}));
 };
 constructor () {
     super();
@@ -33,10 +33,10 @@ constructor () {
       uk: ''
     }
 
-    this.getImage('estudiorxtest1')
+    this.getImages('estudiorxtest1');
   }
 
-  getImage (image) {
+  getImages (image) {
 
     firebase.storage().ref('images/testid').child(`${image}.jpg`).getDownloadURL().then((url) => {
       console.log(url);
@@ -74,7 +74,7 @@ render() {
                 			Sube tu imagen RX
                 				<FileUploader
                 				hidden
-                				storageRef={firebase.storage().ref('images')}
+                				storageRef={firebase.storage().ref('images/testid1')}
                 			filename={file => this.state.username }
 
                 	accept="image/*"
@@ -88,7 +88,7 @@ render() {
                 	</label>
   <form>
   <fieldset>   <fieldset className="form-group"> <br />
-    <img src={ this.state.uk } height="500" width="500" /><br />  </fieldset>
+    <img src={ this.state.uk } height="400" width="400" /><br />  </fieldset>
     <fieldset className="form-group">
       <input
         className="form-control form-control-lg"
