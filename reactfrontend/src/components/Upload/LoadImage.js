@@ -70,10 +70,11 @@ render() {
                 	{this.state.avatarURL &&
                 	<img src={this.state.avatarURL} />
                 	}
-                	<label style={{backgroundColor: 'steelblue', color: 'white', padding: 4, borderRadius: 4, pointer: 'cursor'}}>
-                			Sube tu imagen RX
+                	<label style={{ weight:0, backgroundColor: 'steelblue', color: 'white', padding: 4,  margin: 6,  borderRadius: 5, pointer: 'hand'}}>
+
+                      Sube tu imagen RX
                 				<FileUploader
-                				hidden
+                				hidden style={{ weight:0}}
                 				storageRef={firebase.storage().ref('images/testid1')}
                 			filename={file => this.state.username }
 
