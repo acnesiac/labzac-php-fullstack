@@ -78,7 +78,7 @@ class SettingsForm extends React.Component {
             <input
               className="form-control form-control-lg"
               type="text"
-              placeholder="Nombre de Usuario"
+              placeholder="Username"
               value={this.state.username}
               onChange={this.updateState('username')} />
           </fieldset>
@@ -87,7 +87,7 @@ class SettingsForm extends React.Component {
             <textarea
               className="form-control form-control-lg"
               rows="8"
-              placeholder="Dinos algo acerca de ti"
+              placeholder="Short bio about you"
               value={this.state.bio}
               onChange={this.updateState('bio')}>
             </textarea>
@@ -106,7 +106,7 @@ class SettingsForm extends React.Component {
             <input
               className="form-control form-control-lg"
               type="password"
-              placeholder="Nuevo Password"
+              placeholder="New Password"
               value={this.state.password}
               onChange={this.updateState('password')} />
           </fieldset>
@@ -115,7 +115,7 @@ class SettingsForm extends React.Component {
             className="btn btn-lg btn-primary pull-xs-right"
             type="submit"
             disabled={this.state.inProgress}>
-            Actializa
+            Update Settings
           </button>
 
         </fieldset>
@@ -144,7 +144,7 @@ class Settings extends React.Component {
           <div className="row">
             <div className="col-md-6 offset-md-3 col-xs-12">
 
-              <h1 className="text-xs-center">Informacion de la cuenta</h1>
+              <h1 className="text-xs-center">Your Settings</h1>
 
               <ListErrors errors={this.props.errors}></ListErrors>
 
@@ -152,16 +152,14 @@ class Settings extends React.Component {
                 currentUser={this.props.currentUser}
                 onSubmitForm={this.props.onSubmitForm} />
 
+              <hr />
 
-{/*
-
-<hr />
               <button
                 className="btn btn-outline-danger"
                 onClick={this.props.onClickLogout}>
-                Cierra la sesion.
+                Or click here to logout.
               </button>
-  */}
+
             </div>
           </div>
         </div>

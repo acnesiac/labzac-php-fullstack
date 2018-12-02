@@ -18,7 +18,7 @@ import {
 } from '../constants/actionTypes';
 
 const defaultState = {
-  appName: 'imagenesrx',
+  appName: 'Conduit',
   token: null,
   viewChangeCounter: 0
 };

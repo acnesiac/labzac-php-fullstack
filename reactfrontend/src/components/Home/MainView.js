@@ -10,12 +10,13 @@ const YourFeedTab = props => {
       ev.preventDefault();
       props.onTabClick('feed', agent.Articles.feed, agent.Articles.feed());
     }
+
     return (
       <li className="nav-item">
         <a  href=""
             className={ props.tab === 'feed' ? 'nav-link active' : 'nav-link' }
             onClick={clickHandler}>
-            Tus imagenes
+          Your Feed
         </a>
       </li>
     );
@@ -26,14 +27,16 @@ const YourFeedTab = props => {
 const GlobalFeedTab = props => {
   const clickHandler = ev => {
     ev.preventDefault();
-    props.onLoad('all', agent.Articles.byAuthor("acnesiac"), agent.Articles.all());
+    props.onTabClick('all', agent.Articles.all, agent.Articles.all());
   };
-  if (!props.token) {
-    return null;
-  }
   return (
     <li className="nav-item">
-      <a href="" className={ props.tab === 'all' ? 'nav-link active' : 'nav-link' } onClick={clickHandler}>Pacientes </a>
+      <a
+        href=""
+        className={ props.tab === 'all' ? 'nav-link active' : 'nav-link' }
+        onClick={clickHandler}>
+        Global Feed
+      </a>
     </li>
   );
 };
@@ -42,6 +45,7 @@ const TagFilterTab = props => {
   if (!props.tag) {
     return null;
   }
+
   return (
     <li className="nav-item">
       <a href="" className="nav-link active">
@@ -58,22 +62,28 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  //onTabClick: (tab, pager, payload) => dispatch({ type: CHANGE_TAB, tab, pager, payload }),
-  onLoad: (tab, pager, payload) =>
-    dispatch({ type: CHANGE_TAB, tab, pager, payload }),
+  onTabClick: (tab, pager, payload) => dispatch({ type: CHANGE_TAB, tab, pager, payload })
 });
 
 const MainView = props => {
   return (
-    <div className="col-md-12">
+    <div className="col-md-9">
       <div className="feed-toggle">
         <ul className="nav nav-pills outline-active">
-          <GlobalFeedTab  token={props.token}  tab={props.tab} onTabClick={props.onTabClick} />
+
+          <YourFeedTab
+            token={props.token}
+            tab={props.tab}
+            onTabClick={props.onTabClick} />
+
+          <GlobalFeedTab tab={props.tab} onTabClick={props.onTabClick} />
+
           <TagFilterTab tag={props.tag} />
+
         </ul>
       </div>
+
       <ArticleList
-        token = {props.token}
         pager={props.pager}
         articles={props.articles}
         loading={props.loading}

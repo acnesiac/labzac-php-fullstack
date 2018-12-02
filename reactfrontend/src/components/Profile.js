@@ -16,7 +16,7 @@ const EditProfileSettings = props => {
       <Link
         to="/settings"
         className="btn btn-sm btn-outline-secondary action-btn">
-        <i className="ion-gear-a"></i> Edita tu cuenta
+        <i className="ion-gear-a"></i> Edit Profile Settings
       </Link>
     );
   }
@@ -24,9 +24,9 @@ const EditProfileSettings = props => {
 };
 
 const FollowUserButton = props => {
-  //if (props.isUser) {
-  //  return null;
-  //}
+  if (props.isUser) {
+    return null;
+  }
 
   let classes = 'btn btn-sm action-btn';
   if (props.user.following) {
@@ -93,11 +93,17 @@ class Profile extends React.Component {
           <Link
             className="nav-link active"
             to={`/@${this.props.profile.username}`}>
-            Pacientes de {`@${this.props.profile.username}`}
+            My Articles
           </Link>
         </li>
 
-
+        <li className="nav-item">
+          <Link
+            className="nav-link"
+            to={`/@${this.props.profile.username}/favorites`}>
+            Favorited Articles
+          </Link>
+        </li>
       </ul>
     );
   }
@@ -112,14 +118,14 @@ class Profile extends React.Component {
       this.props.profile.username === this.props.currentUser.username;
 
     return (
-      <div className="home-page">
+      <div className="profile-page">
 
         <div className="user-info">
           <div className="container">
             <div className="row">
               <div className="col-xs-12 col-md-10 offset-md-1">
 
-                <img src={profile.image} className="user-img" alt={profile.username} weigth ="200" height="200"/>
+                <img src={profile.image} className="user-img" alt={profile.username} />
                 <h4>{profile.username}</h4>
                 <p>{profile.bio}</p>
 
