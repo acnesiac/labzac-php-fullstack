@@ -3,9 +3,6 @@ import ListPagination from './ListPagination';
 import React from 'react';
 
 const ArticleList = props => {
-  if (!props.token) {
-    return null;
-  }
   if (!props.articles) {
     return (
       <div className="article-preview">Loading...</div>
@@ -15,7 +12,7 @@ const ArticleList = props => {
   if (props.articles.length === 0) {
     return (
       <div className="article-preview">
-        Dame click arriba
+        No articles are here... yet.
       </div>
     );
   }
