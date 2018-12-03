@@ -47,7 +47,7 @@ const LoggedInView = props => {
           </Link>
         </li>
 
-      
+
 
         <li className="nav-item">
           <Link

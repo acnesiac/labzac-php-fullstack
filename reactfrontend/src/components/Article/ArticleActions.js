@@ -18,16 +18,18 @@ const ArticleActions = props => {
     return (
       <span>
 
-        <Link
-          to={`/editor/${article.slug}`}
-          className="btn btn-outline-secondary btn-sm">
-          <i className="ion-edit"></i> Edit Article
-        </Link>
+        {/*<Link*/}
+          {/*to={`/editor/${article.slug}`}*/}
+          {/*className="btn btn-outline-secondary btn-sm">*/}
+          {/*<i className="ion-edit"></i> Edit Article*/}
+        {/*</Link>*/}
 
         <button className="btn btn-outline-danger btn-sm" onClick={del}>
-          <i className="ion-trash-a"></i> Delete Article
+          <i className="ion-android-image"></i> Agregar imagen
         </button>
-
+        <button className="btn btn-outline-danger btn-sm" onClick={del}>
+          <i className="ion-android-camera"></i> Diagnosticar imagen
+        </button>
       </span>
     );
   }
