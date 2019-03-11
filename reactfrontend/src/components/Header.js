@@ -1,26 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import agent from '../agent';
-import {withRouter} from 'react-router-dom';
 
 const LoggedOutView = props => {
   if (!props.currentUser) {
     return (
       <ul className="nav navbar-nav pull-xs-right">
 
-
+        <li className="nav-item">
+          <Link to="/" className="nav-link">
+            Home
+          </Link>
+        </li>
 
         <li className="nav-item">
           <Link to="/login" className="nav-link">
-            Login
+            Sign in
           </Link>
         </li>
 
         <li className="nav-item">
           <Link to="/register" className="nav-link">
-            Crea una cuenta
+            Sign up
           </Link>
         </li>
+
       </ul>
     );
   }
@@ -28,41 +31,27 @@ const LoggedOutView = props => {
 };
 
 const LoggedInView = props => {
-
-  function handleClick(e) {
-      e.preventDefault();
-      console.log('The link was clicked.');
-      window.localStorage.setItem('jwt', '');
-      agent.setToken(null);
-      window.location.assign("/");
-    }
-
   if (props.currentUser) {
     return (
       <ul className="nav navbar-nav pull-xs-right">
 
-
-
-          <li className="nav-item" >
-          <Link to="/" className="nav-link" >
-          <i className="ion-compose"></i>&nbsp;Mis Pacientes
-          </Link>  </li>
-  <li className="nav-item" >
-          <Link to="/profilepage" className="nav-link" >
-          <i className="ion-compose"></i>&nbsp;Nuevo Paciente
-          </Link>
-
-
-          </li>
-
-        {props.currentUser.username  === 'acnesiac1' &&
         <li className="nav-item">
-          <Link to="/editor" className="nav-link">
-            <i className="ion-compose"></i>&nbsp;Nuevo paciente
+          <Link to="/" className="nav-link">
+            Pacientes
           </Link>
         </li>
-        }
 
+        <li className="nav-item">
+          <Link to="/editor" className="nav-link">
+            <i className="ion-compose"></i>&nbsp;Nuevo Paciente
+          </Link>
+        </li>
+
+        <li className="nav-item">
+          <Link to="/settings" className="nav-link">
+            <i className="ion-gear-a"></i>&nbsp;Settings
+          </Link>
+        </li>
 
         <li className="nav-item">
           <Link
@@ -72,12 +61,7 @@ const LoggedInView = props => {
             {props.currentUser.username}
           </Link>
         </li>
-        <li className="nav-item">
-        <button
-          className="btn" onClick={handleClick}>
-          Cierra la sesion.
-        </button>
-        </li>
+
       </ul>
     );
   }
