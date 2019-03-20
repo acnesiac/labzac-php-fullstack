@@ -1,5 +1,4 @@
 import Banner from './Banner';
-import MainView from './MainView';
 import React from 'react';
 
 import agent from '../../agent';
@@ -45,10 +44,8 @@ class Home extends React.Component {
   render() {
     return (
       <div className="home-page">
-        <Banner token={this.props.token} appName={this.props.appName} />
         <div className="container page">
           <div className="row">
-            <MainView  token={this.props.token} />
           </div>
         </div>
       </div>
