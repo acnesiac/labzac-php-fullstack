@@ -17,7 +17,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property \Carbon\Carbon                           created_at
  * @property \Carbon\Carbon                           update_at
  */
-class Article extends Model
+class Diagnostico extends Model
 {
 
     /**
