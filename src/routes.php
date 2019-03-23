@@ -50,6 +50,10 @@ $app->group('/api',
         $this->post('/articles', ArticleController::class . ':store')->add($jwtMiddleware)->setName('article.store');
         $this->get('/articles', ArticleController::class . ':index')->add($optionalAuth)->setName('article.index');
 
+        //diagnostico
+        $this->get('/articles', ArticleController::class . ':index')->add($optionalAuth)->setName('article.index');
+
+
         // Comments
         $this->get('/articles/{slug}/comments',
             CommentController::class . ':index')
