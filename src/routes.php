@@ -51,7 +51,7 @@ $app->group('/api',
         $this->get('/articles', ArticleController::class . ':index')->add($optionalAuth)->setName('article.index');
 
         //diagnostico
-        $this->get('/articles', ArticleController::class . ':index')->add($optionalAuth)->setName('article.index');
+        $this->get('/diagnosticos', ArticleController::class . ':index')->add($optionalAuth)->setName('article.index');
 
 
         // Comments
