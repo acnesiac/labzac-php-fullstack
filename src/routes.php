@@ -50,8 +50,15 @@ $app->group('/api',
         $this->post('/articles', ArticleController::class . ':store')->add($jwtMiddleware)->setName('article.store');
         $this->get('/articles', ArticleController::class . ':index')->add($optionalAuth)->setName('article.index');
 
-        //diagnostico
-        $this->get('/diagnosticos', DiagnosticoController::class . ':index')->add($optionalAuth)->setName('article.index');
+        //diagnosticos
+        $this->get('/diagnosticos/feed', ArticleController::class . ':index')->add($optionalAuth)->setName('article.index');
+        $this->get('/diagnosticos/{slug}', ArticleController::class . ':show')->add($optionalAuth)->setName('article.show');
+        $this->put('/diagnosticos/{slug}',
+            ArticleController::class . ':update')->add($jwtMiddleware)->setName('article.update');
+        $this->delete('/diagnosticos/{slug}',
+            ArticleController::class . ':destroy')->add($jwtMiddleware)->setName('article.destroy');
+        $this->post('/diagnosticos', ArticleController::class . ':store')->add($jwtMiddleware)->setName('article.store');
+        $this->get('/diagnosticos', ArticleController::class . ':index')->add($optionalAuth)->setName('article.index');
 
 
         // Comments
