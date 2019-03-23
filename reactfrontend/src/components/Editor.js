@@ -1,9 +1,6 @@
-import ListErrors from './ListErrors';
 import React from 'react';
 import agent from '../agent';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-
 import {
   ADD_TAG,
   EDITOR_PAGE_LOADED,
@@ -56,7 +53,6 @@ class Editor extends React.Component {
 
     this.submitForm = ev => {
       ev.preventDefault();
-
       const article = {
         title: this.props.title,
         description: this.props.description,
@@ -65,18 +61,15 @@ class Editor extends React.Component {
       };
 
       const slug = { slug: this.props.articleSlug };
-
       const promise = this.props.articleSlug ?
         agent.Articles.update(Object.assign(article, slug)) :
         agent.Articles.create(article);
 
       this.props.onSubmit(promise);
-
     };
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(this.props.match.params.slug);
     if (this.props.match.params.slug !== nextProps.match.params.slug) {
       if (nextProps.match.params.slug) {
         this.props.onUnload();
@@ -88,7 +81,6 @@ class Editor extends React.Component {
 
   componentWillMount() {
     if (this.props.match.params.slug) {
-      console.log(this.props.match.params.slug);
       return this.props.onLoad(agent.Articles.get(this.props.match.params.slug));
     }
     this.props.onLoad(null);
@@ -100,12 +92,11 @@ class Editor extends React.Component {
 
   render() {
     return (
-      <div className="home-page">
+      <div className="editor-page">
         <div className="container page">
           <div className="row">
-            <div className="col-md-12 offset-md-0 col-xs-12">
+            <div className="col-md-10 offset-md-1 col-xs-12">
 
-              <ListErrors errors={this.props.errors}></ListErrors>
 
               <form>
                 <fieldset>
@@ -114,7 +105,7 @@ class Editor extends React.Component {
                     <input
                       className="form-control form-control-lg"
                       type="text"
-                      placeholder="Nombre Paciente"
+                      placeholder="Article Title"
                       value={this.props.title}
                       onChange={this.changeTitle} />
                   </fieldset>
@@ -123,41 +114,52 @@ class Editor extends React.Component {
                     <input
                       className="form-control"
                       type="text"
-                      placeholder="Cuadro general, padecimiento"
+                      placeholder="What's this article about?"
                       value={this.props.description}
                       onChange={this.changeDescription} />
                   </fieldset>
 
-                
-
-               
-
-                 <fieldset className="form-group">
+                  <fieldset className="form-group">
                     <textarea
                       className="form-control"
                       rows="8"
-                      placeholder="Observaciones"
-                      >
+                      placeholder="Write your article (in markdown)"
+                      value={this.props.body}
+                      onChange={this.changeBody}>
                     </textarea>
                   </fieldset>
-                
 
-                 <Link to={`/article/`+this.props.description} className="author"> 
-                 <button
-                          className="btn btn-lg  btn-primary"
-                          type="button"
-                          disabled={this.props.inProgress}
-                          >
-                          Regresar
-                        </button>                             
-              </Link>
+                  <fieldset className="form-group">
+                    <input
+                      className="form-control"
+                      type="text"
+                      placeholder="Enter tags"
+                      value={this.props.tagInput}
+                      onChange={this.changeTagInput}
+                      onKeyUp={this.watchForEnter} />
+
+                    <div className="tag-list">
+                      {
+                        (this.props.tagList || []).map(tag => {
+                          return (
+                            <span className="tag-default tag-pill" key={tag}>
+                              <i  className="ion-close-round"
+                                  onClick={this.removeTagHandler(tag)}>
+                              </i>
+                              {tag}
+                            </span>
+                          );
+                        })
+                      }
+                    </div>
+                  </fieldset>
 
                   <button
                     className="btn btn-lg pull-xs-right btn-primary"
                     type="button"
                     disabled={this.props.inProgress}
                     onClick={this.submitForm}>
-                    Salvar paciente
+                    Subir DX
                   </button>
 
                 </fieldset>

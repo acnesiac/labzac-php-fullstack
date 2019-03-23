@@ -48,8 +48,8 @@ const LoggedInView = props => {
           <i className="ion-compose"></i>&nbsp;Diagnosticos
           </Link>  </li>
   <li className="nav-item" >
-          <Link to="/profilepage" className="nav-link" >
-          <i className="ion-compose"></i>&nbsp;Nuevo Diagnostico
+          <Link to="/editor" className="nav-link" >
+          <i className="ion-compose"></i>&nbsp;Nuevo
           </Link>
 
 
@@ -58,7 +58,7 @@ const LoggedInView = props => {
         {props.currentUser.username  === 'acnesiac1' &&
         <li className="nav-item">
           <Link to="/editor" className="nav-link">
-            <i className="ion-compose"></i>&nbsp;Nuevo diagnosticos
+            <i className="ion-compose"></i>&nbsp;Nuevo diagnostico
           </Link>
         </li>
         }
