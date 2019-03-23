@@ -64,4 +64,4 @@ class DiagnosticoTransformer extends TransformerAbstract
         return $this->item($author, new AuthorTransformer($this->requestUserId));
     }
 
-}
+}   

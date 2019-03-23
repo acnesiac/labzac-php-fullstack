@@ -3,8 +3,11 @@
 namespace Conduit\Controllers\Article;
 
 use Conduit\Models\Article;
+use Conduit\Models\Diagnostico;
 use Conduit\Models\Tag;
+use Conduit\Transformers\DiagnosticoTransformer;
 use Conduit\Transformers\ArticleTransformer;
+
 use Interop\Container\ContainerInterface;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\Item;
@@ -12,7 +15,7 @@ use Slim\Http\Request;
 use Slim\Http\Response;
 use Respect\Validation\Validator as v;
 
-class ArticleController
+class DiagnosticoController
 {
 
     /** @var \Conduit\Validation\Validator */
@@ -40,7 +43,7 @@ class ArticleController
     }
 
     /**
-     * Return List of Articles
+     * Return List of Diagnosticos
      *
      * @param \Slim\Http\Request  $request
      * @param \Slim\Http\Response $response
@@ -50,10 +53,10 @@ class ArticleController
      */
     public function index(Request $request, Response $response, array $args)
     {
-        // TODO Extract the logic of filtering articles to its own class
+        // TODO Extract the logic of filtering diagnosticos to its own class
 
         $requestUserId = optional($requestUser = $this->auth->requestUser($request))->id;
-        $builder = Article::query()->latest()->with(['tags', 'user'])->limit(20);
+        $builder = Diagnostico::query()->latest()->with(['tags', 'user'])->limit(20);
 
 
         if ($request->getUri()->getPath() == '/api/articles/feed') {
@@ -94,7 +97,7 @@ class ArticleController
         $articles = $builder->get();
 
         $data = $this->fractal->createData(new Collection($articles,
-            new ArticleTransformer($requestUserId)))->toArray();
+            new DiagnosticoTransformer($requestUserId)))->toArray();
 
         return $response->withJson(['articles' => $data['data'], 'articlesCount' => $articlesCount])
             ->withHeader('Access-Control-Allow-Origin', '*')

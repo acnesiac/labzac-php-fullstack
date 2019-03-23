@@ -1,6 +1,8 @@
 <?php
 
 use Conduit\Controllers\Article\ArticleController;
+use Conduit\Controllers\Article\DiagnosticoController;
+
 use Conduit\Controllers\Article\CommentController;
 use Conduit\Controllers\Article\FavoriteController;
 use Conduit\Controllers\Auth\LoginController;
@@ -57,8 +59,8 @@ $app->group('/api',
             ArticleController::class . ':update')->add($jwtMiddleware)->setName('article.update');
         $this->delete('/diagnosticos/{slug}',
             ArticleController::class . ':destroy')->add($jwtMiddleware)->setName('article.destroy');
-        $this->post('/diagnosticos', ArticleController::class . ':store')->add($jwtMiddleware)->setName('article.store');
-        $this->get('/diagnosticos', ArticleController::class . ':index')->add($optionalAuth)->setName('article.index');
+        $this->post('/diagnosticos', DiagnosticoController::class . ':store')->add($jwtMiddleware)->setName('article.store');
+        $this->get('/diagnosticos', DiagnosticoController::class . ':index')->add($optionalAuth)->setName('article.index');
 
 
         // Comments
