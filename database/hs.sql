@@ -27,8 +27,6 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `articles`
 --
-
-
 CREATE TABLE `diagnosticos` (
   `id` int(10) UNSIGNED NOT NULL,
   `slug` varchar(255) COLLATE utf8_unicode_ci NOT NULL,

@@ -59,15 +59,11 @@ $app->group('/api',
             ArticleController::class . ':update')->add($jwtMiddleware)->setName('article.update');
         $this->delete('/diagnosticos/{slug}',
             ArticleController::class . ':destroy')->add($jwtMiddleware)->setName('article.destroy');
-<<<<<<< HEAD
+
         $this->post('/diagnosticos', DiagnosticoController::class . ':store')->add($jwtMiddleware)->setName('article.store');
         $this->get('/diagnosticos', DiagnosticoController::class . ':index')->add($optionalAuth)->setName('article.index');
-=======
-        $this->post('/diagnosticos', ArticleController::class . ':store')->add($jwtMiddleware)->setName('article.store');
-        $this->get('/diagnosticos', ArticleController::class . ':index')->add($optionalAuth)->setName('article.index');
->>>>>>> 21863a761b17266752cfce5c69a14b079dec4fa2
 
-
+      
         // Comments
         $this->get('/articles/{slug}/comments',
             CommentController::class . ':index')
