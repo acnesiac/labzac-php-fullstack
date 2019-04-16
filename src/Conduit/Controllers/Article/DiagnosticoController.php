@@ -3,8 +3,11 @@
 namespace Conduit\Controllers\Article;
 
 use Conduit\Models\Article;
+use Conduit\Models\Diagnostico;
 use Conduit\Models\Tag;
 use Conduit\Transformers\ArticleTransformer;
+use Conduit\Transformers\DiagnosticoTransformer;
+
 use Interop\Container\ContainerInterface;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\Item;
@@ -12,7 +15,7 @@ use Slim\Http\Request;
 use Slim\Http\Response;
 use Respect\Validation\Validator as v;
 
-class ArticleController
+class DiagnosticoController
 {
 
     /** @var \Conduit\Validation\Validator */
@@ -152,7 +155,7 @@ class ArticleController
             return $response->withJson(['errors' => $this->validator->getErrors()], 422);
         }
 
-        $article = new Article($request->getParam('article'));
+        $article = new Diagnostico($request->getParam('article'));
         $article->slug = str_slug($article->title);
         $article->user_id = $requestUser->id;
         $article->save();
@@ -165,7 +168,7 @@ class ArticleController
             $article->tags()->sync($tagsId);
         }
 
-        $data = $this->fractal->createData(new Item($article, new ArticleTransformer()))->toArray();
+        $data = $this->fractal->createData(new Item($article, new DiagnosticoTransformer()))->toArray();
 
         return $response->withJson(['article' => $data])
             ->withHeader('Access-Control-Allow-Origin', '*')

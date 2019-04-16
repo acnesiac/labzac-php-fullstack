@@ -1,6 +1,7 @@
 <?php
 
 use Conduit\Controllers\Article\ArticleController;
+use Conduit\Controllers\Article\DiagnosticoController;
 use Conduit\Controllers\Article\CommentController;
 use Conduit\Controllers\Article\FavoriteController;
 use Conduit\Controllers\Auth\LoginController;
@@ -51,14 +52,14 @@ $app->group('/api',
         $this->get('/articles', ArticleController::class . ':index')->add($optionalAuth)->setName('article.index');
 
         //diagnosticos
-        $this->get('/diagnosticos/feed', ArticleController::class . ':index')->add($optionalAuth)->setName('article.index');
-        $this->get('/diagnosticos/{slug}', ArticleController::class . ':show')->add($optionalAuth)->setName('article.show');
+        $this->get('/diagnosticos/feed', DiagnosticoController::class . ':index')->add($optionalAuth)->setName('diagnostico.index');
+        $this->get('/diagnosticos/{slug}', DiagnosticoController::class . ':show')->add($optionalAuth)->setName('diagnostico.show');
         $this->put('/diagnosticos/{slug}',
-            ArticleController::class . ':update')->add($jwtMiddleware)->setName('article.update');
+            DiagnosticoController::class . ':update')->add($jwtMiddleware)->setName('diagnostico.update');
         $this->delete('/diagnosticos/{slug}',
-            ArticleController::class . ':destroy')->add($jwtMiddleware)->setName('article.destroy');
-        $this->post('/diagnosticos', ArticleController::class . ':store')->add($jwtMiddleware)->setName('article.store');
-        $this->get('/diagnosticos', ArticleController::class . ':index')->add($optionalAuth)->setName('article.index');
+            ArticleController::class . ':destroy')->add($jwtMiddleware)->setName('diagnostico.destroy');
+        $this->post('/diagnosticos', DiagnosticoController::class . ':store')->add($jwtMiddleware)->setName('diagnostico.store');
+        $this->get('/diagnosticos', DiagnosticoController::class . ':index')->add($optionalAuth)->setName('diagnostico.index');
 
 
         // Comments
