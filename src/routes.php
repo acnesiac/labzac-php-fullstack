@@ -2,6 +2,7 @@
 
 use Conduit\Controllers\Article\ArticleController;
 use Conduit\Controllers\Article\DiagnosticoController;
+
 use Conduit\Controllers\Article\CommentController;
 use Conduit\Controllers\Article\FavoriteController;
 use Conduit\Controllers\Auth\LoginController;
@@ -48,18 +49,18 @@ $app->group('/api',
             ArticleController::class . ':update')->add($jwtMiddleware)->setName('article.update');
         $this->delete('/articles/{slug}',
             ArticleController::class . ':destroy')->add($jwtMiddleware)->setName('article.destroy');
-        $this->post('/articles', ArticleController::class . ':store')->add($jwtMiddleware)->setName('article.store');
+        $this->post('/articles', ArticleController::class . ':store')->add($jwtMiddleware);
         $this->get('/articles', ArticleController::class . ':index')->add($optionalAuth)->setName('article.index');
 
-        //diagnosticos
+        //Diagnosticos
         $this->get('/diagnosticos/feed', DiagnosticoController::class . ':index')->add($optionalAuth)->setName('diagnostico.index');
-        $this->get('/diagnosticos/{slug}', DiagnosticoController::class . ':show')->add($optionalAuth)->setName('diagnostico.show');
+        $this->get('/diagnosticos/{slug}', DiagnosticoController::class . ':show')->add($optionalAuth)->setName('diagnosticos.show');
         $this->put('/diagnosticos/{slug}',
-            DiagnosticoController::class . ':update')->add($jwtMiddleware)->setName('diagnostico.update');
+            DiagnosticoController::class . ':update')->add($jwtMiddleware)->setName('diagnosticos.update');
         $this->delete('/diagnosticos/{slug}',
-            ArticleController::class . ':destroy')->add($jwtMiddleware)->setName('diagnostico.destroy');
-        $this->post('/diagnosticos', DiagnosticoController::class . ':store')->add($jwtMiddleware)->setName('diagnostico.store');
-        $this->get('/diagnosticos', DiagnosticoController::class . ':index')->add($optionalAuth)->setName('diagnostico.index');
+            DiagnosticoController::class . ':destroy')->add($jwtMiddleware)->setName('diagnosticos.destroy');
+        $this->post('/diagnosticos', DiagnosticoController::class . ':store')->add($jwtMiddleware)->setName('diagnosticos.store');
+        $this->get('/diagnosticos', DiagnosticoController::class . ':index')->add($optionalAuth)->setName('diagnosticos.index');
 
 
         // Comments

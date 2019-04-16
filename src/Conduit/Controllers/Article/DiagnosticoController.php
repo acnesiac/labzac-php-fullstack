@@ -3,18 +3,14 @@
 namespace Conduit\Controllers\Article;
 
 use Conduit\Models\Article;
-use Conduit\Models\Diagnostico;
 use Conduit\Models\Tag;
 use Conduit\Transformers\ArticleTransformer;
-use Conduit\Transformers\DiagnosticoTransformer;
-
 use Interop\Container\ContainerInterface;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\Item;
 use Slim\Http\Request;
 use Slim\Http\Response;
 use Respect\Validation\Validator as v;
-
 class DiagnosticoController
 {
 
@@ -43,7 +39,7 @@ class DiagnosticoController
     }
 
     /**
-     * Return List of Articles
+     * Return List of Diagnosticos
      *
      * @param \Slim\Http\Request  $request
      * @param \Slim\Http\Response $response
@@ -53,11 +49,10 @@ class DiagnosticoController
      */
     public function index(Request $request, Response $response, array $args)
     {
-        // TODO Extract the logic of filtering articles to its own class
+        // TODO Extract the logic of filtering diagnosticos to its own class
 
         $requestUserId = optional($requestUser = $this->auth->requestUser($request))->id;
-        $builder = Article::query()->latest()->with(['tags', 'user'])->limit(20);
-
+        $builder = Diagnostico::query()->latest()->with(['tags', 'user'])->limit(20);
 
         if ($request->getUri()->getPath() == '/api/articles/feed') {
             if (is_null($requestUser)) {
@@ -97,7 +92,7 @@ class DiagnosticoController
         $articles = $builder->get();
 
         $data = $this->fractal->createData(new Collection($articles,
-            new ArticleTransformer($requestUserId)))->toArray();
+            new DiagnosticoTransformer($requestUserId)))->toArray();
 
         return $response->withJson(['articles' => $data['data'], 'articlesCount' => $articlesCount])
             ->withHeader('Access-Control-Allow-Origin', '*')
@@ -155,7 +150,7 @@ class DiagnosticoController
             return $response->withJson(['errors' => $this->validator->getErrors()], 422);
         }
 
-        $article = new Diagnostico($request->getParam('article'));
+        $article = new Article($request->getParam('article'));
         $article->slug = str_slug($article->title);
         $article->user_id = $requestUser->id;
         $article->save();
@@ -168,7 +163,7 @@ class DiagnosticoController
             $article->tags()->sync($tagsId);
         }
 
-        $data = $this->fractal->createData(new Item($article, new DiagnosticoTransformer()))->toArray();
+        $data = $this->fractal->createData(new Item($article, new ArticleTransformer()))->toArray();
 
         return $response->withJson(['article' => $data])
             ->withHeader('Access-Control-Allow-Origin', '*')
