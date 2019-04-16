@@ -3,16 +3,14 @@
 namespace Conduit\Controllers\Article;
 
 use Conduit\Models\Article;
-<<<<<<< HEAD
 use Conduit\Models\Diagnostico;
 use Conduit\Models\Tag;
 use Conduit\Transformers\DiagnosticoTransformer;
 use Conduit\Transformers\ArticleTransformer;
-
-=======
 use Conduit\Models\Tag;
 use Conduit\Transformers\ArticleTransformer;
->>>>>>> 21863a761b17266752cfce5c69a14b079dec4fa2
+use Conduit\Models\Tag;
+use Conduit\Transformers\ArticleTransformer;
 use Interop\Container\ContainerInterface;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\Item;
@@ -20,11 +18,7 @@ use Slim\Http\Request;
 use Slim\Http\Response;
 use Respect\Validation\Validator as v;
 
-<<<<<<< HEAD
 class DiagnosticoController
-=======
-class ArticleController
->>>>>>> 21863a761b17266752cfce5c69a14b079dec4fa2
 {
 
     /** @var \Conduit\Validation\Validator */
@@ -52,11 +46,7 @@ class ArticleController
     }
 
     /**
-<<<<<<< HEAD
      * Return List of Diagnosticos
-=======
-     * Return List of Articles
->>>>>>> 21863a761b17266752cfce5c69a14b079dec4fa2
      *
      * @param \Slim\Http\Request  $request
      * @param \Slim\Http\Response $response
@@ -66,18 +56,10 @@ class ArticleController
      */
     public function index(Request $request, Response $response, array $args)
     {
-<<<<<<< HEAD
         // TODO Extract the logic of filtering diagnosticos to its own class
 
         $requestUserId = optional($requestUser = $this->auth->requestUser($request))->id;
         $builder = Diagnostico::query()->latest()->with(['tags', 'user'])->limit(20);
-=======
-        // TODO Extract the logic of filtering articles to its own class
-
-        $requestUserId = optional($requestUser = $this->auth->requestUser($request))->id;
-        $builder = Article::query()->latest()->with(['tags', 'user'])->limit(20);
->>>>>>> 21863a761b17266752cfce5c69a14b079dec4fa2
-
 
         if ($request->getUri()->getPath() == '/api/articles/feed') {
             if (is_null($requestUser)) {
@@ -117,11 +99,7 @@ class ArticleController
         $articles = $builder->get();
 
         $data = $this->fractal->createData(new Collection($articles,
-<<<<<<< HEAD
             new DiagnosticoTransformer($requestUserId)))->toArray();
-=======
-            new ArticleTransformer($requestUserId)))->toArray();
->>>>>>> 21863a761b17266752cfce5c69a14b079dec4fa2
 
         return $response->withJson(['articles' => $data['data'], 'articlesCount' => $articlesCount])
             ->withHeader('Access-Control-Allow-Origin', '*')
