@@ -1,7 +1,5 @@
 <?php
-
 namespace Conduit\Controllers\Article;
-
 use Conduit\Models\Article;
 use Conduit\Models\Diagnostico;
 use Conduit\Models\Tag;
@@ -17,7 +15,6 @@ use League\Fractal\Resource\Item;
 use Slim\Http\Request;
 use Slim\Http\Response;
 use Respect\Validation\Validator as v;
-
 class DiagnosticoController
 {
 
