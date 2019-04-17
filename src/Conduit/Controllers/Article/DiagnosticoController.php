@@ -54,7 +54,7 @@ class DiagnosticoController
         $requestUserId = optional($requestUser = $this->auth->requestUser($request))->id;
         $builder = Diagnostico::query()->latest()->with(['tags', 'user'])->limit(20);
 
-        if ($request->getUri()->getPath() == '/api/articles/feed') {
+        if ($request->getUri()->getPath() == '/api/diagnosticos/feed') {
             if (is_null($requestUser)) {
                 return $response->withJson([], 401);
             }
