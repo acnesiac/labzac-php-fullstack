@@ -22,40 +22,23 @@ const ArticleActions = props => {
   if (props.canModify) {
     return (
       <span>
-        {" "}
-          {" "}<span className="date">
-            {" "}
-            {new Date(article.createdAt).toDateString()}{" "}
-          </span>
+        
+        <span className="date">
+            {new Date(article.createdAt).toDateString()}
+        </span>
           <h1>{article.title}</h1>
           <Link to={`/@${article.author.username}`} />
-          {" "}  <span >
+          <span >
           <Link
             to={`/loadimage`}
-            className="btn btn-outline-secondary btn-md "
-          >
-            {" "}
-            <i className="ion-edit" /> ver Paciente{" "}
+            className="btn btn-outline-secondary btn-md">
+            <i className="ion-edit" /> Detalles
           </Link>  </span>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          {" "}
-          <div class="collapse navbar-collapse" id="navbarNav">
-            {" "}
-            <ul>
-              {" "}
-              {/* <li
-            className="nav-item active"> <Link to={`/editor/${article.slug}`}
-            className="btn btn-outline-secondary btn-md"> <i className="ion-edit"></i>
-            Detalles paciente </Link> </li>*/}
-              {/* <li className="nav-item active">
-
-            <Link to={`/profilepage`} className="btn btn-outline-secondary
-            btn-md"> <i className="ion-edit"></i> Sube tu Dx </Link> </li>
-              <li className="nav-item active">
-                {" "}
-                {" "}
-              </li>{" "}*/}
-            </ul>{" "}
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          
+          <div className="collapse navbar-collapse" id="navbarNav">
+           <ul>
+            </ul>
           </div>
         </nav>
       </span>

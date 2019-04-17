@@ -26,7 +26,6 @@ const YourFeedTab = props => {
 const GlobalFeedTab = props => {
   const clickHandler = ev => {
     ev.preventDefault();
-    props.onLoad('all', agent.Articles.byAuthor("acnesiac"), agent.Articles.all());
   };
   if (!props.token) {
     return null;
@@ -44,10 +43,7 @@ const TagFilterTab = props => {
   }
   return (
     <li className="nav-item">
-      <a href="" className="nav-link active">
-        <i className="ion-pound"></i> {props.tag}
-      </a>
-    </li>
+      <a href="" className="nav-link active"><i className="ion-pound"></i> {props.tag}</a></li>
   );
 };
 
@@ -58,7 +54,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  //onTabClick: (tab, pager, payload) => dispatch({ type: CHANGE_TAB, tab, pager, payload }),
+  onTabClick: (tab, pager, payload) => dispatch({ type: CHANGE_TAB, tab, pager, payload }),
   onLoad: (tab, pager, payload) =>
     dispatch({ type: CHANGE_TAB, tab, pager, payload }),
 });
