@@ -3,7 +3,6 @@
 namespace Conduit\Controllers\Article;
 
 use Conduit\Models\Article;
-use Conduit\Models\Diagnostico;
 use Conduit\Models\Tag;
 use Conduit\Transformers\DiagnosticoTransformer;
 use Interop\Container\ContainerInterface;
@@ -140,7 +139,7 @@ class DiagnosticoController
             return $response->withJson([], 401);
         }
 
-        $this->validator->validateArray($data = $request->getParam('diagnostico'),
+        $this->validator->validateArray($data = $request->getParam('article'),
             [
                 'title'       => v::notEmpty(),
                 'description' => v::notEmpty(),
@@ -151,7 +150,7 @@ class DiagnosticoController
             return $response->withJson(['errors' => $this->validator->getErrors()], 422);
         }
 
-        $article = new Diagnostico($request->getParam('diagnostico'));
+        $article = new Diagnostico($request->getParam('article'));
         $article->slug = str_slug($article->title);
         $article->user_id = $requestUser->id;
         $article->save();
@@ -166,7 +165,7 @@ class DiagnosticoController
 
         $data = $this->fractal->createData(new Item($article, new DiagnosticoTransformer()))->toArray();
 
-        return $response->withJson(['diagnostico' => $data])
+        return $response->withJson(['article' => $data])
             ->withHeader('Access-Control-Allow-Origin', '*')
             ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
             ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');

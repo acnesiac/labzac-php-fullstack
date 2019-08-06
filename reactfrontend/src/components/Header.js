@@ -40,15 +40,24 @@ const LoggedInView = props => {
   if (props.currentUser) {
     return (
       <ul className="nav navbar-nav pull-xs-right">
-        <li className="nav-item" >
+
+
+
+          <li className="nav-item" >
           <Link to="/" className="nav-link" >
-           <i className="ion-compose"></i>&nbsp;Ventas
+          <i className="ion-compose"></i>&nbsp;Diagnosticos
+          </Link>  </li>
+          <li className="nav-item" >
+          <Link to="/editor" className="nav-link" >
+          <i className="ion-compose"></i>&nbsp;Nuevo
           </Link>
-        </li> <li className="nav-item" >
-          <Link to="/" className="nav-link" >
-           <i className="ion-compose"></i>&nbsp;Agendar
-          </Link>
-        </li>
+
+
+          </li>
+
+       
+
+
         <li className="nav-item">
           <Link
             to={`/@${props.currentUser.username}`}
