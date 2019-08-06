@@ -140,7 +140,7 @@ class DiagnosticoController
             return $response->withJson([], 401);
         }
 
-        $this->validator->validateArray($data = $request->getParam('article'),
+        $this->validator->validateArray($data = $request->getParam('diagnostico'),
             [
                 'title'       => v::notEmpty(),
                 'description' => v::notEmpty(),
@@ -151,7 +151,7 @@ class DiagnosticoController
             return $response->withJson(['errors' => $this->validator->getErrors()], 422);
         }
 
-        $article = new Diagnostico($request->getParam('article'));
+        $article = new Diagnostico($request->getParam('diagnostico'));
         $article->slug = str_slug($article->title);
         $article->user_id = $requestUser->id;
         $article->save();

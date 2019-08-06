@@ -59,7 +59,6 @@ class Editor extends React.Component {
         description: this.props.description,
         body: this.props.body
       };
-
       const slug = { slug: this.props.articleSlug };
       const promise = this.props.articleSlug ?
         agent.Diagnosticos.update(Object.assign(diagnostico, slug)) :
