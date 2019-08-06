@@ -3,6 +3,7 @@
 namespace Conduit\Controllers\Article;
 
 use Conduit\Models\Article;
+use Conduit\Models\Diagnostico;
 use Conduit\Models\Tag;
 use Conduit\Transformers\DiagnosticoTransformer;
 use Interop\Container\ContainerInterface;
