@@ -4,7 +4,7 @@ namespace Conduit\Controllers\Article;
 
 use Conduit\Models\Article;
 use Conduit\Models\Tag;
-use Conduit\Transformers\ArticleTransformer;
+use Conduit\Transformers\DiagnosticoTransformer;
 use Interop\Container\ContainerInterface;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\Item;
@@ -94,7 +94,7 @@ class DiagnosticoController
         $data = $this->fractal->createData(new Collection($articles,
             new DiagnosticoTransformer($requestUserId)))->toArray();
 
-        return $response->withJson(['articles' => $data['data'], 'articlesCount' => $articlesCount])
+        return $response->withJson(['diagnosticos' => $data['data'], 'articlesCount' => $articlesCount])
             ->withHeader('Access-Control-Allow-Origin', '*')
             ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
             ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
@@ -115,7 +115,7 @@ class DiagnosticoController
 
         $article = Article::query()->where('slug', $args['slug'])->firstOrFail();
 
-        $data = $this->fractal->createData(new Item($article, new ArticleTransformer($requestUserId)))->toArray();
+        $data = $this->fractal->createData(new Item($article, new DiagnosticoTransformer($requestUserId)))->toArray();
 
         return $response->withJson(['article' => $data])
 			->withHeader('Access-Control-Allow-Origin', '*')
@@ -150,7 +150,7 @@ class DiagnosticoController
             return $response->withJson(['errors' => $this->validator->getErrors()], 422);
         }
 
-        $article = new Article($request->getParam('article'));
+        $article = new Diagnostico($request->getParam('article'));
         $article->slug = str_slug($article->title);
         $article->user_id = $requestUser->id;
         $article->save();
@@ -163,7 +163,7 @@ class DiagnosticoController
             $article->tags()->sync($tagsId);
         }
 
-        $data = $this->fractal->createData(new Item($article, new ArticleTransformer()))->toArray();
+        $data = $this->fractal->createData(new Item($article, new DiagnosticoTransformer()))->toArray();
 
         return $response->withJson(['article' => $data])
             ->withHeader('Access-Control-Allow-Origin', '*')
@@ -206,7 +206,7 @@ class DiagnosticoController
             $article->slug = str_slug($params['title']);
         }
 
-        $data = $this->fractal->createData(new Item($article, new ArticleTransformer()))->toArray();
+        $data = $this->fractal->createData(new Item($article, new DiagnosticoTransformer()))->toArray();
 
         return $response->withJson(['article' => $data])
             ->withHeader('Access-Control-Allow-Origin', '*')

@@ -47,7 +47,7 @@ const LoggedInView = props => {
           <Link to="/" className="nav-link" >
           <i className="ion-compose"></i>&nbsp;Diagnosticos
           </Link>  </li>
-  <li className="nav-item" >
+          <li className="nav-item" >
           <Link to="/editor" className="nav-link" >
           <i className="ion-compose"></i>&nbsp;Nuevo
           </Link>
@@ -55,20 +55,13 @@ const LoggedInView = props => {
 
           </li>
 
-        {props.currentUser.username  === 'acnesiac1' &&
-        <li className="nav-item">
-          <Link to="/editor" className="nav-link">
-            <i className="ion-compose"></i>&nbsp;Nuevo diagnostico
-          </Link>
-        </li>
-        }
+       
 
 
         <li className="nav-item">
           <Link
             to={`/@${props.currentUser.username}`}
             className="nav-link">
-            <img src={props.currentUser.image} className="user-pic" alt={props.currentUser.username} />
             {props.currentUser.username}
           </Link>
         </li>
