@@ -125,8 +125,7 @@ class Editor extends React.Component {
                       onChange={this.changeBody}>
                     </textarea>
                   </fieldset>
-
-                  <button
+           <button
                     className="btn btn-lg pull-xs-right btn-primary"
                     type="button"
                     disabled={this.props.inProgress}
