@@ -46,26 +46,8 @@ const limit = (count, p) => `limit=${count}&offset=${p ? p * count : 0}`;
 const omitSlug = article => Object.assign({}, article, { slug: undefined })
 
 const Diagnosticos = {
-  all: page =>
-      requests.get(`/diagnosticos?${limit(10, page)}`),
-  update: diagnostico =>
-    requests.put(`/disgnosticos/${diagnostico.slug}`, { diagnostico: omitSlug(diagnostico) }),
     create: diagnostico =>
     requests.post('/diagnosticos', { diagnostico })
-};
-
-const Ventas = {
-
-  byClient: (client, page) =>
-    requests.get(`/ventas?client=${encode(client)}&${limit(10, page)}`),
-  all: page =>
-      requests.get(`/ventas?${limit(10, page)}`),
-  update: venta =>
-    requests.put(`/ventas/${venta.slug}`, { venta: omitSlug(venta) }),
-  create: venta =>
-    requests.post('/ventas', { venta }),
-  get: id =>
-      requests.get(`/ventas/${id}`)
 };
 
 const Articles = {
@@ -93,6 +75,9 @@ const Articles = {
     requests.post('/articles', { article })
 };
 
+
+
+
 const Comments = {
   create: (slug, comment) =>
     requests.post(`/articles/${slug}/comments`, { comment }),
@@ -112,7 +97,6 @@ const Profile = {
 };
 
 export default {
-  Ventas,
   Diagnosticos,
   Articles,
   Auth,
