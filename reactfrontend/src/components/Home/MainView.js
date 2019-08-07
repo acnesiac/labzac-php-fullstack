@@ -2,17 +2,20 @@ import ArticleList from '../ArticleList';
 import React from 'react';
 import agent from '../../agent';
 import { connect } from 'react-redux';
+import { CHANGE_TAB } from '../../constants/actionTypes';
+
+
 const mapStateToProps = state => ({
   ...state.articleList,
   token: state.common.token
 });
-const mapDispatchToProps = dispatch => ({
 
+const mapDispatchToProps = dispatch => ({
 });
+
 const MainView = props => {
   return (
     <div className="col-md-12">
-   
       <ArticleList
         token = {props.token}
         pager={props.pager}
@@ -23,4 +26,6 @@ const MainView = props => {
     </div>
   );
 };
+
+
 export default connect(mapStateToProps, mapDispatchToProps)(MainView);
