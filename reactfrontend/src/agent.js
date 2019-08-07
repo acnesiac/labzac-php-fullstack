@@ -46,12 +46,11 @@ const limit = (count, p) => `limit=${count}&offset=${p ? p * count : 0}`;
 const omitSlug = article => Object.assign({}, article, { slug: undefined })
 
 const Diagnosticos = {
-
   all: page =>
       requests.get(`/diagnosticos?${limit(10, page)}`),
   update: diagnostico =>
     requests.put(`/disgnosticos/${diagnostico.slug}`, { diagnostico: omitSlug(diagnostico) }),
-  create: diagnostico =>
+    create: diagnostico =>
     requests.post('/diagnosticos', { diagnostico })
 };
 
