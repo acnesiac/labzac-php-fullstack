@@ -13,6 +13,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
 });
 
+
 const MainView = props => {
   return (
     <div className="col-md-12">
