@@ -2,8 +2,8 @@
 
 namespace Conduit\Controllers\Article;
 
-use Conduit\Models\Article;
 use Conduit\Models\Venta;
+use Conduit\Models\Diagnostico;
 use Conduit\Models\Tag;
 use Conduit\Transformers\VentaTransformer;
 use Interop\Container\ContainerInterface;
@@ -40,7 +40,7 @@ class VentaController
     }
 
     /**
-     * Return List of Diagnosticos
+     * Return List of Ventas
      *
      * @param \Slim\Http\Request  $request
      * @param \Slim\Http\Response $response
@@ -50,18 +50,25 @@ class VentaController
      */
     public function index(Request $request, Response $response, array $args)
     {
-        // TODO Extract the logic of filtering diagnosticos to its own class
+        // TODO Extract the logic of filtering ventas to its own class
 
         $requestUserId = optional($requestUser = $this->auth->requestUser($request))->id;
-        $builder = Venta::query()->latest()->with(['user'])->limit(20);
+        $builder = Venta::query()->latest()->with([ ])->limit(20);
+
+/*
+        if ($request->getUri()->getPath() == '/api/ventas/feed') {
+            if (is_null($requestUser)) {
+                return $response->withJson([], 401);
+            }
+            $ids = $requestUser->followings->pluck('id');
+            $builder->whereIn('user_id', $ids);
+        }
 
         if ($author = $request->getParam('author')) {
             $builder->whereHas('user', function ($query) use ($author) {
                 $query->where('username', $author);
             });
         }
-
-
 
         if ($tag = $request->getParam('tag')) {
             $builder->whereHas('tags', function ($query) use ($tag) {
@@ -75,20 +82,28 @@ class VentaController
             });
         }
 
-        $articlesCount = $builder->count();
-        $articles = $builder->get();
+        if ($limit = $request->getParam('limit')) {
+            $builder->limit($limit);
+        }
 
-        $data = $this->fractal->createData(new Collection($articles,
+        if ($offset = $request->getParam('offset')) {
+            $builder->offset($offset);
+        }
+*/
+        $articlesCount = $builder->count();
+        $ventas = $builder->get();
+
+        $data = $this->fractal->createData(new Collection($ventas,
             new VentaTransformer($requestUserId)))->toArray();
 
-        return $response->withJson(['ventas' => $data['data'], 'articlesCount' => $articlesCount])
+        return $response->withJson(['ventas' => $data['data'], 'ventasCount' => $articlesCount])
             ->withHeader('Access-Control-Allow-Origin', '*')
             ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
             ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
     }
 
     /**
-     * Return a single Article to get article endpoint
+     * Return a single Venta to get article endpoint
      *
      * @param \Slim\Http\Request  $request
      * @param \Slim\Http\Response $response
@@ -100,11 +115,11 @@ class VentaController
     {
         $requestUserId = optional($this->auth->requestUser($request))->id;
 
-        $article = Article::query()->where('slug', $args['slug'])->firstOrFail();
+        $article = Venta::query()->where('slug', $args['slug'])->firstOrFail();
 
-        $data = $this->fractal->createData(new Item($article, new DiagnosticoTransformer($requestUserId)))->toArray();
+        $data = $this->fractal->createData(new Item($article, new VentaTransformer($requestUserId)))->toArray();
 
-        return $response->withJson(['article' => $data])
+        return $response->withJson(['venta' => $data])
 			->withHeader('Access-Control-Allow-Origin', '*')
             ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
             ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
@@ -128,19 +143,27 @@ class VentaController
 
         $this->validator->validateArray($data = $request->getParam('venta'),
             [
-
-              
+                'title'       => v::notEmpty(),
+                'description' => v::notEmpty(),
+                'body'        => v::notEmpty(),
             ]);
 
         if ($this->validator->failed()) {
             return $response->withJson(['errors' => $this->validator->getErrors()], 422);
         }
 
+        $article = new Venta($request->getParam('venta'));
+        $article->slug = str_slug($article->title);
+        $article->user_id = $requestUser->id;
+        $article->save();
 
-                $article = new Venta($request->getParam('venta'));
-                $article->user_id = $requestUser->id;
-                $article->save();
-
+        $tagsId = [];
+        if (isset($data['tagList'])) {
+            foreach ($data['tagList'] as $tag) {
+                $tagsId[] = Tag::updateOrCreate(['title' => $tag], ['title' => $tag])->id;
+            }
+            $article->tags()->sync($tagsId);
+        }
 
         $data = $this->fractal->createData(new Item($article, new VentaTransformer()))->toArray();
 
