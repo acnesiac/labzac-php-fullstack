@@ -15,7 +15,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"type": "text/javascript",
+								"id": "c0f5eff9-7364-4388-84a7-aac506426fbe",
 								"exec": [
 									"if (!(environment.isIntegrationTest)) {",
 									"var responseJSON = JSON.parse(responseBody);",
@@ -31,7 +31,8 @@
 									"tests['User has \"token\" property'] = user.hasOwnProperty('token');",
 									"}",
 									""
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -52,7 +53,7 @@
 							"raw": "{\"user\":{\"email\":\"{{EMAIL}}\", \"password\":\"{{PASSWORD}}\", \"username\":\"{{USERNAME}}\"}}"
 						},
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/users",
+							"raw": "http://localhost/imagenesrx/public/api/users?username=acnesiac@hotmail.com&email=acnesiac@hotmail.com&password=Aruizr1$",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -62,6 +63,20 @@
 								"public",
 								"api",
 								"users"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "acnesiac@hotmail.com"
+								},
+								{
+									"key": "email",
+									"value": "acnesiac@hotmail.com"
+								},
+								{
+									"key": "password",
+									"value": "Aruizr1$"
+								}
 							]
 						}
 					},
@@ -109,7 +124,7 @@
 							"raw": "{\"user\":{\"email\":\"{{EMAIL}}\", \"password\":\"{{PASSWORD}}\"}}"
 						},
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/users/login",
+							"raw": "http://localhost/imagenesrx/public/api/users/login?PASSWORD=Aruizr1$&EMAIL=acnesiac@hotmail.com",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -123,11 +138,11 @@
 							],
 							"query": [
 								{
-									"key": "",
+									"key": "PASSWORD",
 									"value": "Aruizr1$"
 								},
 								{
-									"key": "",
+									"key": "EMAIL",
 									"value": "acnesiac@hotmail.com"
 								}
 							]
@@ -142,7 +157,6 @@
 							"listen": "test",
 							"script": {
 								"id": "a7674032-bf09-4ae7-8224-4afa2fb1a9f9",
-								"type": "text/javascript",
 								"exec": [
 									"var responseJSON = JSON.parse(responseBody);",
 									"",
@@ -162,7 +176,8 @@
 									"",
 									"tests['Global variable \"token\" has been set'] = pm.globals.get('token') === user.token;",
 									""
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -183,7 +198,7 @@
 							"raw": "{\"user\":{\"email\":\"{{EMAIL}}\", \"password\":\"{{PASSWORD}}\"}}"
 						},
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/users/login",
+							"raw": "http://localhost/imagenesrx/public/api/users/login?EMAIL=acnesiac@hotmail.com&PASSWORD=Aruizr1$&USERNAME=acnesiac@hotmail.com",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -194,6 +209,20 @@
 								"api",
 								"users",
 								"login"
+							],
+							"query": [
+								{
+									"key": "EMAIL",
+									"value": "acnesiac@hotmail.com"
+								},
+								{
+									"key": "PASSWORD",
+									"value": "Aruizr1$"
+								},
+								{
+									"key": "USERNAME",
+									"value": "acnesiac@hotmail.com"
+								}
 							]
 						}
 					},
@@ -330,7 +359,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"type": "text/javascript",
+								"id": "79eec8c7-c72d-4f5a-9581-1c974acf71ce",
 								"exec": [
 									"var is200Response = responseCode.code === 200;",
 									"",
@@ -365,10 +394,14 @@
 									"    }",
 									"}",
 									""
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
 						"header": [
@@ -379,6 +412,11 @@
 							{
 								"key": "X-Requested-With",
 								"value": "XMLHttpRequest"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token {{token}}",
+								"type": "text"
 							}
 						],
 						"body": {
@@ -396,6 +434,264 @@
 								"public",
 								"api",
 								"articles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Articles Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "79eec8c7-c72d-4f5a-9581-1c974acf71ce",
+								"exec": [
+									"var is200Response = responseCode.code === 200;",
+									"",
+									"tests['Response code is 200 OK'] = is200Response;",
+									"",
+									"if(is200Response){",
+									"    var responseJSON = JSON.parse(responseBody);",
+									"",
+									"    tests['Response contains \"articles\" property'] = responseJSON.hasOwnProperty('articles');",
+									"    tests['Response contains \"articlesCount\" property'] = responseJSON.hasOwnProperty('articlesCount');",
+									"    tests['articlesCount is an integer'] = Number.isInteger(responseJSON.articlesCount);",
+									"",
+									"    if(responseJSON.articles.length){",
+									"        var article = responseJSON.articles[0];",
+									"",
+									"        tests['Article has \"title\" property'] = article.hasOwnProperty('title');",
+									"        tests['Article has \"slug\" property'] = article.hasOwnProperty('slug');",
+									"        tests['Article has \"body\" property'] = article.hasOwnProperty('body');",
+									"        tests['Article has \"createdAt\" property'] = article.hasOwnProperty('createdAt');",
+									"        tests['Article\\'s \"createdAt\" property is an ISO 8601 timestamp'] = /^\\d{4,}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d.\\d+(?:[+-][0-2]\\d:[0-5]\\d|Z)$/.test(article.createdAt);",
+									"        tests['Article has \"updatedAt\" property'] = article.hasOwnProperty('updatedAt');",
+									"        tests['Article\\'s \"updatedAt\" property is an ISO 8601 timestamp'] = /^\\d{4,}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d.\\d+(?:[+-][0-2]\\d:[0-5]\\d|Z)$/.test(article.updatedAt);",
+									"        tests['Article has \"description\" property'] = article.hasOwnProperty('description');",
+									"        tests['Article has \"tagList\" property'] = article.hasOwnProperty('tagList');",
+									"        tests['Article\\'s \"tagList\" property is an Array'] = Array.isArray(article.tagList);",
+									"        tests['Article has \"author\" property'] = article.hasOwnProperty('author');",
+									"        tests['Article has \"favorited\" property'] = article.hasOwnProperty('favorited');",
+									"        tests['Article has \"favoritesCount\" property'] = article.hasOwnProperty('favoritesCount');",
+									"        tests['favoritesCount is an integer'] = Number.isInteger(article.favoritesCount);",
+									"    } else {",
+									"        tests['articlesCount is 0 when feed is empty'] = responseJSON.articlesCount === 0;",
+									"    }",
+									"}",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost/imagenesrx/public/api/articles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"imagenesrx",
+								"public",
+								"api",
+								"articles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Diagnostics",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "79eec8c7-c72d-4f5a-9581-1c974acf71ce",
+								"exec": [
+									"var is200Response = responseCode.code === 200;",
+									"",
+									"tests['Response code is 200 OK'] = is200Response;",
+									"",
+									"if(is200Response){",
+									"    var responseJSON = JSON.parse(responseBody);",
+									"",
+									"    tests['Response contains \"articles\" property'] = responseJSON.hasOwnProperty('articles');",
+									"    tests['Response contains \"articlesCount\" property'] = responseJSON.hasOwnProperty('articlesCount');",
+									"    tests['articlesCount is an integer'] = Number.isInteger(responseJSON.articlesCount);",
+									"",
+									"    if(responseJSON.articles.length){",
+									"        var article = responseJSON.articles[0];",
+									"",
+									"        tests['Article has \"title\" property'] = article.hasOwnProperty('title');",
+									"        tests['Article has \"slug\" property'] = article.hasOwnProperty('slug');",
+									"        tests['Article has \"body\" property'] = article.hasOwnProperty('body');",
+									"        tests['Article has \"createdAt\" property'] = article.hasOwnProperty('createdAt');",
+									"        tests['Article\\'s \"createdAt\" property is an ISO 8601 timestamp'] = /^\\d{4,}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d.\\d+(?:[+-][0-2]\\d:[0-5]\\d|Z)$/.test(article.createdAt);",
+									"        tests['Article has \"updatedAt\" property'] = article.hasOwnProperty('updatedAt');",
+									"        tests['Article\\'s \"updatedAt\" property is an ISO 8601 timestamp'] = /^\\d{4,}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d.\\d+(?:[+-][0-2]\\d:[0-5]\\d|Z)$/.test(article.updatedAt);",
+									"        tests['Article has \"description\" property'] = article.hasOwnProperty('description');",
+									"        tests['Article has \"tagList\" property'] = article.hasOwnProperty('tagList');",
+									"        tests['Article\\'s \"tagList\" property is an Array'] = Array.isArray(article.tagList);",
+									"        tests['Article has \"author\" property'] = article.hasOwnProperty('author');",
+									"        tests['Article has \"favorited\" property'] = article.hasOwnProperty('favorited');",
+									"        tests['Article has \"favoritesCount\" property'] = article.hasOwnProperty('favoritesCount');",
+									"        tests['favoritesCount is an integer'] = Number.isInteger(article.favoritesCount);",
+									"    } else {",
+									"        tests['articlesCount is 0 when feed is empty'] = responseJSON.articlesCount === 0;",
+									"    }",
+									"}",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Token {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost/imagenesrx/public/api/diagnosticos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"imagenesrx",
+								"public",
+								"api",
+								"diagnosticos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Ventas",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "79eec8c7-c72d-4f5a-9581-1c974acf71ce",
+								"exec": [
+									"var is200Response = responseCode.code === 200;",
+									"",
+									"tests['Response code is 200 OK'] = is200Response;",
+									"",
+									"if(is200Response){",
+									"    var responseJSON = JSON.parse(responseBody);",
+									"",
+									"    tests['Response contains \"articles\" property'] = responseJSON.hasOwnProperty('articles');",
+									"    tests['Response contains \"articlesCount\" property'] = responseJSON.hasOwnProperty('articlesCount');",
+									"    tests['articlesCount is an integer'] = Number.isInteger(responseJSON.articlesCount);",
+									"",
+									"    if(responseJSON.articles.length){",
+									"        var article = responseJSON.articles[0];",
+									"",
+									"        tests['Article has \"title\" property'] = article.hasOwnProperty('title');",
+									"        tests['Article has \"slug\" property'] = article.hasOwnProperty('slug');",
+									"        tests['Article has \"body\" property'] = article.hasOwnProperty('body');",
+									"        tests['Article has \"createdAt\" property'] = article.hasOwnProperty('createdAt');",
+									"        tests['Article\\'s \"createdAt\" property is an ISO 8601 timestamp'] = /^\\d{4,}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d.\\d+(?:[+-][0-2]\\d:[0-5]\\d|Z)$/.test(article.createdAt);",
+									"        tests['Article has \"updatedAt\" property'] = article.hasOwnProperty('updatedAt');",
+									"        tests['Article\\'s \"updatedAt\" property is an ISO 8601 timestamp'] = /^\\d{4,}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d.\\d+(?:[+-][0-2]\\d:[0-5]\\d|Z)$/.test(article.updatedAt);",
+									"        tests['Article has \"description\" property'] = article.hasOwnProperty('description');",
+									"        tests['Article has \"tagList\" property'] = article.hasOwnProperty('tagList');",
+									"        tests['Article\\'s \"tagList\" property is an Array'] = Array.isArray(article.tagList);",
+									"        tests['Article has \"author\" property'] = article.hasOwnProperty('author');",
+									"        tests['Article has \"favorited\" property'] = article.hasOwnProperty('favorited');",
+									"        tests['Article has \"favoritesCount\" property'] = article.hasOwnProperty('favoritesCount');",
+									"        tests['favoritesCount is an integer'] = Number.isInteger(article.favoritesCount);",
+									"    } else {",
+									"        tests['articlesCount is 0 when feed is empty'] = responseJSON.articlesCount === 0;",
+									"    }",
+									"}",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjUyMDU2ODUsImV4cCI6MTU2NTIxMjg4NSwianRpIjoiTHRKM3lTa1diK3duczlGZFBnSU50Zz09IiwiaXNzIjoiaHR0cDpcL1wvbG9jYWxob3N0Iiwic3ViIjoiYWNuZXNpYWMifQ.wxwEJB5TIkPhSNDpcxGaTfnUI8DyKjfk7ydphvPPGzE"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost/imagenesrx/public/api/ventas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"imagenesrx",
+								"public",
+								"api",
+								"ventas"
 							]
 						}
 					},
@@ -2333,6 +2629,46 @@
 								"api",
 								"tags"
 							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Diagnosticos",
+			"item": [
+				{
+					"name": "diagnosticos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ventas",
+			"item": [
+				{
+					"name": "diagnosticos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": ""
 						}
 					},
 					"response": []
