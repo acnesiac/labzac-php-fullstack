@@ -12,13 +12,6 @@ const ArticleList = props => {
     );
   }
 
-  if (props.articles.length === 0) {
-    return (
-      <div className="article-preview">
-        Dame click arriba
-      </div>
-    );
-  }
 
   return (
     <div>

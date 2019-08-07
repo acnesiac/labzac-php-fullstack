@@ -21,7 +21,6 @@ const mapDispatchToProps = dispatch => ({
   onClickTag: (tag, pager, payload) =>
     dispatch({ type: APPLY_TAG_FILTER, tag, pager, payload }),
   onLoad: (tab, pager, payload) =>{
-    dispatch({ type: CHANGE_TAB, tab, pager, payload }),
     dispatch({ type: HOME_PAGE_LOADED, tab, pager, payload })},
   onUnload: () =>
     dispatch({  type: HOME_PAGE_UNLOADED })
@@ -30,11 +29,11 @@ const mapDispatchToProps = dispatch => ({
 class Home extends React.Component {
   
   componentWillMount() {
-    //agent.Articles.all();
     const tab = this.props.token ? 'feed' : 'all';
-    const articlesPromise = this.props.token ? agent.Articles.feed :  agent.Articles.all;
+    const articlesPromise = this.props.token ? agent.Diagnosticos.all :  agent.Diagnosticos.all;
     this.props.onLoad(tab, articlesPromise, Promise.all([agent.Tags.getAll(), articlesPromise()]));
   }
+
 
   componentWillUnmount() {
     this.props.onUnload();
