@@ -50,7 +50,7 @@ const Diagnosticos = {
       requests.get(`/diagnosticos?${limit(10, page)}`),
   update: diagnostico =>
     requests.put(`/disgnosticos/${diagnostico.slug}`, { diagnostico: omitSlug(diagnostico) }),
-  create: diagnostico =>
+    create: diagnostico =>
     requests.post('/diagnosticos', { diagnostico })
 };
 
