@@ -2,7 +2,7 @@
 
 use Conduit\Controllers\Article\ArticleController;
 use Conduit\Controllers\Article\DiagnosticoController;
-
+use Conduit\Controllers\Article\VentaController;
 use Conduit\Controllers\Article\CommentController;
 use Conduit\Controllers\Article\FavoriteController;
 use Conduit\Controllers\Auth\LoginController;
@@ -55,13 +55,14 @@ $app->group('/api',
         //Diagnosticos
         $this->get('/diagnosticos/feed', DiagnosticoController::class . ':index')->add($optionalAuth)->setName('diagnostico.index');
         $this->get('/diagnosticos/{slug}', DiagnosticoController::class . ':show')->add($optionalAuth)->setName('diagnosticos.show');
-        $this->put('/diagnosticos/{slug}',
-            DiagnosticoController::class . ':update')->add($jwtMiddleware)->setName('diagnosticos.update');
-        $this->delete('/diagnosticos/{slug}',
-            DiagnosticoController::class . ':destroy')->add($jwtMiddleware)->setName('diagnosticos.destroy');
         $this->post('/diagnosticos', DiagnosticoController::class . ':store')->add($jwtMiddleware)->setName('diagnosticos.store');
         $this->get('/diagnosticos', DiagnosticoController::class . ':index')->add($optionalAuth)->setName('diagnosticos.index');
 
+        //Ventas
+        $this->get('/ventas/feed', VentaController::class . ':index')->add($optionalAuth)->setName('ventas.index');
+        $this->get('/ventas/{slug}', VentaController::class . ':show')->add($optionalAuth)->setName('ventas.show');
+        $this->post('/ventas', VentaController::class . ':store')->add($jwtMiddleware)->setName('ventas.store');
+        $this->get('/ventas', VentaController::class . ':index')->add($optionalAuth)->setName('ventas.index');
 
         // Comments
         $this->get('/articles/{slug}/comments',
