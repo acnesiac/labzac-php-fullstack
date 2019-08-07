@@ -66,6 +66,7 @@ class App extends React.Component {
             <Route path="/editor/:id" component={EditorVenta} />
             <Route path="/editorventa" component={EditorVenta} />
             <Route path="/editor" component={Editor} />
+            <Route path="/ventas" component={Editor} />
             </Switch>
         </div>
       );
