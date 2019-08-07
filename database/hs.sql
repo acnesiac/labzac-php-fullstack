@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Mar 22, 2019 at 06:14 PM
--- Server version: 5.6.39-cll-lve
--- PHP Version: 5.6.30
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 07-08-2019 a las 17:16:01
+-- Versión del servidor: 10.1.38-MariaDB
+-- Versión de PHP: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,41 +19,14 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `hs`
+-- Base de datos: `hs`
 --
 
 -- --------------------------------------------------------
 
-
 --
--- Table structure for table `articles`
+-- Estructura de tabla para la tabla `articles`
 --
-
-CREATE TABLE `diagnosticos` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `slug` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `description` text COLLATE utf8_unicode_ci NOT NULL,
-  `body` text COLLATE utf8_unicode_ci NOT NULL,
-  `user_id` int(10) UNSIGNED NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Table structure for table `articles`
---
-CREATE TABLE `diagnosticos` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `slug` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `description` text COLLATE utf8_unicode_ci NOT NULL,
-  `body` text COLLATE utf8_unicode_ci NOT NULL,
-  `user_id` int(10) UNSIGNED NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
 
 CREATE TABLE `articles` (
   `id` int(10) UNSIGNED NOT NULL,
@@ -67,18 +40,31 @@ CREATE TABLE `articles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `articles`
+-- Volcado de datos para la tabla `articles`
 --
 
 INSERT INTO `articles` (`id`, `slug`, `title`, `description`, `body`, `user_id`, `created_at`, `updated_at`) VALUES
 (1, 'prueba', 'prueba', 'decc', 'Este es una desciprionc', 21, '2019-03-11 13:14:18', '2019-03-11 13:14:18'),
 (2, 'paciente-2', 'paciente 2', 'el paciente tiene fractura', 'DX adjunto', 21, '2019-03-11 13:18:22', '2019-03-11 13:18:22'),
-(3, 'new-post', 'new post', 'about', 'demora', 21, '2019-03-11 13:27:12', '2019-03-11 13:27:12');
+(3, 'new-post', 'new post', 'about', 'demora', 21, '2019-03-11 13:27:12', '2019-03-11 13:27:12'),
+(4, 'how-to-train-your-dragon', 'How to train your dragon', 'Ever wonder how?', 'Very carefully.', 21, '2019-04-17 07:19:26', '2019-04-17 07:19:26'),
+(5, 'how-to-train-your-dragon-1', 'How to train your dragon', 'Ever wonder how?', 'Very carefully.', 21, '2019-04-17 07:30:50', '2019-04-17 07:30:50'),
+(6, 'how-to-train-your-dragon-2', 'How to train your dragon', 'Ever wonder how?', 'Very carefully.', 21, '2019-04-17 07:34:24', '2019-04-17 07:34:24'),
+(7, 'how-to-train-your-dragon-3', 'How to train your dragon', 'Ever wonder how?', 'Very carefully.', 21, '2019-04-17 08:42:35', '2019-04-17 08:42:35'),
+(8, 'how-to-train-your-dragon-4', 'How to train your dragon', 'Ever wonder how?', 'Very carefully.', 21, '2019-04-17 08:42:39', '2019-04-17 08:42:39'),
+(9, 'dx', 'Dx', 'Descripcion', 'Detalles', 21, '2019-04-17 13:28:28', '2019-04-17 13:28:28'),
+(10, 'asdaf', 'asdaf', 'dfds', 'asdf', 21, '2019-04-17 13:36:37', '2019-04-17 13:36:37'),
+(11, 'how-to-train-your-dragon-5', 'How to train your dragon', 'Ever wonder how?', 'Very carefully.', 21, '2019-04-17 13:38:51', '2019-04-17 13:38:51'),
+(12, 'how-to-train-your-dragon-6', 'How to train your dragon', 'Ever wonder how?', 'Very carefully.', 21, '2019-04-17 13:41:22', '2019-04-17 13:41:22'),
+(13, 'how-to-train-your-dragon-7', 'How to train your dragon', 'Ever wonder how?', 'Very carefully.', 21, '2019-04-17 13:43:40', '2019-04-17 13:43:40'),
+(14, 'fsf', 'fsf', 'sdfsd', 'fsdsd', 21, '2019-08-07 00:49:22', '2019-08-07 00:49:22'),
+(15, 'sdfsd', 'sdfsd', 'sadfa', 'asdfa', 21, '2019-08-07 00:57:53', '2019-08-07 00:57:53'),
+(16, 'fasd', 'fasd', 'safa', 'asdf', 21, '2019-08-07 00:58:14', '2019-08-07 00:58:14');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `article_tag`
+-- Estructura de tabla para la tabla `article_tag`
 --
 
 CREATE TABLE `article_tag` (
@@ -89,10 +75,32 @@ CREATE TABLE `article_tag` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Volcado de datos para la tabla `article_tag`
+--
+
+INSERT INTO `article_tag` (`id`, `article_id`, `tag_id`, `created_at`, `updated_at`) VALUES
+(1, 4, 9, NULL, NULL),
+(2, 4, 10, NULL, NULL),
+(3, 5, 9, NULL, NULL),
+(4, 5, 10, NULL, NULL),
+(5, 6, 9, NULL, NULL),
+(6, 6, 10, NULL, NULL),
+(7, 7, 9, NULL, NULL),
+(8, 7, 10, NULL, NULL),
+(9, 8, 9, NULL, NULL),
+(10, 8, 10, NULL, NULL),
+(11, 11, 9, NULL, NULL),
+(12, 11, 10, NULL, NULL),
+(13, 12, 9, NULL, NULL),
+(14, 12, 10, NULL, NULL),
+(15, 13, 9, NULL, NULL),
+(16, 13, 10, NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `comments`
+-- Estructura de tabla para la tabla `comments`
 --
 
 CREATE TABLE `comments` (
@@ -107,7 +115,63 @@ CREATE TABLE `comments` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `imagenesrx`
+-- Estructura de tabla para la tabla `diagnosticos`
+--
+
+CREATE TABLE `diagnosticos` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `slug` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `description` text COLLATE utf8_unicode_ci NOT NULL,
+  `body` text COLLATE utf8_unicode_ci NOT NULL,
+  `user_id` int(10) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `diagnosticos`
+--
+
+INSERT INTO `diagnosticos` (`id`, `slug`, `title`, `description`, `body`, `user_id`, `created_at`, `updated_at`) VALUES
+(0, 's', 's', 's', 's', 21, '2019-08-07 02:19:08', '2019-08-07 02:19:08'),
+(0, 'd', 'd', 'd', 'd', 21, '2019-08-07 02:23:41', '2019-08-07 02:23:41'),
+(0, 'dfg', 'dfg', 'ddsfg', 'sdfg', 21, '2019-08-07 09:45:43', '2019-08-07 09:45:43'),
+(0, 'qs', 'qS', 'S', 's', 21, '2019-08-07 09:48:32', '2019-08-07 09:48:32'),
+(0, 'a', 'a', 's', 'wd', 21, '2019-08-07 09:49:37', '2019-08-07 09:49:37'),
+(0, 'sd', 'sd', 'sf', 'sdf', 21, '2019-08-07 09:56:14', '2019-08-07 09:56:14'),
+(0, 'dfgq', 'dfgq', 'sdf', 'd', 21, '2019-08-07 09:57:34', '2019-08-07 09:57:34'),
+(0, 'aa', 'aa', 'aa', 'aa', 21, '2019-08-07 10:11:33', '2019-08-07 10:11:33'),
+(0, 'ss', 'ss', 'ss', 'ss', 21, '2019-08-07 10:15:25', '2019-08-07 10:15:25'),
+(0, 's-1', 's', 's', 's', 21, '2019-08-07 10:16:35', '2019-08-07 10:16:35'),
+(0, 'detroit', 'detroit', 'hope', 'michigan', 21, '2019-08-07 11:01:48', '2019-08-07 11:01:48');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `diagnostico_tag`
+--
+
+CREATE TABLE `diagnostico_tag` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `diagnostico_id` int(10) UNSIGNED NOT NULL,
+  `tag_id` int(10) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `diagnostico_tag`
+--
+
+INSERT INTO `diagnostico_tag` (`id`, `diagnostico_id`, `tag_id`, `created_at`, `updated_at`) VALUES
+(0, 0, 9, NULL, NULL),
+(0, 0, 10, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `imagenesrx`
 --
 
 CREATE TABLE `imagenesrx` (
@@ -119,7 +183,7 @@ CREATE TABLE `imagenesrx` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `migrations`
+-- Estructura de tabla para la tabla `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -131,7 +195,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `migrations`
+-- Volcado de datos para la tabla `migrations`
 --
 
 INSERT INTO `migrations` (`version`, `migration_name`, `start_time`, `end_time`, `breakpoint`) VALUES
@@ -145,7 +209,7 @@ INSERT INTO `migrations` (`version`, `migration_name`, `start_time`, `end_time`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tags`
+-- Estructura de tabla para la tabla `tags`
 --
 
 CREATE TABLE `tags` (
@@ -156,7 +220,7 @@ CREATE TABLE `tags` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `tags`
+-- Volcado de datos para la tabla `tags`
 --
 
 INSERT INTO `tags` (`id`, `title`, `created_at`, `updated_at`) VALUES
@@ -167,12 +231,14 @@ INSERT INTO `tags` (`id`, `title`, `created_at`, `updated_at`) VALUES
 (5, 'locura', '2017-11-30 23:21:44', '2017-11-30 23:21:44'),
 (6, 'depresion', '2017-11-30 23:21:44', '2017-11-30 23:21:44'),
 (7, 'paro', '2017-11-30 23:21:44', '2017-11-30 23:21:44'),
-(8, 'desangramiento', '2017-11-30 23:21:44', '2017-11-30 23:21:44');
+(8, 'desangramiento', '2017-11-30 23:21:44', '2017-11-30 23:21:44'),
+(9, 'dragons', '2019-04-17 07:19:26', '2019-04-17 07:19:26'),
+(10, 'training', '2019-04-17 07:19:26', '2019-04-17 07:19:26');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Estructura de tabla para la tabla `users`
 --
 
 CREATE TABLE `users` (
@@ -188,7 +254,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `users`
+-- Volcado de datos para la tabla `users`
 --
 
 INSERT INTO `users` (`id`, `email`, `username`, `password`, `token`, `bio`, `image`, `created_at`, `updated_at`) VALUES
@@ -233,7 +299,7 @@ INSERT INTO `users` (`id`, `email`, `username`, `password`, `token`, `bio`, `ima
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users_following`
+-- Estructura de tabla para la tabla `users_following`
 --
 
 CREATE TABLE `users_following` (
@@ -245,7 +311,7 @@ CREATE TABLE `users_following` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `users_following`
+-- Volcado de datos para la tabla `users_following`
 --
 
 INSERT INTO `users_following` (`id`, `user_id`, `following_user_id`, `created_at`, `updated_at`) VALUES
@@ -357,7 +423,7 @@ INSERT INTO `users_following` (`id`, `user_id`, `following_user_id`, `created_at
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_favorite`
+-- Estructura de tabla para la tabla `user_favorite`
 --
 
 CREATE TABLE `user_favorite` (
@@ -368,12 +434,36 @@ CREATE TABLE `user_favorite` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+-- --------------------------------------------------------
+
 --
--- Indexes for dumped tables
+-- Estructura de tabla para la tabla `ventas`
+--
+
+CREATE TABLE `ventas` (
+  `id` int(11) NOT NULL,
+  `created_at` date NOT NULL,
+  `description` int(11) NOT NULL,
+  `costo` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `venta_diagnostico`
+--
+
+CREATE TABLE `venta_diagnostico` (
+  `venta_id` int(11) NOT NULL,
+  `diagnostico_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `articles`
+-- Indices de la tabla `articles`
 --
 ALTER TABLE `articles`
   ADD PRIMARY KEY (`id`),
@@ -381,7 +471,7 @@ ALTER TABLE `articles`
   ADD KEY `articles_user_id_foreign` (`user_id`);
 
 --
--- Indexes for table `article_tag`
+-- Indices de la tabla `article_tag`
 --
 ALTER TABLE `article_tag`
   ADD PRIMARY KEY (`id`),
@@ -389,7 +479,7 @@ ALTER TABLE `article_tag`
   ADD KEY `article_tag_tag_id_foreign` (`tag_id`);
 
 --
--- Indexes for table `comments`
+-- Indices de la tabla `comments`
 --
 ALTER TABLE `comments`
   ADD PRIMARY KEY (`id`),
@@ -397,26 +487,26 @@ ALTER TABLE `comments`
   ADD KEY `comments_article_id_foreign` (`article_id`);
 
 --
--- Indexes for table `imagenesrx`
+-- Indices de la tabla `imagenesrx`
 --
 ALTER TABLE `imagenesrx`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `migrations`
+-- Indices de la tabla `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`version`);
 
 --
--- Indexes for table `tags`
+-- Indices de la tabla `tags`
 --
 ALTER TABLE `tags`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `tags_title_unique` (`title`);
 
 --
--- Indexes for table `users`
+-- Indices de la tabla `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
@@ -424,7 +514,7 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `users_username_unique` (`username`);
 
 --
--- Indexes for table `users_following`
+-- Indices de la tabla `users_following`
 --
 ALTER TABLE `users_following`
   ADD PRIMARY KEY (`id`),
@@ -432,7 +522,7 @@ ALTER TABLE `users_following`
   ADD KEY `users_following_following_user_id_foreign` (`following_user_id`);
 
 --
--- Indexes for table `user_favorite`
+-- Indices de la tabla `user_favorite`
 --
 ALTER TABLE `user_favorite`
   ADD PRIMARY KEY (`id`),
@@ -440,84 +530,84 @@ ALTER TABLE `user_favorite`
   ADD KEY `user_favorite_article_id_foreign` (`article_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `articles`
+-- AUTO_INCREMENT de la tabla `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT for table `article_tag`
+-- AUTO_INCREMENT de la tabla `article_tag`
 --
 ALTER TABLE `article_tag`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT for table `comments`
+-- AUTO_INCREMENT de la tabla `comments`
 --
 ALTER TABLE `comments`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tags`
+-- AUTO_INCREMENT de la tabla `tags`
 --
 ALTER TABLE `tags`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
--- AUTO_INCREMENT for table `users_following`
+-- AUTO_INCREMENT de la tabla `users_following`
 --
 ALTER TABLE `users_following`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
 
 --
--- AUTO_INCREMENT for table `user_favorite`
+-- AUTO_INCREMENT de la tabla `user_favorite`
 --
 ALTER TABLE `user_favorite`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- Constraints for dumped tables
+-- Restricciones para tablas volcadas
 --
 
 --
--- Constraints for table `articles`
+-- Filtros para la tabla `articles`
 --
 ALTER TABLE `articles`
   ADD CONSTRAINT `articles_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 --
--- Constraints for table `article_tag`
+-- Filtros para la tabla `article_tag`
 --
 ALTER TABLE `article_tag`
   ADD CONSTRAINT `article_tag_article_id_foreign` FOREIGN KEY (`article_id`) REFERENCES `articles` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `article_tag_tag_id_foreign` FOREIGN KEY (`tag_id`) REFERENCES `tags` (`id`) ON DELETE CASCADE;
 
 --
--- Constraints for table `comments`
+-- Filtros para la tabla `comments`
 --
 ALTER TABLE `comments`
   ADD CONSTRAINT `comments_article_id_foreign` FOREIGN KEY (`article_id`) REFERENCES `articles` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `comments_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 
 --
--- Constraints for table `users_following`
+-- Filtros para la tabla `users_following`
 --
 ALTER TABLE `users_following`
   ADD CONSTRAINT `users_following_following_user_id_foreign` FOREIGN KEY (`following_user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `users_following_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 
 --
--- Constraints for table `user_favorite`
+-- Filtros para la tabla `user_favorite`
 --
 ALTER TABLE `user_favorite`
   ADD CONSTRAINT `user_favorite_article_id_foreign` FOREIGN KEY (`article_id`) REFERENCES `articles` (`id`) ON DELETE CASCADE,
