@@ -74,15 +74,7 @@ class VentaController
                 $query->where('username', $favoriteByUser);
             });
         }
-
-        if ($limit = $request->getParam('limit')) {
-            $builder->limit($limit);
-        }
-
-        if ($offset = $request->getParam('offset')) {
-            $builder->offset($offset);
-        }
-
+      
         $articlesCount = $builder->count();
         $articles = $builder->get();
 
@@ -113,7 +105,7 @@ class VentaController
         $data = $this->fractal->createData(new Item($article, new DiagnosticoTransformer($requestUserId)))->toArray();
 
         return $response->withJson(['article' => $data])
-            ->withHeader('Access-Control-Allow-Origin', '*')
+			->withHeader('Access-Control-Allow-Origin', '*')
             ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
             ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
     }
@@ -134,7 +126,7 @@ class VentaController
             return $response->withJson([], 401);
         }
 
-        $this->validator->validateArray($data = $request->getParam('venta'),
+        $this->validator->validateArray($data = $request->getParam('diagnostico'),
             [
                 
                 'description' => v::notEmpty()
@@ -150,7 +142,7 @@ class VentaController
 
         $data = $this->fractal->createData(new Item($article, new VentaTransformer()))->toArray();
 
-        return $response->withJson(['venta' => $data])
+        return $response->withJson(['article' => $data])
             ->withHeader('Access-Control-Allow-Origin', '*')
             ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
             ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
