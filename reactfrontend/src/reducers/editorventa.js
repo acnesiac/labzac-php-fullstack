@@ -10,7 +10,7 @@ import {
 
 export default (state = {}, action) => {
   switch (action.type) {
-    case EDITORVENTA_PAGE_UNLOADED:
+    case EDITOR_PAGE_LOADED:
       return {
         ...state,
         articleSlug: action.payload ? action.payload.article.slug : '',
@@ -20,16 +20,16 @@ export default (state = {}, action) => {
         tagInput: '',
         tagList: action.payload ? action.payload.article.tagList : []
       };
-    case EDITORVENTA_PAGE_LOADED:
+    case EDITOR_PAGE_UNLOADED:
       return {};
-    case VENTA_SUBMITTED:
+    case ARTICLE_SUBMITTED:
       return {
         ...state,
         inProgress: null,
         errors: action.error ? action.payload.errors : null
       };
     case ASYNC_START:
-      if (action.subtype === VENTA_SUBMITTED) {
+      if (action.subtype === ARTICLE_SUBMITTED) {
         return { ...state, inProgress: true };
       }
       break;
@@ -44,7 +44,7 @@ export default (state = {}, action) => {
         ...state,
         tagList: state.tagList.filter(tag => tag !== action.tag)
       };
-    case UPDATE_FIELD_EDITORVENTA:
+    case UPDATE_FIELD_EDITOR:
       return { ...state, [action.key]: action.value };
     default:
       return state;
