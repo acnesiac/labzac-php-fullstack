@@ -2,8 +2,8 @@
 
 namespace Conduit\Controllers\Article;
 
+use Conduit\Models\Article;
 use Conduit\Models\Venta;
-use Conduit\Models\Diagnostico;
 use Conduit\Models\Tag;
 use Conduit\Transformers\VentaTransformer;
 use Interop\Container\ContainerInterface;
@@ -40,7 +40,7 @@ class VentaController
     }
 
     /**
-     * Return List of Ventas
+     * Return List of Diagnosticos
      *
      * @param \Slim\Http\Request  $request
      * @param \Slim\Http\Response $response
@@ -51,49 +51,17 @@ class VentaController
     public function index(Request $request, Response $response, array $args)
     {
         // TODO Extract the logic of filtering ventas to its own class
-
         $requestUserId = optional($requestUser = $this->auth->requestUser($request))->id;
-        $builder = Venta::query()->latest()->with([ ])->limit(20);
-
-/*
-        if ($request->getUri()->getPath() == '/api/ventas/feed') {
-            if (is_null($requestUser)) {
-                return $response->withJson([], 401);
-            }
-            $ids = $requestUser->followings->pluck('id');
-            $builder->whereIn('user_id', $ids);
-        }
-
-        if ($author = $request->getParam('author')) {
-            $builder->whereHas('user', function ($query) use ($author) {
-                $query->where('username', $author);
-            });
-        }
-
-        if ($tag = $request->getParam('tag')) {
-            $builder->whereHas('tags', function ($query) use ($tag) {
-                $query->where('title', $tag);
-            });
-        }
-
-        if ($favoriteByUser = $request->getParam('favorited')) {
-            $builder->whereHas('favorites', function ($query) use ($favoriteByUser) {
-                $query->where('username', $favoriteByUser);
-            });
-        }
+        $builder = Venta::query()->latest()->with([])->limit(20);
 
         if ($limit = $request->getParam('limit')) {
             $builder->limit($limit);
         }
 
-        if ($offset = $request->getParam('offset')) {
-            $builder->offset($offset);
-        }
-*/
         $articlesCount = $builder->count();
-        $ventas = $builder->get();
+        $articles = $builder->get();
 
-        $data = $this->fractal->createData(new Collection($ventas,
+        $data = $this->fractal->createData(new Collection($articles,
             new VentaTransformer($requestUserId)))->toArray();
 
         return $response->withJson(['ventas' => $data['data'], 'ventasCount' => $articlesCount])
@@ -103,7 +71,7 @@ class VentaController
     }
 
     /**
-     * Return a single Venta to get article endpoint
+     * Return a single Article to get article endpoint
      *
      * @param \Slim\Http\Request  $request
      * @param \Slim\Http\Response $response
@@ -115,11 +83,11 @@ class VentaController
     {
         $requestUserId = optional($this->auth->requestUser($request))->id;
 
-        $article = Venta::query()->where('slug', $args['slug'])->firstOrFail();
+        $article = Article::query()->where('slug', $args['slug'])->firstOrFail();
 
-        $data = $this->fractal->createData(new Item($article, new VentaTransformer($requestUserId)))->toArray();
+        $data = $this->fractal->createData(new Item($article, new DiagnosticoTransformer($requestUserId)))->toArray();
 
-        return $response->withJson(['venta' => $data])
+        return $response->withJson(['article' => $data])
 			->withHeader('Access-Control-Allow-Origin', '*')
             ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
             ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
@@ -141,7 +109,7 @@ class VentaController
             return $response->withJson([], 401);
         }
 
-        $this->validator->validateArray($data = $request->getParam('venta'),
+        $this->validator->validateArray($data = $request->getParam('diagnostico'),
             [
                 'title'       => v::notEmpty(),
                 'description' => v::notEmpty(),
@@ -152,7 +120,7 @@ class VentaController
             return $response->withJson(['errors' => $this->validator->getErrors()], 422);
         }
 
-        $article = new Venta($request->getParam('venta'));
+        $article = new Diagnostico($request->getParam('diagnostico'));
         $article->slug = str_slug($article->title);
         $article->user_id = $requestUser->id;
         $article->save();
@@ -167,7 +135,7 @@ class VentaController
 
         $data = $this->fractal->createData(new Item($article, new VentaTransformer()))->toArray();
 
-        return $response->withJson(['venta' => $data])
+        return $response->withJson(['article' => $data])
             ->withHeader('Access-Control-Allow-Origin', '*')
             ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
             ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');

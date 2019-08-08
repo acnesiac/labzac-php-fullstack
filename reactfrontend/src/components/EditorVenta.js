@@ -100,7 +100,7 @@ class EditorVenta extends React.Component {
                     <textarea
                       className="form-control"
                       rows="8"
-                      placeholder="Escribe tu Descripcion"
+                      placeholder="Escribe tu Descripcion de la venta"
                       value={this.props.body}
                       onChange={this.changeBody}>
                     </textarea>

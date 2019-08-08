@@ -55,6 +55,9 @@ const Diagnosticos = {
 };
 
 const Ventas = {
+
+  byClient: (client, page) =>
+    requests.get(`/ventas?client=${encode(client)}&${limit(10, page)}`),
   all: page =>
       requests.get(`/ventas?${limit(10, page)}`),
   update: venta =>
