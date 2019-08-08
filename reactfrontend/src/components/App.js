@@ -80,6 +80,7 @@ class App extends React.Component {
             <Route path="/register" component={Register} />
             <Route path="/editor/:slug" component={Editor} />
             <Route path="/editorventa" component={EditorVenta} />
+            <Route path="/editor" component={Editor} />
             </Switch>
         </div>
       );

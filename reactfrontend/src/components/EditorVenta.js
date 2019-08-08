@@ -2,10 +2,10 @@ import React from 'react';
 import agent from '../agent';
 import { connect } from 'react-redux';
 import {
-  EDITORVENTA_PAGE_LOADED,
-  VENTA_SUBMITTED,
-  EDITORVENTA_PAGE_UNLOADED,
-  UPDATE_FIELD_EDITORVENTA
+  EDITOR_PAGE_LOADED,
+  ARTICLE_SUBMITTED,
+  EDITOR_PAGE_UNLOADED,
+  UPDATE_FIELD_EDITOR
 } from '../constants/actionTypes';
 
 const mapStateToProps = state => ({
@@ -14,13 +14,13 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   onLoad: payload =>
-    dispatch({ type: EDITORVENTA_PAGE_LOADED, payload }),
+    dispatch({ type: EDITOR_PAGE_LOADED, payload }),
   onSubmit: payload =>
-    dispatch({ type: VENTA_SUBMITTED, payload }),
+    dispatch({ type: ARTICLE_SUBMITTED, payload }),
   onUnload: payload =>
-    dispatch({ type: EDITORVENTA_PAGE_UNLOADED }),
+    dispatch({ type: EDITOR_PAGE_UNLOADED }),
   onUpdateField: (key, value) =>
-    dispatch({ type: UPDATE_FIELD_EDITORVENTA, key, value })
+    dispatch({ type: UPDATE_FIELD_EDITOR, key, value })
 });
 
 class EditorVenta extends React.Component {
@@ -38,15 +38,15 @@ class EditorVenta extends React.Component {
     };
     this.submitForm = ev => {
       ev.preventDefault();
-      const venta = {
+      const diagnostico = {
         title: this.props.title,
         description: this.props.description,
         body: this.props.body
       };
       const slug = { slug: this.props.articleSlug };
       const promise = this.props.articleSlug ?
-        agent.Ventas.update(Object.assign(venta, slug)) :
-        agent.Ventas.create(venta);
+        agent.Diagnosticos.update(Object.assign(diagnostico, slug)) :
+        agent.Diagnosticos.create(diagnostico);
       this.props.onSubmit(promise);
     };
   }
@@ -100,7 +100,7 @@ class EditorVenta extends React.Component {
                     <textarea
                       className="form-control"
                       rows="8"
-                      placeholder="Escribe tu Descripcion"
+                      placeholder="Escribe tu Descripcion de la venta"
                       value={this.props.body}
                       onChange={this.changeBody}>
                     </textarea>
