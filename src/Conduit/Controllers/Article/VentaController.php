@@ -214,4 +214,5 @@ class VentaController
             ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
     }
 
+
 }
