@@ -184,35 +184,4 @@ class VentaController
             ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
     }
 
-    /**
-     * Delete Article Endpoint
-     *
-     * @param \Slim\Http\Request  $request
-     * @param \Slim\Http\Response $response
-     * @param array               $args
-     *
-     * @return \Slim\Http\Response
-     */
-    public function destroy(Request $request, Response $response, array $args)
-    {
-        $article = Article::query()->where('slug', $args['slug'])->firstOrFail();
-        $requestUser = $this->auth->requestUser($request);
-
-        if (is_null($requestUser)) {
-            return $response->withJson([], 401);
-        }
-
-        if ($requestUser->id != $article->user_id) {
-            return $response->withJson(['message' => 'Forbidden'], 403);
-        }
-
-        $article->delete();
-
-        return $response->withJson([], 200)
-            ->withHeader('Access-Control-Allow-Origin', '*')
-            ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
-            ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-    }
-
-
 }

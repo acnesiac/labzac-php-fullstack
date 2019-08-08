@@ -2,10 +2,10 @@ import React from 'react';
 import agent from '../agent';
 import { connect } from 'react-redux';
 import {
-  EDITOR_PAGE_LOADED,
-  ARTICLE_SUBMITTED,
-  EDITOR_PAGE_UNLOADED,
-  UPDATE_FIELD_EDITOR
+  EDITORVENTA_PAGE_LOADED,
+  VENTA_SUBMITTED,
+  EDITORVENTA_PAGE_UNLOADED,
+  UPDATE_FIELD_EDITORVENTA
 } from '../constants/actionTypes';
 
 const mapStateToProps = state => ({
@@ -14,13 +14,13 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   onLoad: payload =>
-    dispatch({ type: EDITOR_PAGE_LOADED, payload }),
+    dispatch({ type: EDITORVENTA_PAGE_LOADED, payload }),
   onSubmit: payload =>
-    dispatch({ type: ARTICLE_SUBMITTED, payload }),
+    dispatch({ type: VENTA_SUBMITTED, payload }),
   onUnload: payload =>
-    dispatch({ type: EDITOR_PAGE_UNLOADED }),
+    dispatch({ type: EDITORVENTA_PAGE_UNLOADED }),
   onUpdateField: (key, value) =>
-    dispatch({ type: UPDATE_FIELD_EDITOR, key, value })
+    dispatch({ type: UPDATE_FIELD_EDITORVENTA, key, value })
 });
 
 class EditorVenta extends React.Component {
@@ -38,15 +38,15 @@ class EditorVenta extends React.Component {
     };
     this.submitForm = ev => {
       ev.preventDefault();
-      const diagnostico = {
+      const venta = {
         title: this.props.title,
         description: this.props.description,
         body: this.props.body
       };
       const slug = { slug: this.props.articleSlug };
       const promise = this.props.articleSlug ?
-        agent.Diagnosticos.update(Object.assign(diagnostico, slug)) :
-        agent.Diagnosticos.create(diagnostico);
+        agent.Ventas.update(Object.assign(venta, slug)) :
+        agent.Ventas.create(venta);
       this.props.onSubmit(promise);
     };
   }
