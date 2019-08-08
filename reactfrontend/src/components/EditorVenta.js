@@ -2,10 +2,10 @@ import React from 'react';
 import agent from '../agent';
 import { connect } from 'react-redux';
 import {
-  EDITOR_PAGE_LOADED,
-  ARTICLE_SUBMITTED,
-  EDITOR_PAGE_UNLOADED,
-  UPDATE_FIELD_EDITOR
+  EDITORVENTA_PAGE_LOADED,
+  VENTA_SUBMITTED,
+  EDITORVENTA_PAGE_UNLOADED,
+  UPDATE_FIELD_EDITORVENTA
 } from '../constants/actionTypes';
 
 const mapStateToProps = state => ({
@@ -14,16 +14,16 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   onLoad: payload =>
-    dispatch({ type: EDITOR_PAGE_LOADED, payload }),
+    dispatch({ type: EDITORVENTA_PAGE_LOADED, payload }),
   onSubmit: payload =>
-    dispatch({ type: ARTICLE_SUBMITTED, payload }),
+    dispatch({ type: VENTA_SUBMITTED, payload }),
   onUnload: payload =>
-    dispatch({ type: EDITOR_PAGE_UNLOADED }),
+    dispatch({ type: EDITORVENTA_PAGE_UNLOADED }),
   onUpdateField: (key, value) =>
-    dispatch({ type: UPDATE_FIELD_EDITOR, key, value })
+    dispatch({ type: UPDATE_FIELD_EDITORVENTA, key, value })
 });
 
-class Editor extends React.Component {
+class EditorVenta extends React.Component {
   constructor() {
     super();
     const updateFieldEvent = key => ev => this.props.onUpdateField(key, ev.target.value);
@@ -38,15 +38,15 @@ class Editor extends React.Component {
     };
     this.submitForm = ev => {
       ev.preventDefault();
-      const diagnostico = {
+      const venta = {
         title: this.props.title,
         description: this.props.description,
         body: this.props.body
       };
       const slug = { slug: this.props.articleSlug };
       const promise = this.props.articleSlug ?
-        agent.Diagnosticos.update(Object.assign(diagnostico, slug)) :
-        agent.Diagnosticos.create(diagnostico);
+        agent.Ventas.update(Object.assign(venta, slug)) :
+        agent.Ventas.create(venta);
       this.props.onSubmit(promise);
     };
   }
@@ -84,7 +84,7 @@ class Editor extends React.Component {
                     <input
                       className="form-control form-control-lg"
                       type="text"
-                      placeholder="Diagnostico titulo"
+                      placeholder="Venta titulo"
                       value={this.props.title}
                       onChange={this.changeTitle} />
                   </fieldset>
@@ -121,4 +121,4 @@ class Editor extends React.Component {
     );
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(Editor);
+export default connect(mapStateToProps, mapDispatchToProps)(EditorVenta);
