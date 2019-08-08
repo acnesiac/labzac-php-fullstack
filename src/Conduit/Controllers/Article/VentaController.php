@@ -50,12 +50,37 @@ class VentaController
      */
     public function index(Request $request, Response $response, array $args)
     {
-        // TODO Extract the logic of filtering ventas to its own class
+        // TODO Extract the logic of filtering diagnosticos to its own class
+
         $requestUserId = optional($requestUser = $this->auth->requestUser($request))->id;
         $builder = Venta::query()->latest()->with([])->limit(20);
 
+      
+
+        if ($author = $request->getParam('author')) {
+            $builder->whereHas('user', function ($query) use ($author) {
+                $query->where('username', $author);
+            });
+        }
+
+        if ($tag = $request->getParam('tag')) {
+            $builder->whereHas('tags', function ($query) use ($tag) {
+                $query->where('title', $tag);
+            });
+        }
+
+        if ($favoriteByUser = $request->getParam('favorited')) {
+            $builder->whereHas('favorites', function ($query) use ($favoriteByUser) {
+                $query->where('username', $favoriteByUser);
+            });
+        }
+
         if ($limit = $request->getParam('limit')) {
             $builder->limit($limit);
+        }
+
+        if ($offset = $request->getParam('offset')) {
+            $builder->offset($offset);
         }
 
         $articlesCount = $builder->count();
@@ -64,7 +89,7 @@ class VentaController
         $data = $this->fractal->createData(new Collection($articles,
             new VentaTransformer($requestUserId)))->toArray();
 
-        return $response->withJson(['ventas' => $data['data'], 'ventasCount' => $articlesCount])
+        return $response->withJson(['ventas' => $data['data'], 'articlesCount' => $articlesCount])
             ->withHeader('Access-Control-Allow-Origin', '*')
             ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
             ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
@@ -88,7 +113,7 @@ class VentaController
         $data = $this->fractal->createData(new Item($article, new DiagnosticoTransformer($requestUserId)))->toArray();
 
         return $response->withJson(['article' => $data])
-			->withHeader('Access-Control-Allow-Origin', '*')
+            ->withHeader('Access-Control-Allow-Origin', '*')
             ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
             ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
     }
@@ -109,33 +134,23 @@ class VentaController
             return $response->withJson([], 401);
         }
 
-        $this->validator->validateArray($data = $request->getParam('diagnostico'),
+        $this->validator->validateArray($data = $request->getParam('venta'),
             [
-                'title'       => v::notEmpty(),
-                'description' => v::notEmpty(),
-                'body'        => v::notEmpty(),
+                
+                'description' => v::notEmpty()
             ]);
 
         if ($this->validator->failed()) {
             return $response->withJson(['errors' => $this->validator->getErrors()], 422);
         }
 
-        $article = new Diagnostico($request->getParam('diagnostico'));
-        $article->slug = str_slug($article->title);
-        $article->user_id = $requestUser->id;
+        $article = new Venta($request->getParam('venta'));
         $article->save();
 
-        $tagsId = [];
-        if (isset($data['tagList'])) {
-            foreach ($data['tagList'] as $tag) {
-                $tagsId[] = Tag::updateOrCreate(['title' => $tag], ['title' => $tag])->id;
-            }
-            $article->tags()->sync($tagsId);
-        }
 
         $data = $this->fractal->createData(new Item($article, new VentaTransformer()))->toArray();
 
-        return $response->withJson(['article' => $data])
+        return $response->withJson(['venta' => $data])
             ->withHeader('Access-Control-Allow-Origin', '*')
             ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
             ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
@@ -179,6 +194,36 @@ class VentaController
         $data = $this->fractal->createData(new Item($article, new DiagnosticoTransformer()))->toArray();
 
         return $response->withJson(['article' => $data])
+            ->withHeader('Access-Control-Allow-Origin', '*')
+            ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
+            ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    }
+
+    /**
+     * Delete Article Endpoint
+     *
+     * @param \Slim\Http\Request  $request
+     * @param \Slim\Http\Response $response
+     * @param array               $args
+     *
+     * @return \Slim\Http\Response
+     */
+    public function destroy(Request $request, Response $response, array $args)
+    {
+        $article = Article::query()->where('slug', $args['slug'])->firstOrFail();
+        $requestUser = $this->auth->requestUser($request);
+
+        if (is_null($requestUser)) {
+            return $response->withJson([], 401);
+        }
+
+        if ($requestUser->id != $article->user_id) {
+            return $response->withJson(['message' => 'Forbidden'], 403);
+        }
+
+        $article->delete();
+
+        return $response->withJson([], 200)
             ->withHeader('Access-Control-Allow-Origin', '*')
             ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
             ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
