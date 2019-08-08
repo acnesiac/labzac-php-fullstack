@@ -439,13 +439,13 @@ CREATE TABLE `user_favorite` (
 --
 -- Estructura de tabla para la tabla `ventas`
 --
-
 CREATE TABLE `ventas` (
-  `id` int(11) NOT NULL,
-  `created_at` date NOT NULL,
-  `description` int(11) NOT NULL,
-  `costo` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `id` int(10) UNSIGNED NOT NULL,
+  `description` text COLLATE utf8_unicode_ci NOT NULL,
+  `costo` int(10) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 
 -- --------------------------------------------------------
 
