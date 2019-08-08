@@ -2,10 +2,11 @@ import agent from '../agent';
 import Header from './Header';
 import React from 'react';
 import { connect } from 'react-redux';
-import { APP_LOAD, REDIRECT, CHANGE_TAB } from '../constants/actionTypes';
+import { APP_LOAD, REDIRECT } from '../constants/actionTypes';
 import { Route, Switch } from 'react-router-dom';
 import Article from '../components/Article';
 import Editor from '../components/Editor';
+import EditorVenta from '../components/EditorVenta';
 import Home from '../components/Home';
 import Login from '../components/Login';
 import ProfilePage from '../components/Upload/ProfilePage';
@@ -78,10 +79,8 @@ class App extends React.Component {
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route path="/editor/:slug" component={Editor} />
-            <Route path="/editor" component={Editor} />
-            <Route path="/ventas" component={Editor} />
+            <Route path="/editorventa" component={EditorVenta} />
             </Switch>
-
         </div>
       );
     }
