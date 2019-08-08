@@ -54,6 +54,15 @@ const Diagnosticos = {
     requests.post('/diagnosticos', { diagnostico })
 };
 
+const Ventas = {
+  all: page =>
+      requests.get(`/ventas?${limit(10, page)}`),
+  update: venta =>
+    requests.put(`/ventas/${venta.slug}`, { venta: omitSlug(venta) }),
+  create: venta =>
+    requests.post('/ventas', { venta })
+};
+
 const Articles = {
   all: page =>
     requests.get(`/articles?${limit(10, page)}`),

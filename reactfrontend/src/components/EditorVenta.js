@@ -9,7 +9,7 @@ import {
 } from '../constants/actionTypes';
 
 const mapStateToProps = state => ({
-  ...state.editorventa
+  ...state.editor
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -27,30 +27,24 @@ class EditorVenta extends React.Component {
   constructor() {
     super();
     const updateFieldEvent = key => ev => this.props.onUpdateField(key, ev.target.value);
-
-    this.changeCosto = updateFieldEvent('costo');
     this.changeTitle = updateFieldEvent('title');
     this.changeDescription = updateFieldEvent('description');
-
     this.changeBody = updateFieldEvent('body');
-
     this.watchForEnter = ev => {
       if (ev.keyCode === 13) {
         ev.preventDefault();
         this.props.onAddTag();
       }
     };
-
     this.submitForm = ev => {
       ev.preventDefault();
       const venta = {
         title: this.props.title,
         description: this.props.description,
-        body: this.props.body,
-        costo: this.props.costo
+        body: this.props.body
       };
-      const slug = { slug: this.props.id };
-      const promise = this.props.id ?
+      const slug = { slug: this.props.articleSlug };
+      const promise = this.props.articleSlug ?
         agent.Ventas.update(Object.assign(venta, slug)) :
         agent.Ventas.create(venta);
       this.props.onSubmit(promise);
@@ -58,18 +52,18 @@ class EditorVenta extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.match.params.id !== nextProps.match.params.id) {
-      if (nextProps.match.params.id) {
+    if (this.props.match.params.slug !== nextProps.match.params.slug) {
+      if (nextProps.match.params.slug) {
         this.props.onUnload();
-        return this.props.onLoad(agent.Ventas.get(this.props.match.params.id));
+        return this.props.onLoad(agent.Diagnosticos.get(this.props.match.params.slug));
       }
       this.props.onLoad(null);
     }
   }
 
   componentWillMount() {
-    if (this.props.match.params.id) {
-      return this.props.onLoad(agent.Diagnosticos.get(this.props.match.params.id));
+    if (this.props.match.params.slug) {
+      return this.props.onLoad(agent.Diagnosticos.get(this.props.match.params.slug));
     }
     this.props.onLoad(null);
   }
@@ -83,7 +77,7 @@ class EditorVenta extends React.Component {
       <div className="editor-page">
         <div className="container page">
           <div className="row">
-            <div className="col-md-12 offset-md-0 col-xs-12">
+            <div className="col-md-10 offset-md-1 col-xs-12">
               <form>
                 <fieldset>
                   <fieldset className="form-group">
@@ -106,25 +100,17 @@ class EditorVenta extends React.Component {
                     <textarea
                       className="form-control"
                       rows="8"
-                      placeholder="Escribe tu Descripcion de la venta"
+                      placeholder="Escribe tu Descripcion"
                       value={this.props.body}
                       onChange={this.changeBody}>
                     </textarea>
-                  </fieldset>
-                  <fieldset className="form-group">
-                  <input
-                    className="form-control"
-                    type="text"
-                    placeholder="Costo $"
-                    value={this.props.costo}
-                    onChange={this.changeCosto} />
                   </fieldset>
                   <button
                     className="btn btn-lg pull-xs-right btn-primary"
                     type="button"
                     disabled={this.props.inProgress}
                     onClick={this.submitForm}>
-                    Hacer venta
+                    Subir DX
                   </button>
                 </fieldset>
               </form>
