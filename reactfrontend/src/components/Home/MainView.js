@@ -2,8 +2,6 @@ import ArticleList from '../ArticleList';
 import React from 'react';
 import agent from '../../agent';
 import { connect } from 'react-redux';
-import { CHANGE_TAB } from '../../constants/actionTypes';
-
 
 const mapStateToProps = state => ({
   ...state.articleList,
@@ -12,7 +10,6 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
 });
-
 
 const MainView = props => {
   return (

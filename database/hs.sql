@@ -474,6 +474,10 @@ ALTER TABLE `articles`
   ADD UNIQUE KEY `articles_slug_unique` (`slug`),
   ADD KEY `articles_user_id_foreign` (`user_id`);
 
+
+ALTER TABLE `ventas`
+  ADD PRIMARY KEY (`id`)
+
 --
 -- Indices de la tabla `article_tag`
 --
@@ -540,7 +544,7 @@ ALTER TABLE `user_favorite`
 --
 -- AUTO_INCREMENT de la tabla `articles`
 --
-ALTER TABLE `ventas`
+ALTER TABLE `ventas` 
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
