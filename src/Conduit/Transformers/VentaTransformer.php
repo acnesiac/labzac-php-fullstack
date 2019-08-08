@@ -25,10 +25,7 @@ class VentaTransformer extends TransformerAbstract
     public function transform(Venta $venta)
     {
         return [
-            "id"             => $venta->id,
-            "description"    => $venta->description,
-            "costo"          => $venta->costo,
-            'createdAt'      => $venta->created_at->toIso8601String()
+            "id"             => $venta->id
         ];
     }
 }   
