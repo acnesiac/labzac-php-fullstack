@@ -7,8 +7,6 @@ use League\Fractal\TransformerAbstract;
 
 class VentaTransformer extends TransformerAbstract
 {
-
-
     /**
      * @var integer|null
      */
@@ -27,8 +25,7 @@ class VentaTransformer extends TransformerAbstract
     public function transform(Venta $venta)
     {
         return [
-            "description"    => $venta->description,
-            'createdAt'      => $venta->created_at->toIso8601String()
+            "id"             => $venta->id
         ];
     }
 }   
