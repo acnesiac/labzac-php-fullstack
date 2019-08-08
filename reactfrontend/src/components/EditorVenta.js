@@ -110,7 +110,7 @@ class EditorVenta extends React.Component {
                     type="button"
                     disabled={this.props.inProgress}
                     onClick={this.submitForm}>
-                    Subir DX
+                    Hacer venta
                   </button>
                 </fieldset>
               </form>
