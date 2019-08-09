@@ -9,7 +9,7 @@ import {
 } from '../constants/actionTypes';
 
 const mapStateToProps = state => ({
-  ...state.editor
+  ...state.editorventa
 });
 
 const mapDispatchToProps = dispatch => ({

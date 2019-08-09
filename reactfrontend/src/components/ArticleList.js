@@ -1,7 +1,6 @@
 import ArticlePreview from './ArticlePreview';
 import ListPagination from './ListPagination';
 import React from 'react';
-
 const ArticleList = props => {
   if (!props.token) {
     return null;
@@ -11,10 +10,10 @@ const ArticleList = props => {
       <div className="article-preview">Loading...</div>
     );
   }
-
-
   return (
     <div>
+    
+              
       {
         props.articles.map(article => {
           return (
@@ -22,7 +21,6 @@ const ArticleList = props => {
           );
         })
       }
-
       <ListPagination
         pager={props.pager}
         articlesCount={props.articlesCount}
@@ -30,5 +28,4 @@ const ArticleList = props => {
     </div>
   );
 };
-
 export default ArticleList;

@@ -4,12 +4,12 @@ import React from 'react';
 
 import agent from '../../agent';
 import { connect } from 'react-redux';
-import { CHANGE_TAB } from '../../constants/actionTypes';
 
 import {
   HOME_PAGE_LOADED,
   HOME_PAGE_UNLOADED,
-  APPLY_TAG_FILTER
+  APPLY_TAG_FILTER,
+  SEARCH_HOME
 } from '../../constants/actionTypes';
 
 const mapStateToProps = state => ({
@@ -23,17 +23,30 @@ const mapDispatchToProps = dispatch => ({
   onLoad: (tab, pager, payload) =>{
     dispatch({ type: HOME_PAGE_LOADED, tab, pager, payload })},
   onUnload: () =>
-    dispatch({  type: HOME_PAGE_UNLOADED })
+    dispatch({  type: HOME_PAGE_UNLOADED }),
+  searchEvent: (key, value) =>
+    dispatch({ type: SEARCH_HOME, key, value })
 });
 
 class Home extends React.Component {
+
+  constructor (){
+    super();
+        this.search=ev => { 
+          this.searchArticles();  
+        };
+  }
   
   componentWillMount() {
+    //this.searchArticles();
+
+  }
+
+  searchArticles(){
     const tab = this.props.token ? 'feed' : 'all';
     const articlesPromise = this.props.token ? agent.Diagnosticos.all :  agent.Diagnosticos.all;
     this.props.onLoad(tab, articlesPromise, Promise.all([agent.Tags.getAll(), articlesPromise()]));
   }
-
 
   componentWillUnmount() {
     this.props.onUnload();
@@ -45,6 +58,12 @@ class Home extends React.Component {
         <Banner token={this.props.token} appName={this.props.appName} />
         <div className="container page">
           <div className="row">
+           <input
+                      className="form-control form-control-md"
+                      type="text"
+                      placeholder="Buscar"
+                       onChange={this.search} 
+                    />         
             <MainView  token={this.props.token} />
           </div>
         </div>
