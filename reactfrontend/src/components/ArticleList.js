@@ -12,12 +12,7 @@ const ArticleList = props => {
   }
   return (
     <div>
-              
-                    <input
-                      className="form-control form-control-md"
-                      type="text"
-                      placeholder="Buscar"
-                    />
+    
               
       {
         props.articles.map(article => {
