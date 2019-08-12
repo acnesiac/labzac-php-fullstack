@@ -30,9 +30,9 @@ const ArticleActions = props => {
           <Link to={`/@${article.author.username}`} />
           <span >
           <Link
-            to={`/loadimage`}
+            to={`/editorventa`}
             className="btn btn-outline-secondary btn-md">
-            <i className="ion-edit" /> Detalles
+            <i className="ion-edit" /> Agrega DX
           </Link>  </span>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           

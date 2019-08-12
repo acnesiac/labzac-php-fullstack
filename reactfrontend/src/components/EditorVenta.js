@@ -77,7 +77,7 @@ class EditorVenta extends React.Component {
       <div className="editor-page">
         <div className="container page">
           <div className="row">
-            <div className="col-md-10 offset-md-1 col-xs-12">
+            <div className="col-md-12 offset-md-0 col-xs-12">
               <form>
                 <fieldset>
                   <fieldset className="form-group">
