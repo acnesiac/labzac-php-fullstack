@@ -22,19 +22,20 @@ const ArticleActions = props => {
   if (props.canModify) {
     return (
       <span>
+        
         <span className="date">
             {new Date(article.createdAt).toDateString()}
         </span>
-          <h1>{article.description}</h1>
+          <h1>{article.title}</h1>
           <Link to={`/@${article.author.username}`} />
           <span >
           <Link
-            to={`/editor`}
+            to={`/editorventa`}
             className="btn btn-outline-secondary btn-md">
             <i className="ion-edit" /> Agrega DX
           </Link>  </span>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-
+          
           <div className="collapse navbar-collapse" id="navbarNav">
            <ul>
             </ul>
