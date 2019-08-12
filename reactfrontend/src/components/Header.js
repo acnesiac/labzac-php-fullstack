@@ -41,11 +41,15 @@ const LoggedInView = props => {
     return (
       <ul className="nav navbar-nav pull-xs-right">
         <li className="nav-item" >
-          <Link to="/" className="nav-link" >
+          <Link to="/ventas" className="nav-link" >
            <i className="ion-compose"></i>&nbsp;Ventas
           </Link>
         </li>
-      
+        <li className="nav-item" >
+          <Link to="/" className="nav-link" >
+           <i className="ion-compose"></i>&nbsp;Diagnosticos
+          </Link>
+        </li>
       
         <li className="nav-item">
           <Link
