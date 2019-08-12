@@ -43,7 +43,7 @@ class Article extends React.Component {
 
           <div className="container">
 
-          
+
             <ArticleMeta
               article={this.props.article}
               canModify={canModify} />
@@ -78,10 +78,9 @@ class Article extends React.Component {
             <hr />
               <div className="article-actions">
           </div>
-
 */
 }
-        
+
 
         {/*
           <div className="row">
