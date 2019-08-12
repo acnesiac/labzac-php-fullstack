@@ -1,6 +1,7 @@
 import Banner from './Banner';
 import MainView from './MainView';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import agent from '../../agent';
 import { connect } from 'react-redux';
@@ -32,14 +33,13 @@ class Home extends React.Component {
 
   constructor (){
     super();
-        this.search=ev => { 
-          this.searchArticles();  
+        this.search=ev => {
+          this.searchArticles();
         };
   }
-  
-  componentWillMount() {
-    //this.searchArticles();
 
+  componentWillMount() {
+    this.searchArticles();
   }
 
   searchArticles(){
@@ -51,19 +51,31 @@ class Home extends React.Component {
   componentWillUnmount() {
     this.props.onUnload();
   }
-  
+
   render() {
     return (
       <div className="home-page">
         <Banner token={this.props.token} appName={this.props.appName} />
         <div className="container page">
+
           <div className="row">
-           <input
+            <form>
+                <fieldset>
+                  <fieldset className="form-group">
+                  <p className="text-xs-center">
+                <Link to="/editorventa">
+                  Nueva venta
+                </Link>
+              </p>
+                  <input
                       className="form-control form-control-md"
                       type="text"
                       placeholder="Buscar"
-                       onChange={this.search} 
-                    />         
+                       onChange={this.search}
+                  />
+                  </fieldset>
+                </fieldset>
+            </form>
             <MainView  token={this.props.token} />
           </div>
         </div>
