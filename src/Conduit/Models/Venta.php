@@ -29,6 +29,7 @@ class Venta extends Model
         'title',
         'description',
         'body',
+        'costo',
         'user_id',
     ];
 
