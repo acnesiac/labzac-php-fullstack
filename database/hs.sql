@@ -40,6 +40,15 @@ CREATE TABLE `articles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
+
+CREATE TABLE `posts` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `description` text COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
 -- Volcado de datos para la tabla `articles`
 --
 
@@ -475,6 +484,13 @@ ALTER TABLE `articles`
   ADD KEY `articles_user_id_foreign` (`user_id`);
 
 
+--
+-- Indices de la tabla `articles`
+--
+ALTER TABLE `posts`
+  ADD PRIMARY KEY (`id`);
+
+
 ALTER TABLE `ventas`
   ADD PRIMARY KEY (`id`)
 
@@ -544,7 +560,7 @@ ALTER TABLE `user_favorite`
 --
 -- AUTO_INCREMENT de la tabla `articles`
 --
-ALTER TABLE `ventas` 
+ALTER TABLE `ventas`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
