@@ -1,6 +1,7 @@
 <?php
 
 use Conduit\Controllers\Article\ArticleController;
+use Conduit\Controllers\Article\PostController;
 use Conduit\Controllers\Article\DiagnosticoController;
 use Conduit\Controllers\Article\VentaController;
 use Conduit\Controllers\Article\CommentController;
@@ -41,7 +42,6 @@ $app->group('/api',
             ->add($jwtMiddleware)
             ->setName('profile.unfollow');
 
-
         // Articles Routes
         $this->get('/articles/feed', ArticleController::class . ':index')->add($optionalAuth)->setName('article.index');
         $this->get('/articles/{slug}', ArticleController::class . ':show')->add($optionalAuth)->setName('article.show');
@@ -51,6 +51,9 @@ $app->group('/api',
             ArticleController::class . ':destroy')->add($jwtMiddleware)->setName('article.destroy');
         $this->post('/articles', ArticleController::class . ':store')->add($jwtMiddleware);
         $this->get('/articles', ArticleController::class . ':index')->add($optionalAuth)->setName('article.index');
+
+        //Posts
+        $this->get('/posts', PostController::class . ':index')->add($optionalAuth)->setName('post.index');
 
         //Diagnosticos
         $this->get('/diagnosticos/feed', DiagnosticoController::class . ':index')->add($optionalAuth)->setName('diagnostico.index');

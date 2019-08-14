@@ -91,9 +91,6 @@ const Articles = {
     requests.post('/articles', { article })
 };
 
-
-
-
 const Comments = {
   create: (slug, comment) =>
     requests.post(`/articles/${slug}/comments`, { comment }),
