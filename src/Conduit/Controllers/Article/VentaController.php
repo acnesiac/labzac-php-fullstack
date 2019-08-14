@@ -53,15 +53,15 @@ class VentaController
         // TODO Extract the logic of filtering diagnosticos to its own class
 
         $requestUserId = optional($requestUser = $this->auth->requestUser($request))->id;
-        $builder = Venta::query()->latest()->with([])->limit(20);
-
-      
+        $builder = Venta::query()->latest()->with(['user'])->limit(20);
 
         if ($author = $request->getParam('author')) {
             $builder->whereHas('user', function ($query) use ($author) {
                 $query->where('username', $author);
             });
         }
+
+
 
         if ($tag = $request->getParam('tag')) {
             $builder->whereHas('tags', function ($query) use ($tag) {
@@ -73,14 +73,6 @@ class VentaController
             $builder->whereHas('favorites', function ($query) use ($favoriteByUser) {
                 $query->where('username', $favoriteByUser);
             });
-        }
-
-        if ($limit = $request->getParam('limit')) {
-            $builder->limit($limit);
-        }
-
-        if ($offset = $request->getParam('offset')) {
-            $builder->offset($offset);
         }
 
         $articlesCount = $builder->count();
@@ -113,7 +105,7 @@ class VentaController
         $data = $this->fractal->createData(new Item($article, new DiagnosticoTransformer($requestUserId)))->toArray();
 
         return $response->withJson(['article' => $data])
-            ->withHeader('Access-Control-Allow-Origin', '*')
+			->withHeader('Access-Control-Allow-Origin', '*')
             ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
             ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
     }
@@ -136,7 +128,7 @@ class VentaController
 
         $this->validator->validateArray($data = $request->getParam('venta'),
             [
-                
+
                 'description' => v::notEmpty()
             ]);
 
@@ -144,13 +136,15 @@ class VentaController
             return $response->withJson(['errors' => $this->validator->getErrors()], 422);
         }
 
-        $article = new Venta($request->getParam('venta'));
-        $article->save();
+
+                $article = new Venta($request->getParam('venta'));
+                $article->user_id = $requestUser->id;
+                $article->save();
 
 
         $data = $this->fractal->createData(new Item($article, new VentaTransformer()))->toArray();
 
-        return $response->withJson(['venta' => $data])
+        return $response->withJson(['article' => $data])
             ->withHeader('Access-Control-Allow-Origin', '*')
             ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
             ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
@@ -194,36 +188,6 @@ class VentaController
         $data = $this->fractal->createData(new Item($article, new DiagnosticoTransformer()))->toArray();
 
         return $response->withJson(['article' => $data])
-            ->withHeader('Access-Control-Allow-Origin', '*')
-            ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
-            ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-    }
-
-    /**
-     * Delete Article Endpoint
-     *
-     * @param \Slim\Http\Request  $request
-     * @param \Slim\Http\Response $response
-     * @param array               $args
-     *
-     * @return \Slim\Http\Response
-     */
-    public function destroy(Request $request, Response $response, array $args)
-    {
-        $article = Article::query()->where('slug', $args['slug'])->firstOrFail();
-        $requestUser = $this->auth->requestUser($request);
-
-        if (is_null($requestUser)) {
-            return $response->withJson([], 401);
-        }
-
-        if ($requestUser->id != $article->user_id) {
-            return $response->withJson(['message' => 'Forbidden'], 403);
-        }
-
-        $article->delete();
-
-        return $response->withJson([], 200)
             ->withHeader('Access-Control-Allow-Origin', '*')
             ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
             ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');

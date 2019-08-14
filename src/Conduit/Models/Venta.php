@@ -46,6 +46,14 @@ class Venta extends Model
         return $this->attributes['slug'] = $slug;
     }
 
+    /********************
+     *  Relationships
+     ********************/
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
     /**
      * Check if given user has favorited this article
      *
