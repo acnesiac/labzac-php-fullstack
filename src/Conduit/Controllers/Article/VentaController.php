@@ -53,15 +53,15 @@ class VentaController
         // TODO Extract the logic of filtering diagnosticos to its own class
 
         $requestUserId = optional($requestUser = $this->auth->requestUser($request))->id;
-        $builder = Venta::query()->latest()->with([])->limit(20);
-
-      
+        $builder = Venta::query()->latest()->with(['user'])->limit(20);
 
         if ($author = $request->getParam('author')) {
             $builder->whereHas('user', function ($query) use ($author) {
                 $query->where('username', $author);
             });
         }
+
+
 
         if ($tag = $request->getParam('tag')) {
             $builder->whereHas('tags', function ($query) use ($tag) {
@@ -74,7 +74,7 @@ class VentaController
                 $query->where('username', $favoriteByUser);
             });
         }
-      
+
         $articlesCount = $builder->count();
         $articles = $builder->get();
 
@@ -126,9 +126,9 @@ class VentaController
             return $response->withJson([], 401);
         }
 
-        $this->validator->validateArray($data = $request->getParam('diagnostico'),
+        $this->validator->validateArray($data = $request->getParam('venta'),
             [
-                
+
                 'description' => v::notEmpty()
             ]);
 
@@ -136,13 +136,15 @@ class VentaController
             return $response->withJson(['errors' => $this->validator->getErrors()], 422);
         }
 
-        $article = new Venta($request->getParam('venta'));
-        $article->save();
+
+                $article = new Venta($request->getParam('venta'));
+                $article->user_id = $requestUser->id;
+                $article->save();
 
 
         $data = $this->fractal->createData(new Item($article, new VentaTransformer()))->toArray();
 
-        return $response->withJson(['article' => $data])
+        return $response->withJson(['venta' => $data])
             ->withHeader('Access-Control-Allow-Origin', '*')
             ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
             ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');

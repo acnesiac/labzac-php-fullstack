@@ -483,6 +483,16 @@ ALTER TABLE `articles`
   ADD UNIQUE KEY `articles_slug_unique` (`slug`),
   ADD KEY `articles_user_id_foreign` (`user_id`);
 
+ALTER TABLE `ventas`
+    ADD PRIMARY KEY (`id`),
+    ADD KEY `ventas_user_id_foreign` (`user_id`);
+
+--
+-- Indices de la tabla `articles`
+--
+ALTER TABLE `posts`
+  ADD PRIMARY KEY (`id`);
+
 
 --
 -- Indices de la tabla `articles`
