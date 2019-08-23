@@ -494,6 +494,7 @@ ALTER TABLE `posts`
   ADD PRIMARY KEY (`id`);
 
 
+
 ALTER TABLE `ventas`
   ADD PRIMARY KEY (`id`)
 
