@@ -44,7 +44,7 @@ class Home extends React.Component {
 
   searchArticles(){
     const tab = this.props.token ? 'feed' : 'all';
-    const articlesPromise = this.props.token ? agent.Diagnosticos.all :  agent.Diagnosticos.all;
+    const articlesPromise = this.props.token ? agent.Ventas.all :  agent.Ventas.all;
     this.props.onLoad(tab, articlesPromise, Promise.all([agent.Tags.getAll(), articlesPromise()]));
   }
 

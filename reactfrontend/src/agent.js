@@ -110,6 +110,7 @@ const Profile = {
 };
 
 export default {
+  Ventas,
   Diagnosticos,
   Articles,
   Auth,
