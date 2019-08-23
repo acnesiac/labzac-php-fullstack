@@ -12,8 +12,6 @@ const ArticleList = props => {
   }
   return (
     <div>
-
-
       {
         props.articles.map(article => {
           return (
