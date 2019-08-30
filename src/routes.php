@@ -1,8 +1,9 @@
 <?php
 
 use Conduit\Controllers\Article\ArticleController;
+use Conduit\Controllers\Article\PostController;
 use Conduit\Controllers\Article\DiagnosticoController;
-
+use Conduit\Controllers\Article\VentaController;
 use Conduit\Controllers\Article\CommentController;
 use Conduit\Controllers\Article\FavoriteController;
 use Conduit\Controllers\Auth\LoginController;
@@ -41,7 +42,6 @@ $app->group('/api',
             ->add($jwtMiddleware)
             ->setName('profile.unfollow');
 
-
         // Articles Routes
         $this->get('/articles/feed', ArticleController::class . ':index')->add($optionalAuth)->setName('article.index');
         $this->get('/articles/{slug}', ArticleController::class . ':show')->add($optionalAuth)->setName('article.show');
@@ -49,21 +49,24 @@ $app->group('/api',
             ArticleController::class . ':update')->add($jwtMiddleware)->setName('article.update');
         $this->delete('/articles/{slug}',
             ArticleController::class . ':destroy')->add($jwtMiddleware)->setName('article.destroy');
-        $this->post('/articles', ArticleController::class . ':store')->add($jwtMiddleware)->setName('article.store');
+        $this->post('/articles', ArticleController::class . ':store')->add($jwtMiddleware);
         $this->get('/articles', ArticleController::class . ':index')->add($optionalAuth)->setName('article.index');
 
-        //diagnosticos
-        $this->get('/diagnosticos/feed', ArticleController::class . ':index')->add($optionalAuth)->setName('article.index');
-        $this->get('/diagnosticos/{slug}', ArticleController::class . ':show')->add($optionalAuth)->setName('article.show');
-        $this->put('/diagnosticos/{slug}',
-            ArticleController::class . ':update')->add($jwtMiddleware)->setName('article.update');
-        $this->delete('/diagnosticos/{slug}',
-            ArticleController::class . ':destroy')->add($jwtMiddleware)->setName('article.destroy');
+        //Posts
+        $this->get('/posts', PostController::class . ':index')->add($optionalAuth)->setName('post.index');
 
-        $this->post('/diagnosticos', DiagnosticoController::class . ':store')->add($jwtMiddleware)->setName('article.store');
-        $this->get('/diagnosticos', DiagnosticoController::class . ':index')->add($optionalAuth)->setName('article.index');
+        //Diagnosticos
+        $this->get('/diagnosticos/feed', DiagnosticoController::class . ':index')->add($optionalAuth)->setName('diagnostico.index');
+        $this->get('/diagnosticos/{slug}', DiagnosticoController::class . ':show')->add($optionalAuth)->setName('diagnosticos.show');
+        $this->post('/diagnosticos', DiagnosticoController::class . ':store')->add($jwtMiddleware)->setName('diagnosticos.store');
+        $this->get('/diagnosticos', DiagnosticoController::class . ':index')->add($optionalAuth)->setName('diagnosticos.index');
 
-      
+        //Ventas
+        $this->get('/ventas/feed', VentaController::class . ':index')->add($optionalAuth)->setName('ventas.index');
+        $this->get('/ventas/{slug}', VentaController::class . ':show')->add($optionalAuth)->setName('ventas.show');
+        $this->post('/ventas', VentaController::class . ':store')->add($jwtMiddleware)->setName('ventas.store');
+        $this->get('/ventas', VentaController::class . ':index')->add($optionalAuth)->setName('ventas.index');
+
         // Comments
         $this->get('/articles/{slug}/comments',
             CommentController::class . ':index')

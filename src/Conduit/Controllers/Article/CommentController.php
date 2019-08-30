@@ -3,7 +3,7 @@
 namespace Conduit\Controllers\Article;
 
 use Conduit\Models\Article;
-use Conduit\Models\Comment;
+use Conduit\Models\DxComment;
 use Conduit\Transformers\ArticleTransformer;
 use Conduit\Transformers\CommentTransformer;
 use Interop\Container\ContainerInterface;
@@ -41,7 +41,7 @@ class CommentController
     }
 
     /**
-     * Return a all Comment for an article
+     * Return a all DxComment for an article
      *
      * @param \Slim\Http\Request  $request
      * @param \Slim\Http\Response $response
@@ -92,7 +92,7 @@ class CommentController
             return $response->withJson(['errors' => $this->validator->getErrors()], 422);
         }
 
-        $comment = Comment::create([
+        $comment = DxComment::create([
             'body'       => $data['body'],
             'user_id'    => $requestUser->id,
             'article_id' => $article->id,
@@ -108,7 +108,7 @@ class CommentController
     }
 
     /**
-     * Delete A Comment Endpoint
+     * Delete A DxComment Endpoint
      *
      * @param \Slim\Http\Request  $request
      * @param \Slim\Http\Response $response
@@ -118,7 +118,7 @@ class CommentController
      */
     public function destroy(Request $request, Response $response, array $args)
     {
-        $comment = Comment::query()->findOrFail($args['id']);
+        $comment = DxComment::query()->findOrFail($args['id']);
         $requestUser = $this->auth->requestUser($request);
 
         if (is_null($requestUser)) {

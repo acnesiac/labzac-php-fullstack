@@ -27,7 +27,10 @@ const ListPagination = props => {
   };
 
   return (
+    <div>
+     
     <nav>
+
       <ul className="pagination">
 
         {
@@ -52,6 +55,8 @@ const ListPagination = props => {
 
       </ul>
     </nav>
+    
+  </div>
   );
 };
 

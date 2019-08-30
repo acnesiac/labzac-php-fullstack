@@ -1,7 +1,6 @@
 import ArticlePreview from './ArticlePreview';
 import ListPagination from './ListPagination';
 import React from 'react';
-
 const ArticleList = props => {
   if (!props.token) {
     return null;
@@ -11,15 +10,6 @@ const ArticleList = props => {
       <div className="article-preview">Loading...</div>
     );
   }
-
-  if (props.articles.length === 0) {
-    return (
-      <div className="article-preview">
-        Dame click arriba
-      </div>
-    );
-  }
-
   return (
     <div>
       {
@@ -29,7 +19,6 @@ const ArticleList = props => {
           );
         })
       }
-
       <ListPagination
         pager={props.pager}
         articlesCount={props.articlesCount}
@@ -37,5 +26,4 @@ const ArticleList = props => {
     </div>
   );
 };
-
 export default ArticleList;

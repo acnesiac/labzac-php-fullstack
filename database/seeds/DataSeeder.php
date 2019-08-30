@@ -1,7 +1,7 @@
 <?php
 
 use Conduit\Models\Article;
-use Conduit\Models\Comment;
+use Conduit\Models\DxComment;
 use Conduit\Models\Tag;
 use Conduit\Models\User;
 
@@ -39,7 +39,7 @@ class DataSeeder extends BaseSeeder
         $articles = Article::all();
 
         $articles->each(function (Article $article) {
-            $this->factory->of(Comment::class)->times(rand(0, 5))->create(
+            $this->factory->of(DxComment::class)->times(rand(0, 5))->create(
                 ['article_id' => $article->id, 'user_id' => $this->faker->numberBetween(1, $this->usersCount)]);
         });
 
