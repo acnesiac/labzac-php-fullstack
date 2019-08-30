@@ -51,7 +51,7 @@ export default (state = {}, action) => {
         ...state,
         pager: action.pager,
         tags: action.payload[0].tags,
-        articles: action.payload[1].diagnosticos,
+        articles: action.payload[1].ventas,
         articlesCount: action.payload[1].articlesCount,
         currentPage: 0,
         tab: action.tab

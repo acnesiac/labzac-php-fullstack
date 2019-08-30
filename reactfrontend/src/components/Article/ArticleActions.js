@@ -22,11 +22,10 @@ const ArticleActions = props => {
   if (props.canModify) {
     return (
       <span>
-
         <span className="date">
             {new Date(article.createdAt).toDateString()}
         </span>
-          <h1>{article.title}</h1>
+          <h1>{article.description}</h1>
           <Link to={`/@${article.author.username}`} />
           <span >
           <Link

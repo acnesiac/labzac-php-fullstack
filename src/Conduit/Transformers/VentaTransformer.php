@@ -49,7 +49,7 @@ class VentaTransformer extends TransformerAbstract
      * @param \Conduit\Models\Article $article
      *
      * @return \League\Fractal\Resource\Item
-     * @internal param \Conduit\Models\Comment $comment
+     * @internal param \Conduit\Models\DxComment $comment
      *
      */
     public function includeAuthor(Venta $venta)

@@ -1,4 +1,5 @@
 import article from './reducers/article';
+import editorventa from './reducers/editorventa';
 import articleList from './reducers/articleList';
 import auth from './reducers/auth';
 import { combineReducers } from 'redux';
@@ -15,6 +16,7 @@ export default combineReducers({
   auth,
   common,
   editor,
+  editorventa,
   home,
   profile,
   settings,
