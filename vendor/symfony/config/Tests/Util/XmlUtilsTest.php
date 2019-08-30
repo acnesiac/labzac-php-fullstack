@@ -101,7 +101,7 @@ class XmlUtilsTest extends TestCase
             array(array('foo' => array('bar', 'text')), '<foo>bar</foo><foo>text</foo>'),
             array(array('foo' => array(array('foo' => 'bar'), array('foo' => 'text'))), '<foo foo="bar"/><foo foo="text" />'),
             array(array('foo' => array('foo' => array('bar', 'text'))), '<foo foo="bar"><foo>text</foo></foo>'),
-            array(array('foo' => 'bar'), '<foo><!-- Comment -->bar</foo>'),
+            array(array('foo' => 'bar'), '<foo><!-- DxComment -->bar</foo>'),
             array(array('foo' => 'text'), '<foo xmlns:h="http://www.example.org/bar" h:bar="bar">text</foo>'),
             array(array('foo' => array('bar' => 'bar', 'value' => 'text')), '<foo xmlns:h="http://www.example.org/bar" h:bar="bar">text</foo>', false, false),
             array(array('attr' => 1, 'b' => 'hello'), '<foo:a xmlns:foo="http://www.example.org/foo" xmlns:h="http://www.example.org/bar" attr="1" h:bar="bar"><foo:b>hello</foo:b><h:c>2</h:c></foo:a>', true),

@@ -1595,7 +1595,7 @@
 					"response": []
 				},
 				{
-					"name": "Create Comment for Article",
+					"name": "Create DxComment for Article",
 					"event": [
 						{
 							"listen": "test",
@@ -1609,15 +1609,15 @@
 									"",
 									"var comment = responseJSON.comment || {};",
 									"",
-									"tests['Comment has \"id\" property'] = comment.hasOwnProperty('id');",
+									"tests['DxComment has \"id\" property'] = comment.hasOwnProperty('id');",
 									"pm.globals.set('commentId', comment.id);",
 									"",
-									"tests['Comment has \"body\" property'] = comment.hasOwnProperty('body');",
-									"tests['Comment has \"createdAt\" property'] = comment.hasOwnProperty('createdAt');",
+									"tests['DxComment has \"body\" property'] = comment.hasOwnProperty('body');",
+									"tests['DxComment has \"createdAt\" property'] = comment.hasOwnProperty('createdAt');",
 									"tests['\"createdAt\" property is an ISO 8601 timestamp'] = /^\\d{4,}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d.\\d+(?:[+-][0-2]\\d:[0-5]\\d|Z)$/.test(comment.createdAt);",
-									"tests['Comment has \"updatedAt\" property'] = comment.hasOwnProperty('updatedAt');",
+									"tests['DxComment has \"updatedAt\" property'] = comment.hasOwnProperty('updatedAt');",
 									"tests['\"updatedAt\" property is an ISO 8601 timestamp'] = /^\\d{4,}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d.\\d+(?:[+-][0-2]\\d:[0-5]\\d|Z)$/.test(comment.updatedAt);",
-									"tests['Comment has \"author\" property'] = comment.hasOwnProperty('author');",
+									"tests['DxComment has \"author\" property'] = comment.hasOwnProperty('author');",
 									""
 								]
 							}
@@ -1677,13 +1677,13 @@
 									"    if(responseJSON.comments.length){",
 									"        var comment = responseJSON.comments[0];",
 									"",
-									"        tests['Comment has \"id\" property'] = comment.hasOwnProperty('id');",
-									"        tests['Comment has \"body\" property'] = comment.hasOwnProperty('body');",
-									"        tests['Comment has \"createdAt\" property'] = comment.hasOwnProperty('createdAt');",
+									"        tests['DxComment has \"id\" property'] = comment.hasOwnProperty('id');",
+									"        tests['DxComment has \"body\" property'] = comment.hasOwnProperty('body');",
+									"        tests['DxComment has \"createdAt\" property'] = comment.hasOwnProperty('createdAt');",
 									"        tests['\"createdAt\" property is an ISO 8601 timestamp'] = /^\\d{4,}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d.\\d+(?:[+-][0-2]\\d:[0-5]\\d|Z)$/.test(comment.createdAt);",
-									"        tests['Comment has \"updatedAt\" property'] = comment.hasOwnProperty('updatedAt');",
+									"        tests['DxComment has \"updatedAt\" property'] = comment.hasOwnProperty('updatedAt');",
 									"        tests['\"updatedAt\" property is an ISO 8601 timestamp'] = /^\\d{4,}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d.\\d+(?:[+-][0-2]\\d:[0-5]\\d|Z)$/.test(comment.updatedAt);",
-									"        tests['Comment has \"author\" property'] = comment.hasOwnProperty('author');",
+									"        tests['DxComment has \"author\" property'] = comment.hasOwnProperty('author');",
 									"    }",
 									"}",
 									""
@@ -1726,7 +1726,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete Comment for Article",
+					"name": "Delete DxComment for Article",
 					"request": {
 						"method": "DELETE",
 						"header": [
