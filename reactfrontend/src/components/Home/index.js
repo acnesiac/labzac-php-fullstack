@@ -57,24 +57,28 @@ class Home extends React.Component {
       <div className="home-page">
         <Banner token={this.props.token} appName={this.props.appName} />
         <div className="container page">
-
           <div className="row">
-            <form>
-                <fieldset>
-                  <fieldset className="form-group">
-                  <p className="text-xs-center">
-                <Link to="/editorventa">
-                  Nueva venta
-                </Link>
-              </p>
+            <form className="form-inline">
+               <div className=" article-preview form-group">
+                <ul className="nav navbar-nav pull-xs-right">
+                  <li className="nav-item" >
+                    <Link to="/ventas" className="nav-link" >
+                     <i className="ion-compose"></i>&nbsp;Ventas
+                    </Link>
+                  </li>
+                  <li className="nav-item" >
                   <input
                       className="form-control form-control-md"
                       type="text"
                       placeholder="Buscar"
                        onChange={this.search}
                   />
-                  </fieldset>
-                </fieldset>
+                  </li>
+                </ul>
+
+
+
+            </div>
             </form>
             <MainView  token={this.props.token} />
           </div>

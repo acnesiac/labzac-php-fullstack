@@ -487,18 +487,13 @@ ALTER TABLE `ventas`
     ADD PRIMARY KEY (`id`),
     ADD KEY `ventas_user_id_foreign` (`user_id`);
 
---
--- Indices de la tabla `articles`
---
-ALTER TABLE `posts`
-  ADD PRIMARY KEY (`id`);
-
 
 --
 -- Indices de la tabla `articles`
 --
 ALTER TABLE `posts`
   ADD PRIMARY KEY (`id`);
+
 
 
 ALTER TABLE `ventas`

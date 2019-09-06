@@ -355,14 +355,13 @@ pre code {
 .container-fluid {
     margin-left: auto;
     margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px; }
+    padding-left: 5px;
+    padding-right: 5px; }
 
 .row {
     display: flex;
     flex-wrap: wrap;
-    margin-left: -15px;
-    margin-right: -15px; }
+}
 
 .col-xs {
     position: relative;
@@ -4921,12 +4920,12 @@ footer .attribution {
 .article-preview {
     border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 1.5rem ;
-position: relative;
+    position: relative;
     display: block;
     margin-bottom: 0.75rem;
     background-color: #fff;
     border-radius: 0.25rem;
-    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.125);
+    box-shadow: inset 0 0 0 .01px rgba(0, 0, 0, 0.125);
     }
 .article-preview .article-meta {
     margin: 0 0 1rem 0; }
