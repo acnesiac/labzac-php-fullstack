@@ -2,30 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d901de5-efc5-4fa2-85bb-3cd330930e48" name="Default" comment="hs">
-      <change afterPath="$PROJECT_DIR$/reactfrontend/src/components/Diagnostico/Comment.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactfrontend/src/components/Diagnostico/CommentContainer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactfrontend/src/components/Diagnostico/CommentInput.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactfrontend/src/components/Diagnostico/CommentList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactfrontend/src/components/Diagnostico/DeleteButton.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactfrontend/src/components/Diagnostico/DiagnosticoActions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactfrontend/src/components/Diagnostico/DiagnosticoMeta.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactfrontend/src/components/Diagnostico/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactfrontend/src/reducers/diagnostico.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/hs.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/hs.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/build/asset-manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/build/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/build/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/build/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/build/static/css/main.4f50ccf6.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/build/static/css/main.4f50ccf6.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/build/static/js/main.d1093353.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/build/static/js/main.d1093353.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/src/components/Article/ArticleActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/components/Article/ArticleActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/src/components/Editor.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/components/Editor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/components/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/src/reducers/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/reducers/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Conduit/Controllers/Article/CommentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conduit/Controllers/Article/CommentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Conduit/Transformers/DiagnosticoTransformer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conduit/Transformers/DiagnosticoTransformer.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -38,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Conduit/Models/Diagnostico.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="525">
+              <caret line="38" column="21" lean-forward="true" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -50,8 +28,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Conduit/Controllers/Article/DiagnosticoController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2975">
-              <caret line="175" column="7" selection-start-line="175" selection-start-column="7" selection-end-line="175" selection-end-column="7" />
+            <state relative-caret-position="17">
+              <caret line="135" column="5" lean-forward="true" selection-start-line="135" selection-start-column="5" selection-end-line="135" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -65,11 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/hs.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="574" lean-forward="true" selection-start-line="572" selection-end-line="574" />
+            <state relative-caret-position="173">
+              <caret line="563" lean-forward="true" selection-start-line="563" selection-end-line="563" />
             </state>
           </provider>
         </entry>
@@ -86,8 +64,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Conduit/Transformers/DiagnosticoTransformer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="37" column="47" selection-start-line="37" selection-end-line="38" />
+            <state relative-caret-position="17">
+              <caret line="26" column="6" lean-forward="true" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -109,6 +87,8 @@
       <find>id</find>
       <find>store</find>
       <find>trans</find>
+      <find>autoincre</find>
+      <find>auto</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -129,6 +109,7 @@
         <option value="$PROJECT_DIR$/reactfrontend/src/components/Diagnostico/index.js" />
         <option value="$PROJECT_DIR$/src/Conduit/Controllers/Article/CommentController.php" />
         <option value="$PROJECT_DIR$/database/hs.sql" />
+        <option value="$PROJECT_DIR$/src/Conduit/Transformers/DiagnosticoTransformer.php" />
       </list>
     </option>
   </component>
@@ -143,7 +124,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -151,10 +131,16 @@
               <item name="imagenesrx" type="b2602c69:ProjectViewProjectNode" />
               <item name="imagenesrx" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="imagenesrx" type="b2602c69:ProjectViewProjectNode" />
+              <item name="imagenesrx" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -238,7 +224,7 @@
       <workItem from="1567445399141" duration="1787000" />
       <workItem from="1567447225663" duration="531000" />
       <workItem from="1567812165114" duration="1631000" />
-      <workItem from="1567813936997" duration="375000" />
+      <workItem from="1567813936997" duration="1312000" />
     </task>
     <task id="LOCAL-00001" summary="hs">
       <created>1555455950859</created>
@@ -254,11 +240,18 @@
       <option name="project" value="LOCAL" />
       <updated>1555455972508</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="hs">
+      <created>1567814583907</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1567814583907</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12242000" />
+    <option name="totallyTimeSpent" value="13179000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -620,27 +613,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Conduit/Models/Diagnostico.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Conduit/Controllers/Article/DiagnosticoController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2975">
-          <caret line="175" column="7" selection-start-line="175" selection-start-column="7" selection-end-line="175" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Conduit/Transformers/DiagnosticoTransformer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="47" selection-start-line="37" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Conduit/Transformers/VentaTransformer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="185">
@@ -657,8 +629,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/database/hs.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="574" lean-forward="true" selection-start-line="572" selection-end-line="574" />
+        <state relative-caret-position="173">
+          <caret line="563" lean-forward="true" selection-start-line="563" selection-end-line="563" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Conduit/Transformers/DiagnosticoTransformer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="26" column="6" lean-forward="true" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Conduit/Controllers/Article/DiagnosticoController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="135" column="5" lean-forward="true" selection-start-line="135" selection-start-column="5" selection-end-line="135" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Conduit/Models/Diagnostico.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="38" column="21" lean-forward="true" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
         </state>
       </provider>
     </entry>
