@@ -3,16 +3,16 @@
 namespace Conduit\Controllers\Article;
 
 use Conduit\Models\Article;
+use Conduit\Models\Diagnostico;
 use Conduit\Models\Tag;
-use Conduit\Transformers\ArticleTransformer;
+use Conduit\Transformers\DiagnosticoTransformer;
 use Interop\Container\ContainerInterface;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\Item;
 use Slim\Http\Request;
 use Slim\Http\Response;
 use Respect\Validation\Validator as v;
-
-class ArticleController
+class DiagnosticoController
 {
 
     /** @var \Conduit\Validation\Validator */
@@ -40,7 +40,7 @@ class ArticleController
     }
 
     /**
-     * Return List of Articles
+     * Return List of Diagnosticos
      *
      * @param \Slim\Http\Request  $request
      * @param \Slim\Http\Response $response
@@ -50,13 +50,12 @@ class ArticleController
      */
     public function index(Request $request, Response $response, array $args)
     {
-        // TODO Extract the logic of filtering articles to its own class
+        // TODO Extract the logic of filtering diagnosticos to its own class
 
         $requestUserId = optional($requestUser = $this->auth->requestUser($request))->id;
-        $builder = Article::query()->latest()->with(['tags', 'user'])->limit(20);
+        $builder = Diagnostico::query()->latest()->with(['tags', 'user'])->limit(20);
 
-
-        if ($request->getUri()->getPath() == '/api/articles/feed') {
+        if ($request->getUri()->getPath() == '/api/diagnosticos/feed') {
             if (is_null($requestUser)) {
                 return $response->withJson([], 401);
             }
@@ -94,9 +93,9 @@ class ArticleController
         $articles = $builder->get();
 
         $data = $this->fractal->createData(new Collection($articles,
-            new ArticleTransformer($requestUserId)))->toArray();
+            new DiagnosticoTransformer($requestUserId)))->toArray();
 
-        return $response->withJson(['articles' => $data['data'], 'articlesCount' => $articlesCount])
+        return $response->withJson(['diagnosticos' => $data['data'], 'articlesCount' => $articlesCount])
             ->withHeader('Access-Control-Allow-Origin', '*')
             ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
             ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
@@ -117,7 +116,7 @@ class ArticleController
 
         $article = Article::query()->where('slug', $args['slug'])->firstOrFail();
 
-        $data = $this->fractal->createData(new Item($article, new ArticleTransformer($requestUserId)))->toArray();
+        $data = $this->fractal->createData(new Item($article, new DiagnosticoTransformer($requestUserId)))->toArray();
 
         return $response->withJson(['article' => $data])
 			->withHeader('Access-Control-Allow-Origin', '*')
@@ -141,7 +140,7 @@ class ArticleController
             return $response->withJson([], 401);
         }
 
-        $this->validator->validateArray($data = $request->getParam('article'),
+        $this->validator->validateArray($data = $request->getParam('diagnostico'),
             [
                 'title'       => v::notEmpty(),
                 'description' => v::notEmpty(),
@@ -152,7 +151,7 @@ class ArticleController
             return $response->withJson(['errors' => $this->validator->getErrors()], 422);
         }
 
-        $article = new Article($request->getParam('article'));
+        $article = new Diagnostico($request->getParam('diagnostico'));
         $article->slug = str_slug($article->title);
         $article->user_id = $requestUser->id;
         $article->save();
@@ -165,9 +164,9 @@ class ArticleController
             $article->tags()->sync($tagsId);
         }
 
-        $data = $this->fractal->createData(new Item($article, new ArticleTransformer()))->toArray();
+        $data = $this->fractal->createData(new Item($article, new DiagnosticoTransformer()))->toArray();
 
-        return $response->withJson(['article' => $data])
+        return $response->withJson(['diagnostico' => $data])
             ->withHeader('Access-Control-Allow-Origin', '*')
             ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
             ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
@@ -208,7 +207,7 @@ class ArticleController
             $article->slug = str_slug($params['title']);
         }
 
-        $data = $this->fractal->createData(new Item($article, new ArticleTransformer()))->toArray();
+        $data = $this->fractal->createData(new Item($article, new DiagnosticoTransformer()))->toArray();
 
         return $response->withJson(['article' => $data])
             ->withHeader('Access-Control-Allow-Origin', '*')

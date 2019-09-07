@@ -6,8 +6,6 @@ const superagent = superagentPromise(_superagent, global.Promise);
 const API_ROOT = 'http://localhost/imagenesrx/public/api';
 //const API_ROOT = 'http://www.imagenesrx.com.mx/api';
 
-
-
 const encode = encodeURIComponent;
 const responseBody = res => res.body;
 
@@ -46,6 +44,30 @@ const Tags = {
 
 const limit = (count, p) => `limit=${count}&offset=${p ? p * count : 0}`;
 const omitSlug = article => Object.assign({}, article, { slug: undefined })
+
+const Diagnosticos = {
+  all: page =>
+      requests.get(`/diagnosticos?${limit(10, page)}`),
+  update: diagnostico =>
+    requests.put(`/disgnosticos/${diagnostico.slug}`, { diagnostico: omitSlug(diagnostico) }),
+    create: diagnostico =>
+    requests.post('/diagnosticos', { diagnostico })
+};
+
+const Ventas = {
+
+  byClient: (client, page) =>
+    requests.get(`/ventas?client=${encode(client)}&${limit(10, page)}`),
+  all: page =>
+      requests.get(`/ventas?${limit(10, page)}`),
+  update: venta =>
+    requests.put(`/ventas/${venta.slug}`, { venta: omitSlug(venta) }),
+  create: venta =>
+    requests.post('/ventas', { venta }),
+  get: id =>
+      requests.get(`/ventas/${id}`)
+};
+
 const Articles = {
   all: page =>
     requests.get(`/articles?${limit(10, page)}`),
@@ -68,7 +90,7 @@ const Articles = {
   update: article =>
     requests.put(`/articles/${article.slug}`, { article: omitSlug(article) }),
   create: article =>
-    requests.post('/diagnosticos', { article })
+    requests.post('/articles', { article })
 };
 
 const Comments = {
@@ -90,6 +112,8 @@ const Profile = {
 };
 
 export default {
+  Ventas,
+  Diagnosticos,
   Articles,
   Auth,
   Comments,

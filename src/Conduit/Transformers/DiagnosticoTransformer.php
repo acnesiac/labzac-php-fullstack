@@ -41,9 +41,7 @@ class DiagnosticoTransformer extends TransformerAbstract
             "body"           => $article->body,
             "tagList"        => optional($article->tags()->get(['title']))->pluck('title'),
             'createdAt'      => $article->created_at->toIso8601String(),
-            'updatedAt'      => isset($user->update_at) ? $article->update_at->toIso8601String() : $article->update_at,
-            "favorited"      => $article->isFavoritedByUser($this->requestUserId),
-            "favoritesCount" => $article->favorites()->count(),
+            'updatedAt'      => isset($user->update_at) ? $article->update_at->toIso8601String() : $article->update_at
         ];
     }
 
@@ -54,7 +52,7 @@ class DiagnosticoTransformer extends TransformerAbstract
      * @param \Conduit\Models\Diagnostico $article
      *
      * @return \League\Fractal\Resource\Item
-     * @internal param \Conduit\Models\Comment $comment
+     * @internal param \Conduit\Models\DxComment $comment
      *
      */
     public function includeAuthor(Diagnostico $article)
@@ -64,4 +62,4 @@ class DiagnosticoTransformer extends TransformerAbstract
         return $this->item($author, new AuthorTransformer($this->requestUserId));
     }
 
-}
+}   

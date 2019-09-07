@@ -53,6 +53,7 @@ const ArticleList = props => {
           );
         })
       }
+
       <ListPagination
         pager={props.pager}
         articlesCount={props.articlesCount}
@@ -60,4 +61,5 @@ const ArticleList = props => {
     </div>
   );
 };
+
 export default ArticleList;

@@ -40,35 +40,15 @@ const LoggedInView = props => {
   if (props.currentUser) {
     return (
       <ul className="nav navbar-nav pull-xs-right">
-
-
-
-          <li className="nav-item" >
+        <li className="nav-item" >
           <Link to="/" className="nav-link" >
-          <i className="ion-compose"></i>&nbsp;Diagnosticos
-          </Link>  </li>
-  <li className="nav-item" >
-          <Link to="/editor" className="nav-link" >
-          <i className="ion-compose"></i>&nbsp;Nuevo
-          </Link>
-
-
-          </li>
-
-        {props.currentUser.username  === 'acnesiac1' &&
-        <li className="nav-item">
-          <Link to="/editor" className="nav-link">
-            <i className="ion-compose"></i>&nbsp;Nuevo diagnostico
+           <i className="ion-compose"></i>&nbsp;Ventas
           </Link>
         </li>
-        }
-
-
         <li className="nav-item">
           <Link
             to={`/@${props.currentUser.username}`}
             className="nav-link">
-            <img src={props.currentUser.image} className="user-pic" alt={props.currentUser.username} />
             {props.currentUser.username}
           </Link>
         </li>
