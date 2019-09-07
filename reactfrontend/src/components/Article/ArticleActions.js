@@ -17,8 +17,10 @@ const ArticleActions = props => {
             {article.costo}
         </span>
           <h1>{article.description}</h1>
-            <Link to={`diagnostico/${article.id}`} >
+            <Link to={`diagnostico/${article.id}/1`} >
                   <i className="ion-compose"></i>&nbsp;Nuevo DX
+            </Link>  <Link to={`diagnostico/${article.id}/1`} >
+                  <i className="ion-compose"></i>&nbsp;Existente DX
             </Link>
           <span >
             </span>

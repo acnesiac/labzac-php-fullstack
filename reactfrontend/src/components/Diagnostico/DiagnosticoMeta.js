@@ -12,7 +12,7 @@ const DiagnosticoMeta = props => {
        
      
 
-      <ArticleActions canModify={props.canModify} article={article} />
+      <ArticleActions article={article} />
 
     </div>
   );

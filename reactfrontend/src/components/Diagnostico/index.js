@@ -20,11 +20,12 @@ const mapDispatchToProps = dispatch => ({
 
 class Diagnostico extends React.Component {
   componentWillMount() {
-    this.props.onLoad(Promise.all([
-      agent.Articles.get(this.props.match.params.id),
-      agent.Comments.forArticle(this.props.match.params.id)
-    ]));
+    // this.props.onLoad(Promise.all([
+    //
+    // ]));
   }
+  // agent.Diagnosticos.get(this.props.match.params.id)
+  //agent.Comments.forArticle(this.props.match.params.id)
 
   componentWillUnmount() {
     this.props.onUnload();
@@ -32,12 +33,11 @@ class Diagnostico extends React.Component {
 
   render() {
     if (!this.props.article) {
-      return null;
+      return <div>{ this.props.match.params.costo },{ this.props.match.params.id }</div>
     }
 
     const markup = { __html: marked(this.props.article.body, { sanitize: true }) };
-    const canModify = this.props.currentUser &&
-      this.props.currentUser.username === this.props.article.author.username;
+
     return (
       <div className="home-page">
 
@@ -46,7 +46,7 @@ class Diagnostico extends React.Component {
 
             <DiagnosticoMeta
               article={this.props.article}
-              canModify={canModify} />
+            />
 
           </div>
 
