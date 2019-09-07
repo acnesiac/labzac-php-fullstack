@@ -95,7 +95,7 @@ class DiagnosticoController
         $data = $this->fractal->createData(new Collection($articles,
             new DiagnosticoTransformer($requestUserId)))->toArray();
 
-        return $response->withJson(['diagnosticos' => $data['data'], 'articlesCount' => $articlesCount])
+        return $response->withJson(['diagnosticos' => $data['data'], 'count' => $articlesCount])
             ->withHeader('Access-Control-Allow-Origin', '*')
             ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
             ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
@@ -125,7 +125,7 @@ class DiagnosticoController
     }
 
     /**
-     * Create and store a new Article
+     * Create and store a new Diagnostico
      *
      * @param \Slim\Http\Request  $request
      * @param \Slim\Http\Response $response
@@ -171,78 +171,6 @@ class DiagnosticoController
             ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
             ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
 
-    }
-
-    /**
-     * Update Article Endpoint
-     *
-     * @param \Slim\Http\Request  $request
-     * @param \Slim\Http\Response $response
-     * @param array               $args
-     *
-     * @return \Slim\Http\Response
-     */
-    public function update(Request $request, Response $response, array $args)
-    {
-        $article = Article::query()->where('slug', $args['slug'])->firstOrFail();
-        $requestUser = $this->auth->requestUser($request);
-
-        if (is_null($requestUser)) {
-            return $response->withJson([], 401);
-        }
-
-        if ($requestUser->id != $article->user_id) {
-            return $response->withJson(['message' => 'Forbidden'], 403);
-        }
-
-        $params = $request->getParam('article', []);
-
-        $article->update([
-            'title'       => isset($params['title']) ? $params['title'] : $article->title,
-            'description' => isset($params['description']) ? $params['description'] : $article->description,
-            'body'        => isset($params['body']) ? $params['body'] : $article->body,
-        ]);
-
-        if (isset($params['title'])) {
-            $article->slug = str_slug($params['title']);
-        }
-
-        $data = $this->fractal->createData(new Item($article, new DiagnosticoTransformer()))->toArray();
-
-        return $response->withJson(['article' => $data])
-            ->withHeader('Access-Control-Allow-Origin', '*')
-            ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
-            ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-    }
-
-    /**
-     * Delete Article Endpoint
-     *
-     * @param \Slim\Http\Request  $request
-     * @param \Slim\Http\Response $response
-     * @param array               $args
-     *
-     * @return \Slim\Http\Response
-     */
-    public function destroy(Request $request, Response $response, array $args)
-    {
-        $article = Article::query()->where('slug', $args['slug'])->firstOrFail();
-        $requestUser = $this->auth->requestUser($request);
-
-        if (is_null($requestUser)) {
-            return $response->withJson([], 401);
-        }
-
-        if ($requestUser->id != $article->user_id) {
-            return $response->withJson(['message' => 'Forbidden'], 403);
-        }
-
-        $article->delete();
-
-        return $response->withJson([], 200)
-            ->withHeader('Access-Control-Allow-Origin', '*')
-            ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
-            ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
     }
 
 }
