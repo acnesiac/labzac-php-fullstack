@@ -2,22 +2,14 @@ import { Link } from "react-router-dom";
 import React from "react";
 import agent from "../../agent";
 import { connect } from "react-redux";
-import { DELETE_ARTICLE } from "../../constants/actionTypes";
 
 const mapDispatchToProps = dispatch => ({
-  onClickDelete: payload =>
-    dispatch({
-      type: DELETE_ARTICLE,
-      payload
-    })
+
 });
 
 const ArticleActions = props => {
   const article = props.article;
 
-  const del = () => {
-    props.onClickDelete(agent.Articles.del(article.slug));
-  };
 
     return (
       <span>
@@ -25,7 +17,9 @@ const ArticleActions = props => {
             {article.costo}
         </span>
           <h1>{article.description}</h1>
-            <Link to={`/@${article.id}`} />
+            <Link to={`diagnostico/${article.id}`} >
+                  <i className="ion-compose"></i>&nbsp;Nuevo DX
+            </Link>
           <span >
             </span>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">

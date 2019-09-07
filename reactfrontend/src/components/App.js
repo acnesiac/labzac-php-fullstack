@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { APP_LOAD, REDIRECT } from '../constants/actionTypes';
 import { Route, Switch } from 'react-router-dom';
 import Article from '../components/Article';
-import Editor from '../components/Editor';
+import Diagnostico from '../components/Diagnostico';
 import EditorVenta from '../components/EditorVenta';
 import Home from '../components/Home';
 import Login from '../components/Login';
@@ -78,7 +78,7 @@ class App extends React.Component {
             <Route exact path="/" component={Home}/>
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
-            <Route path="/editorventa/:slug" component={EditorVenta} />
+            <Route path="/diagnostico/:id" component={Diagnostico} />
             <Route path="/editorventa" component={EditorVenta} />
             </Switch>
         </div>
