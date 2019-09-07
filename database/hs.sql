@@ -567,6 +567,11 @@ ALTER TABLE `user_favorite`
 --
 ALTER TABLE `ventas`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+--
+-- AUTO_INCREMENT de la tabla `articles`
+--
+ALTER TABLE `diagnostico`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `articles`

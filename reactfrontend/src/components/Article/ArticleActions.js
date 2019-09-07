@@ -19,21 +19,15 @@ const ArticleActions = props => {
     props.onClickDelete(agent.Articles.del(article.slug));
   };
 
-  if (props.canModify) {
     return (
       <span>
-
-        <span className="date">
-            {new Date(article.createdAt).toDateString()}
+         <span className="date">
+            {article.costo}
         </span>
           <h1>{article.title}</h1>
-          <Link to={`/@${article.author.username}`} />
+          <Link to={`/@${article.id}`} />
           <span >
-          <Link
-            to={`/editor`}
-            className="btn btn-outline-secondary btn-md">
-            <i className="ion-edit" /> Agrega DX
-          </Link>  </span>
+            </span>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
 
           <div className="collapse navbar-collapse" id="navbarNav">
@@ -43,7 +37,6 @@ const ArticleActions = props => {
         </nav>
       </span>
     );
-  }
 
   return <span> </span>;
 };
