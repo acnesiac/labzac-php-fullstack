@@ -5,7 +5,7 @@ import {
   EDITORVENTA_PAGE_LOADED,
   VENTA_SUBMITTED,
   EDITORVENTA_PAGE_UNLOADED,
-  UPDATE_FIELD_EDITORVENTA
+  UPDATE_FIELD_EDITORVENTA, EDITORVENTA_SUBMITTED
 } from '../constants/actionTypes';
 
 const mapStateToProps = state => ({
@@ -16,7 +16,7 @@ const mapDispatchToProps = dispatch => ({
   onLoad: payload =>
     dispatch({ type: EDITORVENTA_PAGE_LOADED, payload }),
   onSubmit: payload =>
-    dispatch({ type: VENTA_SUBMITTED, payload }),
+    dispatch({ type: EDITORVENTA_SUBMITTED, payload }),
   onUnload: payload =>
     dispatch({ type: EDITORVENTA_PAGE_UNLOADED }),
   onUpdateField: (key, value) =>
@@ -44,6 +44,7 @@ class EditorVenta extends React.Component {
         body: this.props.body
       };
       const slug = { slug: this.props.articleSlug };
+      console.log(this.props);
       const promise = this.props.articleSlug ?
         agent.Ventas.update(Object.assign(venta, slug)) :
         agent.Ventas.create(venta);
