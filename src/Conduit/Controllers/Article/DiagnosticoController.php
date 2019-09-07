@@ -151,20 +151,20 @@ class DiagnosticoController
             return $response->withJson(['errors' => $this->validator->getErrors()], 422);
         }
 
-        $article = new Diagnostico($request->getParam('diagnostico'));
-        $article->slug = str_slug($article->title);
-        $article->user_id = $requestUser->id;
-        $article->save();
+        $diagnostico = new Diagnostico($request->getParam('diagnostico'));
+        $diagnostico->slug = str_slug($diagnostico->title);
+        $diagnostico->user_id = $requestUser->id;
+        $diagnostico->save();
 
         $tagsId = [];
         if (isset($data['tagList'])) {
             foreach ($data['tagList'] as $tag) {
                 $tagsId[] = Tag::updateOrCreate(['title' => $tag], ['title' => $tag])->id;
             }
-            $article->tags()->sync($tagsId);
+            $diagnostico->tags()->sync($tagsId);
         }
 
-        $data = $this->fractal->createData(new Item($article, new DiagnosticoTransformer()))->toArray();
+        $data = $this->fractal->createData(new Item($diagnostico, new DiagnosticoTransformer()))->toArray();
 
         return $response->withJson(['diagnostico' => $data])
             ->withHeader('Access-Control-Allow-Origin', '*')
