@@ -55,8 +55,6 @@ class CommentController
 
         $article = Article::query()->with('comments')->where('slug', $args['slug'])->firstOrFail();
 
-        $data = $this->fractal->createData(new Collection($article->comments,
-            new CommentTransformer($requestUserId)))->toArray();
 
         return $response->withJson(['comments' => $data['data']])
             ->withHeader('Access-Control-Allow-Origin', '*')
