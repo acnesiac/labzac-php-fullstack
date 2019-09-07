@@ -115,5 +115,6 @@ export default {
   Comments,
   Profile,
   Tags,
+  Ventas,
   setToken: _token => { token = _token; }
 };

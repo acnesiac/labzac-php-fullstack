@@ -1,16 +1,14 @@
 import {
   EDITORVENTA_PAGE_LOADED,
   EDITORVENTA_PAGE_UNLOADED,
-  VENTA_SUBMITTED,
-  ASYNC_START,
-  ADD_TAG,
-  REMOVE_TAG,
+  EDITORVENTA_SUBMITTED,
+  EDITORVENTA_ASYNC_START,
   UPDATE_FIELD_EDITORVENTA
 } from '../constants/actionTypes';
 
 export default (state = {}, action) => {
   switch (action.type) {
-    case EDITOR_PAGE_LOADED:
+    case EDITORVENTA_PAGE_LOADED:
       return {
         ...state,
         articleSlug: action.payload ? action.payload.article.slug : '',
@@ -20,31 +18,20 @@ export default (state = {}, action) => {
         tagInput: '',
         tagList: action.payload ? action.payload.article.tagList : []
       };
-    case EDITOR_PAGE_UNLOADED:
+    case EDITORVENTA_PAGE_UNLOADED:
       return {};
-    case ARTICLE_SUBMITTED:
+    case EDITORVENTA_SUBMITTED:
       return {
         ...state,
         inProgress: null,
         errors: action.error ? action.payload.errors : null
       };
-    case ASYNC_START:
-      if (action.subtype === ARTICLE_SUBMITTED) {
+    case EDITORVENTA_ASYNC_START:
+      if (action.subtype === EDITORVENTA_SUBMITTED) {
         return { ...state, inProgress: true };
       }
       break;
-    case ADD_TAG:
-      return {
-        ...state,
-        tagList: state.tagList.concat([state.tagInput]),
-        tagInput: ''
-      };
-    case REMOVE_TAG:
-      return {
-        ...state,
-        tagList: state.tagList.filter(tag => tag !== action.tag)
-      };
-    case UPDATE_FIELD_EDITOR:
+    case UPDATE_FIELD_EDITORVENTA:
       return { ...state, [action.key]: action.value };
     default:
       return state;
