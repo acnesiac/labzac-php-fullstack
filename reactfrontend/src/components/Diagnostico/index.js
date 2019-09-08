@@ -26,7 +26,6 @@ class Diagnostico extends React.Component {
   }
   // agent.Diagnosticos.get(this.props.match.params.id)
   //agent.Comments.forArticle(this.props.match.params.id)
-
   componentWillUnmount() {
     this.props.onUnload();
   }

@@ -53,7 +53,7 @@ class DiagnosticoTransformer extends TransformerAbstract
      * @param \Conduit\Models\Diagnostico $article
      *
      * @return \League\Fractal\Resource\Item
-     * @internal param \Conduit\Models\Comment $comment
+     * @internal param \Conduit\Models\DxComment $comment
      *
      */
     public function includeAuthor(Diagnostico $article)

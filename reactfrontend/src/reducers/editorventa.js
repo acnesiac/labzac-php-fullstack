@@ -9,6 +9,7 @@ import {
 export default (state = {}, action) => {
   switch (action.type) {
     case EDITORVENTA_PAGE_LOADED:
+
       return {
         ...state,
         articleSlug: action.payload ? action.payload.article.slug : '',

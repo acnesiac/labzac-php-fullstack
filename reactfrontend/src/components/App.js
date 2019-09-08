@@ -4,27 +4,15 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { APP_LOAD, REDIRECT } from '../constants/actionTypes';
 import { Route, Switch } from 'react-router-dom';
+
 import Article from '../components/Article';
 import Diagnostico from '../components/Diagnostico';
 import EditorVenta from '../components/EditorVenta';
 import Home from '../components/Home';
 import Login from '../components/Login';
-import ProfilePage from '../components/Upload/ProfilePage';
-import Profile from '../components/Profile';
 import Register from '../components/Register';
-import Settings from '../components/Settings';
 import { store } from '../store';
 import { push } from 'react-router-redux';
-import firebase from 'firebase';
-
-var config = {
-    apiKey: "AIzaSyBqWC-AHjyG4xd3mnXHECz0uKH2piAhOOk",
-    authDomain: "uploadrx-92ff0.firebaseapp.com",
-    databaseURL: "https://uploadrx-92ff0.firebaseio.com",
-    projectId: "uploadrx-92ff0",
-    storageBucket: "uploadrx-92ff0.appspot.com",
-    messagingSenderId: "30483709073"
-  };
 
 
 
@@ -48,7 +36,6 @@ const mapDispatchToProps = dispatch => ({
 class App extends React.Component {
   constructor(){
     super();
-    firebase.initializeApp(config);
   }
 
 

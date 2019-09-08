@@ -13,6 +13,7 @@ const ArticleActions = props => {
 
     return (
       <span>
+
          <span className="date">
             {article.costo}
         </span>

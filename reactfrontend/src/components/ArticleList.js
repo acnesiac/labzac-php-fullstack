@@ -18,9 +18,11 @@ const ArticleList = props => {
           <ul className="nav navbar-nav pull-xs-right">
             <li className="nav-item" >
               <Link to="/editorventa" className="nav-link" >
+
                 <i className="ion-compose"></i>&nbsp;Reportes
               </Link>
-            </li><li className="nav-item" >
+            </li>
+            <li className="nav-item" >
               <Link to="/editorventa" className="nav-link" >
                 <i className="ion-compose"></i>&nbsp;Nueva Venta
               </Link>
@@ -30,9 +32,14 @@ const ArticleList = props => {
                   className="form-control form-control-md"
                   type="text"
                   placeholder="Buscar"
+
+
               />
             </li>
           </ul>
+
+
+
         </div>
       </form>
 
@@ -43,6 +50,7 @@ const ArticleList = props => {
           );
         })
       }
+
       <ListPagination
         pager={props.pager}
         articlesCount={props.articlesCount}
@@ -50,4 +58,5 @@ const ArticleList = props => {
     </div>
   );
 };
+
 export default ArticleList;

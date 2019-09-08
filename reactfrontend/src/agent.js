@@ -64,7 +64,9 @@ const Ventas = {
   update: venta =>
     requests.put(`/ventas/${venta.slug}`, { venta: omitSlug(venta) }),
   create: venta =>
-    requests.post('/ventas', { venta })
+    requests.post('/ventas', { venta }),
+  get: id =>
+      requests.get(`/ventas/${id}`)
 };
 
 const Articles = {
@@ -111,6 +113,7 @@ const Profile = {
 };
 
 export default {
+  Ventas,
   Diagnosticos,
   Articles,
   Auth,

@@ -127,7 +127,7 @@ class VentaController
         $this->validator->validateArray($data = $request->getParam('venta'),
             [
 
-                'description' => v::notEmpty()
+              
             ]);
 
         if ($this->validator->failed()) {
