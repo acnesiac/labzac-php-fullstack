@@ -18,6 +18,10 @@ const ArticleList = props => {
           <ul className="nav navbar-nav pull-xs-right">
             <li className="nav-item" >
               <Link to="/editorventa" className="nav-link" >
+                <i className="ion-compose"></i>&nbsp;Reportes
+              </Link>
+            </li><li className="nav-item" >
+              <Link to="/editorventa" className="nav-link" >
                 <i className="ion-compose"></i>&nbsp;Nueva Venta
               </Link>
             </li>
