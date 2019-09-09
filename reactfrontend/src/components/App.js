@@ -78,7 +78,6 @@ class App extends React.Component {
             <Route exact path="/" component={Home}/>
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
-            <Route path="/editorventa/:slug" component={EditorVenta} />
             <Route path="/editorventa" component={EditorVenta} />
             </Switch>
         </div>
