@@ -487,7 +487,6 @@ ALTER TABLE `ventas`
     ADD PRIMARY KEY (`id`),
     ADD KEY `ventas_user_id_foreign` (`user_id`);
 
-
 --
 -- Indices de la tabla `articles`
 --
@@ -566,6 +565,11 @@ ALTER TABLE `user_favorite`
 -- AUTO_INCREMENT de la tabla `articles`
 --
 ALTER TABLE `ventas`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+--
+-- AUTO_INCREMENT de la tabla `articles`
+--
+ALTER TABLE `diagnostico`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --

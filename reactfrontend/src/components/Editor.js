@@ -85,6 +85,14 @@ class Editor extends React.Component {
                       className="form-control form-control-lg"
                       type="text"
                       placeholder="Diagnostico titulo"
+                      value={this.props.match.params.id}
+                    />
+                  </fieldset>
+                  <fieldset className="form-group">
+                    <input
+                      className="form-control form-control-lg"
+                      type="text"
+                      placeholder="Diagnostico titulo"
                       value={this.props.title}
                       onChange={this.changeTitle} />
                   </fieldset>

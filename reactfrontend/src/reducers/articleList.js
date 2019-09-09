@@ -52,7 +52,7 @@ export default (state = {}, action) => {
         pager: action.pager,
         tags: action.payload[0].tags,
         articles: action.payload[1].ventas,
-        articlesCount: action.payload[1].articlesCount,
+        articlesCount: action.payload[1].count,
         currentPage: 0,
         tab: action.tab
       };

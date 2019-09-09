@@ -35,6 +35,7 @@ class DiagnosticoTransformer extends TransformerAbstract
     public function transform(Diagnostico $article)
     {
         return [
+            "id"           => $article->id,
             "slug"           => $article->slug,
             "title"          => $article->title,
             "description"    => $article->description,

@@ -45,6 +45,8 @@ const LoggedInView = props => {
            <i className="ion-compose"></i>&nbsp;Ventas
           </Link>
         </li>
+
+      
         <li className="nav-item">
           <Link
             to={`/@${props.currentUser.username}`}
