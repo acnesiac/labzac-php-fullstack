@@ -1,5 +1,5 @@
-import DxMeta from './DxMeta';
-import DxCommentContainer from './DxCommentContainer';
+import DiagnosticoMeta from './DiagnosticoMeta';
+import CommentContainer from './CommentContainer';
 import React from 'react';
 import agent from '../../agent';
 import { connect } from 'react-redux';
@@ -18,35 +18,34 @@ const mapDispatchToProps = dispatch => ({
     dispatch({ type: ARTICLE_PAGE_UNLOADED })
 });
 
-class Article extends React.Component {
+class Diagnostico extends React.Component {
   componentWillMount() {
-    this.props.onLoad(Promise.all([
-      agent.Articles.get(this.props.match.params.id),
-      agent.Comments.forArticle(this.props.match.params.id)
-    ]));
+    // this.props.onLoad(Promise.all([
+    //
+    // ]));
   }
-
+  // agent.Diagnosticos.get(this.props.match.params.id)
+  //agent.Comments.forArticle(this.props.match.params.id)
   componentWillUnmount() {
     this.props.onUnload();
   }
 
   render() {
     if (!this.props.article) {
-      return null;
+      return <div>{ this.props.match.params.costo },{ this.props.match.params.id }</div>
     }
 
     const markup = { __html: marked(this.props.article.body, { sanitize: true }) };
-    const canModify = this.props.currentUser &&
-      this.props.currentUser.username === this.props.article.author.username;
+
     return (
       <div className="home-page">
 
           <div className="container">
 
 
-            <DxMeta
+            <DiagnosticoMeta
               article={this.props.article}
-              canModify={canModify} />
+            />
 
           </div>
 
@@ -97,4 +96,4 @@ class Article extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Article);
+export default connect(mapStateToProps, mapDispatchToProps)(Diagnostico);

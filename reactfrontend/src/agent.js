@@ -51,11 +51,12 @@ const Diagnosticos = {
   update: diagnostico =>
     requests.put(`/disgnosticos/${diagnostico.slug}`, { diagnostico: omitSlug(diagnostico) }),
     create: diagnostico =>
-    requests.post('/diagnosticos', { diagnostico })
+    requests.post('/diagnosticos', { diagnostico }),
+  get: id =>
+      requests.get(`/diagnosticos/${id}`)
 };
 
 const Ventas = {
-
   byClient: (client, page) =>
     requests.get(`/ventas?client=${encode(client)}&${limit(10, page)}`),
   all: page =>
@@ -63,9 +64,7 @@ const Ventas = {
   update: venta =>
     requests.put(`/ventas/${venta.slug}`, { venta: omitSlug(venta) }),
   create: venta =>
-    requests.post('/ventas', { venta }),
-  get: id =>
-      requests.get(`/ventas/${id}`)
+    requests.post('/ventas', { venta })
 };
 
 const Articles = {
@@ -112,12 +111,12 @@ const Profile = {
 };
 
 export default {
-  Ventas,
   Diagnosticos,
   Articles,
   Auth,
   Comments,
   Profile,
   Tags,
+  Ventas,
   setToken: _token => { token = _token; }
 };

@@ -1,54 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="2d901de5-efc5-4fa2-85bb-3cd330930e48" name="Default" comment="hs">
-      <change afterPath="$PROJECT_DIR$/reactfrontend/src/components/Diagnostico/DxActions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactfrontend/src/components/Diagnostico/DxComment.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactfrontend/src/components/Diagnostico/DxCommentContainer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactfrontend/src/components/Diagnostico/DxCommentInput.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactfrontend/src/components/Diagnostico/DxCommentList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactfrontend/src/components/Diagnostico/DxDeleteButton.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactfrontend/src/components/Diagnostico/DxMeta.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactfrontend/src/components/Diagnostico/index.js" afterDir="false" />
+    <list default="true" id="2d901de5-efc5-4fa2-85bb-3cd330930e48" name="Default" comment="Agendar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONTEND_INSTRUCTIONS.md" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND_INSTRUCTIONS.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/Conduit.postman_collection.json" beforeDir="false" afterPath="$PROJECT_DIR$/database/Conduit.postman_collection.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/CommentFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/CommentFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/postman.js" beforeDir="false" afterPath="$PROJECT_DIR$/database/postman.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DataSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DataSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/directory.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/directory.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/src/agent.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/agent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactfrontend/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/components/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/src/components/EditorVenta.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/components/EditorVenta.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/components/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/src/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/src/reducers/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/reducers/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/src/reducers/editorventa.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/reducers/editorventa.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Conduit/Controllers/Article/CommentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conduit/Controllers/Article/CommentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Conduit/Controllers/Article/VentaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conduit/Controllers/Article/VentaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Conduit/Models/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conduit/Models/Article.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Conduit/Models/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conduit/Models/Comment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Conduit/Models/Diagnostico.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conduit/Models/Diagnostico.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Conduit/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conduit/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Conduit/Transformers/ArticleTransformer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conduit/Transformers/ArticleTransformer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Conduit/Transformers/CommentTransformer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conduit/Transformers/CommentTransformer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Conduit/Transformers/DiagnosticoTransformer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conduit/Transformers/DiagnosticoTransformer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Conduit/Transformers/VentaTransformer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conduit/Transformers/VentaTransformer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/BaseTestCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BaseTestCase.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Unit/Models/ArticleTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/Models/ArticleTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Unit/Models/CommentTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/Models/CommentTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Unit/Models/UserTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/Models/UserTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/fzaninotto/faker/src/Faker/Provider/fr_FR/Text.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/fzaninotto/faker/src/Faker/Provider/fr_FR/Text.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/illuminate/database/Schema/Grammars/MySqlGrammar.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Schema/Grammars/MySqlGrammar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock/src/DocBlockFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock/src/DocBlockFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/config/Tests/Util/XmlUtilsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/config/Tests/Util/XmlUtilsTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/yaml/Tests/Fixtures/sfComments.yml" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/yaml/Tests/Fixtures/sfComments.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactfrontend/src/components/Article/ArticleActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/components/Article/ArticleActions.js" afterDir="false" />
     </list>
-=======
-    <list default="true" id="2d901de5-efc5-4fa2-85bb-3cd330930e48" name="Default" comment="hs" />
->>>>>>> master
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,35 +13,31 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-<<<<<<< HEAD
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="another" />
+        <entry key="$PROJECT_DIR$" value="dxapi" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="MERGE" />
-=======
-    <option name="UPDATE_TYPE" value="MERGE" />
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
->>>>>>> master
   </component>
-  <component name="ProjectId" id="1Q1TnY7Hs6AJRKsHSOa6vg7UPau" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1096" />
+  </component>
   <component name="PropertiesComponent">
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/reactfrontend/src/components" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.2.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\imagenesrx\reactfrontend\src\reducers" />
       <recent name="C:\xampp\htdocs\imagenesrx\reactfrontend\src\components" />
     </key>
   </component>
@@ -101,7 +54,7 @@
     </option>
   </component>
   <component name="RunManager" selected="JavaScript Debug.labzac">
-    <configuration name="labzac" type="JavascriptDebugType" uri="http://localhost:4100/">
+    <configuration name="labzac" type="JavascriptDebugType" engineId="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" uri="http://localhost:4100/">
       <method v="2" />
     </configuration>
     <configuration name="start (1)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -133,6 +86,8 @@
       <list>
         <item itemvalue="npm.start (1)" />
         <item itemvalue="npm.start" />
+        <item itemvalue="npm.start (1)" />
+        <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
   </component>
@@ -151,8 +106,12 @@
       <workItem from="1560878756508" duration="137000" />
       <workItem from="1565151375524" duration="1711000" />
       <workItem from="1565386264857" duration="777000" />
-      <workItem from="1566937275733" duration="900000" />
-      <workItem from="1566940338280" duration="7649000" />
+      <workItem from="1567224013877" duration="2457000" />
+      <workItem from="1567439539082" duration="254000" />
+      <workItem from="1567445399141" duration="1787000" />
+      <workItem from="1567447225663" duration="531000" />
+      <workItem from="1567812165114" duration="1631000" />
+      <workItem from="1567813936997" duration="1780000" />
     </task>
     <task id="LOCAL-00001" summary="hs">
       <created>1555455950859</created>
@@ -168,7 +127,28 @@
       <option name="project" value="LOCAL" />
       <updated>1555455972508</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="hs">
+      <created>1567814583907</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1567814583907</updated>
+    </task>
+    <task id="LOCAL-00004" summary="hs">
+      <created>1567815261355</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1567815261355</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Agendar">
+      <created>1567951665450</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1567951665450</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,118 +183,16 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="hs" />
-    <option name="LAST_COMMIT_MESSAGE" value="hs" />
+    <MESSAGE value="Agendar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Agendar" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/reactfrontend/src/components/Home/index.js</url>
-          <line>35</line>
-<<<<<<< HEAD
-          <properties lambdaOrdinal="-1" />
-=======
->>>>>>> master
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/reactfrontend/src/components/Home/index.js</url>
-          <line>46</line>
-<<<<<<< HEAD
-          <properties lambdaOrdinal="-1" />
-=======
->>>>>>> master
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/reactfrontend/src/components/Home/index.js</url>
-          <line>45</line>
-<<<<<<< HEAD
-          <properties lambdaOrdinal="-1" />
-=======
->>>>>>> master
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/reactfrontend/src/components/Home/index.js</url>
-          <line>47</line>
-<<<<<<< HEAD
-          <properties lambdaOrdinal="-1" />
-=======
->>>>>>> master
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/reactfrontend/src/components/EditorVenta.js</url>
-          <line>47</line>
-<<<<<<< HEAD
-          <properties lambdaOrdinal="-1" />
-=======
->>>>>>> master
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/reactfrontend/src/components/EditorVenta.js</url>
-          <line>44</line>
-<<<<<<< HEAD
-          <properties lambdaOrdinal="-1" />
-=======
->>>>>>> master
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/reactfrontend/src/components/EditorVenta.js</url>
-          <line>125</line>
-<<<<<<< HEAD
-          <properties lambdaOrdinal="-1" />
-=======
->>>>>>> master
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/reactfrontend/src/components/EditorVenta.js</url>
-          <line>46</line>
-<<<<<<< HEAD
-          <properties lambdaOrdinal="-1" />
-=======
->>>>>>> master
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/reactfrontend/src/components/Editor.js</url>
-          <line>55</line>
-<<<<<<< HEAD
-          <properties lambdaOrdinal="-1" />
-=======
->>>>>>> master
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/reactfrontend/src/components/Editor.js</url>
-          <line>57</line>
-<<<<<<< HEAD
-          <properties lambdaOrdinal="-1" />
-=======
->>>>>>> master
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/reactfrontend/src/components/App.js</url>
-          <line>40</line>
-<<<<<<< HEAD
-          <properties lambdaOrdinal="-1" />
-=======
->>>>>>> master
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/reactfrontend/src/components/EditorVenta.js</url>
-          <line>54</line>
-<<<<<<< HEAD
-          <properties lambdaOrdinal="-1" />
-=======
->>>>>>> master
-          <option name="timeStamp" value="13" />
+          <line>38</line>
+          <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
