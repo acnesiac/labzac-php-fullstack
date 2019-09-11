@@ -608,6 +608,8 @@
 					"response": []
 				},
 				{
+
+
 					"name": "All Articles Copy",
 					"event": [
 						{
@@ -678,6 +680,7 @@
 							"raw": ""
 						},
 						"url": {
+
 							"raw": "http://localhost/imagenesrx/public/api/articles",
 							"protocol": "http",
 							"host": [
@@ -687,6 +690,7 @@
 								"imagenesrx",
 								"public",
 								"api",
+
 								"articles"
 							]
 						}
@@ -694,6 +698,7 @@
 					"response": []
 				},
 				{
+
 					"name": "All Diagnostics",
 					"event": [
 						{
@@ -754,9 +759,9 @@
 								"value": "XMLHttpRequest"
 							},
 							{
-								"key": "Authorization",
-								"type": "text",
-								"value": "Token {{token}}"
+								"key": "Authorization",								"value": "Token {{token}}",
+								"type": "text"
+
 							}
 						],
 						"body": {
@@ -764,7 +769,9 @@
 							"raw": ""
 						},
 						"url": {
+
 							"raw": "http://localhost/imagenesrx/public/api/diagnosticos",
+
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -773,6 +780,7 @@
 								"imagenesrx",
 								"public",
 								"api",
+
 								"diagnosticos"
 							]
 						}
