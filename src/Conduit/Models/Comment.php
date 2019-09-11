@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property \Carbon\Carbon          created_at
  * @property \Carbon\Carbon          update_at
  */
-class Comment extends Model
+class DxComment extends Model
 {
 
     /**

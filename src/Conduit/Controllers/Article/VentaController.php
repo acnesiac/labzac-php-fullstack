@@ -81,7 +81,7 @@ class VentaController
         $data = $this->fractal->createData(new Collection($articles,
             new VentaTransformer($requestUserId)))->toArray();
 
-        return $response->withJson(['ventas' => $data['data'], 'articlesCount' => $articlesCount])
+        return $response->withJson(['ventas' => $data['data'], 'count' => $articlesCount])
             ->withHeader('Access-Control-Allow-Origin', '*')
             ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
             ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
@@ -137,12 +137,13 @@ class VentaController
         }
 
 
+
                 $article = new Venta($request->getParam('venta'));
                 $article->user_id = $requestUser->id;
                 $article->save();
 
 
-        $data = $this->fractal->createData(new Item($article, new VentaTransformer()))->toArray();
+        $data = $this->fractal->createData(new Item($venta, new VentaTransformer()))->toArray();
 
         return $response->withJson(['venta' => $data])
             ->withHeader('Access-Control-Allow-Origin', '*')

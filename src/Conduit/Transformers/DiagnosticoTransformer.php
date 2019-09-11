@@ -35,6 +35,7 @@ class DiagnosticoTransformer extends TransformerAbstract
     public function transform(Diagnostico $article)
     {
         return [
+            "id"           => $article->id,
             "slug"           => $article->slug,
             "title"          => $article->title,
             "description"    => $article->description,
@@ -52,7 +53,7 @@ class DiagnosticoTransformer extends TransformerAbstract
      * @param \Conduit\Models\Diagnostico $article
      *
      * @return \League\Fractal\Resource\Item
-     * @internal param \Conduit\Models\Comment $comment
+     * @internal param \Conduit\Models\DxComment $comment
      *
      */
     public function includeAuthor(Diagnostico $article)

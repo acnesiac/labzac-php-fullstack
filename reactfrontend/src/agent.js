@@ -51,11 +51,12 @@ const Diagnosticos = {
   update: diagnostico =>
     requests.put(`/disgnosticos/${diagnostico.slug}`, { diagnostico: omitSlug(diagnostico) }),
     create: diagnostico =>
-    requests.post('/diagnosticos', { diagnostico })
+    requests.post('/diagnosticos', { diagnostico }),
+  get: id =>
+      requests.get(`/diagnosticos/${id}`)
 };
 
 const Ventas = {
-
   byClient: (client, page) =>
     requests.get(`/ventas?client=${encode(client)}&${limit(10, page)}`),
   all: page =>
@@ -116,5 +117,6 @@ export default {
   Comments,
   Profile,
   Tags,
+  Ventas,
   setToken: _token => { token = _token; }
 };

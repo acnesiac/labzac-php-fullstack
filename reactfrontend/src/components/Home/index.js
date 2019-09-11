@@ -34,17 +34,17 @@ class Home extends React.Component {
   constructor (){
     super();
         this.search=ev => {
-          this.searchArticles();
+          this.searchVentas();
         };
   }
 
   componentWillMount() {
-    this.searchArticles();
+    this.searchVentas();
   }
 
-  searchArticles(){
+  searchVentas(){
     const tab = this.props.token ? 'feed' : 'all';
-    const articlesPromise = this.props.token ? agent.Diagnosticos.all :  agent.Diagnosticos.all;
+    const articlesPromise = this.props.token ? agent.Ventas.all :  agent.Ventas.all;
     this.props.onLoad(tab, articlesPromise, Promise.all([agent.Tags.getAll(), articlesPromise()]));
   }
 
@@ -80,6 +80,7 @@ class Home extends React.Component {
 
             </div>
             </form>
+
             <MainView  token={this.props.token} />
           </div>
         </div>
