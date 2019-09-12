@@ -3,7 +3,7 @@
 namespace Conduit\Transformers;
 
 use Conduit\Models\Article;
-use Conduit\Models\Comment;
+use Conduit\Models\DxComment;
 use Conduit\Models\User;
 use League\Fractal\ItemResource;
 use League\Fractal\TransformerAbstract;
@@ -35,7 +35,7 @@ class CommentTransformer extends TransformerAbstract
         $this->requestUserId = $requestUserId;
     }
 
-    public function transform(Comment $comment)
+    public function transform(DxComment $comment)
     {
         return [
             'id'        => $comment->id,
@@ -48,11 +48,11 @@ class CommentTransformer extends TransformerAbstract
     /**
      * Include Author
      *
-     * @param \Conduit\Models\Comment $comment
+     * @param \Conduit\Models\DxComment $comment
      *
      * @return \League\Fractal\Resource\Item
      */
-    public function includeAuthor(Comment $comment)
+    public function includeAuthor(DxComment $comment)
     {
         $author = $comment->user;
 

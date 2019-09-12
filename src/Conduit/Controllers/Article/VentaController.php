@@ -137,7 +137,6 @@ class VentaController
 
                 $venta = new Venta($request->getParam('venta'));
                 $venta->user_id = $requestUser->id;
-                $venta->save();
 
 
         $data = $this->fractal->createData(new Item($venta, new VentaTransformer()))->toArray();

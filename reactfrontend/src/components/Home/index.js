@@ -59,6 +59,12 @@ class Home extends React.Component {
         <div className="container page">
           <div className="row">
 
+
+
+
+            </div>
+            </form>
+
             <MainView  token={this.props.token} />
           </div>
         </div>

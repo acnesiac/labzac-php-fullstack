@@ -1,5 +1,5 @@
 import article from './reducers/article';
-import articleList from './reducers/articleList';
+ import articleList from './reducers/articleList';
 import auth from './reducers/auth';
 import { combineReducers } from 'redux';
 import common from './reducers/common';

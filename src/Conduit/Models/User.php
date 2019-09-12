@@ -65,7 +65,7 @@ class User extends Model
 
     public function comments()
     {
-        return $this->hasMany(Comment::class);
+        return $this->hasMany(DxComment::class);
     }
 
     public function favoriteArticles()
