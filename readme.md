@@ -1,3 +1,5 @@
+Change in minimun
+
 Imagenes RX
 
 http://localhost/imagenesrx/public/api/tags
