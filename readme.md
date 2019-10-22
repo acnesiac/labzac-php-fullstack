@@ -3,7 +3,7 @@
 # QA
     Launch xamp control both mysql y apache
     http://localhost/imagenesrx/public/
-    
+    npm run build
 # DEV
     Inside 
     \xampp\htdocs\imagenesrx\reactfrontend
