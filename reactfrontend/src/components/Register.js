@@ -60,6 +60,7 @@ class Register extends React.Component {
                 </Link>
               </p>
 
+
               <ListErrors errors={this.props.errors} />
 
               <form onSubmit={this.submitForm(username, email, password)}>
