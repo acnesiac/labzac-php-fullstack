@@ -1,9 +1,12 @@
 # Production
     http://www.laboratorioszacatelco.com.mx
 # QA
-    Launch xamp control both mysql y apache
+    Launch xamp control both mysql y apache    
     http://localhost/imagenesrx/public/
     npm run build
+    En /templates mover index.html
+    En /public colocar los .css y .js
+    
 # DEV
     Inside 
     \xampp\htdocs\imagenesrx\reactfrontend
