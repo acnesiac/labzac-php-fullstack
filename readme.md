@@ -1,3 +1,15 @@
+# Production
+    http://www.laboratorioszacatelco.com.mx
+# QA
+    Launch xamp control both mysql y apache
+    http://localhost/imagenesrx/public/
+    
+# DEV
+    Inside 
+    \xampp\htdocs\imagenesrx\reactfrontend
+    npm start
+    http://localhost:4100/
+
 
 # API
 http://localhost/imagenesrx/public/api/tags
