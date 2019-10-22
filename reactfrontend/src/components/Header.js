@@ -18,7 +18,7 @@ const LoggedOutView = props => {
 
         <li className="nav-item">
           <Link to="/register" className="nav-link">
-            Crea una cuenta
+           Registrar
           </Link>
         </li>
       </ul>
