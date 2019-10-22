@@ -1,12 +1,18 @@
 # Production
     http://www.laboratorioszacatelco.com.mx
     Comparar los .sql
-    Correr script .sql solo con los cambios necesarios
+    Correr script .sql solo con los cambios necesarios de QA
     Apuntar el API en agent.js a www.laboratorioszacatelco.com.mx antes de compilar
     npm run build
     En /templates mover index.html a  /templates por ftp
     En /public colocar los .css y .js a /public por ftp
+    
+    FTP Username: acnesiac@laboratorioszacatelco.com.mx
+    FTP server: ftp.laboratorioszacatelco.com.mx
+    FTP & explicit FTPS port:  21
+    
 # QA
+    Cargar los SQL cambios con produccion
     Launch xamp control both mysql y apache    
     http://localhost/imagenesrx/public/
     npm run build
