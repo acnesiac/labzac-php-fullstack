@@ -1,5 +1,11 @@
 # Production
     http://www.laboratorioszacatelco.com.mx
+    Comparar los .sql
+    Correr script .sql solo con los cambios necesarios
+    Apuntar el API en agent.js a www.laboratorioszacatelco.com.mx antes de compilar
+    npm run build
+    En /templates mover index.html a  /templates por ftp
+    En /public colocar los .css y .js a /public por ftp
 # QA
     Launch xamp control both mysql y apache    
     http://localhost/imagenesrx/public/
