@@ -2,6 +2,7 @@
     http://www.laboratorioszacatelco.com.mx
     Comparar los hs.sql
     Correr script hs.sql solo con los cambios necesarios de QA
+
     Apuntar el API en agent.js a www.laboratorioszacatelco.com.mx antes de compilar
     npm run build
     En /templates mover index.html a  /templates por ftp
@@ -13,6 +14,7 @@
     FTP & explicit FTPS port:  21
     
     Test with postman
+
 # QA
     
     Test with postman
