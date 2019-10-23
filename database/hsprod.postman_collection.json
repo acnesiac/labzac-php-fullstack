@@ -2284,7 +2284,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"type": "text/javascript",
+								"id": "ac0731f3-e24f-47c3-be23-c184bd965c47",
 								"exec": [
 									"if (!(environment.isIntegrationTest)) {",
 									"var responseJSON = JSON.parse(responseBody);",
@@ -2300,7 +2300,8 @@
 									"tests['User has \"token\" property'] = user.hasOwnProperty('token');",
 									"}",
 									""
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -2321,14 +2322,15 @@
 							"raw": "{\"user\":{\"email\":\"celeb_{{EMAIL}}\", \"password\":\"{{PASSWORD}}\", \"username\":\"celeb_{{USERNAME}}\"}}"
 						},
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/users",
+							"raw": "http://www.laboratorioszacatelco.com.mx/api/users",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"www",
+								"laboratorioszacatelco",
+								"com",
+								"mx"
 							],
 							"path": [
-								"imagenesrx",
-								"public",
 								"api",
 								"users"
 							]
@@ -2342,7 +2344,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"type": "text/javascript",
+								"id": "039aa314-4f4c-49cf-8fce-e1cf03e2d5c7",
 								"exec": [
 									"if (!(environment.isIntegrationTest)) {",
 									"var is200Response = responseCode.code === 200;",
@@ -2363,7 +2365,8 @@
 									"}",
 									"}",
 									""
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -2384,14 +2387,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/profiles/celeb_{{USERNAME}}",
+							"raw": "http://www.laboratorioszacatelco.com.mx/api/profiles/celeb_{{USERNAME}}",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"www",
+								"laboratorioszacatelco",
+								"com",
+								"mx"
 							],
 							"path": [
-								"imagenesrx",
-								"public",
 								"api",
 								"profiles",
 								"celeb_{{USERNAME}}"
@@ -2406,7 +2410,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"type": "text/javascript",
+								"id": "7a03d006-4106-49d3-978d-290c99315e50",
 								"exec": [
 									"if (!(environment.isIntegrationTest)) {",
 									"var is200Response = responseCode.code === 200;",
@@ -2428,7 +2432,8 @@
 									"}",
 									"}",
 									""
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -2453,14 +2458,15 @@
 							"raw": "{\"user\":{\"email\":\"{{EMAIL}}\"}}"
 						},
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/profiles/celeb_{{USERNAME}}/follow",
+							"raw": "http://www.laboratorioszacatelco.com.mx/api/profiles/celeb_{{USERNAME}}/follow",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"www",
+								"laboratorioszacatelco",
+								"com",
+								"mx"
 							],
 							"path": [
-								"imagenesrx",
-								"public",
 								"api",
 								"profiles",
 								"celeb_{{USERNAME}}",
@@ -2476,7 +2482,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"type": "text/javascript",
+								"id": "665e790c-742b-48be-bd25-f6062235e75a",
 								"exec": [
 									"if (!(environment.isIntegrationTest)) {",
 									"var is200Response = responseCode.code === 200;",
@@ -2498,7 +2504,8 @@
 									"}",
 									"}",
 									""
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -2523,14 +2530,15 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/profiles/celeb_{{USERNAME}}/follow",
+							"raw": "http://www.laboratorioszacatelco.com.mx/api/profiles/celeb_{{USERNAME}}/follow",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"www",
+								"laboratorioszacatelco",
+								"com",
+								"mx"
 							],
 							"path": [
-								"imagenesrx",
-								"public",
 								"api",
 								"profiles",
 								"celeb_{{USERNAME}}",
@@ -2551,7 +2559,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"type": "text/javascript",
+								"id": "ea951528-cd19-4442-af3d-81105b35cbc1",
 								"exec": [
 									"var is200Response = responseCode.code === 200;",
 									"",
@@ -2564,7 +2572,8 @@
 									"    tests['\"tags\" property returned as array'] = Array.isArray(responseJSON.tags);",
 									"}",
 									""
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -2581,14 +2590,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/tags",
+							"raw": "http://www.laboratorioszacatelco.com.mx/api/tags",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"www",
+								"laboratorioszacatelco",
+								"com",
+								"mx"
 							],
 							"path": [
-								"imagenesrx",
-								"public",
 								"api",
 								"tags"
 							]
@@ -2665,14 +2675,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/diagnosticos",
+							"raw": "http://www.laboratorioszacatelco.com.mx/api/diagnosticos",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"www",
+								"laboratorioszacatelco",
+								"com",
+								"mx"
 							],
 							"path": [
-								"imagenesrx",
-								"public",
 								"api",
 								"diagnosticos"
 							]
@@ -2737,14 +2748,15 @@
 							"raw": "{\n    \"diagnostico\": {\n        \"title\": \"Diagnostico dos de la venta uno\",\n        \"description\": \"El paciente presenta una imflamacion en el area de la cadera\",\n        \"body\": \"Puede sobrevivir.\",\n        \"tagList\": [\n            \"contusiones\",\n            \"lesiones\"\n        ]\n    }\n}"
 						},
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/diagnosticos",
+							"raw": "http://www.laboratorioszacatelco.com.mx/api/diagnosticos",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"www",
+								"laboratorioszacatelco",
+								"com",
+								"mx"
 							],
 							"path": [
-								"imagenesrx",
-								"public",
 								"api",
 								"diagnosticos"
 							]
@@ -2993,14 +3005,15 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/ventas",
+							"raw": "http://www.laboratorioszacatelco.com.mx/api/ventas",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"www",
+								"laboratorioszacatelco",
+								"com",
+								"mx"
 							],
 							"path": [
-								"imagenesrx",
-								"public",
 								"api",
 								"ventas"
 							]
@@ -3065,14 +3078,16 @@
 							"raw": "{\n    \"venta\": {\n        \"description\": \"Venta 5 de paquete 1\",\n        \"costo\": \"300\"\n    }\n}"
 						},
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/ventas",
+							"raw": "http://www.laboratorioszacatelco.com.mx/api/ventas",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"www",
+								"laboratorioszacatelco",
+								"com",
+								"mx"
 							],
 							"path": [
-								"imagenesrx",
-								"public",
+
 								"api",
 								"ventas"
 							]
