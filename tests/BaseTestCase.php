@@ -3,7 +3,7 @@
 namespace Tests;
 
 use Conduit\Models\Article;
-use Conduit\Models\Comment;
+use Conduit\Models\DxComment;
 use Conduit\Models\User;
 use Faker\Factory;
 use PHPUnit\Framework\TestCase;
@@ -176,11 +176,11 @@ abstract class BaseTestCase extends TestCase
     }
 
     /**
-     * Create a new Comment
+     * Create a new DxComment
      *
      * @param array $overrides
      *
-     * @return Comment
+     * @return DxComment
      */
     public function createComment($overrides = [])
     {
@@ -191,7 +191,7 @@ abstract class BaseTestCase extends TestCase
             'article_id' => isset($overrides['article_id']) ? $overrides['article_id'] : $this->createArticle(['user_id' => $user_id])->id,
         ];
 
-        return Comment::create(array_merge($attributes, $overrides));
+        return DxComment::create(array_merge($attributes, $overrides));
     }
 
     /**

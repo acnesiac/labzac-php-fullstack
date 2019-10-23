@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import agent from '../agent';
 import { connect } from 'react-redux';
 import { ARTICLE_FAVORITED, ARTICLE_UNFAVORITED } from '../constants/actionTypes';
+import ArticleActions from './Article/ArticleActions';
+
 
 const FAVORITED_CLASS = 'btn btn-sm btn-primary';
 const NOT_FAVORITED_CLASS = 'btn btn-sm btn-outline-primary';
@@ -35,10 +37,15 @@ const ArticlePreview = props => {
 
   return (
     <div className="article-preview">
-      <div className="article-meta">
+      <div>
         <Link to={`/@${article.author.username}`}>
-          <img src={article.author.image} alt={article.author.username} />
+          
         </Link>
+
+
+        
+      </div>{
+/*
 
         <div className="info">
           <Link className="author" to={`/@${article.author.username}`}>
@@ -48,10 +55,7 @@ const ArticlePreview = props => {
             {new Date(article.createdAt).toDateString()}
           </span>
         </div>
-
-        
-      </div>
-
+<img src={article.author.image} alt={article.author.username} />
       <Link to={`/article/${article.slug}`} className="preview-link">
         <h1>{article.title}</h1>
         <p>{article.description}</p>
@@ -67,10 +71,13 @@ const ArticlePreview = props => {
             })
           }
         </ul>
+      
          <Link className="btn btn-primary" to={`/graphchartTraversi2d`}>
             Resumen 
           </Link>
-      </Link>
+          
+      </Link>*/}
+       <ArticleActions canModify={true} article={article} />
     </div>
   );
 }

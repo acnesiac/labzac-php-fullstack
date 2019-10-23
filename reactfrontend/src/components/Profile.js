@@ -97,7 +97,7 @@ class Profile extends React.Component {
           </Link>
         </li>
 
-  
+
       </ul>
     );
   }
@@ -112,14 +112,14 @@ class Profile extends React.Component {
       this.props.profile.username === this.props.currentUser.username;
 
     return (
-      <div className="profile-page">
+      <div className="home-page">
 
         <div className="user-info">
           <div className="container">
             <div className="row">
               <div className="col-xs-12 col-md-10 offset-md-1">
 
-                <img src={profile.image} className="user-img" alt={profile.username} />
+                <img src={profile.image} className="user-img" alt={profile.username} weigth ="200" height="200"/>
                 <h4>{profile.username}</h4>
                 <p>{profile.bio}</p>
 

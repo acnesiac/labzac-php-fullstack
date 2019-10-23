@@ -25,7 +25,7 @@ src/Conduit
 │   └── OptionalAuth.php # Middleware for optional routes when the reqest has token.
 ├── Models
 │   ├── Article.php
-│   ├── Comment.php
+│   ├── DxComment.php
 │   ├── Tag.php
 │   └── User.php
 ├── Services
