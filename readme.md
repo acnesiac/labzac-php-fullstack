@@ -6,11 +6,13 @@
     npm run build
     En /templates mover index.html a  /templates por ftp
     En /public colocar los .css y .js a /public por ftp
+    En /src colocar los .php a /src
     
     FTP Username: acnesiac@laboratorioszacatelco.com.mx
     FTP server: laboratorioszacatelco.com.mx
     FTP & explicit FTPS port:  21
     
+    Test with postman
 # QA
     
     Test with postman
@@ -20,7 +22,7 @@
     npm run build
     En /templates mover index.html
     En /public colocar los .css y .js
-    
+    Test with postman
 # DEV
     Inside 
     \xampp\htdocs\imagenesrx\reactfrontend
