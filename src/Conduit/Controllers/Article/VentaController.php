@@ -61,8 +61,6 @@ class VentaController
             });
         }
 
-
-
         if ($tag = $request->getParam('tag')) {
             $builder->whereHas('tags', function ($query) use ($tag) {
                 $query->where('title', $tag);
@@ -137,12 +135,10 @@ class VentaController
         }
 
 
+                $venta = new Venta($request->getParam('venta'));
+                $venta->user_id = $requestUser->id;
 
-                $article = new Venta($request->getParam('venta'));
-                $article->user_id = $requestUser->id;
-                $article->save();
-
-
+        $venta->save();
         $data = $this->fractal->createData(new Item($venta, new VentaTransformer()))->toArray();
 
         return $response->withJson(['venta' => $data])

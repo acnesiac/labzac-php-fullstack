@@ -18,7 +18,7 @@ const LoggedOutView = props => {
 
         <li className="nav-item">
           <Link to="/register" className="nav-link">
-            Crea una cuenta
+           Registrar
           </Link>
         </li>
       </ul>
@@ -43,6 +43,11 @@ const LoggedInView = props => {
         <li className="nav-item" >
           <Link to="/" className="nav-link" >
            <i className="ion-compose"></i>&nbsp;Ventas
+          </Link>
+        </li>
+        <li className="nav-item" >
+          <Link to="/" className="nav-link" >
+           <i className="ion-compose"></i>&nbsp;Diagnosticos
           </Link>
         </li>
 

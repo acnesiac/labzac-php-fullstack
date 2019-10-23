@@ -16,6 +16,18 @@ const ArticleActions = props => {
          <span className="date">
             {article.costo}
         </span>
+          <h1>{article.description}</h1>
+            <Link to={`/@${article.id}`} />
+          <span >
+            </span>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+
+          <div className="collapse navbar-collapse" id="navbarNav">
+           <ul>
+            </ul>
+          </div>
+        </nav>
+
           <span className="date">
                 {article.costo}
         </span>
