@@ -53,14 +53,15 @@
 							"raw": "{\"user\":{\"email\":\"{{EMAIL}}\", \"password\":\"{{PASSWORD}}\", \"username\":\"{{USERNAME}}\"}}"
 						},
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/users?username=acnesiac1@hotmail.com&email=acnesiac1@hotmail.com&password=Aruizr1$",
+							"raw": "http://www.laboratorioszacatelco.com.mx/api/users?username=acnesiac1@hotmail.com&email=acnesiac1@hotmail.com&password=Aruizr1$",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"www",
+								"laboratorioszacatelco",
+								"com",
+								"mx"
 							],
 							"path": [
-								"imagenesrx",
-								"public",
 								"api",
 								"users"
 							],
@@ -124,14 +125,15 @@
 							"raw": "{\"user\":{\"email\":\"{{EMAIL}}\", \"password\":\"{{PASSWORD}}\"}}"
 						},
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/users/login?PASSWORD=Aruizr1$&EMAIL=acnesiac@hotmail.com",
+							"raw": "http://www.laboratorioszacatelco.com.mx/api/users/login?PASSWORD=Aruizr1$&EMAIL=acnesiac@hotmail.com",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"www",
+								"laboratorioszacatelco",
+								"com",
+								"mx"
 							],
 							"path": [
-								"imagenesrx",
-								"public",
 								"api",
 								"users",
 								"login"
@@ -235,7 +237,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"type": "text/javascript",
+								"id": "02708ca5-399b-4fe2-9caf-1a72c0932258",
 								"exec": [
 									"var responseJSON = JSON.parse(responseBody);",
 									"",
@@ -249,7 +251,8 @@
 									"tests['User has \"image\" property'] = user.hasOwnProperty('image');",
 									"tests['User has \"token\" property'] = user.hasOwnProperty('token');",
 									""
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -270,14 +273,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/user",
+							"raw": "http://www.laboratorioszacatelco.com.mx/api/user",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"www",
+								"laboratorioszacatelco",
+								"com",
+								"mx"
 							],
 							"path": [
-								"imagenesrx",
-								"public",
 								"api",
 								"user"
 							]
@@ -291,7 +295,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"type": "text/javascript",
+								"id": "3d7aeb06-5daa-423b-bb33-cd1ed9f77fd4",
 								"exec": [
 									"var responseJSON = JSON.parse(responseBody);",
 									"",
@@ -305,7 +309,8 @@
 									"tests['User has \"image\" property'] = user.hasOwnProperty('image');",
 									"tests['User has \"token\" property'] = user.hasOwnProperty('token');",
 									""
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -330,14 +335,15 @@
 							"raw": "{\"user\":{\"email\":\"{{EMAIL}}\"}}"
 						},
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/user",
+							"raw": "http://www.laboratorioszacatelco.com.mx/api/user",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"www",
+								"laboratorioszacatelco",
+								"com",
+								"mx"
 							],
 							"path": [
-								"imagenesrx",
-								"public",
 								"api",
 								"user"
 							]
@@ -438,92 +444,6 @@
 					"response": []
 				},
 				{
-					"name": "All Articles Copy",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "79eec8c7-c72d-4f5a-9581-1c974acf71ce",
-								"exec": [
-									"var is200Response = responseCode.code === 200;",
-									"",
-									"tests['Response code is 200 OK'] = is200Response;",
-									"",
-									"if(is200Response){",
-									"    var responseJSON = JSON.parse(responseBody);",
-									"",
-									"    tests['Response contains \"articles\" property'] = responseJSON.hasOwnProperty('articles');",
-									"    tests['Response contains \"articlesCount\" property'] = responseJSON.hasOwnProperty('articlesCount');",
-									"    tests['articlesCount is an integer'] = Number.isInteger(responseJSON.articlesCount);",
-									"",
-									"    if(responseJSON.articles.length){",
-									"        var article = responseJSON.articles[0];",
-									"",
-									"        tests['Article has \"title\" property'] = article.hasOwnProperty('title');",
-									"        tests['Article has \"slug\" property'] = article.hasOwnProperty('slug');",
-									"        tests['Article has \"body\" property'] = article.hasOwnProperty('body');",
-									"        tests['Article has \"createdAt\" property'] = article.hasOwnProperty('createdAt');",
-									"        tests['Article\\'s \"createdAt\" property is an ISO 8601 timestamp'] = /^\\d{4,}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d.\\d+(?:[+-][0-2]\\d:[0-5]\\d|Z)$/.test(article.createdAt);",
-									"        tests['Article has \"updatedAt\" property'] = article.hasOwnProperty('updatedAt');",
-									"        tests['Article\\'s \"updatedAt\" property is an ISO 8601 timestamp'] = /^\\d{4,}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d.\\d+(?:[+-][0-2]\\d:[0-5]\\d|Z)$/.test(article.updatedAt);",
-									"        tests['Article has \"description\" property'] = article.hasOwnProperty('description');",
-									"        tests['Article has \"tagList\" property'] = article.hasOwnProperty('tagList');",
-									"        tests['Article\\'s \"tagList\" property is an Array'] = Array.isArray(article.tagList);",
-									"        tests['Article has \"author\" property'] = article.hasOwnProperty('author');",
-									"        tests['Article has \"favorited\" property'] = article.hasOwnProperty('favorited');",
-									"        tests['Article has \"favoritesCount\" property'] = article.hasOwnProperty('favoritesCount');",
-									"        tests['favoritesCount is an integer'] = Number.isInteger(article.favoritesCount);",
-									"    } else {",
-									"        tests['articlesCount is 0 when feed is empty'] = responseJSON.articlesCount === 0;",
-									"    }",
-									"}",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "X-Requested-With",
-								"value": "XMLHttpRequest"
-							},
-							{
-								"key": "Authorization",
-								"value": "Token {{token}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/articles",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"path": [
-								"imagenesrx",
-								"public",
-								"api",
-								"articles"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "All Posts",
 					"event": [
 						{
@@ -594,14 +514,15 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/posts",
+							"raw": "http://www.laboratorioszacatelco.com.mx/api/posts",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"www",
+								"laboratorioszacatelco",
+								"com",
+								"mx"
 							],
 							"path": [
-								"imagenesrx",
-								"public",
 								"api",
 								"posts"
 							]
@@ -610,12 +531,12 @@
 					"response": []
 				},
 				{
-					"name": "All Articles Copy",
+					"name": "Articles by Author",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
-								"id": "79eec8c7-c72d-4f5a-9581-1c974acf71ce",
+								"id": "410db205-2733-44af-822e-c728df353054",
 								"exec": [
 									"var is200Response = responseCode.code === 200;",
 									"",
@@ -655,91 +576,6 @@
 							}
 						}
 					],
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "X-Requested-With",
-								"value": "XMLHttpRequest"
-							},
-							{
-								"key": "Authorization",
-								"value": "Token {{token}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/articles",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"path": [
-								"imagenesrx",
-								"public",
-								"api",
-								"articles"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Articles by Author",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									"var is200Response = responseCode.code === 200;",
-									"",
-									"tests['Response code is 200 OK'] = is200Response;",
-									"",
-									"if(is200Response){",
-									"    var responseJSON = JSON.parse(responseBody);",
-									"",
-									"    tests['Response contains \"articles\" property'] = responseJSON.hasOwnProperty('articles');",
-									"    tests['Response contains \"articlesCount\" property'] = responseJSON.hasOwnProperty('articlesCount');",
-									"    tests['articlesCount is an integer'] = Number.isInteger(responseJSON.articlesCount);",
-									"",
-									"    if(responseJSON.articles.length){",
-									"        var article = responseJSON.articles[0];",
-									"",
-									"        tests['Article has \"title\" property'] = article.hasOwnProperty('title');",
-									"        tests['Article has \"slug\" property'] = article.hasOwnProperty('slug');",
-									"        tests['Article has \"body\" property'] = article.hasOwnProperty('body');",
-									"        tests['Article has \"createdAt\" property'] = article.hasOwnProperty('createdAt');",
-									"        tests['Article\\'s \"createdAt\" property is an ISO 8601 timestamp'] = /^\\d{4,}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d.\\d+(?:[+-][0-2]\\d:[0-5]\\d|Z)$/.test(article.createdAt);",
-									"        tests['Article has \"updatedAt\" property'] = article.hasOwnProperty('updatedAt');",
-									"        tests['Article\\'s \"updatedAt\" property is an ISO 8601 timestamp'] = /^\\d{4,}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d.\\d+(?:[+-][0-2]\\d:[0-5]\\d|Z)$/.test(article.updatedAt);",
-									"        tests['Article has \"description\" property'] = article.hasOwnProperty('description');",
-									"        tests['Article has \"tagList\" property'] = article.hasOwnProperty('tagList');",
-									"        tests['Article\\'s \"tagList\" property is an Array'] = Array.isArray(article.tagList);",
-									"        tests['Article has \"author\" property'] = article.hasOwnProperty('author');",
-									"        tests['Article has \"favorited\" property'] = article.hasOwnProperty('favorited');",
-									"        tests['Article has \"favoritesCount\" property'] = article.hasOwnProperty('favoritesCount');",
-									"        tests['favoritesCount is an integer'] = Number.isInteger(article.favoritesCount);",
-									"    } else {",
-									"        tests['articlesCount is 0 when feed is empty'] = responseJSON.articlesCount === 0;",
-									"    }",
-									"}",
-									""
-								]
-							}
-						}
-					],
 					"request": {
 						"method": "GET",
 						"header": [
@@ -753,14 +589,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/articles?author=johnjacob",
+							"raw": "http://www.laboratorioszacatelco.com.mx/api/articles?author=johnjacob",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"www",
+								"laboratorioszacatelco",
+								"com",
+								"mx"
 							],
 							"path": [
-								"imagenesrx",
-								"public",
 								"api",
 								"articles"
 							],
@@ -855,7 +692,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"type": "text/javascript",
+								"id": "987c884c-6cf5-4c89-a43f-28213c763d03",
 								"exec": [
 									"var is200Response = responseCode.code === 200;",
 									"",
@@ -890,7 +727,8 @@
 									"    }",
 									"}",
 									""
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -907,14 +745,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/articles?favorited=jane",
+							"raw": "http://www.laboratorioszacatelco.com.mx/api/articles?favorited=jane",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"www",
+								"laboratorioszacatelco",
+								"com",
+								"mx"
 							],
 							"path": [
-								"imagenesrx",
-								"public",
 								"api",
 								"articles"
 							],
@@ -934,7 +773,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"type": "text/javascript",
+								"id": "3785da53-82c0-44aa-b2f0-8ef9f10e1f47",
 								"exec": [
 									"var is200Response = responseCode.code === 200;",
 									"",
@@ -969,7 +808,8 @@
 									"    }",
 									"}",
 									""
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -986,14 +826,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/articles?tag=dragons",
+							"raw": "http://www.laboratorioszacatelco.com.mx/api/articles?tag=dragons",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"www",
+								"laboratorioszacatelco",
+								"com",
+								"mx"
 							],
 							"path": [
-								"imagenesrx",
-								"public",
 								"api",
 								"articles"
 							],
@@ -1019,7 +860,6 @@
 							"listen": "test",
 							"script": {
 								"id": "e711dbf8-8065-4ba8-8b74-f1639a7d8208",
-								"type": "text/javascript",
 								"exec": [
 									"var responseJSON = JSON.parse(responseBody);",
 									"",
@@ -1044,7 +884,8 @@
 									"tests['Article has \"favoritesCount\" property'] = article.hasOwnProperty('favoritesCount');",
 									"tests['favoritesCount is an integer'] = Number.isInteger(article.favoritesCount);",
 									""
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -1069,14 +910,15 @@
 							"raw": "{\"article\":{\"title\":\"How to train your dragon\", \"description\":\"Ever wonder how?\", \"body\":\"Very carefully.\", \"tagList\":[\"dragons\",\"training\"]}}"
 						},
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/articles",
+							"raw": "http://www.laboratorioszacatelco.com.mx/api/articles",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"www",
+								"laboratorioszacatelco",
+								"com",
+								"mx"
 							],
 							"path": [
-								"imagenesrx",
-								"public",
 								"api",
 								"articles"
 							]
@@ -1091,7 +933,6 @@
 							"listen": "test",
 							"script": {
 								"id": "e711dbf8-8065-4ba8-8b74-f1639a7d8208",
-								"type": "text/javascript",
 								"exec": [
 									"var responseJSON = JSON.parse(responseBody);",
 									"",
@@ -1116,7 +957,8 @@
 									"tests['Article has \"favoritesCount\" property'] = article.hasOwnProperty('favoritesCount');",
 									"tests['favoritesCount is an integer'] = Number.isInteger(article.favoritesCount);",
 									""
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -1141,14 +983,15 @@
 							"raw": "{\"article\":{\"title\":\"How to train your dragon\", \"description\":\"Ever wonder how?\", \"body\":\"Very carefully.\", \"tagList\":[\"dragons\",\"training\"]}}"
 						},
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/articles",
+							"raw": "http://www.laboratorioszacatelco.com.mx/api/articles",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"www",
+								"laboratorioszacatelco",
+								"com",
+								"mx"
 							],
 							"path": [
-								"imagenesrx",
-								"public",
 								"api",
 								"articles"
 							]
@@ -1162,7 +1005,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"type": "text/javascript",
+								"id": "ab4b594f-d7e2-4116-8969-dee1ba98afd2",
 								"exec": [
 									"var is200Response = responseCode.code === 200;",
 									"",
@@ -1197,7 +1040,8 @@
 									"    }",
 									"}",
 									""
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -1218,14 +1062,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/articles/feed",
+							"raw": "http://www.laboratorioszacatelco.com.mx/api/articles/feed",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"www",
+								"laboratorioszacatelco",
+								"com",
+								"mx"
 							],
 							"path": [
-								"imagenesrx",
-								"public",
 								"api",
 								"articles",
 								"feed"
@@ -1240,7 +1085,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"type": "text/javascript",
+								"id": "87677c7d-9223-4a2a-a4f8-d15aa8fd8479",
 								"exec": [
 									"var is200Response = responseCode.code === 200;",
 									"",
@@ -1275,7 +1120,8 @@
 									"    }",
 									"}",
 									""
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -1296,14 +1142,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/articles",
+							"raw": "http://www.laboratorioszacatelco.com.mx/api/articles",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"www",
+								"laboratorioszacatelco",
+								"com",
+								"mx"
 							],
 							"path": [
-								"imagenesrx",
-								"public",
 								"api",
 								"articles"
 							]
@@ -1374,14 +1221,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/ventas",
+							"raw": "http://www.laboratorioszacatelco.com.mx/api/ventas",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"www",
+								"laboratorioszacatelco",
+								"com",
+								"mx"
 							],
 							"path": [
-								"imagenesrx",
-								"public",
 								"api",
 								"ventas"
 							]
@@ -1395,7 +1243,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"type": "text/javascript",
+								"id": "7817f594-711e-4d54-989e-4cf813e40bda",
 								"exec": [
 									"var is200Response = responseCode.code === 200;",
 									"",
@@ -1430,7 +1278,8 @@
 									"    }",
 									"}",
 									""
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -1451,14 +1300,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/articles",
+							"raw": "http://www.laboratorioszacatelco.com.mx/api/articles",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"www",
+								"laboratorioszacatelco",
+								"com",
+								"mx"
 							],
 							"path": [
-								"imagenesrx",
-								"public",
 								"api",
 								"articles"
 							]
@@ -1472,7 +1322,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"type": "text/javascript",
+								"id": "325d745d-cadf-42e5-b3c2-e4a67ed4abd8",
 								"exec": [
 									"var is200Response = responseCode.code === 200;",
 									"",
@@ -1507,7 +1357,8 @@
 									"    }",
 									"}",
 									""
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -1528,14 +1379,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/articles?author={{USERNAME}}",
+							"raw": "http://www.laboratorioszacatelco.com.mx/api/articles?author={{USERNAME}}",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"www",
+								"laboratorioszacatelco",
+								"com",
+								"mx"
 							],
 							"path": [
-								"imagenesrx",
-								"public",
 								"api",
 								"articles"
 							],
@@ -1555,7 +1407,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"type": "text/javascript",
+								"id": "1bb10276-76ea-4c49-8679-d4df32be92cc",
 								"exec": [
 									"var is200Response = responseCode.code === 200;",
 									"",
@@ -1590,7 +1442,8 @@
 									"    }",
 									"}",
 									""
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -1611,14 +1464,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/articles?author={{USERNAME}}",
+							"raw": "http://www.laboratorioszacatelco.com.mx/api/articles?author={{USERNAME}}",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"www",
+								"laboratorioszacatelco",
+								"com",
+								"mx"
 							],
 							"path": [
-								"imagenesrx",
-								"public",
 								"api",
 								"articles"
 							],
@@ -1638,7 +1492,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"type": "text/javascript",
+								"id": "b61cb6f5-b588-4b02-828f-5704fdeb640a",
 								"exec": [
 									"var is200Response = responseCode.code === 200;",
 									"",
@@ -1673,7 +1527,8 @@
 									"    }",
 									"}",
 									""
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -1694,14 +1549,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/articles?favorited=jane",
+							"raw": "http://www.laboratorioszacatelco.com.mx/api/articles?favorited=jane",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"www",
+								"laboratorioszacatelco",
+								"com",
+								"mx"
 							],
 							"path": [
-								"imagenesrx",
-								"public",
 								"api",
 								"articles"
 							],
@@ -1721,7 +1577,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"type": "text/javascript",
+								"id": "6dd854ad-4f30-4b16-a1ea-f14fdc0c2920",
 								"exec": [
 									"var is200Response = responseCode.code === 200;",
 									"",
@@ -1756,7 +1612,8 @@
 									"    }",
 									"}",
 									""
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -1777,14 +1634,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/articles?favorited=jane",
+							"raw": "http://www.laboratorioszacatelco.com.mx/api/articles?favorited=jane",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"www",
+								"laboratorioszacatelco",
+								"com",
+								"mx"
 							],
 							"path": [
-								"imagenesrx",
-								"public",
 								"api",
 								"articles"
 							],
@@ -1804,7 +1662,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"type": "text/javascript",
+								"id": "0be6c5e1-e543-4ae3-8a48-095aa5cfa4e9",
 								"exec": [
 									"var responseJSON = JSON.parse(responseBody);",
 									"",
@@ -1827,7 +1685,8 @@
 									"tests['Article has \"favoritesCount\" property'] = article.hasOwnProperty('favoritesCount');",
 									"tests['favoritesCount is an integer'] = Number.isInteger(article.favoritesCount);",
 									""
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -1848,14 +1707,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/articles/{{slug}}",
+							"raw": "http://www.laboratorioszacatelco.com.mx/api/articles/{{slug}}",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"www",
+								"laboratorioszacatelco",
+								"com",
+								"mx"
 							],
 							"path": [
-								"imagenesrx",
-								"public",
 								"api",
 								"articles",
 								"{{slug}}"
@@ -1870,7 +1730,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"type": "text/javascript",
+								"id": "b80c7f4d-ca39-4495-a24d-51964152aecd",
 								"exec": [
 									"var is200Response = responseCode.code === 200;",
 									"",
@@ -1905,7 +1765,8 @@
 									"    }",
 									"}",
 									""
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -1926,14 +1787,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/articles?tag=dragons",
+							"raw": "http://www.laboratorioszacatelco.com.mx/api/articles?tag=dragons",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"www",
+								"laboratorioszacatelco",
+								"com",
+								"mx"
 							],
 							"path": [
-								"imagenesrx",
-								"public",
 								"api",
 								"articles"
 							],
@@ -1953,7 +1815,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"type": "text/javascript",
+								"id": "98a73d00-4885-4c51-a906-e2c002a4f664",
 								"exec": [
 									"if (!(environment.isIntegrationTest)) {",
 									"var responseJSON = JSON.parse(responseBody);",
@@ -1978,7 +1840,8 @@
 									"tests['favoritesCount is an integer'] = Number.isInteger(article.favoritesCount);",
 									"}",
 									""
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -2003,14 +1866,15 @@
 							"raw": "{\"article\":{\"body\":\"With two hands\"}}"
 						},
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/articles/{{slug}}",
+							"raw": "http://www.laboratorioszacatelco.com.mx/api/articles/{{slug}}",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"www",
+								"laboratorioszacatelco",
+								"com",
+								"mx"
 							],
 							"path": [
-								"imagenesrx",
-								"public",
 								"api",
 								"articles",
 								"{{slug}}"
@@ -2025,7 +1889,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"type": "text/javascript",
+								"id": "80b3d589-bb86-462a-8595-cfea610eb779",
 								"exec": [
 									"var responseJSON = JSON.parse(responseBody);",
 									"",
@@ -2050,7 +1914,8 @@
 									"tests['favoritesCount is an integer'] = Number.isInteger(article.favoritesCount);",
 									"tests[\"Article's 'favoritesCount' property is greater than 0\"] = article.favoritesCount > 0;",
 									""
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -2075,14 +1940,15 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/articles/{{slug}}/favorite",
+							"raw": "http://www.laboratorioszacatelco.com.mx/api/articles/{{slug}}/favorite",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"www",
+								"laboratorioszacatelco",
+								"com",
+								"mx"
 							],
 							"path": [
-								"imagenesrx",
-								"public",
 								"api",
 								"articles",
 								"{{slug}}",
@@ -2098,7 +1964,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"type": "text/javascript",
+								"id": "50d59816-5419-4319-bcb3-368718b371f6",
 								"exec": [
 									"var responseJSON = JSON.parse(responseBody);",
 									"",
@@ -2122,7 +1988,8 @@
 									"tests['favoritesCount is an integer'] = Number.isInteger(article.favoritesCount);",
 									"tests[\"Article's \\\"favorited\\\" property is false\"] = article.favorited === false;",
 									""
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -2147,14 +2014,15 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/articles/{{slug}}/favorite",
+							"raw": "http://www.laboratorioszacatelco.com.mx/api/articles/{{slug}}/favorite",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"www",
+								"laboratorioszacatelco",
+								"com",
+								"mx"
 							],
 							"path": [
-								"imagenesrx",
-								"public",
 								"api",
 								"articles",
 								"{{slug}}",
@@ -2171,7 +2039,6 @@
 							"listen": "test",
 							"script": {
 								"id": "9f90c364-cc68-4728-961a-85eb00197d7b",
-								"type": "text/javascript",
 								"exec": [
 									"var responseJSON = JSON.parse(responseBody);",
 									"",
@@ -2189,7 +2056,8 @@
 									"tests['\"updatedAt\" property is an ISO 8601 timestamp'] = /^\\d{4,}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d.\\d+(?:[+-][0-2]\\d:[0-5]\\d|Z)$/.test(comment.updatedAt);",
 									"tests['Comment has \"author\" property'] = comment.hasOwnProperty('author');",
 									""
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -2214,15 +2082,15 @@
 							"raw": "{\"comment\":{\"body\":\"Thank you so much!\"}}"
 						},
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/articles/{{slug}}/comments",
+							"raw": "http://www.laboratorioszacatelco.com.mx/articles/{{slug}}/comments",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"www",
+								"laboratorioszacatelco",
+								"com",
+								"mx"
 							],
 							"path": [
-								"imagenesrx",
-								"public",
-								"api",
 								"articles",
 								"{{slug}}",
 								"comments"
@@ -2237,7 +2105,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"type": "text/javascript",
+								"id": "2c4effd9-1491-4189-ba4a-564431f0a36b",
 								"exec": [
 									"var is200Response = responseCode.code === 200",
 									"",
@@ -2261,7 +2129,8 @@
 									"    }",
 									"}",
 									""
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -2282,14 +2151,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/articles/{{slug}}/comments",
+							"raw": "http://www.laboratorioszacatelco.com.mx/api/articles/{{slug}}/comments",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"www",
+								"laboratorioszacatelco",
+								"com",
+								"mx"
 							],
 							"path": [
-								"imagenesrx",
-								"public",
 								"api",
 								"articles",
 								"{{slug}}",
@@ -2322,14 +2192,15 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/articles/{{slug}}/comments/{{commentId}}",
+							"raw": "http://www.laboratorioszacatelco.com.mx/api/articles/{{slug}}/comments/{{commentId}}",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"www",
+								"laboratorioszacatelco",
+								"com",
+								"mx"
 							],
 							"path": [
-								"imagenesrx",
-								"public",
 								"api",
 								"articles",
 								"{{slug}}",
@@ -2363,14 +2234,15 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/articles/{{slug}}",
+							"raw": "http://www.laboratorioszacatelco.com.mx/api/articles/{{slug}}",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"www",
+								"laboratorioszacatelco",
+								"com",
+								"mx"
 							],
 							"path": [
-								"imagenesrx",
-								"public",
 								"api",
 								"articles",
 								"{{slug}}"
