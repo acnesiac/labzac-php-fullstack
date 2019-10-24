@@ -2856,7 +2856,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"diagnostico\": {\n        \"description\": \"Venta 5 de paquete 1\",\n        \"costo\": \"300\"\n    }\n}"
+							"raw": "{\n    \"diagnostico\": {\n        \"title\": \"How to train your dragon\",\n        \"description\": \"Ever wonder how?\",\n        \"body\": \"Very carefully.\",\n        \"tagList\": [\n            \"dragons\",\n            \"training\"\n        ]\n    }\n}"
 						},
 						"url": {
 							"raw": "http://localhost/imagenesrx/public/api/diagnosticos",
