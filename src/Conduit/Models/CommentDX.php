@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property \Carbon\Carbon          created_at
  * @property \Carbon\Carbon          update_at
  */
-class Comment extends Model
+class CommentDX extends Model
 {
 
     /**
@@ -33,9 +33,9 @@ class Comment extends Model
      *  Relationships
      ********************/
 
-    public function article()
+    public function diagnostico()
     {
-        return $this->belongsTo(Article::class);
+        return $this->belongsTo(Diagnostico::class);
     }
 
     public function user()
