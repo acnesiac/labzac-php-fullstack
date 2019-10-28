@@ -1,12 +1,30 @@
 # Production
     http://www.laboratorioszacatelco.com.mx
+    Comparar los hs.sql
+    Correr script hs.sql solo con los cambios necesarios de QA
+
+    Apuntar el API en agent.js a www.laboratorioszacatelco.com.mx antes de compilar
+    npm run build
+    En /templates mover index.html a  /templates por ftp
+    En /public colocar los .css y .js a /public por ftp
+    En /src colocar los .php a /src
+    
+    FTP Username: acnesiac@laboratorioszacatelco.com.mx
+    FTP server: laboratorioszacatelco.com.mx
+    FTP & explicit FTPS port:  21
+    
+    Test with postman
+
 # QA
+    
+    Test with postman
+    Cargar los SQL cambios con produccion
     Launch xamp control both mysql y apache    
     http://localhost/imagenesrx/public/
     npm run build
     En /templates mover index.html
     En /public colocar los .css y .js
-    
+    Test with postman
 # DEV
     Inside 
     \xampp\htdocs\imagenesrx\reactfrontend
