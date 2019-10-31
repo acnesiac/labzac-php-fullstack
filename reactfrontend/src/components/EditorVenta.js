@@ -30,6 +30,7 @@ class EditorVenta extends React.Component {
     this.changeTitle = updateFieldEvent('title');
     this.changeDescription = updateFieldEvent('description');
     this.changeBody = updateFieldEvent('body');
+    this.changeCosto = updateFieldEvent('costo');
     this.watchForEnter = ev => {
       if (ev.keyCode === 13) {
         ev.preventDefault();
@@ -41,7 +42,9 @@ class EditorVenta extends React.Component {
       const venta = {
         title: this.props.title,
         description: this.props.description,
-        body: this.props.body
+        body: this.props.body,
+        cliente: 1,
+        costo: this.props.costo
       };
       const slug = { slug: this.props.articleSlug };
       console.log(this.props);
@@ -105,6 +108,15 @@ class EditorVenta extends React.Component {
                       value={this.props.body}
                       onChange={this.changeBody}>
                     </textarea>
+                  </fieldset>
+                  <fieldset className="form-group">
+                    <input
+                      className="form-control"
+                      type="text"
+                      placeholder="Escribe costo de la venta"
+                      value={this.props.costo}
+                      onChange={this.changeCosto}>
+                    </input>
                   </fieldset>
                   <button
                     className="btn btn-lg pull-xs-right btn-primary"

@@ -3,8 +3,8 @@ import _superagent from 'superagent';
 
 const superagent = superagentPromise(_superagent, global.Promise);
 
-//const API_ROOT = 'http://localhost/imagenesrx/public/api';
-const API_ROOT = 'http://www.laboratorioszacatelco.com.mx/api';
+const API_ROOT = 'http://localhost/imagenesrx/public/api';
+//const API_ROOT = 'http://www.laboratorioszacatelco.com.mx/api';
 
 
 const encode = encodeURIComponent;
@@ -102,6 +102,15 @@ const Comments = {
     requests.get(`/articles/${slug}/comments`)
 };
 
+const CommentsDX = {
+  create: (slug, comment) =>
+    requests.post(`/articles/${slug}/comments`, { comment }),
+  delete: (slug, commentId) =>
+    requests.del(`/articles/${slug}/comments/${commentId}`),
+  forDx: slug =>
+    requests.get(`/articles/${slug}/comments`)
+};
+
 const Profile = {
   follow: username =>
     requests.post(`/profiles/${username}/follow`),
@@ -116,6 +125,7 @@ export default {
   Articles,
   Auth,
   Comments,
+  CommentsDX,
   Profile,
   Tags,
   Ventas,

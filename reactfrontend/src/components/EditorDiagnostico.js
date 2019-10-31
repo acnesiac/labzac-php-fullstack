@@ -23,7 +23,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch({ type: UPDATE_FIELD_EDITORVENTA, key, value })
 });
 
-class EditorVenta extends React.Component {
+class EditorDiagnostico extends React.Component {
   constructor() {
     super();
     const updateFieldEvent = key => ev => this.props.onUpdateField(key, ev.target.value);
@@ -41,13 +41,14 @@ class EditorVenta extends React.Component {
       const venta = {
         title: this.props.title,
         description: this.props.description,
-        body: this.props.body
+        body: this.props.body,
+        venta: 9
       };
       const slug = { slug: this.props.articleSlug };
       console.log(this.props);
       const promise = this.props.articleSlug ?
-        agent.Ventas.update(Object.assign(venta, slug)) :
-        agent.Ventas.create(venta);
+        agent.Diagnosticos.update(Object.assign(venta, slug)) :
+        agent.Diagnosticos.create(venta);
       this.props.onSubmit(promise);
     };
   }
@@ -85,7 +86,7 @@ class EditorVenta extends React.Component {
                     <input
                       className="form-control form-control-lg"
                       type="text"
-                      placeholder="Venta titulo"
+                      placeholder="title"
                       value={this.props.title}
                       onChange={this.changeTitle} />
                   </fieldset>
@@ -93,7 +94,7 @@ class EditorVenta extends React.Component {
                     <input
                       className="form-control"
                       type="text"
-                      placeholder="Descripcion corta"
+                      placeholder="description"
                       value={this.props.description}
                       onChange={this.changeDescription} />
                   </fieldset>
@@ -101,7 +102,7 @@ class EditorVenta extends React.Component {
                     <textarea
                       className="form-control"
                       rows="8"
-                      placeholder="Escribe tu Descripcion de la venta"
+                      placeholder="body"
                       value={this.props.body}
                       onChange={this.changeBody}>
                     </textarea>
@@ -111,7 +112,7 @@ class EditorVenta extends React.Component {
                     type="button"
                     disabled={this.props.inProgress}
                     onClick={this.submitForm}>
-                    Hacer venta
+                    Hacer Diagnostico
                   </button>
                 </fieldset>
               </form>
@@ -122,4 +123,4 @@ class EditorVenta extends React.Component {
     );
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(EditorVenta);
+export default connect(mapStateToProps, mapDispatchToProps)(EditorDiagnostico);
