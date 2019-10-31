@@ -27,16 +27,10 @@ const ArticleActions = props => {
             </ul>
           </div>
         </nav>
-
-          <span className="date">
-                {article.costo}
-        </span>
           <Link  to={'/editordiagnostico'}>
-                Nuevo diagnostico
-          </Link>
-          <Link  to={'/dx/14'}>
-                Ver diagnostico
-            </Link>
+                Nuevo DX
+          </Link> |
+          <Link  to={'/dx/14'}> Ver DX </Link>
 
       </span>
     );
