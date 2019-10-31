@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2d901de5-efc5-4fa2-85bb-3cd330930e48" name="Default" comment="Crea cuenta to registrar">
-      <change afterPath="$PROJECT_DIR$/database/hs_prod.sql" afterDir="false" />
+    <list default="true" id="2d901de5-efc5-4fa2-85bb-3cd330930e48" name="Default" comment="changes in variables">
+      <change afterPath="$PROJECT_DIR$/src/Conduit/Controllers/Article/CommentDXController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Conduit/Transformers/CommentDXTransformer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/hs.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/hs.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/app.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/main.6cdadf3e.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/main.95cb1bbb.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/main.6cdadf3e.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/src/agent.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/agent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/hslocal.postman_collection.json" beforeDir="false" afterPath="$PROJECT_DIR$/database/hslocal.postman_collection.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Conduit/Controllers/Article/CommentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conduit/Controllers/Article/CommentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Conduit/Controllers/Article/VentaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conduit/Controllers/Article/VentaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Conduit/Models/Diagnostico.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conduit/Models/Diagnostico.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Conduit/Models/Venta.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conduit/Models/Venta.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Conduit/Transformers/CommentTransformer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conduit/Transformers/CommentTransformer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Conduit/Transformers/DiagnosticoTransformer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conduit/Transformers/DiagnosticoTransformer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Conduit/Transformers/VentaTransformer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conduit/Transformers/VentaTransformer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +35,7 @@
   <component name="PropertiesComponent">
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Conduit/Transformers" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -41,14 +45,15 @@
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.2.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/database/hslocal.postman_collection.json" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\imagenesrx\src\Conduit\Transformers" />
+      <recent name="C:\xampp\htdocs\imagenesrx\src\Conduit\Controllers\Article" />
+      <recent name="C:\xampp\htdocs\imagenesrx\src\Conduit\Models" />
       <recent name="C:\xampp\htdocs\imagenesrx\templates" />
       <recent name="C:\xampp\htdocs\imagenesrx\public\static\js" />
-      <recent name="C:\xampp\htdocs\imagenesrx\database" />
-      <recent name="C:\xampp\htdocs\imagenesrx\reactfrontend\src\reducers" />
-      <recent name="C:\xampp\htdocs\imagenesrx\reactfrontend\src\components" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -124,6 +129,20 @@
       <workItem from="1567812165114" duration="1631000" />
       <workItem from="1567813936997" duration="1780000" />
       <workItem from="1571786948603" duration="1882000" />
+      <workItem from="1571842823946" duration="998000" />
+      <workItem from="1571864499733" duration="1188000" />
+      <workItem from="1571924323130" duration="638000" />
+      <workItem from="1571924975045" duration="1738000" />
+      <workItem from="1571926942587" duration="940000" />
+      <workItem from="1571927895903" duration="1797000" />
+      <workItem from="1571929754737" duration="1771000" />
+      <workItem from="1571931734767" duration="1789000" />
+      <workItem from="1571933545911" duration="1794000" />
+      <workItem from="1571940373975" duration="1413000" />
+      <workItem from="1571943719678" duration="1798000" />
+      <workItem from="1571945531376" duration="1804000" />
+      <workItem from="1571947356572" duration="1792000" />
+      <workItem from="1571949180161" duration="1793000" />
     </task>
     <task id="LOCAL-00001" summary="hs">
       <created>1555455950859</created>
@@ -181,11 +200,77 @@
       <option name="project" value="LOCAL" />
       <updated>1571786989600</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="postman collections">
+      <created>1571842466183</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1571842466183</updated>
+    </task>
+    <task id="LOCAL-00010" summary="renamed conduit postman">
+      <created>1571842532481</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1571842532481</updated>
+    </task>
+    <task id="LOCAL-00011" summary="changes in variables to production">
+      <created>1571843262604</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1571843262604</updated>
+    </task>
+    <task id="LOCAL-00012" summary="changes in variables for laboratorioszacatelco.com.mx">
+      <created>1571843485958</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1571843485958</updated>
+    </task>
+    <task id="LOCAL-00013" summary="comentarios by DX">
+      <created>1571866158062</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1571866158062</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Comments by DX">
+      <created>1571926359992</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1571926359992</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Comments by DX postman">
+      <created>1571927683365</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1571927683365</updated>
+    </task>
+    <task id="LOCAL-00016" summary="changes in variables">
+      <created>1571933675153</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1571933675153</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -217,9 +302,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="hs" />
     <MESSAGE value="Agendar" />
-    <MESSAGE value="changes in variables" />
     <MESSAGE value="Crea cuenta to registrar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Crea cuenta to registrar" />
+    <MESSAGE value="postman collections" />
+    <MESSAGE value="renamed conduit postman" />
+    <MESSAGE value="changes in variables to production" />
+    <MESSAGE value="changes in variables for laboratorioszacatelco.com.mx" />
+    <MESSAGE value="comentarios by DX" />
+    <MESSAGE value="Comments by DX" />
+    <MESSAGE value="Comments by DX postman" />
+    <MESSAGE value="changes in variables" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes in variables" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

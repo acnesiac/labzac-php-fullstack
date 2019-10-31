@@ -70,10 +70,10 @@ CREATE TABLE `article_tag` (
 -- Table structure for table `comments`
 --
 
-CREATE TABLE `commentsdx` (
+CREATE TABLE `comment_d_xes` (
   `id` int(10) UNSIGNED NOT NULL,
   `user_id` int(10) UNSIGNED NOT NULL,
-  `diagnostico_id` int(10) UNSIGNED NOT NULL,
+  `diagnostico` int(10) UNSIGNED NOT NULL,
   `body` text COLLATE utf8_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -105,7 +105,7 @@ CREATE TABLE `diagnosticos` (
   `description` text COLLATE utf8_unicode_ci NOT NULL,
   `body` text COLLATE utf8_unicode_ci NOT NULL,
   `user_id` int(10) UNSIGNED NOT NULL,
-  `venta_id` int(10) UNSIGNED NOT NULL,
+  `venta` int(10) UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -438,6 +438,7 @@ CREATE TABLE `ventas` (
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `body` text COLLATE utf8_unicode_ci NOT NULL,
   `user_id` int(10) UNSIGNED NOT NULL,
+  `cliente` int(10) UNSIGNED NOT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -456,7 +457,7 @@ ALTER TABLE `diagnosticos`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `diagnosticos_slug_unique` (`slug`),
   ADD KEY `diagnosticos_user_id_foreign` (`user_id`),
-  ADD KEY `diagnosticos_venta_id_foreign` (`venta_id`);
+  ADD KEY `diagnosticos_venta_foreign` (`venta`);
 
 --
 -- Indexes for table `articles`
@@ -485,10 +486,10 @@ ALTER TABLE `comments`
 --
 -- Indexes for table `commentsdx`
 --
-ALTER TABLE `commentsdx`
+ALTER TABLE `comment_d_xes`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `commentsdx_user_id_foreign` (`user_id`),
-  ADD KEY `commentsdx_diagnostico_id_foreign` (`diagnostico_id`);
+  ADD KEY `comment_d_xes_user_id_foreign` (`user_id`),
+  ADD KEY `comment_d_xes_diagnostico_id_foreign` (`diagnostico_id`);
 
 --
 -- Indexes for table `imagenesrx`
@@ -544,6 +545,7 @@ ALTER TABLE `user_favorite`
 --
 ALTER TABLE `ventas`
   ADD PRIMARY KEY (`id`),
+  ADD KEY `ventas_cliente_foreign` (`cliente`),
   ADD KEY `ventas_user_id_foreign` (`user_id`);
 
 --
@@ -575,9 +577,9 @@ ALTER TABLE `comments`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `commentsdx`
+-- AUTO_INCREMENT for table `comment_d_xes`
 --
-ALTER TABLE `commentsdx`
+ALTER TABLE `comment_d_xes`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
@@ -627,18 +629,18 @@ ALTER TABLE `diagnosticos`
   ADD CONSTRAINT `diagnosticos_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 --
+-- Constraints for table `ventas`
+--
+ALTER TABLE `ventas`
+  ADD CONSTRAINT `diagnosticos_liente_foreign` FOREIGN KEY (`cliente`) REFERENCES `users` (`id`),
+  ADD CONSTRAINT `diagnosticos_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+
+--
 -- Constraints for table `article_tag`
 --
 ALTER TABLE `article_tag`
   ADD CONSTRAINT `article_tag_article_id_foreign` FOREIGN KEY (`article_id`) REFERENCES `articles` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `article_tag_tag_id_foreign` FOREIGN KEY (`tag_id`) REFERENCES `tags` (`id`) ON DELETE CASCADE;
-
---
--- Constraints for table `venta_diagnostico`
---
-ALTER TABLE `venta_diagnostico`
-  ADD CONSTRAINT `venta_diagnostico_venta_id_foreign` FOREIGN KEY (`venta_id`) REFERENCES `ventas` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `venta_diagnostico_diagnostico_id_foreign` FOREIGN KEY (`diagnostico_id`) REFERENCES `diagnosticos` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `comments`

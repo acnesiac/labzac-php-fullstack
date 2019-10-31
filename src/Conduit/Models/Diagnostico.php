@@ -31,6 +31,7 @@ class Diagnostico extends Model
         'description',
         'body',
         'user_id',
+        'venta'
     ];
 
     public function setSlugAttribute($value)
@@ -54,6 +55,11 @@ class Diagnostico extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function venta()
+    {
+        return $this->belongsTo(Venta::class);
     }
 
     /**

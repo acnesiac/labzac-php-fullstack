@@ -32,17 +32,18 @@ class DiagnosticoTransformer extends TransformerAbstract
         $this->requestUserId = $requestUserId;
     }
 
-    public function transform(Diagnostico $article)
+    public function transform(Diagnostico $dx)
     {
         return [
-            "id"           => $article->id,
-            "slug"           => $article->slug,
-            "title"          => $article->title,
-            "description"    => $article->description,
-            "body"           => $article->body,
-            "tagList"        => optional($article->tags()->get(['title']))->pluck('title'),
-            'createdAt'      => $article->created_at->toIso8601String(),
-            'updatedAt'      => isset($user->update_at) ? $article->update_at->toIso8601String() : $article->update_at
+            "id"             => $dx->id,
+            "slug"           => $dx->slug,
+            "title"          => $dx->title,
+            "description"    => $dx->description,
+            "body"           => $dx->body,
+            "tagList"        => optional($dx->tags()->get(['title']))->pluck('title'),
+            'createdAt'      => $dx->created_at->toIso8601String(),
+            'updatedAt'      => isset($user->update_at) ? $dx->update_at->toIso8601String() : $dx->update_at,
+            'venta'          => $dx->venta
         ];
     }
 

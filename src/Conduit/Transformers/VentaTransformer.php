@@ -39,7 +39,9 @@ class VentaTransformer extends TransformerAbstract
             "description"    => $venta->description,
             "costo"          => $venta->costo,
             'createdAt'      => $venta->created_at->toIso8601String(),
-            'updatedAt'      => isset($user->update_at) ? $venta->update_at->toIso8601String() : $venta->update_at
+            'updatedAt'      => isset($user->update_at) ? $venta->update_at->toIso8601String() : $venta->update_at,
+            "cliente"        => $venta->cliente
+
         ];
     }
 

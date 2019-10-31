@@ -98,9 +98,9 @@ class VentaController
     {
         $requestUserId = optional($this->auth->requestUser($request))->id;
 
-        $article = Article::query()->where('slug', $args['slug'])->firstOrFail();
+        $article = Venta::query()->where('slug', $args['slug'])->firstOrFail();
 
-        $data = $this->fractal->createData(new Item($article, new DiagnosticoTransformer($requestUserId)))->toArray();
+        $data = $this->fractal->createData(new Item($article, new VentaTransformer($requestUserId)))->toArray();
 
         return $response->withJson(['article' => $data])
 			->withHeader('Access-Control-Allow-Origin', '*')
@@ -137,6 +137,7 @@ class VentaController
 
                 $venta = new Venta($request->getParam('venta'));
                 $venta->user_id = $requestUser->id;
+
 
         $venta->save();
         $data = $this->fractal->createData(new Item($venta, new VentaTransformer()))->toArray();
