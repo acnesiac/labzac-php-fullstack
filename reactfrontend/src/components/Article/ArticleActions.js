@@ -31,7 +31,7 @@ const ArticleActions = props => {
           <span className="date">
                 {article.costo}
         </span>
-          <Link  to={'/home'}>
+          <Link  to={'/editordiagnostico'}>
                 Nuevo diagnostico
         </Link>
           <h1>{article.description}</h1>

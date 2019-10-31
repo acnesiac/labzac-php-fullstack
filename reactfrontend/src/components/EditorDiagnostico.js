@@ -23,7 +23,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch({ type: UPDATE_FIELD_EDITORVENTA, key, value })
 });
 
-class EditorVenta extends React.Component {
+class EditorDiagnostico extends React.Component {
   constructor() {
     super();
     const updateFieldEvent = key => ev => this.props.onUpdateField(key, ev.target.value);
@@ -85,7 +85,7 @@ class EditorVenta extends React.Component {
                     <input
                       className="form-control form-control-lg"
                       type="text"
-                      placeholder="Venta titulo"
+                      placeholder="Diagnostico titulo"
                       value={this.props.title}
                       onChange={this.changeTitle} />
                   </fieldset>
@@ -101,7 +101,7 @@ class EditorVenta extends React.Component {
                     <textarea
                       className="form-control"
                       rows="8"
-                      placeholder="Escribe tu Descripcion de la venta"
+                      placeholder="Escribe tu Descripcion del DX"
                       value={this.props.body}
                       onChange={this.changeBody}>
                     </textarea>
@@ -111,7 +111,7 @@ class EditorVenta extends React.Component {
                     type="button"
                     disabled={this.props.inProgress}
                     onClick={this.submitForm}>
-                    Hacer venta
+                    Hacer Diagnostico
                   </button>
                 </fieldset>
               </form>
@@ -122,4 +122,4 @@ class EditorVenta extends React.Component {
     );
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(EditorVenta);
+export default connect(mapStateToProps, mapDispatchToProps)(EditorDiagnostico);
