@@ -1,5 +1,4 @@
 import DiagnosticoMeta from './DiagnosticoMeta';
-import CommentContainer from './CommentContainer';
 import React from 'react';
 import agent from '../../agent';
 import { connect } from 'react-redux';
@@ -21,8 +20,7 @@ const mapDispatchToProps = dispatch => ({
 class Diagnostico extends React.Component {
   componentWillMount() {
     this.props.onLoad(Promise.all([
-      agent.Articles.get(this.props.match.params.id),
-      agent.Comments.forArticle(this.props.match.params.id)
+      agent.Diagnosticos.get(this.props.match.params.id)
     ]));
   }
 
@@ -30,7 +28,7 @@ class Diagnostico extends React.Component {
     // this.props.onLoad(Promise.all([
     //
     // ]));
-  }
+
   // agent.Diagnosticos.get(this.props.match.params.id)
   //agent.Comments.forArticle(this.props.match.params.id)
   componentWillUnmount() {

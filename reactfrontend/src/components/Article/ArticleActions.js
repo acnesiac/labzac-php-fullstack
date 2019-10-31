@@ -33,8 +33,11 @@ const ArticleActions = props => {
         </span>
           <Link  to={'/editordiagnostico'}>
                 Nuevo diagnostico
-        </Link>
-          <h1>{article.description}</h1>
+          </Link>
+          <Link  to={'/dx/14'}>
+                Ver diagnostico
+            </Link>
+
       </span>
     );
 

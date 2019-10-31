@@ -41,13 +41,14 @@ class EditorDiagnostico extends React.Component {
       const venta = {
         title: this.props.title,
         description: this.props.description,
-        body: this.props.body
+        body: this.props.body,
+        venta: 9
       };
       const slug = { slug: this.props.articleSlug };
       console.log(this.props);
       const promise = this.props.articleSlug ?
-        agent.Ventas.update(Object.assign(venta, slug)) :
-        agent.Ventas.create(venta);
+        agent.Diagnosticos.update(Object.assign(venta, slug)) :
+        agent.Diagnosticos.create(venta);
       this.props.onSubmit(promise);
     };
   }
@@ -85,7 +86,7 @@ class EditorDiagnostico extends React.Component {
                     <input
                       className="form-control form-control-lg"
                       type="text"
-                      placeholder="Diagnostico titulo"
+                      placeholder="title"
                       value={this.props.title}
                       onChange={this.changeTitle} />
                   </fieldset>
@@ -93,7 +94,7 @@ class EditorDiagnostico extends React.Component {
                     <input
                       className="form-control"
                       type="text"
-                      placeholder="Descripcion corta"
+                      placeholder="description"
                       value={this.props.description}
                       onChange={this.changeDescription} />
                   </fieldset>
@@ -101,7 +102,7 @@ class EditorDiagnostico extends React.Component {
                     <textarea
                       className="form-control"
                       rows="8"
-                      placeholder="Escribe tu Descripcion del DX"
+                      placeholder="body"
                       value={this.props.body}
                       onChange={this.changeBody}>
                     </textarea>

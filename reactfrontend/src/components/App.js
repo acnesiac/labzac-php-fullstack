@@ -11,6 +11,8 @@ import Register from '../components/Register';
 import { store } from '../store';
 import { push } from 'react-router-redux';
 import EditorDiagnostico from "./EditorDiagnostico";
+import Diagnostico from '../components/Diagnostico';
+
 
 
 
@@ -66,6 +68,7 @@ class App extends React.Component {
             <Route path="/register" component={Register} />
             <Route path="/editorventa" component={EditorVenta} />
             <Route path="/editordiagnostico" component={EditorDiagnostico} />
+            <Route path="/dx/:id" component={Diagnostico} />
             </Switch>
         </div>
       );
