@@ -32,6 +32,15 @@ const ArticleActions = props => {
           </Link> |
           <Link  to={'/dx/14'}> Ver DX </Link>
 
+          <span className="date">
+                {article.costo}
+        </span>
+          <Link  to={'/editordiagnostico'}>
+                Nuevo diagnostico
+          </Link>
+          <Link  to={'/dx/14'}>
+                Ver diagnostico
+            </Link>
       </span>
     );
 
