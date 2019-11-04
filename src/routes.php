@@ -80,7 +80,7 @@ $app->group('/api',
 
         //Diagnosticos
         $this->get('/diagnosticos/feed', DiagnosticoController::class . ':index')->add($optionalAuth)->setName('diagnostico.index');
-        $this->get('/diagnosticos/{slug}', DiagnosticoController::class . ':show')->add($optionalAuth)->setName('diagnosticos.show');
+        $this->get('/diagnosticos/{id}', DiagnosticoController::class . ':show')->add($optionalAuth)->setName('diagnosticos.show');
         $this->post('/diagnosticos', DiagnosticoController::class . ':store')->add($jwtMiddleware)->setName('diagnosticos.store');
         $this->get('/diagnosticos', DiagnosticoController::class . ':index')->add($optionalAuth)->setName('diagnosticos.index');
 

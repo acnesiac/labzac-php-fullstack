@@ -114,11 +114,11 @@ class DiagnosticoController
     {
         $requestUserId = optional($this->auth->requestUser($request))->id;
 
-        $article = Article::query()->where('slug', $args['slug'])->firstOrFail();
+        $article = Diagnostico::query()->where('id', $args['id'])->firstOrFail();
 
         $data = $this->fractal->createData(new Item($article, new DiagnosticoTransformer($requestUserId)))->toArray();
 
-        return $response->withJson(['article' => $data])
+        return $response->withJson(['diagnostico' => $data])
 			->withHeader('Access-Control-Allow-Origin', '*')
             ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
             ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
