@@ -47,7 +47,7 @@ const LoggedInView = props => {
         </li>
         <li className="nav-item" >
           <Link to="/" className="nav-link" >
-           <i className="ion-compose"></i>&nbsp;Diagnosticos
+           <i className="ion-compose"></i>&nbsp;Mis Compras
           </Link>
         </li>
 

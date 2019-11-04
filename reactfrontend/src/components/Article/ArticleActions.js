@@ -27,6 +27,10 @@ const ArticleActions = props => {
             </ul>
           </div>
         </nav>
+          <Link  to={'/editordiagnostico'}>
+                Nuevo DX
+          </Link> |
+          <Link  to={'/dx/14'}> Ver DX </Link>
 
           <span className="date">
                 {article.costo}
@@ -37,7 +41,6 @@ const ArticleActions = props => {
           <Link  to={'/dx/14'}>
                 Ver diagnostico
             </Link>
-
       </span>
     );
 
