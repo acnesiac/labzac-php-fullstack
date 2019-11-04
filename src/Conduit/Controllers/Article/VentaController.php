@@ -60,6 +60,11 @@ class VentaController
                 $query->where('username', $author);
             });
         }
+        if ($cliente = $request->getParam('cliente')) {
+            $builder->whereHas('cliente', function ($query) use ($cliente) {
+                $query->where('cliente', $cliente);
+            });
+        }
 
         if ($tag = $request->getParam('tag')) {
             $builder->whereHas('tags', function ($query) use ($tag) {
@@ -136,6 +141,7 @@ class VentaController
 
 
                 $venta = new Venta($request->getParam('venta'));
+                console.log($venta->cliente);
                 $venta->user_id = $requestUser->id;
 
 
