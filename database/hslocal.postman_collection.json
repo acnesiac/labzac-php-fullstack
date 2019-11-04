@@ -2729,7 +2729,8 @@
 						{
 							"listen": "test",
 							"script": {
-								"type": "text/javascript",
+								"id": "c011fe83-a1e3-4b43-a0a1-1fa40b57dafc",
+
 								"exec": [
 									"var is200Response = responseCode.code === 200;",
 									"",
@@ -2764,7 +2765,9 @@
 									"    }",
 									"}",
 									""
-								]
+								],
+								"type": "text/javascript"
+
 							}
 						}
 					],
@@ -2778,10 +2781,16 @@
 							{
 								"key": "X-Requested-With",
 								"value": "XMLHttpRequest"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token {{token}}",
+								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/articles?author=johnjacob",
+							"raw": "http://localhost/imagenesrx/public/api/ventas?cliente=1",
+
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2790,12 +2799,12 @@
 								"imagenesrx",
 								"public",
 								"api",
-								"articles"
+								"ventas"
 							],
 							"query": [
 								{
-									"key": "author",
-									"value": "johnjacob"
+									"key": "cliente",
+									"value": "1"
 								}
 							]
 						}
@@ -2880,7 +2889,7 @@
 			"name": "Diagnosticos",
 			"item": [
 				{
-					"name": "All Diagnostics",
+					"name": "All Diagnosticos by venta",
 					"event": [
 						{
 							"listen": "test",
@@ -2966,7 +2975,7 @@
 					"response": []
 				},
 				{
-					"name": "All Diagnosticos by cliente",
+					"name": "Diagnostico by id",
 					"event": [
 						{
 							"listen": "test",
