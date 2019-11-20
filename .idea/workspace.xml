@@ -1,18 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2d901de5-efc5-4fa2-85bb-3cd330930e48" name="Default" comment="changes in variables">
+    <list default="true" id="2d901de5-efc5-4fa2-85bb-3cd330930e48" name="Default" comment="Changes in ventas by cliente">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/hs.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/hs.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/app.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Conduit/Controllers/Article/CommentDXController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conduit/Controllers/Article/CommentdxController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Conduit/Controllers/Article/DiagnosticoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conduit/Controllers/Article/DiagnosticoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Conduit/Controllers/Article/VentaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conduit/Controllers/Article/VentaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Conduit/Models/CommentDX.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conduit/Models/Commentdx.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Conduit/Models/Diagnostico.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conduit/Models/Diagnostico.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Conduit/Models/Venta.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conduit/Models/Venta.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Conduit/Transformers/CommentDXTransformer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conduit/Transformers/CommentdxTransformer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/hslocal.postman_collection.json" beforeDir="false" afterPath="$PROJECT_DIR$/database/hslocal.postman_collection.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -159,7 +150,7 @@
       <workItem from="1574274919531" duration="2024000" />
       <workItem from="1574276962157" duration="1679000" />
       <workItem from="1574280794446" duration="1793000" />
-      <workItem from="1574282624801" duration="1334000" />
+      <workItem from="1574282624801" duration="1803000" />
     </task>
     <task id="LOCAL-00001" summary="hs">
       <created>1555455950859</created>
@@ -315,7 +306,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572900504396</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Changes in ventas by cliente">
+      <created>1574284222410</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1574284222410</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -372,7 +370,8 @@
     <MESSAGE value="changes in diagnostico page" />
     <MESSAGE value="changes in DX, Dx by id and costo atribute" />
     <MESSAGE value="changes in variables" />
-    <option name="LAST_COMMIT_MESSAGE" value="changes in variables" />
+    <MESSAGE value="Changes in ventas by cliente" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes in ventas by cliente" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
