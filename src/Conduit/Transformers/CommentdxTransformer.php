@@ -3,12 +3,12 @@
 namespace Conduit\Transformers;
 
 use Conduit\Models\Article;
-use Conduit\Models\DxComment;
+use Conduit\Models\Commentdx;
 use Conduit\Models\User;
 use League\Fractal\ItemResource;
 use League\Fractal\TransformerAbstract;
 
-class CommentDXTransformer extends TransformerAbstract
+class CommentdxTransformer extends TransformerAbstract
 {
 
     /**
@@ -35,13 +35,13 @@ class CommentDXTransformer extends TransformerAbstract
         $this->requestUserId = $requestUserId;
     }
 
-    public function transform(DxComment $comment)
+    public function transform(Commentdx $comment)
     {
         return [
             'id'        => $comment->id,
             'createdAt' => $comment->created_at->toIso8601String(),
             'updatedAt' => isset($user->update_at) ? $comment->update_at->toIso8601String() : $comment->update_at,
-            'body'      => $comment->body,
+            'body'      => $comment->body
         ];
     }
 
@@ -52,7 +52,7 @@ class CommentDXTransformer extends TransformerAbstract
      *
      * @return \League\Fractal\Resource\Item
      */
-    public function includeAuthor(DxComment $comment)
+    public function includeAuthor(Commentdx $comment)
     {
         $author = $comment->user;
 

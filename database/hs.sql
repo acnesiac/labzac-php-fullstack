@@ -70,10 +70,10 @@ CREATE TABLE `article_tag` (
 -- Table structure for table `comments`
 --
 
-CREATE TABLE `comment_d_xes` (
+CREATE TABLE `commentdxes` (
   `id` int(10) UNSIGNED NOT NULL,
   `user_id` int(10) UNSIGNED NOT NULL,
-  `diagnostico` int(10) UNSIGNED NOT NULL,
+  `diagnostico_id` int(10) UNSIGNED NOT NULL,
   `body` text COLLATE utf8_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -100,7 +100,6 @@ CREATE TABLE `comments` (
 
 CREATE TABLE `diagnosticos` (
   `id` int(10) UNSIGNED NOT NULL,
-  `slug` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `description` text COLLATE utf8_unicode_ci NOT NULL,
   `body` text COLLATE utf8_unicode_ci NOT NULL,
@@ -110,22 +109,6 @@ CREATE TABLE `diagnosticos` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Dumping data for table `diagnosticos`
---
-
-INSERT INTO `diagnosticos` (`id`, `slug`, `title`, `description`, `body`, `user_id`, `created_at`, `updated_at`) VALUES
-(0, 's', 's', 's', 's', 21, '2019-08-07 02:19:08', '2019-08-07 02:19:08'),
-(0, 'd', 'd', 'd', 'd', 21, '2019-08-07 02:23:41', '2019-08-07 02:23:41'),
-(0, 'dfg', 'dfg', 'ddsfg', 'sdfg', 21, '2019-08-07 09:45:43', '2019-08-07 09:45:43'),
-(0, 'qs', 'qS', 'S', 's', 21, '2019-08-07 09:48:32', '2019-08-07 09:48:32'),
-(0, 'a', 'a', 's', 'wd', 21, '2019-08-07 09:49:37', '2019-08-07 09:49:37'),
-(0, 'sd', 'sd', 'sf', 'sdf', 21, '2019-08-07 09:56:14', '2019-08-07 09:56:14'),
-(0, 'dfgq', 'dfgq', 'sdf', 'd', 21, '2019-08-07 09:57:34', '2019-08-07 09:57:34'),
-(0, 'aa', 'aa', 'aa', 'aa', 21, '2019-08-07 10:11:33', '2019-08-07 10:11:33'),
-(0, 'ss', 'ss', 'ss', 'ss', 21, '2019-08-07 10:15:25', '2019-08-07 10:15:25'),
-(0, 's-1', 's', 's', 's', 21, '2019-08-07 10:16:35', '2019-08-07 10:16:35'),
-(0, 'detroit', 'detroit', 'hope', 'michigan', 21, '2019-08-07 11:01:48', '2019-08-07 11:01:48');
 
 -- --------------------------------------------------------
 
@@ -455,7 +438,6 @@ CREATE TABLE `ventas` (
 --
 ALTER TABLE `diagnosticos`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `diagnosticos_slug_unique` (`slug`),
   ADD KEY `diagnosticos_user_id_foreign` (`user_id`),
   ADD KEY `diagnosticos_venta_foreign` (`venta`);
 
@@ -486,10 +468,10 @@ ALTER TABLE `comments`
 --
 -- Indexes for table `commentsdx`
 --
-ALTER TABLE `comment_d_xes`
+ALTER TABLE `commentdxes`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `comment_d_xes_user_id_foreign` (`user_id`),
-  ADD KEY `comment_d_xes_diagnostico_id_foreign` (`diagnostico_id`);
+  ADD KEY `commentd_user_id_foreign` (`user_id`),
+  ADD KEY `commentd_diagnostico_id_foreign` (`diagnostico_id`);
 
 --
 -- Indexes for table `imagenesrx`
@@ -579,7 +561,7 @@ ALTER TABLE `comments`
 --
 -- AUTO_INCREMENT for table `comment_d_xes`
 --
-ALTER TABLE `comment_d_xes`
+ALTER TABLE `commentdxes`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --

@@ -26,7 +26,6 @@ class Diagnostico extends Model
      * @var array
      */
     protected $fillable = [
-        'slug',
         'title',
         'description',
         'body',
@@ -34,19 +33,7 @@ class Diagnostico extends Model
         'venta'
     ];
 
-    public function setSlugAttribute($value)
-    {
-        $index = 0;
-        $slug = $value;
-        while (self::newQuery()
-            ->where('slug', $slug)
-            ->where('id', '!=', $this->id)
-            ->exists()) {
-            $slug = $value . '-' . ++$index;
-        }
 
-        return $this->attributes['slug'] = $slug;
-    }
 
     /********************
      *  Relationships
@@ -79,7 +66,7 @@ class Diagnostico extends Model
 
     public function comments()
     {
-        return $this->hasMany(DxComment::class);
+        return $this->hasMany(Commentdx::class);
     }
 
     /**

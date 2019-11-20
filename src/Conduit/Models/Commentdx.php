@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property \Carbon\Carbon          created_at
  * @property \Carbon\Carbon          update_at
  */
-class CommentDX extends Model
+class Commentdx extends Model
 {
 
     /**
@@ -26,7 +26,7 @@ class CommentDX extends Model
     protected $fillable = [
         'body',
         'user_id',
-        'article_id',
+        'diagnostico_id',
     ];
 
     /********************
