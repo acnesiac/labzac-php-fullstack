@@ -16,7 +16,6 @@
     Test with postman
 
 # QA
-    
     Test with postman
     Cargar los SQL cambios con produccion
     Launch xamp control both mysql y apache    
@@ -25,6 +24,7 @@
     En /templates mover index.html
     En /public colocar los .css y .js
     Test with postman
+    
 # DEV
     Inside 
     \xampp\htdocs\imagenesrx\reactfrontend

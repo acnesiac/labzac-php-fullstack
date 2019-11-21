@@ -13,27 +13,21 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const DiagnosticoActions = props => {
-  const article = props.article;
-
-  const del = () => {
-    props.onClickDelete(agent.Articles.del(article.slug));
-  };
-
+  const diagnostico = props.diagnostico;
     return (
       <span>
          <span className="date">
-            {article.costo}
+            {diagnostico.description}
         </span>
-          <h1>{article.title}</h1>
-          <Link to={`/@${article.id}`} />
-          <span >
-            </span>
+        <h1>{diagnostico.title}</h1>
+        <Link to={`/@${diagnostico.id}`} />
+        <span >
+        </span>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-
-          <div className="collapse navbar-collapse" id="navbarNav">
-           <ul>
-            </ul>
-          </div>
+        <div className="collapse navbar-collapse" id="navbarNav">
+        <ul>
+        </ul>
+        </div>
         </nav>
       </span>
     );

@@ -19,13 +19,11 @@ const mapDispatchToProps = dispatch => ({
     payload: agent.Articles.unfavorite(slug)
   })
 });
-
 const ArticlePreview = props => {
   const article = props.article;
   const favoriteButtonClass = article.favorited ?
     FAVORITED_CLASS :
     NOT_FAVORITED_CLASS;
-
   const handleClick = ev => {
     ev.preventDefault();
     if (article.favorited) {
@@ -34,52 +32,14 @@ const ArticlePreview = props => {
       props.favorite(article.slug);
     }
   };
-
   return (
     <div className="article-preview">
       <div>
         <Link to={`/@${article.author.username}`}>
-          
         </Link>
-
-
-        
-      </div>{
-/*
-
-        <div className="info">
-          <Link className="author" to={`/@${article.author.username}`}>
-            {article.author.username}
-          </Link>
-          <span className="date">
-            {new Date(article.createdAt).toDateString()}
-          </span>
-        </div>
-<img src={article.author.image} alt={article.author.username} />
-      <Link to={`/article/${article.slug}`} className="preview-link">
-        <h1>{article.title}</h1>
-        <p>{article.description}</p>
-        <span></span>
-        <ul className="tag-list">
-          {
-            article.tagList.map(tag => {
-              return (
-                <li className="tag-default tag-pill tag-outline" key={tag}>
-                  {tag}
-                </li>
-              )
-            })
-          }
-        </ul>
-      
-         <Link className="btn btn-primary" to={`/graphchartTraversi2d`}>
-            Resumen 
-          </Link>
-          
-      </Link>*/}
+      </div>
        <ArticleActions canModify={true} article={article} />
     </div>
   );
 }
-
 export default connect(() => ({}), mapDispatchToProps)(ArticlePreview);

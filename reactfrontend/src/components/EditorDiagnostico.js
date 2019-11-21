@@ -45,7 +45,6 @@ class EditorDiagnostico extends React.Component {
         venta: 9
       };
       const slug = { slug: this.props.articleSlug };
-      console.log(this.props);
       const promise = this.props.articleSlug ?
         agent.Diagnosticos.update(Object.assign(venta, slug)) :
         agent.Diagnosticos.create(venta);
@@ -83,6 +82,14 @@ class EditorDiagnostico extends React.Component {
               <form>
                 <fieldset>
                   <fieldset className="form-group">
+                    {this.props.match.params.venta}
+                    <label
+                      className="form-control form-control-lg"
+                      type="text"
+                      placeholder={this.props.match.params.venta}
+                      value={this.props.match.params.venta}
+                      />
+                  </fieldset> <fieldset className="form-group">
                     <input
                       className="form-control form-control-lg"
                       type="text"

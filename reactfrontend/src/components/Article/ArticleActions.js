@@ -9,44 +9,34 @@ const mapDispatchToProps = dispatch => ({
 
 const ArticleActions = props => {
   const article = props.article;
-
-
     return (
-      <span>
-         <span className="date">
-            {article.costo}
-        </span>
-          <h1>{article.description}</h1>
-            <Link to={`/@${article.id}`} />
-          <span >
-            </span>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-
-          <div className="collapse navbar-collapse" id="navbarNav">
-           <ul>
-            </ul>
-          </div>
-        </nav>
-          <Link  to={'/editordiagnostico'}>
-                Nuevo DX
-          </Link> |
-          <Link  to={'/dx/14'}> Ver DX </Link>
-
-          <span className="date">
-                {article.costo}
-        </span>
-          <Link  to={'/editordiagnostico'}>
-                Nuevo diagnostico
+      <div>
+          <span>
+              <Link   className="btn btn-sm pull-xs-right btn-primary" to={`/editordiagnostico/${article.id}`}>
+                    Nuevo DX
+              </Link>
+          </span>
+          <Link   className="btn btn-sm pull-xs-right btn-primary" to={`/editordiagnostico/${article.id}`}>
+                Ver DXs
           </Link>
-          <Link  to={'/dx/14'}>
+          <Link to={`/@${article.id}`} >{article.id}</Link>
+          <h1>{article.cliente.email}</h1>
+        <span className="date">${article.costo}</span>
+      <ul>
+          <Link  to={`/dx/${article.id}`}>
                 Ver diagnostico
-            </Link>
-      </span>
+          </Link>
+          <Link  to={`/dx/${article.id}`}>
+                Ver diagnostico
+          </Link>
+          <Link  to={`/dx/14`}>
+                Ver diagnostico
+          </Link>
+      </ul>
+      </div>
     );
-
   return <span> </span>;
 };
-
 export default connect(
   () => ({}),
   mapDispatchToProps

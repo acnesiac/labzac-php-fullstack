@@ -12,8 +12,6 @@ const mapDispatchToProps = dispatch => ({
 const MainView = props => {
   return (
     <div className="col-md-12">
-
-
       <ArticleList
         token = {props.token}
         pager={props.pager}

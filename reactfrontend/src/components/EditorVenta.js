@@ -27,10 +27,12 @@ class EditorVenta extends React.Component {
   constructor() {
     super();
     const updateFieldEvent = key => ev => this.props.onUpdateField(key, ev.target.value);
-    this.changeTitle = updateFieldEvent('title');
+
     this.changeDescription = updateFieldEvent('description');
-    this.changeBody = updateFieldEvent('body');
     this.changeCosto = updateFieldEvent('costo');
+    this.changeTitle = updateFieldEvent('title');
+    this.changeCliente = updateFieldEvent('cliente');
+    this.changeBody = updateFieldEvent('body');
     this.watchForEnter = ev => {
       if (ev.keyCode === 13) {
         ev.preventDefault();
@@ -40,14 +42,13 @@ class EditorVenta extends React.Component {
     this.submitForm = ev => {
       ev.preventDefault();
       const venta = {
-        title: this.props.title,
         description: this.props.description,
-        body: this.props.body,
-        cliente: 1,
-        costo: this.props.costo
+        costo: this.props.costo,
+        cliente: this.props.cliente,
+        title: this.props.title,
+        body: this.props.body
       };
       const slug = { slug: this.props.articleSlug };
-      console.log(this.props);
       const promise = this.props.articleSlug ?
         agent.Ventas.update(Object.assign(venta, slug)) :
         agent.Ventas.create(venta);
@@ -83,23 +84,36 @@ class EditorVenta extends React.Component {
           <div className="row">
             <div className="col-md-12 offset-md-0 col-xs-12">
               <form>
+                  <fieldset className="form-group">
+                  <select
+                      className="form-control"
+                      value={this.props.title}
+                      onChange={this.changeTitle} >
+                      <option value="1"></option>
+                      <option value="2">Sesion terapia</option>
+                      <option value="3">Paquete 1</option>
+                      <option value="4">Paquete 2</option>
+                      <option value="5">Paquete 3</option>
+                  </select>
+              </fieldset>
+                  <fieldset className="form-group">
+                      <input
+                          className="form-control"
+                          type="text"
+                          placeholder="email"
+                          value={this.props.description}
+                          onChange={this.changeDescription} />
+                  </fieldset>
                 <fieldset>
                   <fieldset className="form-group">
                     <input
-                      className="form-control form-control-lg"
-                      type="text"
-                      placeholder="Venta titulo"
-                      value={this.props.title}
-                      onChange={this.changeTitle} />
+                        className="form-control form-control-lg"
+                        type="text"
+                        placeholder="Ciente (TODO to be removed once mail search for id)"
+                        value={this.props.cliente}
+                        onChange={this.changeCliente} />
                   </fieldset>
-                  <fieldset className="form-group">
-                    <input
-                      className="form-control"
-                      type="text"
-                      placeholder="Descripcion corta"
-                      value={this.props.description}
-                      onChange={this.changeDescription} />
-                  </fieldset>
+
                   <fieldset className="form-group">
                     <textarea
                       className="form-control"
@@ -109,11 +123,12 @@ class EditorVenta extends React.Component {
                       onChange={this.changeBody}>
                     </textarea>
                   </fieldset>
+
                   <fieldset className="form-group">
                     <input
                       className="form-control"
                       type="text"
-                      placeholder="Escribe costo de la venta"
+                      placeholder="$"
                       value={this.props.costo}
                       onChange={this.changeCosto}>
                     </input>
@@ -121,8 +136,7 @@ class EditorVenta extends React.Component {
                   <button
                     className="btn btn-lg pull-xs-right btn-primary"
                     type="button"
-                    disabled={this.props.inProgress}
-                    onClick={this.submitForm}>
+                    disabled={this.props.inProgress} onClick={this.submitForm}>
                     Hacer venta
                   </button>
                 </fieldset>
