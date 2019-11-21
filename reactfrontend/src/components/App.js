@@ -63,12 +63,12 @@ class App extends React.Component {
             appName={this.props.appName}
             currentUser={this.props.currentUser} />
             <Switch>
-            <Route exact path="/" component={Home}/>
-            <Route path="/login" component={Login} />
-            <Route path="/register" component={Register} />
-            <Route path="/editorventa" component={EditorVenta} />
-            <Route path="/editordiagnostico" component={EditorDiagnostico} />
-            <Route path="/dx/:id" component={Diagnostico} />
+              <Route exact path="/" component={Home}/>
+              <Route path="/login" component={Login} />
+              <Route path="/register" component={Register} />
+              <Route path="/editorventa" component={EditorVenta} />
+              <Route path="/editordiagnostico/:venta" component={EditorDiagnostico} />
+              <Route path="/dx/:id" component={Diagnostico} />
             </Switch>
         </div>
       );

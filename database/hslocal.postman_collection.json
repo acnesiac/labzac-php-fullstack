@@ -2787,7 +2787,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/ventas?cliente=37",
+							"raw": "http://localhost/imagenesrx/public/api/ventas?cliente=25",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2801,7 +2801,7 @@
 							"query": [
 								{
 									"key": "cliente",
-									"value": "37"
+									"value": "25"
 								}
 							]
 						}
@@ -2872,7 +2872,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/ventas/69",
+							"raw": "http://localhost/imagenesrx/public/api/ventas/71",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2882,7 +2882,7 @@
 								"public",
 								"api",
 								"ventas",
-								"69"
+								"71"
 							]
 						}
 					},
@@ -2942,7 +2942,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"venta\": {\n        \"description\": \"Venta 5 de paquete 2\",\n        \"costo\": \"25\",\n        \"cliente\": \"25\",\n        \"title\":\"venta numero 2\",\n        \"body\":\"this is my body\"\n    }\n}"
+							"raw": "{\n    \"venta\": {\n        \"description\": \"Venta 5 de paquete 2\",\n        \"costo\": \"2\",\n        \"cliente\": \"2\",\n        \"title\":\"venta numero 2\",\n        \"body\":\"a\"\n    }\n}"
 						},
 						"url": {
 							"raw": "localhost/imagenesrx/public/api/ventas",
@@ -2984,8 +2984,8 @@
 									"    tests['Response contains \"articlesCount\" property'] = responseJSON.hasOwnProperty('articlesCount');",
 									"    tests['articlesCount is an integer'] = Number.isInteger(responseJSON.articlesCount);",
 									"",
-									"    if(responseJSON.articles.length){",
-									"        var article = responseJSON.articles[0];",
+									"    if(responseJSON.diagnosticos.length){",
+									"        var article = responseJSON.diagnosticos[0];",
 									"",
 									"        tests['Article has \"title\" property'] = article.hasOwnProperty('title');",
 									"        tests['Article has \"slug\" property'] = article.hasOwnProperty('slug');",
@@ -3063,8 +3063,8 @@
 									"    tests['Response contains \"articlesCount\" property'] = responseJSON.hasOwnProperty('articlesCount');",
 									"    tests['articlesCount is an integer'] = Number.isInteger(responseJSON.articlesCount);",
 									"",
-									"    if(responseJSON.articles.length){",
-									"        var article = responseJSON.articles[0];",
+									"    if(responseJSON.diagnosticos.length){",
+									"        var article = responseJSON.diagnosticos[0];",
 									"",
 									"        tests['Article has \"title\" property'] = article.hasOwnProperty('title');",
 									"        tests['Article has \"slug\" property'] = article.hasOwnProperty('slug');",
@@ -3149,8 +3149,8 @@
 									"    tests['Response contains \"articlesCount\" property'] = responseJSON.hasOwnProperty('articlesCount');",
 									"    tests['articlesCount is an integer'] = Number.isInteger(responseJSON.articlesCount);",
 									"",
-									"    if(responseJSON.articles.length){",
-									"        var article = responseJSON.articles[0];",
+									"    if(responseJSON.diagnostico){",
+									"        var article = responseJSON.diagnostico;",
 									"",
 									"        tests['Article has \"title\" property'] = article.hasOwnProperty('title');",
 									"        tests['Article has \"slug\" property'] = article.hasOwnProperty('slug');",
@@ -3271,7 +3271,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"diagnostico\": {\n        \"title\": \"How to train your dragon\",\n        \"description\": \"Ever wonder how?\",\n        \"body\": \"Very carefully.\",\n        \"venta\": \"10\",\n        \"tagList\": [\n            \"dragons\",\n            \"training\"\n        ]\n    }\n}"
+							"raw": "{\n    \"diagnostico\": {\n        \"title\": \"Dolor de rodilla\",\n        \"description\": \"Presenta un dolor de rodilla en la parte trasera\",\n        \"body\": \"Este es el body\",\n        \"venta\": \"10\",\n        \"tagList\": [\n            \"dragons\",\n            \"training\"\n        ]\n    }\n}"
 						},
 						"url": {
 							"raw": "http://localhost/imagenesrx/public/api/diagnosticos",
@@ -3314,8 +3314,8 @@
 									"    tests['Response contains \"articlesCount\" property'] = responseJSON.hasOwnProperty('articlesCount');",
 									"    tests['articlesCount is an integer'] = Number.isInteger(responseJSON.articlesCount);",
 									"",
-									"    if(responseJSON.articles.length){",
-									"        var article = responseJSON.articles[0];",
+									"    if(responseJSON.comments.length){",
+									"        var article = responseJSON.comments[0];",
 									"",
 									"        tests['Article has \"title\" property'] = article.hasOwnProperty('title');",
 									"        tests['Article has \"slug\" property'] = article.hasOwnProperty('slug');",

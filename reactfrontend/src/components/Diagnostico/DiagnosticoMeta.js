@@ -1,19 +1,12 @@
-import ArticleActions from './DiagnosticoActions';
-import { Link } from 'react-router-dom';
+import DiagnosticoActions from './DiagnosticoActions';
 import React from 'react';
 
 const DiagnosticoMeta = props => {
-  const article = props.article;
+  const diagnostico = props.diagnostico;
   return (
 
     <div className="article-meta">
-
-      
-       
-     
-
-      <ArticleActions canModify={props.canModify} article={article} />
-
+      <DiagnosticoActions  diagnostico={diagnostico} />
     </div>
   );
 };

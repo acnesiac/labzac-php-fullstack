@@ -1,20 +1,19 @@
 import DiagnosticoMeta from './DiagnosticoMeta';
+import CommentContainer from './CommentContainer';
 import React from 'react';
 import agent from '../../agent';
 import { connect } from 'react-redux';
-import marked from 'marked';
-import { ARTICLE_PAGE_LOADED, ARTICLE_PAGE_UNLOADED } from '../../constants/actionTypes';
-
+import { DIAGNOSTICO_PAGE_LOADED, DIAGNOSTICO_PAGE_UNLOADED } from '../../constants/actionTypes';
 const mapStateToProps = state => ({
-  ...state.article,
+  ...state.diagnostico,
   currentUser: state.common.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({
   onLoad: payload =>
-    dispatch({ type: ARTICLE_PAGE_LOADED, payload }),
+    dispatch({ type: DIAGNOSTICO_PAGE_LOADED, payload }),
   onUnload: () =>
-    dispatch({ type: ARTICLE_PAGE_UNLOADED })
+    dispatch({ type: DIAGNOSTICO_PAGE_UNLOADED })
 });
 
 class Diagnostico extends React.Component {
@@ -23,85 +22,35 @@ class Diagnostico extends React.Component {
       agent.Diagnosticos.get(this.props.match.params.id)
     ]));
   }
-
-
-    // this.props.onLoad(Promise.all([
-    //
-    // ]));
-
-  // agent.Diagnosticos.get(this.props.match.params.id)
   //agent.Comments.forArticle(this.props.match.params.id)
   componentWillUnmount() {
     this.props.onUnload();
   }
 
   render() {
-    if (!this.props.article) {
+    if (!this.props.diagnostico) {
       return null;
     }
-
-    const markup = { __html: marked(this.props.article.body, { sanitize: true }) };
-    const canModify = this.props.currentUser &&
-      this.props.currentUser.username === this.props.article.author.username;
-
     return (
       <div className="home-page">
-
-          <div className="container">
-
-
-            <DiagnosticoMeta
-              article={this.props.article}
-
-            />
-
-          </div>
-
-
         <div className="container page">
-{
-  /*
-          <div className="row article-content">
-            <div className="col-xs-12">
-
-              <div dangerouslySetInnerHTML={markup}></div>
-
-              <ul className="tag-list">
-                {
-                  this.props.article.tagList.map(tag => {
-                    return (
-                      <li
-                        className="tag-default tag-pill tag-outline"
-                        key={tag}>
-                        {tag}
-                      </li>
-                    );
-                  })
-                }
-              </ul>
-
+            <div className="container">
+                <DiagnosticoMeta
+                    diagnostico={this.props.diagnostico}
+                     />
             </div>
-          </div>
-            <hr />
-              <div className="article-actions">
-          </div>
-*/
-}
-
-
-        {/*
-          <div className="row">
-            <CommentContainer
-              comments={this.props.comments || []}
-              errors={this.props.commentErrors}
-              slug={this.props.match.params.id}
-              currentUser={this.props.currentUser} />
-          </div>
-        */}
+            {
+              <div className="row">
+                <CommentContainer
+                  comments={this.props.comments || []}
+                  errors={this.props.commentErrors}
+                  slug={this.props.match.params.id}
+                  currentUser={this.props.currentUser} />
+              </div>
+            }
         </div>
       </div>
     );
   }
 }
-
 export default connect(mapStateToProps, mapDispatchToProps)(Diagnostico);

@@ -26,16 +26,11 @@ const ArticleList = props => {
                   className="form-control form-control-md"
                   type="text"
                   placeholder="Buscar"
-
               />
             </li>
           </ul>
-
-
-
         </div>
       </form>
-
       {
         props.articles.map(article => {
           return (
