@@ -152,7 +152,6 @@ class DiagnosticoController
         }
 
         $diagnostico = new Diagnostico($request->getParam('diagnostico'));
-        $diagnostico->slug = str_slug($diagnostico->title);
         $diagnostico->user_id = $requestUser->id;
         $diagnostico->save();
 

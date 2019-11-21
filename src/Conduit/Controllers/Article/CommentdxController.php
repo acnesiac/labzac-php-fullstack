@@ -4,9 +4,9 @@ namespace Conduit\Controllers\Article;
 
 use Conduit\Models\Article;
 use Conduit\Models\Diagnostico;
-use Conduit\Models\CommentDX;
+use Conduit\Models\Commentdx;
 use Conduit\Transformers\ArticleTransformer;
-use Conduit\Transformers\CommentDXTransformer;
+use Conduit\Transformers\CommentdxTransformer;
 use Interop\Container\ContainerInterface;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\Item;
@@ -57,7 +57,7 @@ class CommentDXController
         $diagnostico = Diagnostico::query()->with('comments')->where('id', $args['diagnostico'])->firstOrFail();
 
          $data = $this->fractal->createData(new Collection($diagnostico->comments,
-                    new CommentDXTransformer($requestUserId)))->toArray();
+                    new CommentdxTransformer($requestUserId)))->toArray();
 
         return $response->withJson(['comments' => $data['data']])
             ->withHeader('Access-Control-Allow-Origin', '*')
@@ -77,7 +77,7 @@ class CommentDXController
      */
     public function store(Request $request, Response $response, array $args)
     {
-        $diagnostico = Diagnostico::query()->where('id', $args['diagnostico'])->firstOrFail();
+        //$diagnostico = Diagnostico::query()->where('id', $args['diagnostico'])->firstOrFail();
         $requestUser = $this->auth->requestUser($request);
 
         if (is_null($requestUser)) {
@@ -93,13 +93,13 @@ class CommentDXController
             return $response->withJson(['errors' => $this->validator->getErrors()], 422);
         }
 
-        $comment = DxComment::create([
+        $comment = Commentdx::create([
             'body'       => $data['body'],
             'user_id'    => $requestUser->id,
-            'diagnostico' => $diagnostico->id,
+            'diagnostico_id' => $args['diagnostico']
         ]);
 
-        $data = $this->fractal->createData(new Item($comment, new CommentDXTransformer()))->toArray();
+        $data = $this->fractal->createData(new Item($comment, new CommentdxTransformer()))->toArray();
 
         return $response->withJson(['comment' => $data])
             ->withHeader('Access-Control-Allow-Origin', '*')
@@ -108,34 +108,6 @@ class CommentDXController
 
     }
 
-    /**
-     * Delete A DxComment Endpoint
-     *
-     * @param \Slim\Http\Request  $request
-     * @param \Slim\Http\Response $response
-     * @param array               $args
-     *
-     * @return \Slim\Http\Response
-     */
-    public function destroy(Request $request, Response $response, array $args)
-    {
-        $comment = DxComment::query()->findOrFail($args['id']);
-        $requestUser = $this->auth->requestUser($request);
 
-        if (is_null($requestUser)) {
-            return $response->withJson([], 401);
-        }
-
-        if ($requestUser->id != $comment->user_id) {
-            return $response->withJson(['message' => 'Forbidden'], 403);
-        }
-
-        $comment->delete();
-
-        return $response->withJson([], 200)
-            ->withHeader('Access-Control-Allow-Origin', '*')
-            ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
-            ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-    }
 
 }

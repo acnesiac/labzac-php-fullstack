@@ -5,7 +5,7 @@ use Conduit\Controllers\Article\PostController;
 use Conduit\Controllers\Article\DiagnosticoController;
 use Conduit\Controllers\Article\VentaController;
 use Conduit\Controllers\Article\CommentController;
-use Conduit\Controllers\Article\CommentDXController;
+use Conduit\Controllers\Article\CommentdxController;
 use Conduit\Controllers\Article\FavoriteController;
 use Conduit\Controllers\Auth\LoginController;
 use Conduit\Controllers\Auth\RegisterController;
@@ -74,7 +74,7 @@ $app->group('/api',
 
         //Ventas
         $this->get('/ventas/feed', VentaController::class . ':index')->add($optionalAuth)->setName('ventas.index');
-        $this->get('/ventas/{slug}', VentaController::class . ':show')->add($optionalAuth)->setName('ventas.show');
+        $this->get('/ventas/{id}', VentaController::class . ':show')->add($optionalAuth)->setName('ventas.show');
         $this->post('/ventas', VentaController::class . ':store')->add($jwtMiddleware)->setName('ventas.store');
         $this->get('/ventas', VentaController::class . ':index')->add($optionalAuth)->setName('ventas.index');
 
@@ -85,8 +85,8 @@ $app->group('/api',
         $this->get('/diagnosticos', DiagnosticoController::class . ':index')->add($optionalAuth)->setName('diagnosticos.index');
 
         //CommentsDX
-        $this->get('/diagnosticos/{diagnostico}/commentsdx',CommentDXController::class . ':index')->add($optionalAuth)->setName('comment.index');
-        $this->post('/diagnosticos/{diagnostico}/commentsdx',CommentDXController::class . ':store')->add($jwtMiddleware)->setName('comment.store');
+        $this->get('/diagnosticos/{diagnostico}/commentsdx',CommentdxController::class . ':index')->add($optionalAuth)->setName('comment.index');
+        $this->post('/diagnosticos/{diagnostico}/commentsdx',CommentdxController::class . ':store')->add($jwtMiddleware)->setName('comment.store');
 
     });
 

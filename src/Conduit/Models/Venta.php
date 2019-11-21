@@ -31,7 +31,7 @@ class Venta extends Model
         'body',
         'costo',
         'user_id',
-        'cliente'
+        'cliente_id'
     ];
 
     public function setSlugAttribute($value)
@@ -56,6 +56,7 @@ class Venta extends Model
     {
         return $this->belongsTo(User::class);
     }
+
     public function cliente()
     {
         return $this->belongsTo(User::class);
