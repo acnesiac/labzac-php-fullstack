@@ -104,7 +104,7 @@ CREATE TABLE `diagnosticos` (
   `description` text COLLATE utf8_unicode_ci NOT NULL,
   `body` text COLLATE utf8_unicode_ci NOT NULL,
   `user_id` int(10) UNSIGNED NOT NULL,
-  `venta` int(10) UNSIGNED NOT NULL,
+  `venta_id` int(10) UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -439,7 +439,7 @@ CREATE TABLE `ventas` (
 ALTER TABLE `diagnosticos`
   ADD PRIMARY KEY (`id`),
   ADD KEY `diagnosticos_user_id_foreign` (`user_id`),
-  ADD KEY `diagnosticos_venta_foreign` (`venta`);
+  ADD KEY `diagnosticos_venta_foreign` (`venta_id`);
 
 --
 -- Indexes for table `articles`

@@ -72,24 +72,21 @@ $app->group('/api',
             ]);
         });
 
-        //Ventas
-        $this->get('/ventas/feed', VentaController::class . ':index')->add($optionalAuth)->setName('ventas.index');
+        // Ventas
+        $this->get('/ventas', VentaController::class . ':index')->add($optionalAuth)->setName('ventas.index');
         $this->get('/ventas/{id}', VentaController::class . ':show')->add($optionalAuth)->setName('ventas.show');
         $this->post('/ventas', VentaController::class . ':store')->add($jwtMiddleware)->setName('ventas.store');
-        $this->get('/ventas', VentaController::class . ':index')->add($optionalAuth)->setName('ventas.index');
 
-        //Diagnosticos
-        $this->get('/diagnosticos/feed', DiagnosticoController::class . ':index')->add($optionalAuth)->setName('diagnostico.index');
-        $this->get('/diagnosticos/{id}', DiagnosticoController::class . ':show')->add($optionalAuth)->setName('diagnosticos.show');
-        $this->post('/diagnosticos', DiagnosticoController::class . ':store')->add($jwtMiddleware)->setName('diagnosticos.store');
+        // Diagnosticos
         $this->get('/diagnosticos', DiagnosticoController::class . ':index')->add($optionalAuth)->setName('diagnosticos.index');
+        $this->get('/diagnosticos/{id}', DiagnosticoController::class . ':show')->add($optionalAuth)->setName('diagnosticos.show');
+        $this->post('/diagnosticos/{venta}', DiagnosticoController::class . ':store')->add($jwtMiddleware)->setName('diagnosticos.store');
 
-        //CommentsDX
+        // CommentsDX
         $this->get('/diagnosticos/{diagnostico}/commentsdx',CommentdxController::class . ':index')->add($optionalAuth)->setName('comment.index');
         $this->post('/diagnosticos/{diagnostico}/commentsdx',CommentdxController::class . ':store')->add($jwtMiddleware)->setName('comment.store');
 
     });
-
 
 // Routes
 

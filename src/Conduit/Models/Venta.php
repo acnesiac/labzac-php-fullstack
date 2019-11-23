@@ -61,6 +61,12 @@ class Venta extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+     public function diagnosticos()
+    {
+        return $this->hasMany(Diagnostico::class);
+    }
+
     /**
      * Check if given user has favorited this article
      *

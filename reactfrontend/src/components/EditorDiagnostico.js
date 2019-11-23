@@ -3,9 +3,9 @@ import agent from '../agent';
 import { connect } from 'react-redux';
 import {
   EDITORVENTA_PAGE_LOADED,
-  VENTA_SUBMITTED,
   EDITORVENTA_PAGE_UNLOADED,
-  UPDATE_FIELD_EDITORVENTA, EDITORVENTA_SUBMITTED
+  UPDATE_FIELD_EDITORVENTA,
+  EDITORVENTA_SUBMITTED
 } from '../constants/actionTypes';
 
 const mapStateToProps = state => ({
@@ -42,7 +42,7 @@ class EditorDiagnostico extends React.Component {
         title: this.props.title,
         description: this.props.description,
         body: this.props.body,
-        venta: 9
+        venta: this.props.match.params.venta
       };
       const slug = { slug: this.props.articleSlug };
       const promise = this.props.articleSlug ?
@@ -82,14 +82,14 @@ class EditorDiagnostico extends React.Component {
               <form>
                 <fieldset>
                   <fieldset className="form-group">
-                    {this.props.match.params.venta}
-                    <label
+                    <input
                       className="form-control form-control-lg"
                       type="text"
-                      placeholder={this.props.match.params.venta}
                       value={this.props.match.params.venta}
+                      disabled
                       />
-                  </fieldset> <fieldset className="form-group">
+                  </fieldset>
+                  <fieldset className="form-group">
                     <input
                       className="form-control form-control-lg"
                       type="text"

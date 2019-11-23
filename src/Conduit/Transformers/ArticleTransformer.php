@@ -47,7 +47,6 @@ class ArticleTransformer extends TransformerAbstract
         ];
     }
 
-
     /**
      * Include Author
      *

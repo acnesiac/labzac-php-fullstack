@@ -51,42 +51,11 @@ class DiagnosticoController
     public function index(Request $request, Response $response, array $args)
     {
         // TODO Extract the logic of filtering diagnosticos to its own class
-
         $requestUserId = optional($requestUser = $this->auth->requestUser($request))->id;
-        $builder = Diagnostico::query()->latest()->with(['tags', 'user'])->limit(20);
+        $builder = Diagnostico::query()->latest()->limit(20);
 
-        if ($request->getUri()->getPath() == '/api/diagnosticos/feed') {
-            if (is_null($requestUser)) {
-                return $response->withJson([], 401);
-            }
-            $ids = $requestUser->followings->pluck('id');
-            $builder->whereIn('user_id', $ids);
-        }
-
-        if ($author = $request->getParam('author')) {
-            $builder->whereHas('user', function ($query) use ($author) {
-                $query->where('username', $author);
-            });
-        }
-
-        if ($tag = $request->getParam('tag')) {
-            $builder->whereHas('tags', function ($query) use ($tag) {
-                $query->where('title', $tag);
-            });
-        }
-
-        if ($favoriteByUser = $request->getParam('favorited')) {
-            $builder->whereHas('favorites', function ($query) use ($favoriteByUser) {
-                $query->where('username', $favoriteByUser);
-            });
-        }
-
-        if ($limit = $request->getParam('limit')) {
-            $builder->limit($limit);
-        }
-
-        if ($offset = $request->getParam('offset')) {
-            $builder->offset($offset);
+        if ($venta = $request->getParam('venta')) {
+            $builder->where('venta_id', $venta);
         }
 
         $articlesCount = $builder->count();
@@ -132,7 +101,7 @@ class DiagnosticoController
      *
      * @return Response
      */
-    public function store(Request $request, Response $response)
+    public function store(Request $request, Response $response, array $args)
     {
         $requestUser = $this->auth->requestUser($request);
 
@@ -153,6 +122,7 @@ class DiagnosticoController
 
         $diagnostico = new Diagnostico($request->getParam('diagnostico'));
         $diagnostico->user_id = $requestUser->id;
+        $diagnostico->venta_id = $args['venta'];
         $diagnostico->save();
 
         $tagsId = [];

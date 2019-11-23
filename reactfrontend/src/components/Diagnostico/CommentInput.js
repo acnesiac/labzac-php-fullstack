@@ -21,7 +21,7 @@ class CommentInput extends React.Component {
 
         this.createComment = ev => {
             ev.preventDefault();
-            const payload = agent.Comments.create(this.props.slug,
+            const payload = agent.CommentsDX.create(this.props.slug,
                 { body: this.state.body });
             this.setState({ body: '' });
             this.props.onSubmit(payload);

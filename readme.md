@@ -21,7 +21,7 @@
     Launch xamp control both mysql y apache    
     http://localhost/imagenesrx/public/
     npm run build
-    En /templates mover index.html
+    En /templates mover /build/index.html
     En /public colocar los .css y .js
     Test with postman
     

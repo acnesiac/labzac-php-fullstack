@@ -30,7 +30,7 @@ class Diagnostico extends Model
         'description',
         'body',
         'user_id',
-        'venta'
+        'venta_id'
     ];
 
 

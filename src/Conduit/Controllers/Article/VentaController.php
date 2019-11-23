@@ -50,21 +50,20 @@ class VentaController
      */
     public function index(Request $request, Response $response, array $args)
     {
-        // TODO Extract the logic of filtering diagnosticos to its own class
         $requestUserId = optional($requestUser = $this->auth->requestUser($request))->id;
         $builder = Venta::query();
 
-          if ($cliente = $request->getParam('cliente')) {
+        if ($cliente = $request->getParam('cliente')) {
             $builder->where('cliente_id', $cliente);
         }
 
-        $articlesCount = $builder->count();
-        $articles = $builder->get();
+        $count = $builder->count();
+        $ventas = $builder->get();
 
-        $data = $this->fractal->createData(new Collection($articles,
+        $data = $this->fractal->createData(new Collection($ventas,
             new VentaTransformer($requestUserId)))->toArray();
 
-        return $response->withJson(['ventas' => $data['data'], 'count' => $articlesCount])
+        return $response->withJson(['ventas' => $data['data'], 'count' => $count])
             ->withHeader('Access-Control-Allow-Origin', '*')
             ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
             ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');

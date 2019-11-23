@@ -19,10 +19,10 @@ const mapDispatchToProps = dispatch => ({
 class Diagnostico extends React.Component {
   componentWillMount() {
     this.props.onLoad(Promise.all([
-      agent.Diagnosticos.get(this.props.match.params.id)
+      agent.Diagnosticos.get(this.props.match.params.id),
+      agent.CommentsDX.forDx(this.props.match.params.id)
     ]));
   }
-  //agent.Comments.forArticle(this.props.match.params.id)
   componentWillUnmount() {
     this.props.onUnload();
   }
@@ -40,13 +40,11 @@ class Diagnostico extends React.Component {
                      />
             </div>
             {
-              <div className="row">
                 <CommentContainer
                   comments={this.props.comments || []}
                   errors={this.props.commentErrors}
                   slug={this.props.match.params.id}
                   currentUser={this.props.currentUser} />
-              </div>
             }
         </div>
       </div>

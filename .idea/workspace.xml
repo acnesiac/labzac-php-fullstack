@@ -1,32 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2d901de5-efc5-4fa2-85bb-3cd330930e48" name="Default" comment="Changes in ventas by cliente">
+    <list default="true" id="2d901de5-efc5-4fa2-85bb-3cd330930e48" name="Default" comment="issue with saving and redirecting solved">
+      <change afterPath="$PROJECT_DIR$/public/static/js/main.da9fade5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/js/main.da9fade5.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactfrontend/public/asset-manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactfrontend/public/static/js/main.da9fade5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactfrontend/public/static/js/main.da9fade5.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/hslocal.postman_collection.json" beforeDir="false" afterPath="$PROJECT_DIR$/database/hslocal.postman_collection.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/hs.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/hs.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/app.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactfrontend/public/css/main - Copy.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/reactfrontend/src/agent.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/agent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/components/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactfrontend/src/components/Article/ArticleActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/components/Article/ArticleActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/src/components/Article/CommentContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/components/Article/CommentContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/src/components/Article/CommentInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/components/Article/CommentInput.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactfrontend/src/components/ArticleList.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/components/ArticleList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/src/components/ArticlePreview.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/components/ArticlePreview.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/src/components/Diagnostico/Comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/components/Diagnostico/Comment.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactfrontend/src/components/Diagnostico/CommentContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/components/Diagnostico/CommentContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactfrontend/src/components/Diagnostico/CommentInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/components/Diagnostico/CommentInput.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/src/components/Diagnostico/DiagnosticoActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/components/Diagnostico/DiagnosticoActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/src/components/Diagnostico/DiagnosticoMeta.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/components/Diagnostico/DiagnosticoMeta.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactfrontend/src/components/Diagnostico/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/components/Diagnostico/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/src/components/Editor.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/components/Editor.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactfrontend/src/components/EditorDiagnostico.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/components/EditorDiagnostico.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/src/components/EditorVenta.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/components/EditorVenta.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/src/components/Home/MainView.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/components/Home/MainView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/src/components/Home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/components/Home/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/src/constants/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/constants/actionTypes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/src/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/src/reducers/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/reducers/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/src/reducers/diagnostico.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/reducers/diagnostico.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactfrontend/src/components/ListPagination.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/components/ListPagination.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Conduit/Controllers/Article/CommentdxController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conduit/Controllers/Article/CommentdxController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Conduit/Controllers/Article/DiagnosticoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conduit/Controllers/Article/DiagnosticoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Conduit/Controllers/Article/VentaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conduit/Controllers/Article/VentaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Conduit/Models/Diagnostico.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conduit/Models/Diagnostico.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Conduit/Models/Venta.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conduit/Models/Venta.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Conduit/Transformers/ArticleTransformer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conduit/Transformers/ArticleTransformer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Conduit/Transformers/VentaTransformer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conduit/Transformers/VentaTransformer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +51,7 @@
   <component name="PropertiesComponent">
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Conduit/Models" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -61,11 +65,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\imagenesrx\public" />
+      <recent name="C:\xampp\htdocs\imagenesrx\templates" />
+      <recent name="C:\xampp\htdocs\imagenesrx\reactfrontend\public" />
       <recent name="C:\xampp\htdocs\imagenesrx\src\Conduit\Models" />
       <recent name="C:\xampp\htdocs\imagenesrx\src\Conduit\Transformers" />
-      <recent name="C:\xampp\htdocs\imagenesrx\src\Conduit\Controllers\Article" />
-      <recent name="C:\xampp\htdocs\imagenesrx\templates" />
-      <recent name="C:\xampp\htdocs\imagenesrx\public\static\js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -188,6 +192,19 @@
       <workItem from="1574368739049" duration="1793000" />
       <workItem from="1574370564086" duration="896000" />
       <workItem from="1574371601928" duration="599000" />
+      <workItem from="1574376026383" duration="1555000" />
+      <workItem from="1574436831875" duration="1871000" />
+      <workItem from="1574438736978" duration="1800000" />
+      <workItem from="1574441235547" duration="1374000" />
+      <workItem from="1574445504125" duration="1786000" />
+      <workItem from="1574447309188" duration="1802000" />
+      <workItem from="1574449125808" duration="1821000" />
+      <workItem from="1574450971093" duration="1792000" />
+      <workItem from="1574452784575" duration="1839000" />
+      <workItem from="1574454678455" duration="1790000" />
+      <workItem from="1574456485840" duration="1891000" />
+      <workItem from="1574458395998" duration="1792000" />
+      <workItem from="1574460204940" duration="1314000" />
     </task>
     <task id="LOCAL-00001" summary="hs">
       <created>1555455950859</created>
@@ -364,7 +381,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574284542244</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="issue with saving and redirecting solved">
+      <created>1574376105832</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1574376105832</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -422,7 +446,8 @@
     <MESSAGE value="changes in DX, Dx by id and costo atribute" />
     <MESSAGE value="changes in variables" />
     <MESSAGE value="Changes in ventas by cliente" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes in ventas by cliente" />
+    <MESSAGE value="issue with saving and redirecting solved" />
+    <option name="LAST_COMMIT_MESSAGE" value="issue with saving and redirecting solved" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -501,6 +526,11 @@
           <url>file://$PROJECT_DIR$/reactfrontend/src/middleware.js</url>
           <line>23</line>
           <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/reactfrontend/src/components/Diagnostico/index.js</url>
+          <line>22</line>
+          <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

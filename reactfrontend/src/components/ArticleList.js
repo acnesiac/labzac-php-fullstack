@@ -17,8 +17,8 @@ const ArticleList = props => {
         <div className=" article-preview form-group">
           <ul className="nav navbar-nav pull-xs-right">
             <li className="nav-item" >
-              <Link to="/editorventa" className="nav-link" >
-                <i className="ion-compose"></i>&nbsp;Nueva Venta
+              <Link to="/editorventa" className="btn btn-primary" >
+                Nueva venta
               </Link>
             </li>
             <li className="nav-item" >
@@ -40,7 +40,7 @@ const ArticleList = props => {
       }
       <ListPagination
         pager={props.pager}
-        articlesCount={props.articlesCount}
+        articlesCount={props.count}
         currentPage={props.currentPage} />
     </div>
   );
