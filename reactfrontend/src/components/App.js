@@ -71,10 +71,7 @@ class App extends React.Component {
               <Route path="/editorventa" component={EditorVenta} />
               <Route path="/editordiagnostico/:venta" component={EditorDiagnostico} />
               <Route path="/dx/:id" component={Diagnostico} />
-<<<<<<< HEAD
-=======
               <Route path="/citas" component={Citas} />
->>>>>>> master
             </Switch>
         </div>
       );
