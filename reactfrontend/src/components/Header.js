@@ -45,13 +45,21 @@ const LoggedInView = props => {
            <i className="ion-compose"></i>&nbsp;Ventas
           </Link>
         </li>
+
         <li className="nav-item" >
           <Link to="/" className="nav-link" >
            <i className="ion-compose"></i>&nbsp;Mis Compras
           </Link>
         </li>
 
-      
+
+        <li className="nav-item" >
+          <Link to="/citas" className="nav-link" >
+           <i className="ion-compose"></i>&nbsp;Mis Citas
+          </Link>
+        </li>
+
+
         <li className="nav-item">
           <Link
             to={`/@${props.currentUser.username}`}

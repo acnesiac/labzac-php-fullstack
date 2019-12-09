@@ -82,6 +82,14 @@ class EditorDiagnostico extends React.Component {
               <form>
                 <fieldset>
                   <fieldset className="form-group">
+                    {this.props.match.params.venta}
+                    <label
+                      className="form-control form-control-lg"
+                      type="text"
+                      placeholder={this.props.match.params.venta}
+                      value={this.props.match.params.venta}
+                      />
+                  </fieldset> <fieldset className="form-group">
                     <input
                       className="form-control form-control-lg"
                       type="text"

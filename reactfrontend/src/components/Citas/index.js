@@ -16,17 +16,13 @@ const mapDispatchToProps = dispatch => ({
     dispatch({ type: DIAGNOSTICO_PAGE_UNLOADED })
 });
 
-class Diagnostico extends React.Component {
+class Citas extends React.Component {
   componentWillMount() {
     this.props.onLoad(Promise.all([
-      agent.Diagnosticos.get(this.props.match.params.id),
-      agent.CommentsDX.forDx(this.props.match.params.id)
+      agent.Diagnosticos.get(this.props.match.params.id)
     ]));
   }
-<<<<<<< HEAD
-=======
   //agent.Comments.forArticle(this.props.match.params.id)
->>>>>>> master
   componentWillUnmount() {
     this.props.onUnload();
   }
@@ -44,23 +40,17 @@ class Diagnostico extends React.Component {
                      />
             </div>
             {
-<<<<<<< HEAD
-=======
               <div className="row">
->>>>>>> master
                 <CommentContainer
                   comments={this.props.comments || []}
                   errors={this.props.commentErrors}
                   slug={this.props.match.params.id}
                   currentUser={this.props.currentUser} />
-<<<<<<< HEAD
-=======
               </div>
->>>>>>> master
             }
         </div>
       </div>
     );
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(Diagnostico);
+export default connect(mapStateToProps, mapDispatchToProps)(Citas);
