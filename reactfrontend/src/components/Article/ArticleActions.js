@@ -29,6 +29,8 @@ const ArticleActions = props => {
               {/*</button>*/}
           </p>
           <h1>{article.cliente.email}</h1>
+          <h1>{article.title}</h1>
+          <h1>{article.description}</h1>
           <span className="date">${article.costo}</span>
       <ul>
           {

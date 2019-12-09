@@ -98,7 +98,7 @@ const Diagnosticos = {
   update: diagnostico =>
       requests.put(`/disgnosticos/${diagnostico.slug}`, { diagnostico: omitSlug(diagnostico) }),
   create: diagnostico =>
-      requests.post('/diagnosticos', { diagnostico }),
+      requests.post(`/diagnosticos/${diagnostico.venta}`, { diagnostico }),
   get: id =>
       requests.get(`/diagnosticos/${id}`)
 };
