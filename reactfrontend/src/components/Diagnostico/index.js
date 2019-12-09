@@ -23,13 +23,6 @@ class Diagnostico extends React.Component {
       agent.CommentsDX.forDx(this.props.match.params.id)
     ]));
   }
-<<<<<<< HEAD
-=======
-  //agent.Comments.forArticle(this.props.match.params.id)
->>>>>>> master
-  componentWillUnmount() {
-    this.props.onUnload();
-  }
 
   render() {
     if (!this.props.diagnostico) {
@@ -44,19 +37,13 @@ class Diagnostico extends React.Component {
                      />
             </div>
             {
-<<<<<<< HEAD
-=======
               <div className="row">
->>>>>>> master
                 <CommentContainer
                   comments={this.props.comments || []}
                   errors={this.props.commentErrors}
                   slug={this.props.match.params.id}
                   currentUser={this.props.currentUser} />
-<<<<<<< HEAD
-=======
               </div>
->>>>>>> master
             }
         </div>
       </div>
