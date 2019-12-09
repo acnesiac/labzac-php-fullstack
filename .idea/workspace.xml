@@ -1,37 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2d901de5-efc5-4fa2-85bb-3cd330930e48" name="Default" comment="issue with saving and redirecting solved">
-      <change afterPath="$PROJECT_DIR$/public/static/js/main.da9fade5.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/static/js/main.da9fade5.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactfrontend/public/asset-manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactfrontend/public/static/js/main.da9fade5.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactfrontend/public/static/js/main.da9fade5.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/hs.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/hs.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/app.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/public/css/main - Copy.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/src/agent.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/agent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/src/components/Article/ArticleActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/components/Article/ArticleActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/src/components/ArticleList.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/components/ArticleList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/src/components/Diagnostico/CommentContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/components/Diagnostico/CommentContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/src/components/Diagnostico/CommentInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/components/Diagnostico/CommentInput.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/src/components/Diagnostico/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/components/Diagnostico/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/src/components/EditorDiagnostico.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/components/EditorDiagnostico.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactfrontend/src/components/ListPagination.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactfrontend/src/components/ListPagination.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Conduit/Controllers/Article/CommentdxController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conduit/Controllers/Article/CommentdxController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Conduit/Controllers/Article/DiagnosticoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conduit/Controllers/Article/DiagnosticoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Conduit/Controllers/Article/VentaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conduit/Controllers/Article/VentaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Conduit/Models/Diagnostico.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conduit/Models/Diagnostico.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Conduit/Models/Venta.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conduit/Models/Venta.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Conduit/Transformers/ArticleTransformer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conduit/Transformers/ArticleTransformer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Conduit/Transformers/VentaTransformer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conduit/Transformers/VentaTransformer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="2d901de5-efc5-4fa2-85bb-3cd330930e48" name="Default" comment="issue with saving and redirecting solved" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,6 +175,7 @@
       <workItem from="1574456485840" duration="1891000" />
       <workItem from="1574458395998" duration="1792000" />
       <workItem from="1574460204940" duration="1314000" />
+      <workItem from="1574492294536" duration="271000" />
     </task>
     <task id="LOCAL-00001" summary="hs">
       <created>1555455950859</created>
@@ -388,7 +359,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574376105832</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="issue with saving and redirecting solved">
+      <created>1574492509488</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1574492509489</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
