@@ -3,7 +3,7 @@
 namespace Tests\Unit\Models;
 
 use Conduit\Models\Article;
-use Conduit\Models\Comment;
+use Conduit\Models\DxComment;
 use Conduit\Models\Tag;
 use Conduit\Models\User;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -32,7 +32,7 @@ class ArticleTest extends BaseTestCase
         $article = new Article();
 
         $this->assertInstanceOf(HasMany::class, $article->comments());
-        $this->assertInstanceOf(Comment::class, $article->comments()->getRelated());
+        $this->assertInstanceOf(DxComment::class, $article->comments()->getRelated());
     }
 
     /** @test */

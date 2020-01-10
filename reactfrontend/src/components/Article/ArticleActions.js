@@ -1,50 +1,49 @@
-import { Link } from 'react-router-dom';
-import React from 'react';
-import agent from '../../agent';
-import { connect } from 'react-redux';
-import { DELETE_ARTICLE } from '../../constants/actionTypes';
+import { Link } from "react-router-dom";
+import React from "react";
+import agent from "../../agent";
+import { connect } from "react-redux";
+import ArticlePreview from "../ArticlePreview";
 
 const mapDispatchToProps = dispatch => ({
-  onClickDelete: payload =>
-    dispatch({ type: DELETE_ARTICLE, payload })
+
 });
 
 const ArticleActions = props => {
   const article = props.article;
-  const del = () => {
-    props.onClickDelete(agent.Articles.del(article.slug))
-  };
-  
-  if (props.canModify) {
+
+    function handleClick(e) {
+        e.preventDefault();
+        agent.Diagnosticos.byVenta(article.id);
+    }
+
     return (
+      <div>
+          <p>
+              <Link className="btn   btn-secondary  my-2" to={`/@${article.id}`} >{article.id}</Link>     |
+              <Link className="btn   btn-secondary  my-2" to={`/editordiagnostico/${article.id}`}>
+                    Iniciar DX
+              </Link>
 
-      <span>
-          <span>
-        <Link
-          to={`/editor/${article.slug}`}
-          className="btn btn-outline-secondary btn-sm">
-          <i className="ion-edit"></i> Edita paciente
-        </Link>
-        </span>
-         <span>
-        </span>
-        <span>
-          <Link
-          to={`/hourEditor/${article.slug}`}
-          className="btn btn-outline-secondary btn-sm">
-          <i className="ion-edit"></i> Nuevo Registro
-        </Link>
-        </span>
-       
-
-      </span>
+              {/*<button className="btn   btn-secondary  my-2" onClick={handleClick}>*/}
+              {/*      Ver DXs*/}
+              {/*</button>*/}
+          </p>
+          <h1>{article.cliente.email}</h1>
+          <span className="date">${article.costo}</span>
+      <ul>
+          {
+              article.diagnosticos.map(dx => {
+                  return (
+                      <Link key={dx.id} to={`/dx/${dx.id}`}>{dx.id}</Link>
+                  );
+              })
+          }
+      </ul>
+      </div>
     );
-  }
-
-  return (
-    <span>
-    </span>
-  );
+  return <span> </span>;
 };
-
-export default connect(() => ({}), mapDispatchToProps)(ArticleActions);
+export default connect(
+  () => ({}),
+  mapDispatchToProps
+)(ArticleActions);

@@ -337,8 +337,8 @@ pre code {
 .container {
     margin-left: auto;
     margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px; }
+
+}
 @media (min-width: 544px) {
     .container {
         max-width: 576px; } }
@@ -355,14 +355,13 @@ pre code {
 .container-fluid {
     margin-left: auto;
     margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px; }
+    padding-left: 5px;
+    padding-right: 5px; }
 
 .row {
     display: flex;
     flex-wrap: wrap;
-    margin-left: -15px;
-    margin-right: -15px; }
+}
 
 .col-xs {
     position: relative;
@@ -839,8 +838,8 @@ pre code {
     .col-md-12 {
         position: relative;
         min-height: 1px;
-        padding-right: 15px;
-        padding-left: 15px;
+        padding-right: 10px;
+        padding-left: 10px;
         flex: 0 0 100%;
         max-width: 100%; }
     .pull-md-0 {
@@ -4882,6 +4881,7 @@ footer .attribution {
     background: #333;
     padding: 2rem;
     margin-bottom: 2rem; }
+
 .banner h1 {
     text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
     margin-bottom: 0px; }
@@ -4918,8 +4918,15 @@ footer .attribution {
     display: block; }
 
 .article-preview {
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 1.5rem 0; }
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 1.5rem ;
+    position: relative;
+    display: block;
+    margin-bottom: 0.75rem;
+    background-color: #fff;
+    border-radius: 0.25rem;
+    box-shadow: inset 0 0 0 .01px rgba(0, 0, 0, 0.125);
+    }
 .article-preview .article-meta {
     margin: 0 0 1rem 0; }
 .article-preview .preview-link h1 {

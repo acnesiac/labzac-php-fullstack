@@ -152,14 +152,16 @@ class Settings extends React.Component {
                 currentUser={this.props.currentUser}
                 onSubmitForm={this.props.onSubmitForm} />
 
-              <hr />
 
+{/*
+
+<hr />
               <button
                 className="btn btn-outline-danger"
                 onClick={this.props.onClickLogout}>
                 Cierra la sesion.
               </button>
-
+  */}
             </div>
           </div>
         </div>

@@ -1,9 +1,45 @@
-# ![RealWorld Example App](logo.png)
+# Production
+    http://www.laboratorioszacatelco.com.mx
+    Comparar los hs.sql
+    Correr script hs.sql solo con los cambios necesarios de QA
 
+    Apuntar el API en agent.js a www.laboratorioszacatelco.com.mx antes de compilar
+    npm run build
+    En /templates mover index.html a  /templates por ftp
+    En /public colocar los .css y .js a /public por ftp
+    En /src colocar los .php a /src
+    
+    FTP Username: acnesiac@laboratorioszacatelco.com.mx
+    FTP server: laboratorioszacatelco.com.mx
+    FTP & explicit FTPS port:  21
+    
+    Test with postman
+
+# QA
+    Test with postman
+    Cargar los SQL cambios con produccion
+    Launch xamp control both mysql y apache    
+    http://localhost/imagenesrx/public/
+    npm run build
+    En /templates mover /build/index.html
+    En /public colocar los .css y .js
+    Test with postman
+    
+# DEV
+    Inside 
+    \xampp\htdocs\imagenesrx\reactfrontend
+    npm start
+    http://localhost:4100/
+
+
+ ### Slim codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the [RealWorld](https://github.com/gothinkster/realworld) spec and API.
+
+
+
+# API
+http://localhost/imagenesrx/public/api/tags
 
 > ### Slim codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the [RealWorld](https://github.com/gothinkster/realworld) spec and API.
-
-
 ### [Demo](https://github.com/gothinkster/realworld)&nbsp;&nbsp;&nbsp;&nbsp;[RealWorld](https://github.com/gothinkster/realworld)
 
 
@@ -142,14 +178,14 @@ php vendor/bin/phinx migrate
 
 ***Data Models***
 
-The data is managed by models which represent the business entities of the app. There are four models `User`, `Article`, `Comment`, and `Tag`. 
+The data is managed by models which represent the business entities of the app. There are four models `User`, `Article`, `DxComment`, and `Tag`. 
 They can be found at [Models Directory](src/Conduit/Models). Each model has corresponding table in the database. 
 These models extends `Illuminate\Database\Eloquent\Model` which provides the ORM implementations.
 
 Relationships with other models are defined by each model using Eloquent.
-For example, `User-Comment` is a one-to-many relationship 
+For example, `User-DxComment` is a one-to-many relationship 
 which is defined [by the User model](https://github.com/alhoqbani/slim-php-realworld-example-app/blob/51ef4cba018673ba63ec2f8cb210effff26aaec5/src/Conduit/Models/User.php#L66-L69)
-and [by the Comment model](https://github.com/alhoqbani/slim-php-realworld-example-app/blob/51ef4cba018673ba63ec2f8cb210effff26aaec5/src/Conduit/Models/Comment.php#L41-L43).
+and [by the DxComment model](https://github.com/alhoqbani/slim-php-realworld-example-app/blob/51ef4cba018673ba63ec2f8cb210effff26aaec5/src/Conduit/Models/Comment.php#L41-L43).
 This relationship is stored in the database by having a foreign key `user_id` in the comments table.
 
 Beside The four tables in the database representing each model, the database has three other tables to store many-to-many relationships (`article_tag`, `user_favorite`, `users_following`).
@@ -389,3 +425,4 @@ For more information check Slim documentations:
 
 # Test
 `composer test`
+

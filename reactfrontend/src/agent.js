@@ -1,9 +1,12 @@
+
 import superagentPromise from 'superagent-promise';
 import _superagent from 'superagent';
 
 const superagent = superagentPromise(_superagent, global.Promise);
 
-const API_ROOT = 'http://localhost:81/imagenesrx/public/api';
+const API_ROOT = 'http://localhost/imagenesrx/public/api';
+//const API_ROOT = 'http://www.laboratorioszacatelco.com.mx/api';
+
 
 const encode = encodeURIComponent;
 const responseBody = res => res.body;
@@ -43,6 +46,7 @@ const Tags = {
 
 const limit = (count, p) => `limit=${count}&offset=${p ? p * count : 0}`;
 const omitSlug = article => Object.assign({}, article, { slug: undefined })
+
 const Articles = {
   all: page =>
     requests.get(`/articles?${limit(10, page)}`),
@@ -79,18 +83,54 @@ const Comments = {
 
 const Profile = {
   follow: username =>
-    requests.post(`/profiles/${username}/follow`),
+      requests.post(`/profiles/${username}/follow`),
   get: username =>
-    requests.get(`/profiles/${username}`),
+      requests.get(`/profiles/${username}`),
   unfollow: username =>
-    requests.del(`/profiles/${username}/follow`)
+      requests.del(`/profiles/${username}/follow`)
+};
+
+const Diagnosticos = {
+  byVenta: (venta) =>
+      requests.get(`/diagnosticos?venta=${encode(venta)}`),
+  all: page =>
+      requests.get(`/diagnosticos?${limit(10, page)}`),
+  update: diagnostico =>
+      requests.put(`/disgnosticos/${diagnostico.slug}`, { diagnostico: omitSlug(diagnostico) }),
+  create: diagnostico =>
+      requests.post('/diagnosticos', { diagnostico }),
+  get: id =>
+      requests.get(`/diagnosticos/${id}`)
+};
+
+const Ventas = {
+  byClient: (client, page) =>
+      requests.get(`/ventas?client=${encode(client)}&${limit(10, page)}`),
+  all: page =>
+      requests.get(`/ventas?${limit(10, page)}`),
+  update: venta =>
+      requests.put(`/ventas/${venta.slug}`, { venta: omitSlug(venta) }),
+  create: venta =>
+      requests.post('/ventas', { venta })
+};
+
+const CommentsDX = {
+  create: (slug, comment) =>
+    requests.post(`/diagnosticos/${slug}/commentsdx`, {comment}),
+  delete: (slug, commentId) =>
+    requests.del(`/diagnosticos/${slug}/commentsdx/${commentId}`),
+  forDx: slug =>
+    requests.get(`/diagnosticos/${slug}/commentsdx`)
 };
 
 export default {
+  Diagnosticos,
   Articles,
   Auth,
   Comments,
+  CommentsDX,
   Profile,
   Tags,
+  Ventas,
   setToken: _token => { token = _token; }
 };

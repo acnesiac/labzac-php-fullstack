@@ -14,11 +14,12 @@ import {
   PROFILE_FAVORITES_PAGE_UNLOADED,
   SETTINGS_PAGE_UNLOADED,
   LOGIN_PAGE_UNLOADED,
-  REGISTER_PAGE_UNLOADED
+  REGISTER_PAGE_UNLOADED,
+  VENTA_SUBMITTED, EDITORVENTA_SUBMITTED
 } from '../constants/actionTypes';
 
 const defaultState = {
-  appName: 'HShip',
+  appName: 'laboratorios zacatelco',
   token: null,
   viewChangeCounter: 0
 };
@@ -36,8 +37,8 @@ export default (state = defaultState, action) => {
       return { ...state, redirectTo: null };
     case LOGOUT:
       return { ...state, redirectTo: '/', token: null, currentUser: null };
-    case ARTICLE_SUBMITTED:
-      const redirectUrl = `/article/${action.payload.article.slug}`;
+    case EDITORVENTA_SUBMITTED:
+      const redirectUrl = `/`;
       return { ...state, redirectTo: redirectUrl };
     case SETTINGS_SAVED:
       return {

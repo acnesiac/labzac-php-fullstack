@@ -1,7 +1,11 @@
 <?php
 
 use Conduit\Controllers\Article\ArticleController;
+use Conduit\Controllers\Article\PostController;
+use Conduit\Controllers\Article\DiagnosticoController;
+use Conduit\Controllers\Article\VentaController;
 use Conduit\Controllers\Article\CommentController;
+use Conduit\Controllers\Article\CommentdxController;
 use Conduit\Controllers\Article\FavoriteController;
 use Conduit\Controllers\Auth\LoginController;
 use Conduit\Controllers\Auth\RegisterController;
@@ -39,7 +43,6 @@ $app->group('/api',
             ->add($jwtMiddleware)
             ->setName('profile.unfollow');
 
-
         // Articles Routes
         $this->get('/articles/feed', ArticleController::class . ':index')->add($optionalAuth)->setName('article.index');
         $this->get('/articles/{slug}', ArticleController::class . ':show')->add($optionalAuth)->setName('article.show');
@@ -47,32 +50,20 @@ $app->group('/api',
             ArticleController::class . ':update')->add($jwtMiddleware)->setName('article.update');
         $this->delete('/articles/{slug}',
             ArticleController::class . ':destroy')->add($jwtMiddleware)->setName('article.destroy');
-        $this->post('/articles', ArticleController::class . ':store')->add($jwtMiddleware)->setName('article.store');
+        $this->post('/articles', ArticleController::class . ':store')->add($jwtMiddleware);
         $this->get('/articles', ArticleController::class . ':index')->add($optionalAuth)->setName('article.index');
 
+        //Posts
+        $this->get('/posts', PostController::class . ':index')->add($optionalAuth)->setName('post.index');
+
         // Comments
-        $this->get('/articles/{slug}/comments',
-            CommentController::class . ':index')
-            ->add($optionalAuth)
-            ->setName('comment.index');
-        $this->post('/articles/{slug}/comments',
-            CommentController::class . ':store')
-            ->add($jwtMiddleware)
-            ->setName('comment.store');
-        $this->delete('/articles/{slug}/comments/{id}',
-            CommentController::class . ':destroy')
-            ->add($jwtMiddleware)
-            ->setName('comment.destroy');
+        $this->get('/articles/{slug}/comments',CommentController::class . ':index')->add($optionalAuth)->setName('comment.index');
+        $this->post('/articles/{slug}/comments',CommentController::class . ':store')->add($jwtMiddleware)->setName('comment.store');
+        $this->delete('/articles/{slug}/comments/{id}',CommentController::class . ':destroy')->add($jwtMiddleware)->setName('comment.destroy');
 
         // Favorite Article Routes
-        $this->post('/articles/{slug}/favorite',
-            FavoriteController::class . ':store')
-            ->add($jwtMiddleware)
-            ->setName('favorite.store');
-        $this->delete('/articles/{slug}/favorite',
-            FavoriteController::class . ':destroy')
-            ->add($jwtMiddleware)
-            ->setName('favorite.destroy');
+        $this->post('/articles/{slug}/favorite',FavoriteController::class . ':store')->add($jwtMiddleware)->setName('favorite.store');
+        $this->delete('/articles/{slug}/favorite',FavoriteController::class . ':destroy')->add($jwtMiddleware)->setName('favorite.destroy');
 
         // Tags Route
         $this->get('/tags', function (Request $request, Response $response) {
@@ -80,8 +71,22 @@ $app->group('/api',
                 'tags' => Tag::all('title')->pluck('title'),
             ]);
         });
-    });
 
+        // Ventas
+        $this->get('/ventas', VentaController::class . ':index')->add($optionalAuth)->setName('ventas.index');
+        $this->get('/ventas/{id}', VentaController::class . ':show')->add($optionalAuth)->setName('ventas.show');
+        $this->post('/ventas', VentaController::class . ':store')->add($jwtMiddleware)->setName('ventas.store');
+
+        // Diagnosticos
+        $this->get('/diagnosticos', DiagnosticoController::class . ':index')->add($optionalAuth)->setName('diagnosticos.index');
+        $this->get('/diagnosticos/{id}', DiagnosticoController::class . ':show')->add($optionalAuth)->setName('diagnosticos.show');
+        $this->post('/diagnosticos/{venta}', DiagnosticoController::class . ':store')->add($jwtMiddleware)->setName('diagnosticos.store');
+
+        // CommentsDX
+        $this->get('/diagnosticos/{diagnostico}/commentsdx',CommentdxController::class . ':index')->add($optionalAuth)->setName('comment.index');
+        $this->post('/diagnosticos/{diagnostico}/commentsdx',CommentdxController::class . ':store')->add($jwtMiddleware)->setName('comment.store');
+
+    });
 
 // Routes
 
