@@ -1,4 +1,4 @@
-import ArticleList from './ArticleList';
+import VentaList from './VentaList';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import agent from '../agent';
@@ -145,7 +145,7 @@ class Profile extends React.Component {
                 {this.renderTabs()}
               </div>
 
-              <ArticleList
+              <VentaList
                 pager={this.props.pager}
                 articles={this.props.articles}
                 articlesCount={this.props.articlesCount}
