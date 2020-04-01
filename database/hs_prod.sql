@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 22, 2019 at 04:31 PM
+-- Generation Time: Mar 31, 2020 at 03:07 PM
 -- Server version: 5.6.44-cll-lve
 -- PHP Version: 7.2.7
 
@@ -63,6 +63,47 @@ CREATE TABLE `article_tag` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `commentdxes`
+--
+
+CREATE TABLE `commentdxes` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `user_id` int(10) UNSIGNED NOT NULL,
+  `diagnostico_id` int(10) UNSIGNED NOT NULL,
+  `body` text COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `commentdxes`
+--
+
+INSERT INTO `commentdxes` (`id`, `user_id`, `diagnostico_id`, `body`, `created_at`, `updated_at`) VALUES
+(8, 37, 24, 'El paciente presenta una lesion grave en la parte osea de la rodilla much!', '2019-11-21 00:54:36', '2019-11-21 00:54:36'),
+(9, 37, 24, 'El paciente presenta una lesion grave en la parte osea de la rodilla much!', '2019-11-21 00:55:09', '2019-11-21 00:55:09'),
+(10, 37, 5, 'El paciente presenta una lesion grave en la parte osea de la rodilla much!', '2019-11-21 01:04:26', '2019-11-21 01:04:26'),
+(11, 37, 5, 'El paciente presenta una lesion grave en la parte osea de la rodilla much!', '2019-11-21 01:04:34', '2019-11-21 01:04:34'),
+(12, 37, 5, 'El paciente presenta una lesion grave en la parte osea de la rodilla much!', '2019-11-21 03:20:06', '2019-11-21 03:20:06'),
+(13, 37, 5, 'El paciente presenta una lesion grave en la parte osea de la rodilla much!', '2019-11-22 22:39:26', '2019-11-22 22:39:26'),
+(14, 37, 5, 'El paciente presenta una lesion grave en la parte osea de la rodilla much!', '2019-11-22 22:39:32', '2019-11-22 22:39:32'),
+(15, 37, 5, 'El paciente presenta una lesion grave en la parte osea de la rodilla much!', '2019-11-22 22:39:35', '2019-11-22 22:39:35'),
+(18, 37, 4, 'El paciente presenta una lesion grave en la parte osea de la rodilla much!', '2019-11-23 00:15:18', '2019-11-23 00:15:18'),
+(19, 21, 4, '45', '2019-11-23 01:03:54', '2019-11-23 01:03:54'),
+(20, 21, 4, '4577', '2019-11-23 01:04:03', '2019-11-23 01:04:03'),
+(21, 21, 4, '121', '2019-11-23 01:04:26', '2019-11-23 01:04:26'),
+(22, 21, 4, '332', '2019-11-23 01:04:40', '2019-11-23 01:04:40'),
+(23, 21, 4, '233', '2019-11-23 01:04:51', '2019-11-23 01:04:51'),
+(24, 21, 4, '3\n3\n', '2019-11-23 01:04:58', '2019-11-23 01:04:58'),
+(25, 37, 4, 'El paciente presenta una lesion grave en la parte osea de la rodilla much!', '2019-11-23 01:28:42', '2019-11-23 01:28:42'),
+(26, 37, 4, 'El paciente presenta una lesion grave en la parte osea de la rodilla much!', '2019-11-23 02:11:40', '2019-11-23 02:11:40'),
+(27, 37, 11, 'El paciente presenta una lesion grave en la parte osea de la rodilla much!', '2019-11-23 02:12:35', '2019-11-23 02:12:35'),
+(28, 21, 16, 'fasdfa', '2019-11-23 03:53:35', '2019-11-23 03:53:35'),
+(29, 21, 16, 'DX', '2019-12-09 07:29:00', '2019-12-09 07:29:00');
 
 -- --------------------------------------------------------
 
@@ -132,6 +173,68 @@ CREATE TABLE `diagnostico_tag` (
 --
 
 INSERT INTO `diagnostico_tag` (`id`, `diagnostico_id`, `tag_id`, `created_at`, `updated_at`) VALUES
+(0, 0, 9, NULL, NULL),
+(0, 0, 10, NULL, NULL),
+(0, 0, 9, NULL, NULL),
+(0, 0, 10, NULL, NULL),
+(0, 0, 9, NULL, NULL),
+(0, 0, 10, NULL, NULL),
+(0, 0, 9, NULL, NULL),
+(0, 0, 10, NULL, NULL),
+(0, 0, 9, NULL, NULL),
+(0, 0, 10, NULL, NULL),
+(0, 0, 9, NULL, NULL),
+(0, 0, 10, NULL, NULL),
+(0, 0, 9, NULL, NULL),
+(0, 0, 10, NULL, NULL),
+(0, 0, 9, NULL, NULL),
+(0, 0, 10, NULL, NULL),
+(0, 0, 9, NULL, NULL),
+(0, 0, 10, NULL, NULL),
+(0, 0, 9, NULL, NULL),
+(0, 0, 10, NULL, NULL),
+(0, 4, 9, NULL, NULL),
+(0, 4, 10, NULL, NULL),
+(0, 5, 9, NULL, NULL),
+(0, 5, 10, NULL, NULL),
+(0, 6, 9, NULL, NULL),
+(0, 6, 10, NULL, NULL),
+(0, 7, 9, NULL, NULL),
+(0, 7, 10, NULL, NULL),
+(0, 8, 9, NULL, NULL),
+(0, 8, 10, NULL, NULL),
+(0, 9, 9, NULL, NULL),
+(0, 9, 10, NULL, NULL),
+(0, 10, 9, NULL, NULL),
+(0, 10, 10, NULL, NULL),
+(0, 11, 9, NULL, NULL),
+(0, 11, 10, NULL, NULL),
+(0, 12, 9, NULL, NULL),
+(0, 12, 10, NULL, NULL),
+(0, 13, 9, NULL, NULL),
+(0, 13, 10, NULL, NULL),
+(0, 14, 9, NULL, NULL),
+(0, 14, 10, NULL, NULL),
+(0, 15, 9, NULL, NULL),
+(0, 15, 10, NULL, NULL),
+(0, 19, 9, NULL, NULL),
+(0, 19, 10, NULL, NULL),
+(0, 20, 9, NULL, NULL),
+(0, 20, 10, NULL, NULL),
+(0, 21, 9, NULL, NULL),
+(0, 21, 10, NULL, NULL),
+(0, 22, 9, NULL, NULL),
+(0, 22, 10, NULL, NULL),
+(0, 23, 9, NULL, NULL),
+(0, 23, 10, NULL, NULL),
+(0, 24, 9, NULL, NULL),
+(0, 24, 10, NULL, NULL),
+(0, 16, 9, NULL, NULL),
+(0, 16, 10, NULL, NULL),
+(0, 17, 9, NULL, NULL),
+(0, 17, 10, NULL, NULL),
+(0, 18, 9, NULL, NULL),
+(0, 18, 10, NULL, NULL),
 (0, 0, 9, NULL, NULL),
 (0, 0, 10, NULL, NULL);
 
@@ -272,7 +375,8 @@ INSERT INTO `users` (`id`, `email`, `username`, `password`, `token`, `bio`, `ima
 (34, 'asdfadf@hotmail.com', 'fasdfa', '$2y$10$4MZWYvAVaHOJQcdwnO0OROCc/sZPomV7Eujlc6hjqAjvK4u3cQIOW', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1Mzk5NzExOTQsImV4cCI6MTUzOTk3ODM5NCwianRpIjoiczFNQWVuT29WOW1DRXhBYkpFUjB2UT09IiwiaXNzIjoiaHR0cDpcL1wvbG9jYWxob3N0Iiwic3ViIjoiZmFzZGZhIn0.onf3jcWiHOYrLIo5XGYwod-YsrUsDXpzLYCtwsqIYyM', NULL, NULL, '2018-10-20 00:46:34', '2018-10-20 00:46:34'),
 (35, 'asdfasdf@hotmail.com', 'asdf', '$2y$10$wL0JZOtR/IvA.YGd/RsqMOBPOieQWH7OFhlyONAXkKl2Nn3N4hAQu', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NDM5NjA2MjgsImV4cCI6MTU0Mzk2NzgyOCwianRpIjoib1ZYRkxVd2dxU3JiSHdpclZZeXJSZz09IiwiaXNzIjoiaHR0cDpcL1wvbG9jYWxob3N0Iiwic3ViIjoiYXNkZiJ9.OhZNaCkzgGguSmLR5WL2eJsJUfp8EImDVQ3IRx5VgK4', NULL, NULL, '2018-12-05 04:57:08', '2018-12-05 04:57:08'),
 (36, 'acnesisc@homsk.com', 'acnesisc@homsk.com', '$2y$10$8eTxoB5pxZOLLX4PLAzgd.S4/dp5ri8ncxAOw3ooGneOxEN/DUrUe', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NTI0NDkzODcsImV4cCI6MTU1MjQ1NjU4NywianRpIjoiTDg3SEJyMmFvZUN1VWtCZUJmYXI3Zz09IiwiaXNzIjoiaHR0cDpcL1wvbG9jYWxob3N0Iiwic3ViIjoiYWNuZXNpc2NAaG9tc2suY29tIn0.ZGgNYRL6WJH-NSdtVYJt4PxG8Ja_eLevmh_f5gzxegU', NULL, NULL, '2019-03-13 10:56:27', '2019-03-13 10:56:27'),
-(37, 'acnesiac1@hotmail.com', 'acnesiac1@hotmail.com', '$2y$10$I./D.gdL5yopib3xZ4F.reXoTDCMVWH/SOl4uwBL82F8Z3BJQh9rW', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NTI0NDk0MTksImV4cCI6MTU1MjQ1NjYxOSwianRpIjoiYzkzOEt2b2N6SFpYTHBkRXRoQ3dQQT09IiwiaXNzIjoiaHR0cDpcL1wvbG9jYWxob3N0Iiwic3ViIjoiYWNuZXNpYWMxQGhvdG1haWwuY29tIn0.sCk2yBWApAmkkk06cuyAy31MzfHSNXuy70nzME9Zo9Y', NULL, NULL, '2019-03-13 10:56:59', '2019-03-13 10:56:59');
+(37, 'acnesiac1@hotmail.com', 'acnesiac1@hotmail.com', '$2y$10$I./D.gdL5yopib3xZ4F.reXoTDCMVWH/SOl4uwBL82F8Z3BJQh9rW', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NTI0NDk0MTksImV4cCI6MTU1MjQ1NjYxOSwianRpIjoiYzkzOEt2b2N6SFpYTHBkRXRoQ3dQQT09IiwiaXNzIjoiaHR0cDpcL1wvbG9jYWxob3N0Iiwic3ViIjoiYWNuZXNpYWMxQGhvdG1haWwuY29tIn0.sCk2yBWApAmkkk06cuyAy31MzfHSNXuy70nzME9Zo9Y', NULL, NULL, '2019-03-13 10:56:59', '2019-03-13 10:56:59'),
+(38, 'celeb_acnesiac1@hotmail.com', 'celeb_acnesiac1@hotmail.com', '$2y$10$33aghz2BHFSfrVuFPfUnyum6WP7I11mTW2OTecxSDcxQyivOzAn/6', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NzE4NDMxMzcsImV4cCI6MTU3MTg1MDMzNywianRpIjoiQ0RBUklFWjRwU1p2YlVFV21uV0Rydz09IiwiaXNzIjoiaHR0cDpcL1wvd3d3LmltYWdlbmVzcnguY29tLm14Iiwic3ViIjoiY2VsZWJfYWNuZXNpYWMxQGhvdG1haWwuY29tIn0.E-ZNMOyjgqX4w55Z-6wnoJ-WjRTY6NSIYNoyFVh2JOA', NULL, NULL, '2019-10-23 22:05:37', '2019-10-23 22:05:37');
 
 -- --------------------------------------------------------
 
@@ -424,20 +528,37 @@ CREATE TABLE `ventas` (
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `body` text COLLATE utf8_unicode_ci NOT NULL,
   `user_id` int(10) UNSIGNED NOT NULL,
+  `cliente_id` int(10) UNSIGNED NOT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `venta_diagnostico`
+-- Dumping data for table `ventas`
 --
 
-CREATE TABLE `venta_diagnostico` (
-  `venta_id` int(11) NOT NULL,
-  `diagnostico_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO `ventas` (`id`, `description`, `costo`, `title`, `body`, `user_id`, `cliente_id`, `updated_at`, `created_at`) VALUES
+(96, 'acaliforni@californication', 22, '2', 'craving', 21, 22, '2019-11-22 07:44:21', '2019-11-22 07:44:21'),
+(97, 'acaliforni@californication', 22, '2', 'craving', 21, 22, '2019-11-22 07:44:24', '2019-11-22 07:44:24'),
+(98, 'acnesiac@hotmail.com', 2, '2', 'Esta es una terapia de sesion para las manaas', 21, 2, '2019-11-22 09:53:46', '2019-11-22 09:53:46'),
+(99, 'acnesiac@ho.com', 20, '2', 'travel ', 21, 20, '2019-11-22 09:55:27', '2019-11-22 09:55:27'),
+(100, 'celsoa', 12, '2', 'asd', 21, 12, '2019-11-22 10:15:15', '2019-11-22 10:15:15'),
+(101, 'julieta.venegas@gmail.com', 9, '2', 'extranandote', 21, 9, '2019-11-22 10:17:56', '2019-11-22 10:17:56'),
+(102, 'acnesiac@hotmail.com', 3, '2', 'hello', 21, 3, '2019-11-23 04:54:08', '2019-11-23 04:54:08'),
+(103, 'acnesuac@hotmail.com', 1, '2', 'description', 21, 1, '2019-11-23 05:12:21', '2019-11-23 05:12:21'),
+(104, 'Venta 5 de paquete 2', 2, 'venta numero 2', 'a', 37, 2, '2019-11-23 08:28:58', '2019-11-23 08:28:58'),
+(105, 'Venta 5 de paquete 2', 2, 'venta numero 2', 'a', 37, 2, '2019-11-23 08:30:06', '2019-11-23 08:30:06'),
+(106, 'Venta 5 de paquete 2', 2, 'venta numero 2', 'a', 37, 2, '2019-11-23 08:31:45', '2019-11-23 08:31:45'),
+(107, 'Venta 5 de paquete 2', 2, 'venta numero 2', 'a', 37, 2, '2019-11-23 08:34:42', '2019-11-23 08:34:42'),
+(108, 'Venta 5 de paquete 2', 2, 'venta numero 2', 'a', 37, 2, '2019-11-23 08:46:25', '2019-11-23 08:46:25'),
+(109, 'Venta 5 de paquete 2', 2, 'venta numero 2', 'a', 37, 2, '2019-11-23 08:50:35', '2019-11-23 08:50:35'),
+(110, 'Venta 5 de paquete 2', 2, 'venta numero 2', 'a', 37, 2, '2019-11-23 08:50:55', '2019-11-23 08:50:55'),
+(111, 'Venta 5 de paquete 2', 2, 'venta numero 2', 'a', 37, 2, '2019-11-23 09:11:06', '2019-11-23 09:11:06'),
+(112, 'Venta 5 de paquete 2', 2, 'venta numero 2', 'a', 37, 2, '2019-11-23 09:13:14', '2019-11-23 09:13:14'),
+(113, 'Venta 5 de paquete 2', 2, 'venta numero 2', 'a', 37, 2, '2019-11-23 09:13:32', '2019-11-23 09:13:32'),
+(114, 'Venta 5 de paquete 2', 2, 'venta numero 2', 'a', 37, 2, '2019-11-23 09:17:35', '2019-11-23 09:17:35'),
+(115, 'Venta 5 de paquete 2', 2, 'venta numero 2', 'a', 37, 2, '2019-11-23 10:29:33', '2019-11-23 10:29:33'),
+(116, 'mail', 3, '2', '2', 21, 3, '2019-11-23 10:52:32', '2019-11-23 10:52:32');
 
 --
 -- Indexes for dumped tables
@@ -458,6 +579,14 @@ ALTER TABLE `article_tag`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `article_tag_article_id_tag_id_unique` (`article_id`,`tag_id`),
   ADD KEY `article_tag_tag_id_foreign` (`tag_id`);
+
+--
+-- Indexes for table `commentdxes`
+--
+ALTER TABLE `commentdxes`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `commentd_user_id_foreign` (`user_id`),
+  ADD KEY `commentd_diagnostico_id_foreign` (`diagnostico_id`);
 
 --
 -- Indexes for table `comments`
@@ -521,6 +650,7 @@ ALTER TABLE `user_favorite`
 --
 ALTER TABLE `ventas`
   ADD PRIMARY KEY (`id`),
+  ADD KEY `ventas_cliente_foreign` (`cliente_id`),
   ADD KEY `ventas_user_id_foreign` (`user_id`);
 
 --
@@ -540,6 +670,12 @@ ALTER TABLE `article_tag`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `commentdxes`
+--
+ALTER TABLE `commentdxes`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+
+--
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
@@ -555,25 +691,13 @@ ALTER TABLE `tags`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `users_following`
 --
 ALTER TABLE `users_following`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
-
---
--- AUTO_INCREMENT for table `user_favorite`
---
-ALTER TABLE `user_favorite`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `ventas`
---
-ALTER TABLE `ventas`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
@@ -598,20 +722,6 @@ ALTER TABLE `article_tag`
 ALTER TABLE `comments`
   ADD CONSTRAINT `comments_article_id_foreign` FOREIGN KEY (`article_id`) REFERENCES `articles` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `comments_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
-
---
--- Constraints for table `users_following`
---
-ALTER TABLE `users_following`
-  ADD CONSTRAINT `users_following_following_user_id_foreign` FOREIGN KEY (`following_user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `users_following_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
-
---
--- Constraints for table `user_favorite`
---
-ALTER TABLE `user_favorite`
-  ADD CONSTRAINT `user_favorite_article_id_foreign` FOREIGN KEY (`article_id`) REFERENCES `articles` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `user_favorite_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

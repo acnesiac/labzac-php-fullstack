@@ -9,6 +9,7 @@
     En /public colocar los .css y .js a /public por ftp
     En /src colocar los .php a /src
     
+    coreftp
     FTP Username: acnesiac@laboratorioszacatelco.com.mx
     FTP server: laboratorioszacatelco.com.mx
     FTP & explicit FTPS port:  21
@@ -16,6 +17,7 @@
     Test with postman
 
 # QA
+    
     Test with postman
     Cargar los SQL cambios con produccion
     Launch xamp control both mysql y apache    
@@ -24,13 +26,30 @@
     En /templates mover /build/index.html
     En /public colocar los .css y .js
     Test with postman
+    Modificar src="./static/js/main.cc1c1a33.js"  el punto ./
+    
     
 # DEV
     Inside 
     \xampp\htdocs\imagenesrx\reactfrontend
     npm start
     http://localhost:4100/
-
+      	      drop table ventas;
+              drop table posts;
+              drop table users_following;
+              drop table user_favorite;
+              drop table article_tag;
+              drop table commentdxes;
+              drop table tags;
+              drop table comments;
+              drop table migrations;        
+              drop table user_favorite;
+              drop table articles;
+              drop table diagnosticos;
+              drop table diagnostico_tag;
+              drop table imagenesrx;
+              drop table users;
+    
 
 
 # API
