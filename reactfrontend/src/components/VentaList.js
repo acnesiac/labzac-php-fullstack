@@ -1,4 +1,4 @@
-import ArticlePreview from './ArticlePreview';
+import VentaPreview from './VentaPreview';
 import ListPagination from './ListPagination';
 import React from 'react';
 import {Link} from "react-router-dom";
@@ -19,16 +19,16 @@ const VentaList = props => {
                     <ul className="nav navbar-nav pull-xs-right">
                         <li className="nav-item">
                             <Link to="/editorventa" className="btn btn-primary">
-                                Nueva venta
+                                Hacer venta de paquete
                             </Link>
                         </li>
                     </ul>
                 </div>
             </form>
             {
-                props.articles.map(article => {
+                props.articles.map(venta => {
                     return (
-                        <ArticlePreview article={article} key={article.slug}/>
+                        <VentaPreview venta={venta} key={venta.slug}/>
                     );
                 })
             }
