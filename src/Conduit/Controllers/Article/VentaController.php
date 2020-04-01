@@ -54,7 +54,7 @@ class VentaController
         $builder = Venta::query();
 
         if ($cliente = $request->getParam('cliente')) {
-            $builder->where('cliente_id', $cliente);
+            $builder->where('cliente', $cliente);
         }
 
         $count = $builder->count();
@@ -120,7 +120,7 @@ class VentaController
 
         $venta = new Venta($request->getParam('venta'));
         $venta->user_id = $requestUser->id;
-        $venta->cliente_id =$venta->costo;
+        $venta->cliente =$venta->costo;
 
         $venta->save();
         $data = $this->fractal->createData(new Item($venta, new VentaTransformer()))->toArray();

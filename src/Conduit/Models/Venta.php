@@ -31,7 +31,7 @@ class Venta extends Model
         'body',
         'costo',
         'user_id',
-        'cliente_id'
+        'cliente'
     ];
 
     public function setSlugAttribute($value)

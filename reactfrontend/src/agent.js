@@ -4,8 +4,8 @@ import _superagent from 'superagent';
 
 const superagent = superagentPromise(_superagent, global.Promise);
 
-const API_ROOT = 'http://localhost/imagenesrx/public/api';
-//const API_ROOT = 'http://www.laboratorioszacatelco.com.mx/api';
+//const API_ROOT = 'http://localhost/imagenesrx/public/api';
+const API_ROOT = 'http://www.laboratorioszacatelco.com.mx/api';
 
 
 const encode = encodeURIComponent;
@@ -98,7 +98,7 @@ const Diagnosticos = {
   update: diagnostico =>
       requests.put(`/disgnosticos/${diagnostico.slug}`, { diagnostico: omitSlug(diagnostico) }),
   create: diagnostico =>
-      requests.post('/diagnosticos', { diagnostico }),
+      requests.post(`/diagnosticos/${diagnostico.venta}`, { diagnostico }),
   get: id =>
       requests.get(`/diagnosticos/${id}`)
 };
