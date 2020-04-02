@@ -53,7 +53,7 @@ export default (state = {}, action) => {
         tags: action.payload[0].tags,
         ventas: action.payload[1].ventas,
         articlesCount: action.payload[1].count,
-        currentPage: 0,
+        currentPage: 3,
         tab: action.tab
       };
     case HOME_PAGE_UNLOADED:

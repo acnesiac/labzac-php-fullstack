@@ -38,7 +38,7 @@ export default (state = defaultState, action) => {
     case LOGOUT:
       return { ...state, redirectTo: '/', token: null, currentUser: null };
     case EDITORVENTA_SUBMITTED:
-      const redirectUrl = `/`;
+      const redirectUrl = `/citas`;
       return { ...state, redirectTo: redirectUrl };
     case SETTINGS_SAVED:
       return {

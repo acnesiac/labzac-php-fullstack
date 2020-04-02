@@ -9,7 +9,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({});
 const MainView = props => {
     return (
-        <div className="col-md-12">
+        <div className="my-3 p-3 bg-white rounded shadow-sm">
             <VentaList
                 token={props.token}
                 pager={props.pager}

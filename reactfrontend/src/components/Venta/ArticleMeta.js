@@ -1,4 +1,4 @@
-import ArticleActions from './ArticleActions';
+import ArticleActions from './VentaActions';
 import { Link } from 'react-router-dom';
 import React from 'react';
 

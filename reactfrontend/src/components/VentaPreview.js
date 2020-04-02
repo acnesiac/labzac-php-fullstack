@@ -1,13 +1,13 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import ArticleActions from './Article/ArticleActions';
+import VentaActions from "./Venta/VentaActions";
 
 const mapDispatchToProps = dispatch => ({});
 const VentaPreview = props => {
     const venta = props.venta;
     return (
         <div className="article-preview">
-            <ArticleActions canModify={true} article={venta}/>
+            <VentaActions canModify={true} article={venta}/>
         </div>
     );
 }

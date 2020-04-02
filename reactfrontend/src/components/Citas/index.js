@@ -18,9 +18,7 @@ const mapDispatchToProps = dispatch => ({
 
 class Citas extends React.Component {
   componentWillMount() {
-    this.props.onLoad(Promise.all([
-      agent.Diagnosticos.get(this.props.match.params.id)
-    ]));
+
   }
   //agent.Comments.forArticle(this.props.match.params.id)
   componentWillUnmount() {
@@ -29,26 +27,11 @@ class Citas extends React.Component {
 
   render() {
     if (!this.props.diagnostico) {
-      return null;
+      return <div>TBD</div>;
     }
     return (
       <div className="home-page">
-        <div className="container page">
-            <div className="container">
-                <DiagnosticoMeta
-                    diagnostico={this.props.diagnostico}
-                     />
-            </div>
-            {
-              <div className="row">
-                <CommentContainer
-                  comments={this.props.comments || []}
-                  errors={this.props.commentErrors}
-                  slug={this.props.match.params.id}
-                  currentUser={this.props.currentUser} />
-              </div>
-            }
-        </div>
+        TBD
       </div>
     );
   }
