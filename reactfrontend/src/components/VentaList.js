@@ -15,16 +15,17 @@ const VentaList = props => {
     return (
         <div>
             <form className="form-inline">
-                <div className=" article-preview form-group">
+                <div className=" form-group">
                     <ul className="nav navbar-nav pull-xs-right">
                         <li className="nav-item">
-                            <Link to="/editorventa" className="btn btn-lg btn-primary pull-xs-right">
-                                Hacer venta de paquete
+                            <Link to="/editorventa" className="btn btn-md btn-primary pull-xs-right">
+                                 Venta de paquete
                             </Link>
                         </li>
                     </ul>
                 </div>
             </form>
+            <br/>
             {
                 props.articles.map(venta => {
                     return (
