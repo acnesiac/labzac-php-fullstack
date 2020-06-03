@@ -26,6 +26,15 @@ const VentaList = props => {
                 </div>
             </form>
             <br/>
+            <form className="form-inline">
+                <div className=" form-group">
+                    <ul className="nav navbar-nav pull-xs-right">
+                        <li className="nav-item">
+                                Lista de paquetes
+                        </li>
+                    </ul>
+                </div>
+            </form>
             {
                 props.articles.map(venta => {
                     return (

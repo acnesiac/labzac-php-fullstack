@@ -16,28 +16,30 @@ const VentaActions = props => {
     return (
         <div>
             <p>
-                <Link className="btn   btn-secondary  my-2" to={`/@${article.id}`}>{article.id}</Link> |
+            <Link className="btn   btn-secondary  my-2" to={`/@${article.id}`}>{article.id}</Link>
+            </p>
+
+            <span>${article.costo}</span>
+            <h1>{article.cliente.email}</h1>
+            <span>{article.cliente.title}</span>
+            <span>{article.description}</span>
+            <p>
                 <Link className="btn   btn-secondary  my-2" to={`/editordiagnostico/${article.id}`}>
                     Iniciar DX
                 </Link>
-                <span>  </span>
-                <span>${article.costo}</span>
+                <ul>
+                    {
+                        article.diagnosticos.map(dx => {
+                            return (
+                                <Link key={dx.id} to={`/dx/${dx.id}`}>
+                                    {dx.id}
+                                </Link>
+                            );
+                        })
+                    }
+                </ul>
             </p>
-            <h1>{article.cliente.email}</h1>
-            <h1>{article.title}</h1>
-            <h1>{article.description}</h1>
-            <ul>
-                {
-                    article.diagnosticos.map(dx => {
-                        return (
 
-                            <Link key={dx.id} to={`/dx/${dx.id}`}>
-                                {dx.id}
-                            </Link>
-                        );
-                    })
-                }
-            </ul>
         </div>
     );
     return <span> </span>;
