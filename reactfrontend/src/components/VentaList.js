@@ -18,7 +18,7 @@ const VentaList = props => {
                 <div className=" article-preview form-group">
                     <ul className="nav navbar-nav pull-xs-right">
                         <li className="nav-item">
-                            <Link to="/editorventa" className="btn btn-primary">
+                            <Link to="/editorventa" className="btn btn-lg btn-primary pull-xs-right">
                                 Hacer venta de paquete
                             </Link>
                         </li>
