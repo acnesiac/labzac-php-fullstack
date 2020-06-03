@@ -2,10 +2,11 @@
 import superagentPromise from 'superagent-promise';
 import _superagent from 'superagent';
 
+
 const superagent = superagentPromise(_superagent, global.Promise);
 
-//const API_ROOT = 'http://localhost/imagenesrx/public/api';
-const API_ROOT = 'http://www.laboratorioszacatelco.com.mx/api';
+const API_ROOT = 'http://localhost/imagenesrx/public/api';
+//const API_ROOT = 'http://www.laboratorioszacatelco.com.mx/api';
 
 
 const encode = encodeURIComponent;

@@ -335,8 +335,8 @@ pre code {
     overflow-y: scroll; }
 
 .container {
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 20px;
+    margin-right: 10px;
 
 }
 @media (min-width: 544px) {
