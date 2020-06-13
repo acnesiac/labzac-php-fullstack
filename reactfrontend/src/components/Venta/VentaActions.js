@@ -25,7 +25,7 @@ const VentaActions = props => {
             <span>{article.description}</span>
             <p>
                 <Link className="btn   btn-secondary  my-2" to={`/editordiagnostico/${article.id}`}>
-                    Iniciar DX
+                    Iniciar Estudio
                 </Link>
                 <ul>
                     {

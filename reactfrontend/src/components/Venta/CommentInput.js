@@ -44,7 +44,7 @@ class CommentInput extends React.Component {
           <button
             className="btn btn-sm btn-primary"
             type="submit">
-            Comentar
+            Comentar Estudio
           </button>
         </div>
       </form>
