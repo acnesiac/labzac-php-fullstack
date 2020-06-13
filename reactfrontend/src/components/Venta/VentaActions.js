@@ -15,14 +15,31 @@ const VentaActions = props => {
 
     return (
         <div>
-            <p>
             <Link className="btn   btn-secondary  my-2" to={`/@${article.id}`}>{article.id}</Link>
-            </p>
-
+            <h2>Paquete</h2>
+            <div className="rTable">
+                <div className="rTableRow">
+                    <div className="rTableHead"><strong>Name</strong></div>
+                    <div className="rTableHead"><span >Telephone</span></div>
+                    <div className="rTableHead">&nbsp;</div>
+                </div>
+                <div className="rTableRow">
+                    <div className="rTableCell">John</div>
+                    <div className="rTableCell"><a href="tel:0123456785">0123 456 785</a></div>
+                    <div className="rTableCell"><img src="images/check.gif" alt="checked"/></div>
+                </div>
+                <div className="rTableRow">
+                    <div className="rTableCell">Cassie</div>
+                    <div className="rTableCell"><a href="tel:9876532432">9876 532 432</a></div>
+                    <div className="rTableCell"><img src="images/check.gif" alt="checked"/></div>
+                </div>
+            </div>
+            <p>
             <span>${article.costo}</span>
             <h1>{article.cliente.email}</h1>
             <span>{article.cliente.title}</span>
             <span>{article.description}</span>
+            </p>
             <p>
                 <Link className="btn   btn-secondary  my-2" to={`/editordiagnostico/${article.id}`}>
                     Iniciar Estudio
