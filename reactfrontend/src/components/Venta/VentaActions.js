@@ -15,47 +15,36 @@ const VentaActions = props => {
 
     return (
         <div>
-            <Link className="btn   btn-secondary  my-2" to={`/@${article.id}`}>{article.id}</Link>
             <h2>Paquete</h2>
-            <div className="rTable">
-                <div className="rTableRow">
-                    <div className="rTableHead"><strong>Name</strong></div>
-                    <div className="rTableHead"><span >Telephone</span></div>
-                    <div className="rTableHead">&nbsp;</div>
-                </div>
-                <div className="rTableRow">
-                    <div className="rTableCell">John</div>
-                    <div className="rTableCell"><a href="tel:0123456785">0123 456 785</a></div>
-                    <div className="rTableCell"><img src="images/check.gif" alt="checked"/></div>
-                </div>
-                <div className="rTableRow">
-                    <div className="rTableCell">Cassie</div>
-                    <div className="rTableCell"><a href="tel:9876532432">9876 532 432</a></div>
-                    <div className="rTableCell"><img src="images/check.gif" alt="checked"/></div>
-                </div>
-            </div>
             <p>
-            <span>${article.costo}</span>
-            <h1>{article.cliente.email}</h1>
-            <span>{article.cliente.title}</span>
-            <span>{article.description}</span>
-            </p>
-            <p>
+                <Link className="btn   btn-secondary  my-2" to={`/@${article.id}`}>{article.id}</Link>
+
                 <Link className="btn   btn-secondary  my-2" to={`/editordiagnostico/${article.id}`}>
                     Iniciar Estudio
                 </Link>
-                <ul>
+                <div>
                     {
                         article.diagnosticos.map(dx => {
                             return (
-                                <Link key={dx.id} to={`/dx/${dx.id}`}>
+                                <Link className="btn   btn-secondary  my-2" key={dx.id} to={`/dx/${dx.id}`}>
                                     {dx.id}
                                 </Link>
                             );
                         })
                     }
-                </ul>
+                </div>
             </p>
+            <div className="rTable">
+                <div className="rTableRow">
+                    <div className="rTableHead"><strong>Costo</strong></div>
+                    <div className="rTableHead"><strong>Desc</strong></div>
+                </div>
+                <div className="rTableRow">
+                    <div className="rTableCell">${article.costo}</div>
+                    <div className="rTableCell">{article.description}</div>
+                </div>
+            </div>
+
 
         </div>
     );
