@@ -15,7 +15,7 @@ const VentaActions = props => {
 
     return (
         <div>
-            <h2>Paquete</h2>
+            <h2>Estudio</h2>
             <p>
                 <Link className="btn   btn-secondary  my-2" to={`/@${article.id}`}>{article.id}</Link>
 

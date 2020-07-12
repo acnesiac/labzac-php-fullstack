@@ -19,7 +19,7 @@ const VentaList = props => {
                     <ul className="nav navbar-nav pull-xs-right">
                         <li className="nav-item">
                             <Link to="/editorventa" className="btn btn-md btn-primary pull-xs-right">
-                                 Venta de paquete
+                                 Venta de estudio
                             </Link>
                         </li>
                     </ul>
@@ -30,7 +30,7 @@ const VentaList = props => {
                 <div className=" form-group">
                     <ul className="nav navbar-nav pull-xs-right">
                         <li className="nav-item">
-                                Lista de paquetes
+                                Lista de estudios
                         </li>
                     </ul>
                 </div>
