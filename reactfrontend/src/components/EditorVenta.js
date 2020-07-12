@@ -137,7 +137,7 @@ class EditorVenta extends React.Component {
                                         className="btn btn-lg pull-xs-right btn-primary"
                                         type="button"
                                         disabled={this.props.inProgress} onClick={this.submitForm}>
-                                        Hacer venta
+                                        Hacer venta de paquete
                                     </button>
                                 </fieldset>
                             </form>

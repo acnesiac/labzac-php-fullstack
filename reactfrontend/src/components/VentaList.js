@@ -15,12 +15,22 @@ const VentaList = props => {
     return (
         <div>
             <form className="form-inline">
-                <div className=" article-preview form-group">
+                <div className=" form-group">
                     <ul className="nav navbar-nav pull-xs-right">
                         <li className="nav-item">
-                            <Link to="/editorventa" className="btn btn-primary">
-                                Hacer venta de paquete
+                            <Link to="/editorventa" className="btn btn-md btn-primary pull-xs-right">
+                                 Venta de estudio
                             </Link>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+            <br/>
+            <form className="form-inline">
+                <div className=" form-group">
+                    <ul className="nav navbar-nav pull-xs-right">
+                        <li className="nav-item">
+                                Lista de estudios
                         </li>
                     </ul>
                 </div>

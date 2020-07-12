@@ -78,7 +78,7 @@ class Login extends React.Component {
                     className="btn btn-lg btn-primary pull-xs-right"
                     type="submit"
                     disabled={this.props.inProgress}>
-                    Sign in
+                    Entrar
                   </button>
 
                 </fieldset>
