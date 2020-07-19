@@ -96,14 +96,7 @@ class EditorVenta extends React.Component {
                                         <option value="5">Paquete 3</option>
                                     </select>
                                 </fieldset>
-                                <fieldset className="form-group">
-                                    <input
-                                        className="form-control"
-                                        type="text"
-                                        placeholder="email"
-                                        value={this.props.description}
-                                        onChange={this.changeDescription}/>
-                                </fieldset>
+
                                 <fieldset>
                                     <fieldset className="form-group">
                                         <input
@@ -113,15 +106,22 @@ class EditorVenta extends React.Component {
                                             value={this.props.cliente}
                                             onChange={this.changeCliente}/>
                                     </fieldset>
-
                                     <fieldset className="form-group">
-                    <textarea
-                        className="form-control"
-                        rows="8"
-                        placeholder="Escribe tu Descripcion de la venta"
-                        value={this.props.body}
-                        onChange={this.changeBody}>
-                    </textarea>
+                                        <input
+                                            className="form-control"
+                                            type="text"
+                                            placeholder="email"
+                                            value={this.props.description}
+                                            onChange={this.changeDescription}/>
+                                    </fieldset>
+                                    <fieldset className="form-group">
+                                        <textarea
+                                            className="form-control"
+                                            rows="8"
+                                            placeholder="Escribe tu Descripcion de la venta"
+                                            value={this.props.body}
+                                            onChange={this.changeBody}>
+                                        </textarea>
                                     </fieldset>
 
                                     <fieldset className="form-group">

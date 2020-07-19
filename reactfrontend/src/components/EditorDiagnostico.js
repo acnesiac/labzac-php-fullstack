@@ -126,7 +126,7 @@ class EditorDiagnostico extends React.Component {
                     type="button"
                     disabled={this.props.inProgress}
                     onClick={this.submitForm}>
-                    Hacer Estudio
+                    Guardar diagnostico
                   </button>
                 </fieldset>
               </form>
