@@ -13,6 +13,8 @@ import {push} from 'react-router-redux';
 import EditorDiagnostico from "./EditorDiagnostico";
 import Diagnostico from '../components/Diagnostico';
 import Citas from '../components/Citas';
+import Cliente from '../components/Cliente';
+
 
 const mapStateToProps = state => {
     return {
@@ -69,6 +71,7 @@ class App extends React.Component {
                         <Route path="/editordiagnostico/:venta" component={EditorDiagnostico}/>
                         <Route path="/dx/:id" component={Diagnostico}/>
                         <Route path="/citas" component={Citas}/>
+                        <Route path="/clientes" component={Cliente}/>
                     </Switch>
                 </div>
             );

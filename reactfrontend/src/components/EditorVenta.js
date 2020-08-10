@@ -91,9 +91,10 @@ class EditorVenta extends React.Component {
                                         onChange={this.changeTitle}>
                                         <option value="1"></option>
                                         <option value="2">Sesion terapia</option>
-                                        <option value="3">Paquete 1</option>
-                                        <option value="4">Paquete 2</option>
-                                        <option value="5">Paquete 3</option>
+                                        <option value="3">Toma de Glucosa</option>
+                                        <option value="4">Paquete 1</option>
+                                        <option value="5">Paquete 2</option>
+                                        <option value="6">Paquete 3</option>
                                     </select>
                                 </fieldset>
 
@@ -106,11 +107,21 @@ class EditorVenta extends React.Component {
                                             value={this.props.cliente}
                                             onChange={this.changeCliente}/>
                                     </fieldset>
-                                    <fieldset className="form-group">
+                                    <fieldset className="form-group" >
                                         <input
                                             className="form-control"
                                             type="text"
                                             placeholder="email"
+                                            disabled={true}
+                                            value={this.props.description}
+                                            onChange={this.changeDescription}/>
+                                    </fieldset>
+                                    <fieldset className="form-group" >
+                                        <input
+                                            className="form-control"
+                                            type="text"
+                                            placeholder="nombre"
+                                            disabled={true}
                                             value={this.props.description}
                                             onChange={this.changeDescription}/>
                                     </fieldset>
@@ -137,7 +148,7 @@ class EditorVenta extends React.Component {
                                         className="btn btn-lg pull-xs-right btn-primary"
                                         type="button"
                                         disabled={this.props.inProgress} onClick={this.submitForm}>
-                                        Hacer venta de paquete
+                                        Hacer venta de estudio
                                     </button>
                                 </fieldset>
                             </form>
