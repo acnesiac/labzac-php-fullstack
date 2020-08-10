@@ -6,8 +6,9 @@ import {Link} from "react-router-dom";
 const VentaList = props => {
     if (!props.token) {
         return null;
+
     }
-    if (!props.articles) {
+    if (!props.lista) {
         return (
             <div className="article-preview">Loading...</div>
         );
@@ -19,7 +20,7 @@ const VentaList = props => {
                     <ul className="nav navbar-nav pull-xs-right">
                         <li className="nav-item">
                             <Link to="/editorventa" className="btn btn-md btn-primary pull-xs-right">
-                                 Venta de estudio
+                                Venta de estudio
                             </Link>
                         </li>
                     </ul>
@@ -30,13 +31,13 @@ const VentaList = props => {
                 <div className=" form-group">
                     <ul className="nav navbar-nav pull-xs-right">
                         <li className="nav-item">
-                                Lista de estudios
+                            Lista de estudios
                         </li>
                     </ul>
                 </div>
             </form>
             {
-                props.articles.map(venta => {
+                props.lista.map(venta => {
                     return (
                         <VentaPreview venta={venta} key={venta.slug}/>
                     );
