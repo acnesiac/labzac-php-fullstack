@@ -1,5 +1,6 @@
 import VentaPreview from './VentaPreview';
 import ListPagination from './ListPagination';
+import SearchButton from './SearchButton';
 import React from 'react';
 import {Link} from "react-router-dom";
 
@@ -17,16 +18,17 @@ const VentaList = props => {
         <div>
             <form className="form-inline">
                 <div className=" form-group">
-                    <ul className="nav navbar-nav pull-xs-right">
-                        <li className="nav-item">
-                            <Link to="/editorventa" className="btn btn-md btn-primary pull-xs-right">
-                                Venta de estudio
-                            </Link>
-                        </li>
-                    </ul>
+
                 </div>
             </form>
-            <br/>
+            <form className="form-inline">
+
+                <button type="submit" className="btn btn-primary mb-2">Buscar todos</button>
+                <Link to="/editorventa" className="btn btn-md btn-primary ">
+                    Venta de estudio
+                </Link>
+                <SearchButton show={true}/>
+            </form>
             <form className="form-inline">
                 <div className=" form-group">
                     <ul className="nav navbar-nav pull-xs-right">

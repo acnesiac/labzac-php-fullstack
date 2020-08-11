@@ -1732,7 +1732,9 @@ fieldset[disabled] a.btn {
 .btn-primary {
     color: #fff;
     background-color: #e62fe9;
-    border-color: #3c1bf0; }
+    border-color: #3c1bf0;
+    margin: 10px;
+}
 .btn-primary:hover {
     color: #fff;
     background-color: #af89e9;
