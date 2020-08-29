@@ -15,9 +15,10 @@ const SearchButton = props => {
 
   if (props.show) {
     return (
-
-        <input type="text" onChange={search}></input>
-
+        <div className="form-group mx-sm-3 mb-2">
+          <label htmlFor="inputPassword2" className="sr-only">Buscar</label>
+          <input type="password" className="form-control"  onChange={search} id="inputPassword2" placeholder="Buscar"/>
+        </div>
     );
   }
   return null;
