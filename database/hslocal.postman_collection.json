@@ -2965,7 +2965,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"venta\": {\n        \"description\": \"Venta 5 de paquete 2\",\n        \"costo\": \"2\",\n        \"cliente\": \"2\",\n        \"title\":\"venta numero 2\",\n        \"body\":\"a\"\n    }\n}"
+							"raw": "{\n    \"venta\": {\n        \"description\": \"Venta 5 de paquete 2\",\n        \"costo\": \"1\",\n        \"cliente\": \"1\",\n        \"title\":\"venta numero 2\",\n        \"body\":\"a\"\n    }\n}"
 						},
 						"url": {
 							"raw": "localhost/imagenesrx/public/api/ventas",
@@ -3042,10 +3042,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"venta\": {\n        \"description\": \"Venta 5 de paquete 2\",\n        \"costo\": \"2\",\n        \"cliente\": \"2\",\n        \"title\":\"venta numero 2\",\n        \"body\":\"a\"\n    }\n}"
+							"raw": "{\n    \"cliente\": {\n        \"nombre\": \"Venta 5 de paquete 2\",\n        \"email\": \"2\",\n        \"direccion\": \"2\"\n    }\n}"
 						},
 						"url": {
-							"raw": "localhost/imagenesrx/public/api/ventas",
+							"raw": "localhost/imagenesrx/public/api/clientes",
 							"host": [
 								"localhost"
 							],
@@ -3053,7 +3053,7 @@
 								"imagenesrx",
 								"public",
 								"api",
-								"ventas"
+								"clientes"
 							]
 						}
 					},
