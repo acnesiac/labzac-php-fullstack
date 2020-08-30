@@ -124,6 +124,11 @@ const CommentsDX = {
     requests.get(`/diagnosticos/${slug}/commentsdx`)
 };
 
+const Clientes = {
+  create: cliente  =>
+      requests.post('/clientes', { cliente })
+};
+
 export default {
   Diagnosticos,
   Articles,
@@ -133,5 +138,6 @@ export default {
   Profile,
   Tags,
   Ventas,
+  Clientes,
   setToken: _token => { token = _token; }
 };

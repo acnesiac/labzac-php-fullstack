@@ -5,6 +5,7 @@ import auth from './reducers/auth';
 import { combineReducers } from 'redux';
 import common from './reducers/common';
 import editorventa from './reducers/editorventa';
+import editorcliente from './reducers/editorcliente';
 import editor from './reducers/editor';
 import home from './reducers/home';
 import profile from './reducers/profile';
@@ -19,6 +20,7 @@ export default combineReducers({
   common,
   editor,
   editorventa,
+  editorcliente,
   home,
   profile,
   settings,
