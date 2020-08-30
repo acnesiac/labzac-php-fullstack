@@ -86,6 +86,9 @@ $app->group('/api',
         $this->get('/diagnosticos/{diagnostico}/commentsdx',CommentdxController::class . ':index')->add($optionalAuth)->setName('comment.index');
         $this->post('/diagnosticos/{diagnostico}/commentsdx',CommentdxController::class . ':store')->add($jwtMiddleware)->setName('comment.store');
 
+        // Clientes
+        $this->post('/clientes', ClienteController::class . ':store')->add($jwtMiddleware)->setName('clientes.store');
+
     });
 
 // Routes
