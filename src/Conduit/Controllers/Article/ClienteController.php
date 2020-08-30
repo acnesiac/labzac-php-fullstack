@@ -5,7 +5,7 @@ namespace Conduit\Controllers\Article;
 use Conduit\Models\Article;
 use Conduit\Models\Cliente;
 use Conduit\Models\Tag;
-use Conduit\Transformers\VentaTransformer;
+use Conduit\Transformers\ClienteTransformer;
 use Interop\Container\ContainerInterface;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\Item;
@@ -59,7 +59,7 @@ class ClienteController
 
         $this->validator->validateArray($data = $request->getParam('cliente'),
             [
-                'cliente' => v::notEmpty()
+                'nombre' => v::notEmpty()
             ]);
 
         if ($this->validator->failed()) {

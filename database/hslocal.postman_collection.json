@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "1c2aafcd-501a-44f8-b251-c047244bf65f",
+		"_postman_id": "36bf8c2a-f26a-452f-9b5e-e1f30a4b6207",
 		"name": "hslocal",
 		"description": "Collection for testing the Conduit API\n\nhttps://github.com/gothinkster/realworld",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -15,7 +15,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c0f5eff9-7364-4388-84a7-aac506426fbe",
+								"id": "2e3625ec-2e3c-4a23-8be3-dc037484ab7e",
 								"exec": [
 									"if (!(environment.isIntegrationTest)) {",
 									"var responseJSON = JSON.parse(responseBody);",
@@ -88,7 +88,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "064b2c7e-bbc3-4a2f-bace-0f6e1f4e3db4",
+								"id": "fd538bd2-8157-4f83-a367-ce3e3069ca85",
 								"exec": [
 									"var responseJSON = JSON.parse(responseBody);",
 									"",
@@ -156,7 +156,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "a7674032-bf09-4ae7-8224-4afa2fb1a9f9",
+								"id": "d15826e4-7b81-4909-af33-8a27e8d7f4b7",
 								"exec": [
 									"var responseJSON = JSON.parse(responseBody);",
 									"",
@@ -248,7 +248,8 @@
 									"tests['User has \"image\" property'] = user.hasOwnProperty('image');",
 									"tests['User has \"token\" property'] = user.hasOwnProperty('token');",
 									""
-								]
+								],
+								"id": "90ccc341-b67d-4cc6-b466-d0c2874d4abb"
 							}
 						}
 					],
@@ -304,7 +305,8 @@
 									"tests['User has \"image\" property'] = user.hasOwnProperty('image');",
 									"tests['User has \"token\" property'] = user.hasOwnProperty('token');",
 									""
-								]
+								],
+								"id": "e58fd6af-2dad-4381-952c-74f746d70109"
 							}
 						}
 					],
@@ -356,7 +358,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "79eec8c7-c72d-4f5a-9581-1c974acf71ce",
+								"id": "48b165ee-9817-4c2b-849f-87f43869a977",
 								"exec": [
 									"var is200Response = responseCode.code === 200;",
 									"",
@@ -442,7 +444,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "79eec8c7-c72d-4f5a-9581-1c974acf71ce",
+								"id": "08bb443c-360d-4b72-a253-f6c96fd780dc",
 								"exec": [
 									"var is200Response = responseCode.code === 200;",
 									"",
@@ -528,7 +530,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "79eec8c7-c72d-4f5a-9581-1c974acf71ce",
+								"id": "2622da7f-e352-42bf-9e69-e180bc54e2a9",
 								"exec": [
 									"var is200Response = responseCode.code === 200;",
 									"",
@@ -649,7 +651,8 @@
 									"    }",
 									"}",
 									""
-								]
+								],
+								"id": "55a194d7-b1cd-4291-b615-9dfe2f4e47f7"
 							}
 						}
 					],
@@ -728,7 +731,8 @@
 									"    }",
 									"}",
 									""
-								]
+								],
+								"id": "dccded77-7aa7-44b1-a0dd-9490c8d1629c"
 							}
 						}
 					],
@@ -807,7 +811,8 @@
 									"    }",
 									"}",
 									""
-								]
+								],
+								"id": "f227a08a-f188-4ec0-845e-7b0465d5b0b8"
 							}
 						}
 					],
@@ -857,7 +862,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e711dbf8-8065-4ba8-8b74-f1639a7d8208",
+								"id": "f1aee283-ace7-41d3-bb4e-e277b6138700",
 								"type": "text/javascript",
 								"exec": [
 									"var responseJSON = JSON.parse(responseBody);",
@@ -929,7 +934,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e711dbf8-8065-4ba8-8b74-f1639a7d8208",
+								"id": "fc8f5adf-be85-490e-92c4-cde343bd83ae",
 								"type": "text/javascript",
 								"exec": [
 									"var responseJSON = JSON.parse(responseBody);",
@@ -1001,7 +1006,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e711dbf8-8065-4ba8-8b74-f1639a7d8208",
+								"id": "2a272edd-e46b-4059-846a-5b0acd48a202",
 								"exec": [
 									"var responseJSON = JSON.parse(responseBody);",
 									"",
@@ -1073,7 +1078,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e711dbf8-8065-4ba8-8b74-f1639a7d8208",
+								"id": "6fc4b328-2b01-4dfc-88c9-54ad30f62dbd",
 								"exec": [
 									"var responseJSON = JSON.parse(responseBody);",
 									"",
@@ -1180,7 +1185,8 @@
 									"    }",
 									"}",
 									""
-								]
+								],
+								"id": "c6500f95-0d07-4942-bf17-11915fed8ee6"
 							}
 						}
 					],
@@ -1258,7 +1264,8 @@
 									"    }",
 									"}",
 									""
-								]
+								],
+								"id": "4192110b-6071-4e0b-bce9-022ab0e51af9"
 							}
 						}
 					],
@@ -1335,7 +1342,8 @@
 									"    }",
 									"}",
 									""
-								]
+								],
+								"id": "1b3966ab-2eb3-4619-b3c4-4ab6cdb29e80"
 							}
 						}
 					],
@@ -1412,7 +1420,8 @@
 									"    }",
 									"}",
 									""
-								]
+								],
+								"id": "79b553fd-0113-489e-84f8-9da33801738f"
 							}
 						}
 					],
@@ -1495,7 +1504,8 @@
 									"    }",
 									"}",
 									""
-								]
+								],
+								"id": "88976af7-da28-4568-849a-1232567878cb"
 							}
 						}
 					],
@@ -1578,7 +1588,8 @@
 									"    }",
 									"}",
 									""
-								]
+								],
+								"id": "d09ec61e-9fca-49cc-9ed7-cf7f00403b1b"
 							}
 						}
 					],
@@ -1661,7 +1672,8 @@
 									"    }",
 									"}",
 									""
-								]
+								],
+								"id": "cbac73d4-04c6-45a9-9475-c4ba094e47e7"
 							}
 						}
 					],
@@ -1732,7 +1744,8 @@
 									"tests['Article has \"favoritesCount\" property'] = article.hasOwnProperty('favoritesCount');",
 									"tests['favoritesCount is an integer'] = Number.isInteger(article.favoritesCount);",
 									""
-								]
+								],
+								"id": "7b532bb8-bc16-472b-9f5a-7b5537f8f042"
 							}
 						}
 					],
@@ -1810,7 +1823,8 @@
 									"    }",
 									"}",
 									""
-								]
+								],
+								"id": "001ae3b1-0974-4af3-a23f-8b2570618ff2"
 							}
 						}
 					],
@@ -1883,7 +1897,8 @@
 									"tests['favoritesCount is an integer'] = Number.isInteger(article.favoritesCount);",
 									"}",
 									""
-								]
+								],
+								"id": "77795373-4ed6-42ff-b339-d917f9f9f6b6"
 							}
 						}
 					],
@@ -1955,7 +1970,8 @@
 									"tests['favoritesCount is an integer'] = Number.isInteger(article.favoritesCount);",
 									"tests[\"Article's 'favoritesCount' property is greater than 0\"] = article.favoritesCount > 0;",
 									""
-								]
+								],
+								"id": "06c6292c-8455-47f7-818b-95238bcff300"
 							}
 						}
 					],
@@ -2027,7 +2043,8 @@
 									"tests['favoritesCount is an integer'] = Number.isInteger(article.favoritesCount);",
 									"tests[\"Article's \\\"favorited\\\" property is false\"] = article.favorited === false;",
 									""
-								]
+								],
+								"id": "a292e39e-0afd-477d-b8e7-1ec68d674f8a"
 							}
 						}
 					],
@@ -2075,7 +2092,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "9f90c364-cc68-4728-961a-85eb00197d7b",
+								"id": "dfa5c029-64b1-4f77-8999-c4d4f953c2f0",
 								"type": "text/javascript",
 								"exec": [
 									"var responseJSON = JSON.parse(responseBody);",
@@ -2166,7 +2183,8 @@
 									"    }",
 									"}",
 									""
-								]
+								],
+								"id": "7601adda-dcb3-404a-861b-59063dc154d0"
 							}
 						}
 					],
@@ -2289,7 +2307,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "67853a4a-e972-4573-a295-dad12a46a9d7",
+						"id": "6b83bd9e-2fd1-4496-a66b-38bfa3e00527",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -2299,7 +2317,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "3057f989-15e4-484e-b8fa-a041043d0ac0",
+						"id": "adc9d874-e44d-4c7e-bc24-2c8faa20ea4a",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -2334,7 +2352,8 @@
 									"tests['User has \"token\" property'] = user.hasOwnProperty('token');",
 									"}",
 									""
-								]
+								],
+								"id": "84cabe9b-9942-4474-b42b-a06285573839"
 							}
 						}
 					],
@@ -2397,7 +2416,8 @@
 									"}",
 									"}",
 									""
-								]
+								],
+								"id": "3b1771c4-c6fd-4cd7-b091-af2168a8034c"
 							}
 						}
 					],
@@ -2462,7 +2482,8 @@
 									"}",
 									"}",
 									""
-								]
+								],
+								"id": "47ebca07-8411-46b5-8b34-1a690846c682"
 							}
 						}
 					],
@@ -2532,7 +2553,8 @@
 									"}",
 									"}",
 									""
-								]
+								],
+								"id": "e553eca1-7e7f-4d0b-b6a9-f972d4e51ea3"
 							}
 						}
 					],
@@ -2599,7 +2621,8 @@
 									"    tests['\"tags\" property returned as array'] = Array.isArray(responseJSON.tags);",
 									"}",
 									""
-								]
+								],
+								"id": "d8baf835-2b64-49d0-aac0-3bad2c46fe99"
 							}
 						}
 					],
@@ -2643,7 +2666,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "79eec8c7-c72d-4f5a-9581-1c974acf71ce",
+								"id": "2881839e-291a-4b2b-bd60-abf43a367613",
 								"exec": [
 									"var is200Response = responseCode.code === 200;",
 									"",
@@ -2729,7 +2752,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c011fe83-a1e3-4b43-a0a1-1fa40b57dafc",
+								"id": "0a309ff7-d73f-462d-8b19-7151429bbe07",
 								"exec": [
 									"var is200Response = responseCode.code === 200;",
 									"",
@@ -2787,7 +2810,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/ventas?cliente=2",
+							"raw": "http://localhost/imagenesrx/public/api/ventas?cliente=25",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2814,7 +2837,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c011fe83-a1e3-4b43-a0a1-1fa40b57dafc",
+								"id": "7a54130e-8475-4f19-bd8e-30a39b6bdfdd",
 								"exec": [
 									"var is200Response = responseCode.code === 200;",
 									"",
@@ -2872,7 +2895,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost/imagenesrx/public/api/ventas/71",
+							"raw": "http://localhost/imagenesrx/public/api/ventas/96",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2894,7 +2917,84 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e711dbf8-8065-4ba8-8b74-f1639a7d8208",
+								"id": "2fe895ef-2393-4c21-ac82-a8562af6c4ca",
+								"exec": [
+									"var responseJSON = JSON.parse(responseBody);",
+									"",
+									"tests['Response contains \"article\" property'] = responseJSON.hasOwnProperty('article');",
+									"",
+									"var article = responseJSON.article || {};",
+									"",
+									"tests['Article has \"title\" property'] = article.hasOwnProperty('title');",
+									"tests['Article has \"slug\" property'] = article.hasOwnProperty('slug');",
+									"pm.globals.set('slug', article.slug);",
+									"",
+									"tests['Article has \"body\" property'] = article.hasOwnProperty('body');",
+									"tests['Article has \"createdAt\" property'] = article.hasOwnProperty('createdAt');",
+									"tests['Article\\'s \"createdAt\" property is an ISO 8601 timestamp'] = /^\\d{4,}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d.\\d+(?:[+-][0-2]\\d:[0-5]\\d|Z)$/.test(article.createdAt);",
+									"tests['Article has \"updatedAt\" property'] = article.hasOwnProperty('updatedAt');",
+									"tests['Article\\'s \"updatedAt\" property is an ISO 8601 timestamp'] = /^\\d{4,}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d.\\d+(?:[+-][0-2]\\d:[0-5]\\d|Z)$/.test(article.updatedAt);",
+									"tests['Article has \"description\" property'] = article.hasOwnProperty('description');",
+									"tests['Article has \"tagList\" property'] = article.hasOwnProperty('tagList');",
+									"tests['Article\\'s \"tagList\" property is an Array'] = Array.isArray(article.tagList);",
+									"tests['Article has \"author\" property'] = article.hasOwnProperty('author');",
+									"tests['Article has \"favorited\" property'] = article.hasOwnProperty('favorited');",
+									"tests['Article has \"favoritesCount\" property'] = article.hasOwnProperty('favoritesCount');",
+									"tests['favoritesCount is an integer'] = Number.isInteger(article.favoritesCount);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"venta\": {\n        \"description\": \"Venta 5 de paquete 2\",\n        \"costo\": \"2\",\n        \"cliente\": \"2\",\n        \"title\":\"venta numero 2\",\n        \"body\":\"a\"\n    }\n}"
+						},
+						"url": {
+							"raw": "localhost/imagenesrx/public/api/ventas",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"imagenesrx",
+								"public",
+								"api",
+								"ventas"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "Create Cliente",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d5dfa4fe-302b-42fd-8530-a4b2bfb3fee4",
 								"exec": [
 									"var responseJSON = JSON.parse(responseBody);",
 									"",
@@ -2971,7 +3071,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "79eec8c7-c72d-4f5a-9581-1c974acf71ce",
+								"id": "8d1def96-64fe-4f67-99c6-db7e70cc51be",
 								"exec": [
 									"var is200Response = responseCode.code === 200;",
 									"",
@@ -3050,7 +3150,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "79eec8c7-c72d-4f5a-9581-1c974acf71ce",
+								"id": "0eca6de5-2416-4ead-9963-0eee096d70b3",
 								"exec": [
 									"var is200Response = responseCode.code === 200;",
 									"",
@@ -3142,7 +3242,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "79eec8c7-c72d-4f5a-9581-1c974acf71ce",
+								"id": "8151e0e4-3ca6-41b2-839a-6d0f4aee511b",
 								"exec": [
 									"var is200Response = responseCode.code === 200;",
 									"",
@@ -3229,7 +3329,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e711dbf8-8065-4ba8-8b74-f1639a7d8208",
+								"id": "212232f1-8ad8-456b-8e6a-b30c26fc9660",
 								"exec": [
 									"var responseJSON = JSON.parse(responseBody);",
 									"",
@@ -3308,7 +3408,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "79eec8c7-c72d-4f5a-9581-1c974acf71ce",
+								"id": "f5c7481e-8f63-4b46-8a25-d2d597358537",
 								"exec": [
 									"var is200Response = responseCode.code === 200;",
 									"",
@@ -3373,7 +3473,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "localhost/imagenesrx/public/api/diagnosticos/5/commentsdx",
+							"raw": "localhost/imagenesrx/public/api/diagnosticos/11/commentsdx",
 							"host": [
 								"localhost"
 							],
@@ -3395,7 +3495,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e711dbf8-8065-4ba8-8b74-f1639a7d8208",
+								"id": "e441a762-e48f-481d-af3c-f1c97d6f825a",
 								"exec": [
 									"var responseJSON = JSON.parse(responseBody);",
 									"",

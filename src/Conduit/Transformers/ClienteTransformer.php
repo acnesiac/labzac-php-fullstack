@@ -45,6 +45,21 @@ class ClienteTransformer extends TransformerAbstract
         ];
     }
 
+    /**
+     * Include Author
+     *
+     * @param \Conduit\Models\Article $article
+     *
+     * @return \League\Fractal\Resource\Item
+     * @internal param \Conduit\Models\Comment $comment
+     *
+     */
+    public function includeAuthor(Cliente $cliente)
+    {
+        $author = $cliente->user;
+
+        return $this->item($author, new AuthorTransformer($this->requestUserId));
+    }
 
 
 }
