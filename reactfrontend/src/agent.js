@@ -125,6 +125,8 @@ const CommentsDX = {
 };
 
 const Clientes = {
+  update: cliente =>
+      requests.put(`/clientes/${cliente.id}`, { cliente: omitSlug(cliente) }),
   create: cliente  =>
       requests.post('/clientes', { cliente })
 };

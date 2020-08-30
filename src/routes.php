@@ -1,5 +1,6 @@
 <?php
 
+use Conduit\Controllers\Article\ClienteController;
 use Conduit\Controllers\Article\ArticleController;
 use Conduit\Controllers\Article\PostController;
 use Conduit\Controllers\Article\DiagnosticoController;
@@ -85,6 +86,9 @@ $app->group('/api',
         // CommentsDX
         $this->get('/diagnosticos/{diagnostico}/commentsdx',CommentdxController::class . ':index')->add($optionalAuth)->setName('comment.index');
         $this->post('/diagnosticos/{diagnostico}/commentsdx',CommentdxController::class . ':store')->add($jwtMiddleware)->setName('comment.store');
+
+        // Clientes
+        $this->post('/clientes', ClienteController::class . ':store')->add($jwtMiddleware)->setName('clientes.store');
 
     });
 

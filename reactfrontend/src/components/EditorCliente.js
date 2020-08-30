@@ -27,11 +27,10 @@ class EditorCliente extends React.Component {
         super();
         const updateFieldEvent = key => ev => this.props.onUpdateField(key, ev.target.value);
 
-        this.changeDescription = updateFieldEvent('description');
-        this.changeCosto = updateFieldEvent('costo');
-        this.changeTitle = updateFieldEvent('title');
-        this.changeCliente = updateFieldEvent('cliente');
-        this.changeBody = updateFieldEvent('body');
+        this.changeNombre = updateFieldEvent('nombre');
+        this.changeEmail = updateFieldEvent('email');
+        this.changeDireccion = updateFieldEvent('direccion');
+
         this.watchForEnter = ev => {
             if (ev.keyCode === 13) {
                 ev.preventDefault();
@@ -40,36 +39,25 @@ class EditorCliente extends React.Component {
         };
         this.submitForm = ev => {
             ev.preventDefault();
-            const venta = {
-                description: this.props.description,
-                costo: this.props.costo,
-                cliente: this.props.cliente,
-                title: this.props.title,
-                body: this.props.body
+            const cliente = {
+                nombre: this.props.nombre,
+                email: this.props.email,
+                direccion: this.props.direccion
             };
-            const slug = {slug: this.props.articleSlug};
-            const promise = this.props.articleSlug ?
-                agent.Ventas.update(Object.assign(venta, slug)) :
-                agent.Ventas.create(venta);
+            const id = {id: this.props.id};
+            const promise = this.props.id ?
+                agent.Clientes.update(Object.assign(cliente, id)) :
+                agent.Clientes.create(cliente);
             this.props.onSubmit(promise);
         };
     }
 
     componentWillReceiveProps(nextProps) {
-        if (this.props.match.params.slug !== nextProps.match.params.slug) {
-            if (nextProps.match.params.slug) {
-                this.props.onUnload();
-                return this.props.onLoad(agent.Diagnosticos.get(this.props.match.params.slug));
-            }
-            this.props.onLoad(null);
-        }
+
     }
 
     componentWillMount() {
-        if (this.props.match.params.slug) {
-            return this.props.onLoad(agent.Diagnosticos.get(this.props.match.params.slug));
-        }
-        this.props.onLoad(null);
+
     }
 
     componentWillUnmount() {
@@ -90,24 +78,24 @@ class EditorCliente extends React.Component {
                                             className="form-control"
                                             type="text"
                                             placeholder="nombre"
-                                            value={this.props.description}
-                                            onChange={this.changeDescription}/>
+                                            value={this.props.nombre}
+                                            onChange={this.changeNombre}/>
                                     </fieldset>
                                     <fieldset className="form-group">
                                         <input
                                             className="form-control"
                                             type="text"
                                             placeholder="email"
-                                            value={this.props.description}
-                                            onChange={this.changeDescription}/>
+                                            value={this.props.email}
+                                            onChange={this.changeEmail}/>
                                     </fieldset>
                                     <fieldset className="form-group">
                                         <textarea
                                             className="form-control"
                                             rows="8"
                                             placeholder="Escribe la direccion y rumbo"
-                                            value={this.props.body}
-                                            onChange={this.changeBody}>
+                                            value={this.props.direccion}
+                                            onChange={this.changeDireccion}>
                                         </textarea>
                                     </fieldset>
 
