@@ -30,6 +30,31 @@ USE `hs`;
 -- Table structure for table `articles`
 --
 
+CREATE TABLE `clientes` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `nombre` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `email` text COLLATE utf8_unicode_ci NOT NULL,
+  `direccion` text COLLATE utf8_unicode_ci NOT NULL,
+  `user_id` int(10) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `articles`
+--
+
+INSERT INTO `clientes` (`id`,  `nombre`, `email`, `direccion`, `user_id`, `created_at`, `updated_at`) VALUES
+(1, 'prueba', 'decc', 'Este es una desciprionc', 21, '2019-03-11 13:14:18', '2019-03-11 13:14:18'),
+(2,  'paciente 2', 'el paciente tiene fractura', 'DX adjunto', 21, '2019-03-11 13:18:22', '2019-03-11 13:18:22'),
+(3,  'new post', 'about', 'demora', 21, '2019-03-11 13:27:12', '2019-03-11 13:27:12');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `articles`
+--
+
 CREATE TABLE `articles` (
   `id` int(10) UNSIGNED NOT NULL,
   `slug` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -531,8 +556,20 @@ ALTER TABLE `ventas`
   ADD KEY `ventas_user_id_foreign` (`user_id`);
 
 --
+-- Indexes for table `clientes`
+--
+ALTER TABLE `clientes`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `clientes_user_id_foreign` (`user_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
+
+-- AUTO_INCREMENT for table `clientes`
+--
+ALTER TABLE `clientes`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `diagnosticos`
@@ -598,6 +635,10 @@ ALTER TABLE `ventas`
 -- Constraints for dumped tables
 --
 
+-- Constraints for table `ventas`
+--
+ALTER TABLE `clientes`
+  ADD CONSTRAINT `clientes_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 --
 -- Constraints for table `articles`
 --
@@ -614,8 +655,8 @@ ALTER TABLE `diagnosticos`
 -- Constraints for table `ventas`
 --
 ALTER TABLE `ventas`
-  ADD CONSTRAINT `diagnosticos_liente_foreign` FOREIGN KEY (`cliente`) REFERENCES `users` (`id`),
-  ADD CONSTRAINT `diagnosticos_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `ventas_cliente_foreign` FOREIGN KEY (`cliente`) REFERENCES `clientes` (`id`),
+  ADD CONSTRAINT `ventas_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 --
 -- Constraints for table `article_tag`
