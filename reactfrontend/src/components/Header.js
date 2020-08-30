@@ -40,17 +40,20 @@ const LoggedInView = props => {
   if (props.currentUser) {
     return (
       <ul className="nav navbar-nav">
+
+
+          <li className="nav-item" >
+              <Link to="/" className="nav-link" >
+                  <i className="ion-compose"></i>&nbsp;Ventas
+              </Link>
+          </li>
+
         <li className="nav-item" >
           <Link to="/clientes" className="nav-link" >
            <i className="ion-compose"></i>&nbsp;Clientes
           </Link>
         </li>
 
-          <li className="nav-item" >
-          <Link to="/" className="nav-link" >
-           <i className="ion-compose"></i>&nbsp;Ventas
-          </Link>
-        </li>
 
         <li className="nav-item" >
           <Link to="/" className="nav-link" >
