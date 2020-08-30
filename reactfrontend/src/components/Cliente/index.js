@@ -1,5 +1,5 @@
-
 import React from 'react';
+import agent from '../../agent';
 import { connect } from 'react-redux';
 import { DIAGNOSTICO_PAGE_LOADED, DIAGNOSTICO_PAGE_UNLOADED } from '../../constants/actionTypes';
 const mapStateToProps = state => ({
@@ -14,24 +14,20 @@ const mapDispatchToProps = dispatch => ({
     dispatch({ type: DIAGNOSTICO_PAGE_UNLOADED })
 });
 
-class Citas extends React.Component {
+class Cliente extends React.Component {
   componentWillMount() {
 
   }
-  //agent.Comments.forArticle(this.props.match.params.id)
   componentWillUnmount() {
     this.props.onUnload();
   }
 
   render() {
-    if (!this.props.diagnostico) {
-      return <div>TBD</div>;
-    }
     return (
-      <div className="home-page">
-        TBD citas
-      </div>
+        <div className="container">
+          TBD
+        </div>
     );
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(Citas);
+export default connect(mapStateToProps, mapDispatchToProps)(Cliente);

@@ -12,6 +12,8 @@ const mapStateToProps = state => ({
   ...state.editorventa
 });
 
+
+
 const mapDispatchToProps = dispatch => ({
   onLoad: payload =>
     dispatch({ type: EDITORVENTA_PAGE_LOADED, payload }),
@@ -93,7 +95,7 @@ class EditorDiagnostico extends React.Component {
                     <input
                       className="form-control form-control-lg"
                       type="text"
-                      placeholder="title"
+                      placeholder="Titulo del diagnostico"
                       value={this.props.title}
                       onChange={this.changeTitle} />
                   </fieldset>
@@ -101,7 +103,7 @@ class EditorDiagnostico extends React.Component {
                     <input
                       className="form-control"
                       type="text"
-                      placeholder="description"
+                      placeholder="Descripcion del Diagnostico"
                       value={this.props.description}
                       onChange={this.changeDescription} />
                   </fieldset>
@@ -109,7 +111,7 @@ class EditorDiagnostico extends React.Component {
                     <textarea
                       className="form-control"
                       rows="8"
-                      placeholder="body"
+                      placeholder="Diagnostico"
                       value={this.props.body}
                       onChange={this.changeBody}>
                     </textarea>
@@ -119,14 +121,14 @@ class EditorDiagnostico extends React.Component {
                     type="button"
                     disabled={this.props.inProgress}
                     onClick={this.submitForm}>
-                    cancelar
+                    Cancelar
                   </button>
                   <button
                     className="btn btn-lg pull-xs-right btn-primary"
                     type="button"
                     disabled={this.props.inProgress}
                     onClick={this.submitForm}>
-                    Hacer Estudio
+                    Guardar diagnostico
                   </button>
                 </fieldset>
               </form>

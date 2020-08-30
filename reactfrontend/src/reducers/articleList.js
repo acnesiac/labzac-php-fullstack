@@ -9,11 +9,17 @@ import {
   PROFILE_PAGE_LOADED,
   PROFILE_PAGE_UNLOADED,
   PROFILE_FAVORITES_PAGE_LOADED,
-  PROFILE_FAVORITES_PAGE_UNLOADED
+  PROFILE_FAVORITES_PAGE_UNLOADED, SEARCH_VENTA
 } from '../constants/actionTypes';
 
 export default (state = {}, action) => {
   switch (action.type) {
+    case SEARCH_VENTA:
+      const ventaId = action.word
+      return {
+        ...state,
+        ventas: state.ventas.filter(venta => venta.id == ventaId)
+      };
     case ARTICLE_FAVORITED:
     case ARTICLE_UNFAVORITED:
       return {

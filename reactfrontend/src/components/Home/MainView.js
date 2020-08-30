@@ -13,7 +13,7 @@ const MainView = props => {
             <VentaList
                 token={props.token}
                 pager={props.pager}
-                articles={props.ventas}
+                lista={props.ventas}
                 loading={props.loading}
                 articlesCount={props.articlesCount}
                 currentPage={props.currentPage}/>

@@ -2,28 +2,27 @@ import React from 'react';
 import agent from '../agent';
 import {connect} from 'react-redux';
 import {
-    EDITORVENTA_PAGE_LOADED,
-    VENTA_SUBMITTED,
-    EDITORVENTA_PAGE_UNLOADED,
-    UPDATE_FIELD_EDITORVENTA, EDITORVENTA_SUBMITTED
+    EDITORCLIENTE_PAGE_LOADED,
+    EDITORCLIENTE_PAGE_UNLOADED,
+    UPDATE_FIELD_EDITORCLIENTE, EDITORCLIENTE_SUBMITTED
 } from '../constants/actionTypes';
 
 const mapStateToProps = state => ({
-    ...state.editorventa
+    ...state.editorcliente
 });
 
 const mapDispatchToProps = dispatch => ({
     onLoad: payload =>
-        dispatch({type: EDITORVENTA_PAGE_LOADED, payload}),
+        dispatch({type: EDITORCLIENTE_PAGE_LOADED, payload}),
     onSubmit: payload =>
-        dispatch({type: EDITORVENTA_SUBMITTED, payload}),
+        dispatch({type: EDITORCLIENTE_SUBMITTED, payload}),
     onUnload: payload =>
-        dispatch({type: EDITORVENTA_PAGE_UNLOADED}),
+        dispatch({type: EDITORCLIENTE_PAGE_UNLOADED}),
     onUpdateField: (key, value) =>
-        dispatch({type: UPDATE_FIELD_EDITORVENTA, key, value})
+        dispatch({type: UPDATE_FIELD_EDITORCLIENTE, key, value})
 });
 
-class EditorVenta extends React.Component {
+class EditorCliente extends React.Component {
     constructor() {
         super();
         const updateFieldEvent = key => ev => this.props.onUpdateField(key, ev.target.value);
@@ -84,44 +83,21 @@ class EditorVenta extends React.Component {
                     <div className="row">
                         <div className="col-md-12 offset-md-0 col-xs-12">
                             <form>
-                                <fieldset className="form-group">
-                                    <select
-                                        className="form-control"
-                                        value={this.props.title}
-                                        onChange={this.changeTitle}>
-                                        <option value="1"></option>
-                                        <option value="2">Sesion terapia</option>
-                                        <option value="3">Toma de Glucosa</option>
-                                        <option value="4">Paquete 1</option>
-                                        <option value="5">Paquete 2</option>
-                                        <option value="6">Paquete 3</option>
-                                    </select>
-                                </fieldset>
-
                                 <fieldset>
+
                                     <fieldset className="form-group">
-                                        <input
-                                            className="form-control form-control-lg"
-                                            type="text"
-                                            placeholder="Ciente (TODO to be removed once mail search for id)"
-                                            value={this.props.cliente}
-                                            onChange={this.changeCliente}/>
-                                    </fieldset>
-                                    <fieldset className="form-group" >
-                                        <input
-                                            className="form-control"
-                                            type="text"
-                                            placeholder="email"
-                                            disabled={true}
-                                            value={this.props.description}
-                                            onChange={this.changeDescription}/>
-                                    </fieldset>
-                                    <fieldset className="form-group" >
                                         <input
                                             className="form-control"
                                             type="text"
                                             placeholder="nombre"
-                                            disabled={true}
+                                            value={this.props.description}
+                                            onChange={this.changeDescription}/>
+                                    </fieldset>
+                                    <fieldset className="form-group">
+                                        <input
+                                            className="form-control"
+                                            type="text"
+                                            placeholder="email"
                                             value={this.props.description}
                                             onChange={this.changeDescription}/>
                                     </fieldset>
@@ -129,26 +105,18 @@ class EditorVenta extends React.Component {
                                         <textarea
                                             className="form-control"
                                             rows="8"
-                                            placeholder="Escribe tu Descripcion de la venta"
+                                            placeholder="Escribe la direccion y rumbo"
                                             value={this.props.body}
                                             onChange={this.changeBody}>
                                         </textarea>
                                     </fieldset>
 
-                                    <fieldset className="form-group">
-                                        <input
-                                            className="form-control"
-                                            type="text"
-                                            placeholder="$"
-                                            value={this.props.costo}
-                                            onChange={this.changeCosto}>
-                                        </input>
-                                    </fieldset>
+
                                     <button
                                         className="btn btn-lg pull-xs-right btn-primary"
                                         type="button"
                                         disabled={this.props.inProgress} onClick={this.submitForm}>
-                                        Hacer venta de estudio
+                                        Alta de cliente
                                     </button>
                                 </fieldset>
                             </form>
@@ -160,4 +128,4 @@ class EditorVenta extends React.Component {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(EditorVenta);
+export default connect(mapStateToProps, mapDispatchToProps)(EditorCliente);

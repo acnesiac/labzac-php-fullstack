@@ -15,13 +15,12 @@ const VentaActions = props => {
 
     return (
         <div>
-            <h2>Estudio</h2>
+            <h2>Estudio <Link className="btn   btn-secondary  my-2" to={`/@${article.id}`}>{article.id}</Link>  <Link className="btn   btn-secondary  my-2" to={`/editordiagnostico/${article.id}`}>
+                Iniciar diagnostico
+            </Link></h2>
             <p>
-                <Link className="btn   btn-secondary  my-2" to={`/@${article.id}`}>{article.id}</Link>
 
-                <Link className="btn   btn-secondary  my-2" to={`/editordiagnostico/${article.id}`}>
-                    Iniciar Estudio
-                </Link>
+
                 <div>
                     {
                         article.diagnosticos.map(dx => {

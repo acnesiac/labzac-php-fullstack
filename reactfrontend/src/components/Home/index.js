@@ -1,8 +1,6 @@
 import Banner from './Banner';
 import MainView from './MainView';
 import React from 'react';
-import {Link} from 'react-router-dom';
-
 import agent from '../../agent';
 import {connect} from 'react-redux';
 
