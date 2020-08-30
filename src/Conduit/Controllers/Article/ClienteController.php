@@ -12,7 +12,7 @@ use League\Fractal\Resource\Item;
 use Slim\Http\Request;
 use Slim\Http\Response;
 use Respect\Validation\Validator as v;
-class VentaController
+class ClienteController
 {
 
     /** @var \Conduit\Validation\Validator */
