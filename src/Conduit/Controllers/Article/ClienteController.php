@@ -72,7 +72,7 @@ class ClienteController
         $cliente->save();
         $data = $this->fractal->createData(new Item($cliente, new ClienteTransformer()))->toArray();
 
-        return $response->withJson(['venta' =>$cliente])
+        return $response->withJson(['cliente' =>$cliente])
             ->withHeader('Access-Control-Allow-Origin', '*')
             ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
             ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');

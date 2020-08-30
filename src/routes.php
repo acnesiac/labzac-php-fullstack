@@ -1,5 +1,6 @@
 <?php
 
+use Conduit\Controllers\Article\ClienteController;
 use Conduit\Controllers\Article\ArticleController;
 use Conduit\Controllers\Article\PostController;
 use Conduit\Controllers\Article\DiagnosticoController;

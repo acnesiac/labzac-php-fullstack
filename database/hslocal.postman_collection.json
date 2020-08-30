@@ -2787,11 +2787,7 @@
 							}
 						],
 						"url": {
-<<<<<<< HEAD
 							"raw": "http://localhost/imagenesrx/public/api/ventas?cliente=2",
-=======
-							"raw": "http://localhost/imagenesrx/public/api/ventas?cliente=25",
->>>>>>> master
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2805,11 +2801,7 @@
 							"query": [
 								{
 									"key": "cliente",
-<<<<<<< HEAD
-									"value": "2"
-=======
 									"value": "25"
->>>>>>> master
 								}
 							]
 						}
@@ -2880,11 +2872,7 @@
 							}
 						],
 						"url": {
-<<<<<<< HEAD
-							"raw": "http://localhost/imagenesrx/public/api/ventas/96",
-=======
 							"raw": "http://localhost/imagenesrx/public/api/ventas/71",
->>>>>>> master
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2894,11 +2882,7 @@
 								"public",
 								"api",
 								"ventas",
-<<<<<<< HEAD
 								"96"
-=======
-								"71"
->>>>>>> master
 							]
 						}
 					},
@@ -3223,11 +3207,7 @@
 							"raw": ""
 						},
 						"url": {
-<<<<<<< HEAD
-							"raw": "http://localhost/imagenesrx/public/api/diagnosticos/11",
-=======
 							"raw": "http://localhost/imagenesrx/public/api/diagnosticos/10",
->>>>>>> master
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -3237,11 +3217,7 @@
 								"public",
 								"api",
 								"diagnosticos",
-<<<<<<< HEAD
-								"11"
-=======
 								"10"
->>>>>>> master
 							]
 						}
 					},
@@ -3301,11 +3277,7 @@
 						],
 						"body": {
 							"mode": "raw",
-<<<<<<< HEAD
-							"raw": "{\n    \"diagnostico\": {\n        \"title\": \"Dolor de rodilla\",\n        \"description\": \"Presenta un dolor de rodilla en la parte trasera\",\n        \"body\": \"Este es el body\",\n        \"venta\": \"115\",\n        \"tagList\": [\n            \"dragons\",\n            \"training\"\n        ]\n    }\n}"
-=======
 							"raw": "{\n    \"diagnostico\": {\n        \"title\": \"Dolor de rodilla\",\n        \"description\": \"Presenta un dolor de rodilla en la parte trasera\",\n        \"body\": \"Este es el body\",\n        \"venta\": \"10\",\n        \"tagList\": [\n            \"dragons\",\n            \"training\"\n        ]\n    }\n}"
->>>>>>> master
 						},
 						"url": {
 							"raw": "http://localhost/imagenesrx/public/api/diagnosticos/115",
@@ -3401,11 +3373,7 @@
 							"raw": ""
 						},
 						"url": {
-<<<<<<< HEAD
-							"raw": "localhost/imagenesrx/public/api/diagnosticos/11/commentsdx",
-=======
 							"raw": "localhost/imagenesrx/public/api/diagnosticos/5/commentsdx",
->>>>>>> master
 							"host": [
 								"localhost"
 							],
@@ -3414,11 +3382,7 @@
 								"public",
 								"api",
 								"diagnosticos",
-<<<<<<< HEAD
 								"11",
-=======
-								"5",
->>>>>>> master
 								"commentsdx"
 							]
 						}
@@ -3482,11 +3446,7 @@
 							"raw": "{\"comment\":{\"body\":\"El paciente presenta una lesion grave en la parte osea de la rodilla much!\"}}"
 						},
 						"url": {
-<<<<<<< HEAD
-							"raw": "localhost/imagenesrx/public/api/diagnosticos/11/commentsdx",
-=======
 							"raw": "localhost/imagenesrx/public/api/diagnosticos/5/commentsdx",
->>>>>>> master
 							"host": [
 								"localhost"
 							],
@@ -3495,11 +3455,7 @@
 								"public",
 								"api",
 								"diagnosticos",
-<<<<<<< HEAD
-								"11",
-=======
 								"5",
->>>>>>> master
 								"commentsdx"
 							]
 						}
