@@ -21,8 +21,11 @@ SET time_zone = "+00:00";
 -- Base de datos: `hs`
 --
 
--- --------------------------------------------------------
-
+--
+-- Database: `hs`
+--
+CREATE DATABASE IF NOT EXISTS `hs` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `hs`;
 --
 -- Estructura de tabla para la tabla `articles`
 --

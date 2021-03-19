@@ -4,16 +4,11 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {APP_LOAD, REDIRECT} from '../constants/actionTypes';
 import {Route, Switch} from 'react-router-dom';
-import EditorVenta from '../components/EditorVenta';
 import Home from '../components/Home';
 import Login from '../components/Login';
 import Register from '../components/Register';
 import {store} from '../store';
 import {push} from 'react-router-redux';
-import EditorDiagnostico from "./EditorDiagnostico";
-import Diagnostico from '../components/Diagnostico';
-import Citas from '../components/Citas';
-import EditorCliente from "./EditorCliente";
 
 
 const mapStateToProps = state => {
@@ -67,11 +62,11 @@ class App extends React.Component {
                         <Route exact path="/" component={Home}/>
                         <Route path="/login" component={Login}/>
                         <Route path="/register" component={Register}/>
-                        <Route path="/editorventa" component={EditorVenta}/>
-                        <Route path="/editordiagnostico/:venta" component={EditorDiagnostico}/>
-                        <Route path="/dx/:id" component={Diagnostico}/>
-                        <Route path="/citas" component={Citas}/>
-                        <Route path="/clientes" component={EditorCliente}/>
+                        {/* <Route path="/editorventa" component={EditorVenta}/> */}
+                        {/* <Route path="/editordiagnostico/:venta" component={EditorDiagnostico}/> */}
+                        {/* <Route path="/dx/:id" component={Diagnostico}/> */}
+                        {/* <Route path="/citas" component={Citas}/> */}
+                        {/* <Route path="/clientes" component={EditorCliente}/> */}
                     </Switch>
                 </div>
             );
