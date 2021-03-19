@@ -4,8 +4,8 @@ const Banner = ({ appName, token }) => {
     return null;
   }
   return (
-    <div className="banner">
-      <div className="container">
+    <div className="">
+      <div className="  ">
         <h1 className="logo-font">
           {appName.toLowerCase()}
         </h1>

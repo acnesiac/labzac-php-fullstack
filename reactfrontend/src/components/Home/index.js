@@ -53,7 +53,7 @@ class Home extends React.Component {
 
     render() {
         return (
-            <div className="home-page">
+            <div className="">
                 <Banner token={this.props.token} appName={this.props.appName}/>
                 <div className="container">
                     <div>
