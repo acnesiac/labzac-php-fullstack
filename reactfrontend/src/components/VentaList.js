@@ -9,11 +9,7 @@ const VentaList = props => {
         return null;
 
     }
-    if (!props.lista) {
-        return (
-            <div className="article-preview">Loading...</div>
-        );
-    }
+    
     return (
         <div>
             <form className="form-inline">
