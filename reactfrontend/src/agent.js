@@ -6,7 +6,8 @@ import _superagent from 'superagent';
 const superagent = superagentPromise(_superagent, global.Promise);
 
 //const API_ROOT = 'http://localhost/labzac-php-fullstack/public/api';
-const API_ROOT = 'http://www.farmaciaszacatelco.com.mx/api';
+//const API_ROOT = 'http://www.farmaciaszacatelco.com.mx/api';
+const API_ROOT = 'https://labzac-nodejs-1.herokuapp.com/api';
 
 
 const encode = encodeURIComponent;
