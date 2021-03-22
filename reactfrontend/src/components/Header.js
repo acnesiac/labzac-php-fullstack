@@ -1,15 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import agent from '../agent';
-import {withRouter} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 const LoggedOutView = props => {
   if (!props.currentUser) {
     return (
       <ul className="nav navbar-nav pull-xs-right">
-        
+
         <li className="nav-item">
-         
+
         </li>
         <li className="nav-item">
           <Link to="/login" className="nav-link">
@@ -25,7 +25,7 @@ const LoggedOutView = props => {
 
         <li className="nav-item">
           <Link to="/register" className="nav-link">
-           Crear cuenta
+            Crear cuenta
           </Link>
         </li>
       </ul>
@@ -37,33 +37,33 @@ const LoggedOutView = props => {
 const LoggedInView = props => {
 
   function handleClick(e) {
-      e.preventDefault();
-      console.log('The link was clicked.');
-      window.localStorage.setItem('jwt', '');
-      agent.setToken(null);
-      window.location.assign("/");
-    }
+    e.preventDefault();
+    console.log('The link was clicked.');
+    window.localStorage.setItem('jwt', '');
+    agent.setToken(null);
+    window.location.assign("/");
+  }
 
   if (props.currentUser) {
     return (
       <ul className="nav navbar-nav">
 
-
-          <li className="nav-item" >
-              <Link to="/" className="nav-link" >
-                  <i className="ion-compose"></i>&nbsp;Mis compras
-              </Link>
-          </li>
-
-    
         <li className="nav-item" >
-          <Link to="/clientes" className="nav-link" >
-           <i className="ion-compose"></i>&nbsp;Ventas
-          </Link>
+          <Link to="/" className="nav-link" >
+            <i className="ion-compose"></i>&nbsp;Promociones
+              </Link>
+        </li>
+
+        <li className="nav-item" >
+          <Link to="/" className="nav-link" >
+            <i className="ion-compose"></i>&nbsp;Mis movimientos
+              </Link>
         </li>
 
 
-     
+
+
+
 
 
         <li className="nav-item">
@@ -74,9 +74,9 @@ const LoggedInView = props => {
           </Link>
         </li>
         <li className="nav-item">
-        <button
-          className="btn" onClick={handleClick}>
-          Cierra la sesion.
+          <button
+            className="btn" onClick={handleClick}>
+            Cierra la sesion.
         </button>
         </li>
       </ul>

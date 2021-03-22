@@ -48,7 +48,7 @@ return [
             'prefix'    => '',
         ],
 
-        'cors' => null !== getenv('CORS_ALLOWED_ORIGINS') ? getenv('CORS_ALLOWED_ORIGINS') : '*',
+        'cors' =>  '*',
 
         // jwt settings
         'jwt'  => [
