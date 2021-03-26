@@ -62,12 +62,7 @@ class App extends React.Component {
                     <Switch>
                         <Route exact path="/" component={Home}/>
                         <Route path="/login" component={Login}/>
-                        <Route path="/register" component={Register}/>
-                        <Route path="/editorventa" component={EditorVenta}/> 
-                        {/* <Route path="/editordiagnostico/:venta" component={EditorDiagnostico}/> */}
-                        {/* <Route path="/dx/:id" component={Diagnostico}/> */}
-                        {/* <Route path="/citas" component={Citas}/> */}
-                        {/* <Route path="/clientes" component={EditorCliente}/> */}
+                        <Route path="/register" component={Register}/>                       
                     </Switch>
                 </div>
             );

@@ -7,7 +7,8 @@ const superagent = superagentPromise(_superagent, global.Promise);
 
 //const API_ROOT = 'http://localhost/labzac-php-fullstack/public/api';
 //const API_ROOT = 'http://www.farmaciaszacatelco.com.mx/api';
-const API_ROOT = 'https://labzac-nodejs-1.herokuapp.com/api';
+//const API_ROOT = 'https://labzac-nodejs-1.herokuapp.com/api';
+const API_ROOT = 'http://localhost:3000/api';
 
 
 const encode = encodeURIComponent;
@@ -47,7 +48,18 @@ const Tags = {
 };
 
 const limit = (count, p) => `limit=${count}&offset=${p ? p * count : 0}`;
-const omitSlug = article => Object.assign({}, article, { slug: undefined })
+const omitSlug = article => Object.assign({}, article, { id: undefined })
+
+const Promociones = {
+  all: page =>
+    requests.get(`/promociones?${limit(10, page)}`),
+  get: id =>
+    requests.get(`/promociones/${id}`),
+  update: promocion =>
+    requests.put(`/promociones/${promocion.id}`, { promocion: omitSlug(promocion) }),
+  create: promocion =>
+    requests.post('/promociones', { promocion })
+};
 
 const Articles = {
   all: page =>

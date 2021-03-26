@@ -8,9 +8,7 @@ const LoggedOutView = props => {
     return (
       <ul className="nav navbar-nav pull-xs-right">
 
-        <li className="nav-item">
-
-        </li>
+     
         <li className="nav-item">
           <Link to="/login" className="nav-link">
             promociones
@@ -46,25 +44,13 @@ const LoggedInView = props => {
 
   if (props.currentUser) {
     return (
-      <ul className="nav navbar-nav">
+      <ul className="nav navbar-nav pull-xs-right">
 
         <li className="nav-item" >
           <Link to="/" className="nav-link" >
             <i className="ion-compose"></i>&nbsp;Promociones
               </Link>
         </li>
-
-        <li className="nav-item" >
-          <Link to="/" className="nav-link" >
-            <i className="ion-compose"></i>&nbsp;Mis movimientos
-              </Link>
-        </li>
-
-
-
-
-
-
 
         <li className="nav-item">
           <Link
