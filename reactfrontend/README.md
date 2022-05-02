@@ -1,3 +1,9 @@
+Run
+
+npm start
+
+
+
 
 # ![React + Redux Example App](project-logo.png)
 
