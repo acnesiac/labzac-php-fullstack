@@ -19,7 +19,7 @@ import {
 } from '../constants/actionTypes';
 
 const defaultState = {
-  appName: 'laboratorios zacatelco',
+  appName: 'farmacias zacatelco',
   token: null,
   viewChangeCounter: 0
 };
