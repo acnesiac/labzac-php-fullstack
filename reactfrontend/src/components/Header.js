@@ -1,14 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import agent from '../agent';
-import {withRouter} from 'react-router-dom';
 
 const LoggedOutView = props => {
   if (!props.currentUser) {
     return (
-      <ul className="nav navbar-nav pull-xs-right">
-
-
+      <ul className="nav">
 
         <li className="nav-item">
           <Link to="/login" className="nav-link">

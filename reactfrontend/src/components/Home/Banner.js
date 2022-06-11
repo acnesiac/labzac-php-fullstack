@@ -1,4 +1,5 @@
 import React from 'react';
+
 const Banner = ({ appName, token }) => {
   if (token) {
     return null;
@@ -9,9 +10,11 @@ const Banner = ({ appName, token }) => {
         <h1 className="logo-font">
           {appName.toLowerCase()}
         </h1>
-        <p>Tu farmacia.</p>
+        <p>A place to share your knowledge.</p>
       </div>
     </div>
+
   );
 };
+
 export default Banner;
