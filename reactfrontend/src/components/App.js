@@ -14,6 +14,7 @@ import EditorDiagnostico from "./EditorDiagnostico";
 import Diagnostico from '../components/Diagnostico';
 import Citas from '../components/Citas';
 import EditorCliente from "./EditorCliente";
+import Venta from "./Venta";
 
 
 const mapStateToProps = state => {
@@ -66,6 +67,7 @@ class App extends React.Component {
                     <Switch>
                         <Route exact path="/" component={Home}/>
                         <Route path="/login" component={Login}/>
+                        <Route path="/ventas" component={Venta}/>
                         <Route path="/register" component={Register}/>
                         <Route path="/editorventa" component={EditorVenta}/>
                         <Route path="/editordiagnostico/:venta" component={EditorDiagnostico}/>
