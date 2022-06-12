@@ -3,7 +3,7 @@ import Header from './Header';
 import React from 'react';
 import {connect} from 'react-redux';
 import {APP_LOAD, REDIRECT} from '../constants/actionTypes';
-import {Route, Switch} from 'react-router-dom';
+import {Link, Route, Switch} from 'react-router-dom';
 import EditorVenta from '../components/EditorVenta';
 import Home from '../components/Home';
 import Login from '../components/Login';
@@ -16,6 +16,48 @@ import Citas from '../components/Citas';
 import EditorCliente from "./EditorCliente";
 import Venta from "./Venta";
 
+const LoggedOutView = props => {
+    if (props.currentUser) {
+        return (
+            <div className="d-flex flex-column flex-shrink-0 p-3 bg-light">
+
+                <ul className="nav nav-pills flex-column mb-auto">
+                    <li className="nav-item">
+                        <a href="#" className="nav-link active" aria-current="page">
+
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" className="nav-link link-dark">
+
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" className="nav-link link-dark">
+
+                            Orders
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" className="nav-link link-dark">
+
+                            Products
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" className="nav-link link-dark">
+
+                            Customers
+                        </a>
+                    </li>
+                </ul>
+                </div>
+                );
+                }
+                return null;
+                };
 
 const mapStateToProps = state => {
     return {
@@ -35,6 +77,8 @@ const mapDispatchToProps = dispatch => ({
     onRedirect: () =>
         dispatch({type: REDIRECT})
 });
+
+
 
 class App extends React.Component {
     constructor() {
@@ -64,17 +108,22 @@ class App extends React.Component {
                     <Header
                         appName={this.props.appName}
                         currentUser={this.props.currentUser}/>
-                    <Switch>
-                        <Route exact path="/" component={Home}/>
-                        <Route path="/login" component={Login}/>
-                        <Route path="/ventas" component={Venta}/>
-                        <Route path="/register" component={Register}/>
-                        <Route path="/editorventa" component={EditorVenta}/>
-                        <Route path="/editordiagnostico/:venta" component={EditorDiagnostico}/>
-                        <Route path="/dx/:id" component={Diagnostico}/>
-                        <Route path="/citas" component={Citas}/>
-                        <Route path="/clientes" component={EditorCliente}/>
-                    </Switch>
+
+
+                    <div className={this.props.currentUser ? "wrapper" : ""}>
+                        <LoggedOutView currentUser={this.props.currentUser}></LoggedOutView>
+                        <Switch>
+                            <Route exact path="/" component={Home}/>
+                            <Route path="/login" component={Login}/>
+                            <Route path="/ventas" component={Venta}/>
+                            <Route path="/register" component={Register}/>
+                            <Route path="/editorventa" component={EditorVenta}/>
+                            <Route path="/editordiagnostico/:venta" component={EditorDiagnostico}/>
+                            <Route path="/dx/:id" component={Diagnostico}/>
+                            <Route path="/citas" component={Citas}/>
+                            <Route path="/clientes" component={EditorCliente}/>
+                        </Switch>
+                    </div>
                 </div>
             );
         }

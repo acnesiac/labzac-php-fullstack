@@ -82,7 +82,7 @@ const LoggedInView = props => {
         <li className="nav-item">
         <button
           className="btn" onClick={handleClick}>
-          Cierra la sesion.
+          salir
         </button>
         </li>
       </ul>
