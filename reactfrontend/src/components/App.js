@@ -17,6 +17,7 @@ import EditorCliente from "./EditorCliente";
 import Venta from "./Venta";
 
 const SideView = props => {
+
     if (props.currentUser) {
         return (
             <div className="d-flex flex-column flex-shrink-0 p-3 bg-light">
@@ -110,6 +111,7 @@ class App extends React.Component {
 
                     <div className={this.props.currentUser ? "wrapper" : ""}>
                         <SideView currentUser={this.props.currentUser}></SideView>
+
                         <Switch>
                             <Route exact path="/" component={Home}/>
                             <Route path="/login" component={Login}/>
