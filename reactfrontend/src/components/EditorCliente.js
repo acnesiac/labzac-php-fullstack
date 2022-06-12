@@ -66,8 +66,7 @@ class EditorCliente extends React.Component {
 
     render() {
         return (
-            <div className="editor-page">
-                <div className="container page">
+                <div className="container">
                     <div className="row">
                         <div className="col-md-12 offset-md-0 col-xs-12">
                             <form>
@@ -111,7 +110,6 @@ class EditorCliente extends React.Component {
                         </div>
                     </div>
                 </div>
-            </div>
         );
     }
 }
