@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d344d4fe-8094-45fe-ac2f-55bd405c4f07" name="Default Changelist" comment="side bar only shown when is logged user present">
+    <list default="true" id="d344d4fe-8094-45fe-ac2f-55bd405c4f07" name="Default Changelist" comment="on the way for a display list">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home/Banner.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Banner.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,8 +126,6 @@
       <list>
         <item itemvalue="npm.start" />
         <item itemvalue="npm.start" />
-        <item itemvalue="npm.start" />
-        <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
   </component>
@@ -249,9 +245,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="diagnosticoz" />
     <MESSAGE value="on the way for a display list" />
-    <MESSAGE value="css and navigation sidebar" />
-    <MESSAGE value="side bar only shown when is logged user present" />
-    <option name="LAST_COMMIT_MESSAGE" value="side bar only shown when is logged user present" />
+    <option name="LAST_COMMIT_MESSAGE" value="on the way for a display list" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/reducers/common.js">

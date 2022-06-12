@@ -16,42 +16,40 @@ import Citas from '../components/Citas';
 import EditorCliente from "./EditorCliente";
 import Venta from "./Venta";
 
-const LoggedOutView = props => {
+const SideView = props => {
     if (props.currentUser) {
         return (
             <div className="d-flex flex-column flex-shrink-0 p-3 bg-light">
 
                 <ul className="nav nav-pills flex-column mb-auto">
-                    <li className="nav-item">
-                        <a href="#" className="nav-link active" aria-current="page">
 
-                            Home
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" className="nav-link link-dark">
 
-                            Dashboard
-                        </a>
+                    <li className="nav-item" >
+                        <Link to="/" className="nav-link" >
+                            <i className="ion-compose"></i>&nbsp;Ventas
+                        </Link>
                     </li>
-                    <li>
-                        <a href="#" className="nav-link link-dark">
 
-                            Orders
-                        </a>
+                    <li className="nav-item" >
+                        <Link to="/clientes" className="nav-link" >
+                            <i className="ion-compose"></i>&nbsp;Clientes
+                        </Link>
                     </li>
-                    <li>
-                        <a href="#" className="nav-link link-dark">
 
-                            Products
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" className="nav-link link-dark">
 
-                            Customers
-                        </a>
+                    <li className="nav-item" >
+                        <Link to="/" className="nav-link" >
+                            <i className="ion-compose"></i>&nbsp;Mis Estudios
+                        </Link>
                     </li>
+
+
+                    <li className="nav-item" >
+                        <Link to="/citas" className="nav-link" >
+                            <i className="ion-compose"></i>&nbsp;Citas
+                        </Link>
+                    </li>
+
                 </ul>
                 </div>
                 );
@@ -111,7 +109,7 @@ class App extends React.Component {
 
 
                     <div className={this.props.currentUser ? "wrapper" : ""}>
-                        <LoggedOutView currentUser={this.props.currentUser}></LoggedOutView>
+                        <SideView currentUser={this.props.currentUser}></SideView>
                         <Switch>
                             <Route exact path="/" component={Home}/>
                             <Route path="/login" component={Login}/>

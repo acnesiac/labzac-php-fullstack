@@ -39,37 +39,6 @@ const LoggedInView = props => {
       <ul className="nav navbar-nav">
 
 
-          <li className="nav-item" >
-              <Link to="/" className="nav-link" >
-                  <i className="ion-compose"></i>&nbsp;Home
-              </Link>
-          </li>
-
-          <li className="nav-item" >
-              <Link to="/" className="nav-link" >
-                  <i className="ion-compose"></i>&nbsp;Ventas
-              </Link>
-          </li>
-
-        <li className="nav-item" >
-          <Link to="/clientes" className="nav-link" >
-           <i className="ion-compose"></i>&nbsp;Clientes
-          </Link>
-        </li>
-
-
-        <li className="nav-item" >
-          <Link to="/" className="nav-link" >
-           <i className="ion-compose"></i>&nbsp;Mis Estudios
-          </Link>
-        </li>
-
-
-        <li className="nav-item" >
-          <Link to="/citas" className="nav-link" >
-           <i className="ion-compose"></i>&nbsp;Citas
-          </Link>
-        </li>
 
 
         <li className="nav-item">
