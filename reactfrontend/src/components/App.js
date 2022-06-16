@@ -18,7 +18,7 @@ const SideView = props => {
                 <ul className="nav nav-pills flex-column mb-auto">
                     <li className="nav-item">
                         <Link to="/ventas" className="nav-link">
-                            <i className="ion-compose"></i>&nbsp;Ventas
+                            <i className="ion-compose"></i>&nbsp;Ventass
                         </Link>
                     </li>
                 </ul>
