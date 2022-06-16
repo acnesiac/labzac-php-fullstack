@@ -20,7 +20,6 @@ const SideView = props => {
                         <Link to="/ventas" className="nav-link">
                             <i className="ion-compose"></i>&nbsp;Ventas
                         </Link>
-
                     </li>
                 </ul>
             </div>
