@@ -28,7 +28,7 @@ class Home extends React.Component {
         const articlesPromise = this.props.token ?
             agent.Articles.feed :
             agent.Articles.all;
-        this.props.onLoad(tab, articlesPromise, Promise.all([agent.Tags.getAll(), articlesPromise()]));
+        this.props.onLoad(tab, articlesPromise, Promise.all([agent.Articles.all(), articlesPromise()]));
     }
 
     componentWillUnmount() {
