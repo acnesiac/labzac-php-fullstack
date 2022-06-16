@@ -1,86 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="88411219-6c53-4670-a9db-d545e60b084c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_7_2022_12_30_PM_[Default_Changelist]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_7_2022_12_30_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_7_2022_12_30_PM__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_7_2022_12_30_PM__Default_Changelist_1.xml" beforeDir="false" />
+    <list default="true" id="88411219-6c53-4670-a9db-d545e60b084c" name="Default Changelist" comment="nuevo logo css sin tags">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/article-details.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/indexo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/log-in.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/privacy-policy.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sign-up.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/terms-conditions.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Article/ArticleActions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Citas/Comment.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Citas/CommentContainer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Citas/CommentInput.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Citas/CommentList.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Citas/DeleteButton.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Citas/DiagnosticoActions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Citas/DiagnosticoMeta.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Citas/DxActions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Citas/DxComment.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Citas/DxCommentContainer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Citas/DxCommentInput.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Citas/DxCommentList.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Citas/DxDeleteButton.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Citas/DxMeta.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Citas/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Cliente/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Diagnostico/Comment.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Diagnostico/CommentContainer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Diagnostico/CommentInput.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Diagnostico/CommentList.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Diagnostico/DeleteButton.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Diagnostico/DiagnosticoActions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Diagnostico/DiagnosticoMeta.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Diagnostico/DxActions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Diagnostico/DxComment.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Diagnostico/DxCommentContainer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Diagnostico/DxCommentInput.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Diagnostico/DxCommentList.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Diagnostico/DxDeleteButton.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Diagnostico/DxMeta.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Diagnostico/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Editor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EditorCliente.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EditorDiagnostico.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EditorVenta.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home/MainView.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home/Tags.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ListPagination.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProfileFavorites.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Register.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SearchButton.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Settings.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Venta/ArticleMeta.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Venta/Comment.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Venta/CommentContainer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Venta/CommentInput.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Venta/CommentList.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Venta/DeleteButton.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Venta/VentaActions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Venta/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Venta/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VentaList.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VentaPreview.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/actionTypes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/article.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/articleList.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/diagnostico.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/editor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/editorcliente.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/editorventa.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/profile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/settings.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/home.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -265,7 +191,7 @@
       <workItem from="1543776662464" duration="2803000" />
       <workItem from="1543779509085" duration="12255000" />
       <workItem from="1655372427176" duration="2050000" />
-      <workItem from="1655377729371" duration="2517000" />
+      <workItem from="1655377729371" duration="3900000" />
     </task>
     <task id="LOCAL-00001" summary="nuevo logo">
       <created>1543778640754</created>
@@ -288,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1543778680140</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="nuevo logo css sin tags">
+      <created>1655380287940</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1655380287940</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -376,6 +309,20 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/agent.js</url>
+          <line>37</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/reducers/auth.js</url>
+          <line>27</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
       <default-breakpoints>
         <breakpoint enabled="true" type="javascript-exception" />
       </default-breakpoints>
