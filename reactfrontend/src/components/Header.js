@@ -6,13 +6,11 @@ const LoggedOutView = props => {
   if (!props.currentUser) {
     return (
       <ul className="nav">
-
         <li className="nav-item">
           <Link to="/login" className="nav-link">
             Iniciar sesion
           </Link>
         </li>
-
         <li className="nav-item">
           <Link to="/register" className="nav-link">
            Crear cuenta
@@ -66,13 +64,10 @@ class Header extends React.Component {
     return (
       <nav className="navbar navbar-expand-lg bg-light">
           <div className="container-fluid">
-
           <Link to="/" className="navbar-brand">
             {this.props.appName.toLowerCase()}
           </Link>
-
           <LoggedOutView currentUser={this.props.currentUser} />
-
           <LoggedInView currentUser={this.props.currentUser} />
           </div>
       </nav>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Banner = ({ appName, token }) => {
+const Banner = ({ token }) => {
   if (token) {
     return null;
   }
