@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/agent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/agent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/common.js" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,6 +170,7 @@
       <list>
         <item itemvalue="npm.start" />
         <item itemvalue="npm.test" />
+
       </list>
     </recent_temporary>
   </component>

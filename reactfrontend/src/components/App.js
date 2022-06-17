@@ -19,8 +19,10 @@ const SideView = props => {
                     <li className="nav-item">
                         <Link to="/ventas" className="nav-link">
                             <i className="ion-compose"></i>&nbsp;Ventass
+
                         </Link>
                     </li>
+
                 </ul>
             </div>
         );
